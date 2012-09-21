@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+# load aliases
+source ~/.aliases
+
+# symlink ~/code to db, if it doesn't exist
+if [ ! -e ~/Code ]; then
+  ln -s ~/Dropbox/Code ~/Code
+fi
+
+# mkdir and cd
+_md() {
+  mkdir $1 && eval cd $1;
+}
+
+# local vars for prompt colors
+e=`printf "\033"`
+end="$e[0m"
+red="$e[1;31m"
+green="$e[1;32m"
+yellow="$e[1;33m"
+blue="$e[1;34m"
+magenta="$e[1;35m"
+darkcyan="$e[36m"
+
+# path
+export PATH=/usr/local/bin:/usr/local/mysql/bin:/usr/lib/cake/console:/usr/local/git/bin:/Developer/usr/bin:$HOME/.rbenv/bin:$PATH
+
+# misc settings
+export COLORIZE=1
+export CLICOLOR=1
+export EDITOR="/usr/bin/nano"
+export GEMEDITOR="/usr/bin/mate"
+
+# git
+alias git=hub
+_parse_git_branch() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo "("${ref#refs/heads/}")"
+}
+
+# cakephp
+alias icp="/usr/lib/cake/console/cake"
+
+# Local (private) settings
+if [ -f ~/.localrc ]; then
+  source ~/.localrc
+fi
+
+# prompt
+export PS1="\[${red}\][\w]\[${darkcyan}\]\$(_parse_git_branch)\n\[${green}\]\u@\h\[${yellow}\](\$(date +%T))\[${end}\]$ "

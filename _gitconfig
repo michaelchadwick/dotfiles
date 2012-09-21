@@ -1,0 +1,19 @@
+[user]
+  name = Michael Chadwick
+  email = michael.chadwick@gmail.com
+[color]
+  interactive = auto
+  branch = auto
+  diff = auto
+  status = auto
+[core]
+  excludesfile = /Users/mike/.gitignore
+  editor = nano
+  autocrlf = input
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  br = branch
+  aa = add --all
+  amend = commit --amend -C HEAD

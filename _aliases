@@ -1,0 +1,26 @@
+# system commands
+alias clr="clear"
+alias cls="clear"
+alias code="cd ~/Code"
+alias db="cd ~/Dropbox"
+alias home="cd ~"
+alias md="mkdir $1 | cd $1"
+alias myip="curl -s ip.appspot.com"
+alias reload=". ~/.bashrc"
+alias sites="cd ~/Sites"
+alias webrestart="sudo apachectl -k restart"
+alias www="cd ~/Sites"
+
+# editing config files
+alias nanoaliases="nano ~/Code/dotfiles/_aliases"
+alias nanobashprof="nano ~/Code/dotfiles/_bash_profile"
+alias nanobashrc="nano ~/Code/dotfiles/_bashrc"
+alias nanohosts="sudo nano /etc/hosts"
+alias nanohttpd="sudo nano /etc/apache2/httpd.conf"
+alias nanolocalrc="nano ~/Code/dotfiles/_localrc"
+alias nanovhosts="sudo nano /etc/apache2/extra/httpd-vhosts.conf"
+
+# logs
+alias taildev="tail -f log/development.log"
+alias tailha="tail -f /var/log/apache2/access_log"
+alias tailhe="tail -f /var/log/apache2/error_log"

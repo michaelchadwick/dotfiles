@@ -1,0 +1,78 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# Testing #
+###########
+testing/*
+
+# Temp files #
+##############
+tmp/*
+tmp/logs/*
+webroot/tmp/*
+
+# OS generated files #
+######################
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Audio files #
+###############
+# these should be symlinked
+audio
+*.flac
+*.it
+*.m4a
+*.m4p
+*.mid
+*.midi
+*.mp2
+*.mp3
+*.mp4
+*.ogg
+*.ram
+*.rm
+*.tbt
+*.wav
+*.xm
+
+# Video files #
+###############
+# these should be symlinked
+*.3gp
+*.avi
+*.flv
+*.mov
+*.mpg
+*.mpeg
+
+# Image source files #
+######################
+# these should be symlinked
+*.ai
+*.psd
