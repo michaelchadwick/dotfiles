@@ -15,10 +15,10 @@ alias www="cd ~/Sites"
 alias nanoaliases="nano ~/Code/dotfiles/_aliases"
 alias nanobashprof="nano ~/Code/dotfiles/_bash_profile"
 alias nanobashrc="nano ~/Code/dotfiles/_bashrc"
-alias nanohosts="sudo nano /etc/hosts"
-alias nanohttpd="sudo nano /etc/apache2/httpd.conf"
+alias nanohosts="sudo nano ~/Code/apachefiles/_hosts"
+alias nanohttpd="sudo nano ~/Code/apachefiles/_httpd.conf"
 alias nanolocalrc="nano ~/Code/dotfiles/_localrc"
-alias nanovhosts="sudo nano /etc/apache2/extra/httpd-vhosts.conf"
+alias nanovhosts="sudo nano ~/Code/apachefiles/_httpd-vhosts.conf"
 
 # logs
 alias taildev="tail -f log/development.log"
