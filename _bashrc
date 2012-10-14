@@ -24,7 +24,7 @@ magenta="$e[1;35m"
 darkcyan="$e[36m"
 
 # path
-export PATH=/usr/local/bin:/usr/local/mysql/bin:/usr/lib/cake/console:/usr/local/git/bin:/Developer/usr/bin:$HOME/.rbenv/bin:$PATH
+export PATH=/Users/mike/.rbenv/shims:/usr/local/bin:/usr/local/mysql/bin:/usr/lib/cake/console:/usr/local/git/bin:/Developer/usr/bin:$PATH
 
 # misc settings
 export COLORIZE=1
