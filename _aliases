@@ -24,3 +24,6 @@ alias nanovhosts="sudo nano ~/Code/apachefiles/_httpd-vhosts.conf"
 alias taildev="tail -f log/development.log"
 alias tailha="tail -f /var/log/apache2/access_log"
 alias tailhe="tail -f /var/log/apache2/error_log"
+
+# nanostudio
+alias nanssync="rsync -va --delete /Users/mike/Dropbox/Music/projects/nanostudio/ '/Users/mike/Library/Containers/co.uk.blipinteractive.NanoStudio.osx/Data/Documents/User/'"
