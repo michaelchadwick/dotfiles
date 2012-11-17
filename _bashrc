@@ -24,7 +24,7 @@ magenta="$e[1;35m"
 darkcyan="$e[36m"
 
 # path
-export PATH=/Users/mike/.rbenv/shims:/usr/local/bin:/usr/local/mysql/bin:/usr/lib/cake/console:/usr/local/git/bin:/Developer/usr/bin:$PATH
+export PATH=/usr/local/heroku/bin:/Users/mike/.rbenv/shims:/usr/local/bin:/usr/local/mysql/bin:/usr/lib/cake/console:/usr/local/git/bin:/Developer/usr/bin:$PATH
 
 # misc settings
 export COLORIZE=1
@@ -49,3 +49,6 @@ fi
 
 # prompt
 export PS1="\[${red}\][\w]\[${darkcyan}\]\$(_parse_git_branch)\n\[${green}\]\u@\h\[${yellow}\](\$(date +%T))\[${end}\]$ "
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
