@@ -29,6 +29,7 @@ export PATH=.bundle/bin:/usr/local/heroku/bin:/Users/mike/.rbenv/shims:/usr/loca
 # misc settings
 export COLORIZE=1
 export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export EDITOR="/usr/bin/nano"
 export GEMEDITOR="/usr/bin/mate"
 
