@@ -49,6 +49,7 @@ rbenv() {
     command rbenv "$command" "$@";;
   esac
 }
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # git
 alias git=hub
