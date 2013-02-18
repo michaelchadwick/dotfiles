@@ -17,3 +17,5 @@
   br = branch
   aa = add --all
   amend = commit --amend -C HEAD
+[push]
+  default = matching
