@@ -12,6 +12,7 @@ alias sites="cd ~/Sites"
 alias sqlite="sqlite3"
 alias webrestart="sudo apachectl -k restart"
 alias www="cd ~/Sites"
+alias ytdl="youtube-dl -t"
 
 # editing config files
 alias nanoaliases="nano ~/Code/dotfiles/_aliases"
