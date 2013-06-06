@@ -7,12 +7,19 @@ alias home="cd ~"
 alias media="cd /Volumes/Media"
 alias md="mkdir $1 | cd $1"
 alias myip="curl -s ip.appspot.com"
+alias mymusic="cd ~/Music/projects/Nebyoolae/working"
 alias reload=". ~/.bashrc"
 alias sites="cd ~/Sites"
 alias sqlite="sqlite3"
 alias webrestart="sudo apachectl -k restart"
 alias www="cd ~/Sites"
 alias ytdl="youtube-dl -t"
+
+# simple http servers for local directory in various flavors
+DOSKEY httphp=php -S localhost:4567
+DOSKEY httpy=python -m http.server 4567
+DOSKEY httrack=bundle exec rackup -p 4567
+DOSKEY httruby=ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 4567, :DocumentRoot => '.'); trap('INT') { s.shutdown }; s.start"
 
 # editing config files
 alias nanoaliases="nano ~/Code/dotfiles/_aliases"
@@ -23,6 +30,7 @@ alias nanogitconfig="nano ~/Code/dotfiles/_gitconfig"
 alias nanogitignore="nano ~/Code/dotfiles/_gitignore"
 alias nanohosts="sudo nano ~/Code/apachefiles/_hosts"
 alias nanohttpd="sudo nano ~/Code/apachefiles/_httpd.conf"
+alias nanoinputrc="nano ~/Code/dotfiles/_inputrc"
 alias nanolocalrc="nano ~/Code/dotfiles/_localrc"
 alias nanovhosts="sudo nano ~/Code/apachefiles/_httpd-vhosts.conf"
 
