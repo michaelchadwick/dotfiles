@@ -34,6 +34,7 @@ export EDITOR="/usr/bin/nano"
 export GEMEDITOR="/usr/bin/mate"
 
 # rbenv
+export RBENV_ROOT=/usr/local/opt/rbenv
 source "/usr/local/Cellar/rbenv/0.4.0/libexec/../completions/rbenv.bash"
 rbenv rehash 2>/dev/null
 rbenv() {
