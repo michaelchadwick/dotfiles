@@ -16,10 +16,10 @@ alias www="cd ~/Sites"
 alias ytdl="youtube-dl -t"
 
 # simple http servers for local directory in various flavors
-DOSKEY httphp=php -S localhost:4567
-DOSKEY httpy=python -m http.server 4567
-DOSKEY httrack=bundle exec rackup -p 4567
-DOSKEY httruby=ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 4567, :DocumentRoot => '.'); trap('INT') { s.shutdown }; s.start"
+alias httphp="php -S localhost:4567"
+alias httpy="python -m http.server 4567"
+alias httrack="rackup -p 4567"
+alias httruby="ruby -r webrick -e 's = WEBrick::HTTPServer.new(:Port => 4567, :DocumentRoot => "."); trap("INT") { s.shutdown }; s.start'"
 
 # editing config files
 alias nanoaliases="nano ~/Code/dotfiles/_aliases"
