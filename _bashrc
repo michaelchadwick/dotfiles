@@ -9,7 +9,7 @@ if [ ! -e ~/Code ]; then
 fi
 
 # mkdir and cd
-_md() {
+mdcd() {
   mkdir $1 && eval cd $1;
 }
 
