@@ -32,6 +32,7 @@ export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export EDITOR="/usr/bin/nano"
 export GEMEDITOR="/usr/bin/mate"
+export GIT_PS1_SHOWDIRTYSTATE=1
 
 # rbenv
 export RBENV_ROOT=/usr/local/opt/rbenv
@@ -54,9 +55,11 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # git
 alias git=hub
-_parse_git_branch() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo "("${ref#refs/heads/}")"
+source ~/.git-prompt.sh
+
+# hg
+_hg_ps1() {
+  hg prompt "{[hg]({branch})}{ at {bookmark}{status}" 2> /dev/null
 }
 
 # cakephp
@@ -68,7 +71,7 @@ if [ -f ~/.localrc ]; then
 fi
 
 # prompt
-export PS1="\[${red}\][\w]\[${darkcyan}\]\$(_parse_git_branch)\n\[${green}\]\u@\h\[${yellow}\](\$(date +%T))\[${end}\]$ "
+export PS1="\[${red}\][\w]\[${darkcyan}\]\$(_hg_ps1)\$(__git_ps1)\n\[${green}\]\u@\h\[${yellow}\](\$(date +%T))\[${end}\]$ "
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

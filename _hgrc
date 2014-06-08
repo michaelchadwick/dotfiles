@@ -1,0 +1,6 @@
+[ui]
+# Name data to appear in commits
+username = Michael Chadwick <michael.chadwick@gmail.com>
+
+[extensions]
+prompt = ~/code/python/hg-prompt/prompt.py
