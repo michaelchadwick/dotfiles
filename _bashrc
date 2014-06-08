@@ -59,7 +59,7 @@ source ~/.git-prompt.sh
 
 # hg
 _hg_ps1() {
-  hg prompt "{[hg]({branch})}{ at {bookmark}{status}" 2> /dev/null
+  hg prompt " {[hg]({branch})}{ at {bookmark}{status}" 2> /dev/null
 }
 
 # cakephp
