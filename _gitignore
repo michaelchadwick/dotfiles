@@ -77,3 +77,7 @@ audio
 # these should be symlinked
 *.ai
 *.psd
+
+# Rails #
+#########
+config/environment_variables.yml
