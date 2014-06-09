@@ -1,6 +1,6 @@
 # vars
-APACHEF="~/Code/apachefiles"
-DOTF="~/Code/dotfiles"
+APACHEFILES="~/Code/apachefiles"
+DOTFILES="~/Code/dotfiles"
 
 # system commands
 alias clr="clear"
@@ -26,18 +26,18 @@ alias httrack="rackup -p 4567"
 alias httruby="ruby -r webrick -e 's = WEBrick::HTTPServer.new(:Port => 4567, :DocumentRoot => "."); trap("INT") { s.shutdown }; s.start'"
 
 # editing config files
-alias nanoaliases="nano $DOTF/_aliases"
-alias nanobashprof="nano $DOTF/_bash_profile"
-alias nanobashrc="nano $DOTF/_bashrc"
-alias nanogemrc="nano $DOTF/_gemrc"
-alias nanogitconfig="nano $DOTF/_gitconfig"
-alias nanogitignore="nano $DOTF/_gitignore"
-alias nanohgrc="nano $DOTF/_hgrc"
-alias nanohosts="sudo nano $APACHEF/_hosts"
-alias nanohttpd="sudo nano $APACHEF/_httpd.conf"
-alias nanoinputrc="nano $DOTF/_inputrc"
-alias nanolocalrc="nano $DOTF/_localrc"
-alias nanovhosts="sudo nano $APACHEF/_httpd-vhosts.conf"
+alias nanoaliases="nano $DOTFILES/_aliases"
+alias nanobashprof="nano $DOTFILES/_bash_profile"
+alias nanobashrc="nano $DOTFILES/_bashrc"
+alias nanogemrc="nano $DOTFILES/_gemrc"
+alias nanogitconfig="nano $DOTFILES/_gitconfig"
+alias nanogitignore="nano $DOTFILES/_gitignore"
+alias nanohgrc="nano $DOTFILES/_hgrc"
+alias nanohosts="sudo nano $APACHEFILES/_hosts"
+alias nanohttpd="sudo nano $APACHEFILES/_httpd.conf"
+alias nanoinputrc="nano $DOTFILES/_inputrc"
+alias nanolocalrc="nano $DOTFILES/_localrc"
+alias nanovhosts="sudo nano $APACHEFILES/_httpd-vhosts.conf"
 
 # logs
 alias taildev="tail -f log/development.log"
