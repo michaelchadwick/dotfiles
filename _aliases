@@ -2,6 +2,9 @@
 APACHEFILES="~/Code/apachefiles"
 DOTFILES="~/Code/dotfiles"
 
+# copy file to dropbox
+function copy_to_dropbox() { cp "$@" ~/Dropbox; }
+
 # system commands
 alias clr="clear"
 alias cls="clear"
