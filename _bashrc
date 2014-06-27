@@ -26,6 +26,10 @@ darkcyan="$e[36m"
 # path
 export PATH=.bundle/bin:/usr/local/heroku/bin:/Users/mike/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/lib/cake/console:/usr/local/git/bin:/Developer/usr/bin:$PATH
 
+# go
+export GOPATH="/Users/mike/go"
+export GOROOT="/usr/local/Cellar/go/1.2.2/libexec"
+
 # misc settings
 export COLORIZE=1
 export CLICOLOR=1
