@@ -5,6 +5,11 @@ DOTFILES="~/Code/dotfiles"
 # copy file to dropbox
 function copy_to_dropbox() { cp "$@" ~/Dropbox; }
 
+# dice rolls
+function roll() {
+  echo $(($RANDOM % $1 + 1));
+}
+
 # system commands
 alias clr="clear"
 alias cls="clear"
