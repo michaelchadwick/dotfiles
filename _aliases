@@ -10,12 +10,19 @@ function roll() {
   echo $(($RANDOM % $1 + 1));
 }
 
+# bootstrap
+function strap() {
+  cp -R ~/Code/web/bootstrap $1;
+  cd $1;
+}
+
 # system commands
 alias clr="clear"
 alias cls="clear"
 alias code="cd ~/Code"
 alias codeosx="cd ~/Developer"
 alias cpdb=copy_to_dropbox
+alias dandeploy="dandelion deploy"
 alias db="cd ~/Dropbox"
 alias dotf="code && cd dotfiles"
 alias home="cd ~"
