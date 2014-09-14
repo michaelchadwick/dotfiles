@@ -39,9 +39,9 @@ alias ytdla="youtube-dl --extract-audio"
 
 # simple http servers for local directory in various flavors
 alias httphp="php -S localhost:4567"
-alias httpy="python -m http.server 4567"
-alias httrack="rackup -p 4567"
-alias httruby="ruby -r webrick -e 's = WEBrick::HTTPServer.new(:Port => 4567, :DocumentRoot => "."); trap("INT") { s.shutdown }; s.start'"
+alias httpy="python -m http.server 4568"
+alias httrack="rackup -p 4569"
+alias httruby="ruby -r webrick -e 's = WEBrick::HTTPServer.new(:Port => 4570, :DocumentRoot => "."); trap("INT") { s.shutdown }; s.start'"
 
 # editing config files
 alias nanoaliases="nano $DOTFILES/_aliases"
