@@ -5,6 +5,9 @@ DOTFILES="~/Code/dotfiles"
 # copy file to dropbox
 function copy_to_dropbox() { cp "$@" ~/Dropbox; }
 
+# move file to dropbox
+function move_to_dropbox() { mv "$@" ~/Dropbox; }
+
 # dice rolls
 function roll() {
   echo $(($RANDOM % $1 + 1));
@@ -27,6 +30,7 @@ alias db="cd ~/Dropbox"
 alias dotf="code && cd dotfiles"
 alias home="cd ~"
 alias mou="open -a /Applications/Mou.app/Contents/MacOS/Mou $@"
+alias mvdb=move_to_dropbox
 alias myip="curl -s ip.appspot.com"
 alias play="afplay"
 alias rebash=". ~/.bashrc"
