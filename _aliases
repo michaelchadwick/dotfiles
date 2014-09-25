@@ -20,6 +20,7 @@ function strap() {
 }
 
 # system commands
+alias apachef="code && cd apachefiles"
 alias clr="clear"
 alias cls="clear"
 alias code="cd ~/Code"
