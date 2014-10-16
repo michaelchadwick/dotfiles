@@ -81,3 +81,9 @@ audio
 # Rails #
 #########
 config/environment_variables.yml
+
+# Custom config dotfiles to install locally, #
+# but not track on github #
+###########################
+_localrc
+_customrc
