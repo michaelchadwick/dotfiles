@@ -21,6 +21,7 @@ function strap() {
 
 # system commands
 alias apachef="code && cd apachefiles"
+alias backup="tmutil startbackup"
 alias clr="clear"
 alias cls="clear"
 alias code="cd ~/Code"
