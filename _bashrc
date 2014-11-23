@@ -13,6 +13,13 @@ mdcd() {
   mkdir $1 && eval cd $1;
 }
 
+# jekyll startup script
+jsw() {
+  (jekyll serve -w) | while read line; do
+    [[ $line =~ "Server running" ]] && open http://127.0.0.1:4000
+  done
+}
+
 # local vars for prompt colors
 e=`printf "\033"`
 end="$e[0m"

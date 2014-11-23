@@ -87,3 +87,6 @@ config/environment_variables.yml
 ###########################
 _localrc
 _customrc
+
+# Jekyll
+_site/*
