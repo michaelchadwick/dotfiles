@@ -15,7 +15,7 @@ mdcd() {
 
 # jekyll startup script
 jsw() {
-  (jekyll serve -w) | while read line; do
+  (jekyll serve -w --drafts) | while read line; do
     [[ $line =~ "Server running" ]] && open http://127.0.0.1:4000
   done
 }
