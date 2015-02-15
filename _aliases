@@ -22,6 +22,7 @@ function strap() {
 # system commands
 alias apachef="code && cd apachefiles"
 alias backup="tmutil startbackup"
+alias bd=". bd -s"
 alias clr="clear"
 alias cls="clear"
 alias code="cd ~/Code"
@@ -30,6 +31,7 @@ alias cpdb=copy_to_dropbox
 alias dandeploy="dandelion deploy"
 alias db="cd ~/Dropbox"
 alias dotf="code && cd dotfiles"
+alias gitlog="git lg"
 alias home="cd ~"
 alias mou="open -a /Applications/Mou.app/Contents/MacOS/Mou $@"
 alias mvdb=move_to_dropbox
@@ -40,12 +42,13 @@ alias repostfix="sudo launchctl stop org.postfix.master; sudo launchctl start or
 alias reweb="sudo apachectl -k restart"
 alias sites="cd ~/Sites"
 alias sqlite="sqlite3"
+alias subl="sublime"
 alias www="cd ~/Sites"
 alias ytdl="youtube-dl -t"
 alias ytdla="youtube-dl --extract-audio"
 
 # simple http servers for local directory in various flavors
-alias httphp="php -S localhost:4567"
+alias httphp="php -S 0.0.0.0:4567"
 alias httpy="python -m SimpleHTTPServer 4568"
 alias httruby="ruby -run -e httpd . -p 4569"
 

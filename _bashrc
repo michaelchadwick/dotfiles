@@ -31,7 +31,7 @@ magenta="$e[1;35m"
 darkcyan="$e[36m"
 
 # path
-export PATH=.bundle/bin:/usr/local/heroku/bin:/Users/mike/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/lib/cake/console:/usr/local/git/bin:/Developer/usr/bin:$PATH
+export PATH=/Users/mike/bin:.bundle/bin:/usr/local/heroku/bin:/Users/mike/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/lib/cake/console:/usr/local/git/bin:/Developer/usr/bin:/Volumes/Media/sdk/android-sdk-macosx/tools::$PATH
 
 # go
 export GOPATH="/Users/mike/go"
