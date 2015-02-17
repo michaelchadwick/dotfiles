@@ -42,6 +42,7 @@ alias repostfix="sudo launchctl stop org.postfix.master; sudo launchctl start or
 alias reweb="sudo apachectl -k restart"
 alias sites="cd ~/Sites"
 alias sqlite="sqlite3"
+alias speedtest="speedtest-cli"
 alias subl="sublime"
 alias www="cd ~/Sites"
 alias ytdl="youtube-dl -t"
