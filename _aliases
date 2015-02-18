@@ -31,6 +31,7 @@ alias cpdb=copy_to_dropbox
 alias dandeploy="dandelion deploy"
 alias db="cd ~/Dropbox"
 alias dotf="code && cd dotfiles"
+alias gcal=gcalcli
 alias gitlog="git lg"
 alias home="cd ~"
 alias mou="open -a /Applications/Mou.app/Contents/MacOS/Mou $@"
