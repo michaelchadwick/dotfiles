@@ -3,18 +3,16 @@ APACHEFILES="~/Code/apachefiles"
 DOTFILES="~/Code/dotfiles"
 
 # copy file to dropbox
-function copy_to_dropbox() { cp "$@" ~/Dropbox; }
+function copy_to_dropbox { cp "$@" ~/Dropbox; }
 
 # move file to dropbox
-function move_to_dropbox() { mv "$@" ~/Dropbox; }
+function move_to_dropbox { mv "$@" ~/Dropbox; }
 
 # dice rolls
-function roll() {
-  echo $(($RANDOM % $1 + 1));
-}
+function roll { echo $(($RANDOM % $1 + 1)); }
 
 # bootstrap
-function strap() {
+function strap {
   cp -R ~/Code/web/bootstrap $1;
   cd $1;
 }
@@ -23,6 +21,7 @@ function strap() {
 alias apachef="code && cd apachefiles"
 alias backup="tmutil startbackup"
 alias bd=". bd -s"
+alias be="bundle exec"
 alias clr="clear"
 alias cls="clear"
 alias code="cd ~/Code"
@@ -31,6 +30,7 @@ alias cpdb=copy_to_dropbox
 alias dandeploy="dandelion deploy"
 alias db="cd ~/Dropbox"
 alias dotf="code && cd dotfiles"
+alias edit=mate
 alias gcal=gcalcli
 alias gitlog="git lg"
 alias home="cd ~"
