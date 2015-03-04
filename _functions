@@ -1,0 +1,11 @@
+# mkdir and cd
+mdcd() {
+  mkdir $1 && eval cd $1;
+}
+
+# jekyll startup script
+jsw() {
+  (jekyll serve -w --drafts) | while read line; do
+    [[ $line =~ "Server running" ]] && open http://127.0.0.1:4000
+  done
+}

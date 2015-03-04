@@ -3,22 +3,13 @@
 # load aliases
 source ~/.aliases
 
+# load functions
+source ~/.functions
+
 # symlink ~/code to db, if it doesn't exist
 if [ ! -e ~/Code ]; then
   ln -s ~/Dropbox/Code ~/Code
 fi
-
-# mkdir and cd
-mdcd() {
-  mkdir $1 && eval cd $1;
-}
-
-# jekyll startup script
-jsw() {
-  (jekyll serve -w --drafts) | while read line; do
-    [[ $line =~ "Server running" ]] && open http://127.0.0.1:4000
-  done
-}
 
 # local vars for prompt colors
 e=`printf "\033"`
