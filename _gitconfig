@@ -10,6 +10,7 @@
   excludesfile = /Users/mike/.gitignore
   editor = nano
   autocrlf = input
+  safecrlf = false
 [alias]
   st = status
   ci = commit
