@@ -3,6 +3,9 @@ APACHEFILES="~/Code/apachefiles"
 DOTFILES="~/Code/dotfiles"
 
 # system commands
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 alias apachef="code && cd apachefiles"
 alias backup="tmutil startbackup"
 alias bd=". bd -s"
