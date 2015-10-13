@@ -88,6 +88,7 @@ config/environment_variables.yml
 _localrc
 _customrc
 _functions_priv
+_aliases_priv
 
 # Jekyll
 _site/*
