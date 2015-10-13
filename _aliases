@@ -1,4 +1,4 @@
-source ~/.aliases_private
+source ~/.aliases_priv
 
 # vars
 APACHEFILES="~/Code/apachefiles"
