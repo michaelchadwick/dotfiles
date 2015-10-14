@@ -44,7 +44,7 @@ alias httruby="ruby -run -e httpd . -p 4569"
 
 # editing config files
 alias nanoaliases="nano $DOTFILES/_aliases"
-alias nanoaliasesp="nano ~/.aliases_private"
+alias nanoaliasesp="nano $DOTFILES/_aliases_priv"
 alias nanobashprof="nano $DOTFILES/_bash_profile"
 alias nanobashrc="nano $DOTFILES/_bashrc"
 alias nanofuncs="nano $DOTFILES/_functions"
