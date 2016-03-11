@@ -1,14 +1,23 @@
 #!/usr/bin/env bash
 
 # load aliases
-source ~/.aliases
+if [ -f ~/.aliases ]; then
+  source ~/.aliases
+fi
 
 # load functions
-source ~/.functions
+if [ -f ~/.functions ]; then
+  source ~/.functions
+fi
 
 # load local (private) settings
 if [ -f ~/.localrc ]; then
   source ~/.localrc
+fi
+
+# load lita settings
+if [ -f ~/.litarc ]; then
+  source ~/.litarc
 fi
 
 # symlink ~/code to db, if it doesn't exist
@@ -33,12 +42,6 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export EDITOR="/usr/bin/nano"
 export GEMEDITOR="/usr/bin/mate"
 
-# path
-export PATH=$PATH:$GOROOT:/Users/mike/bin:/Users/mike/.scripts:.bundle/bin:/usr/local/heroku/bin:/Users/mike/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/lib/cake/console:/usr/local/git/bin:/Developer/usr/bin:/Volumes/Media/sdk/android-sdk-macosx/tools
-
-# prompt
-export PS1="\[${red}\][\w]\[${darkcyan}\]\$(_hg_ps1)\$(__git_ps1)\n\[${green}\]\u\[${yellow}\]@\[${green}\]\h\[${yellow}\](\$(date +%T))\[${end}\]$ "
-
 # go
 export GOPATH="/Users/mike/Dropbox/code/go"
 export GOROOT="/usr/local/opt/go/libexec"
@@ -46,7 +49,7 @@ export GOBIN="$GOPATH/bin"
 
 # rbenv
 export RBENV_ROOT=/usr/local/opt/rbenv
-source "/usr/local/Cellar/rbenv/0.4.0/libexec/../completions/rbenv.bash"
+source "/usr/local/Cellar/rbenv/1.0.0/libexec/../completions/rbenv.bash"
 rbenv rehash 2>/dev/null
 rbenv() {
   command="$1"
@@ -78,3 +81,9 @@ alias icp="/usr/lib/cake/console/cake"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# path
+export PATH=$PATH:$GOROOT:/Users/mike/bin:/Users/mike/.scripts:.bundle/bin:/usr/local/heroku/bin:/Users/mike/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/lib/cake/console:/usr/local/git/bin:/Developer/usr/bin:/Volumes/Media/sdk/android-sdk-macosx/tools
+
+# prompt
+export PS1="\[${red}\][\w]\[${darkcyan}\]\$(_hg_ps1)\$(__git_ps1)\n\[${green}\]\u\[${yellow}\]@\[${green}\]\h\[${yellow}\](\$(date +%T))\[${end}\]$ "

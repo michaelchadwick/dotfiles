@@ -1,25 +1,23 @@
-# copy file to dropbox
-function dbcp { cp "$@" ~/Dropbox; }
+# private functions
+if [ -f ~/.functions_priv ]; then
+  source ~/.functions_priv
+fi
 
-# move file to dropbox
+# copy/move file to dropbox
+function dbcp { cp "$@" ~/Dropbox; }
 function dbmv { mv "$@" ~/Dropbox; }
 
 # dice rolls
 function roll { echo $(($RANDOM % $1 + 1)); }
 
-# bootstrap
-function strap {
-  cp -R ~/Code/web/bootstrap $1;
-  cd $1;
-}
+# bootstrap a new site
+function strap { cp -R ~/Code/web/bootstrap $1; cd $1; }
 
 # mkdir and cd
-mdcd() {
-  mkdir $1 && eval cd $1;
-}
+function mdcd { mkdir $1 && eval cd $1; }
 
 # jekyll startup script
-jsw() {
+function jsw {
   (jekyll serve -w --drafts) | while read line; do
     [[ $line =~ "Server running" ]] && open http://127.0.0.1:4000
   done

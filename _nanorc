@@ -1,2 +1,4 @@
 set const
 set mouse
+set smooth
+set multibuffer
