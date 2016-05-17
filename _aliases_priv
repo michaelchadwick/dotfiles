@@ -1,0 +1,10 @@
+# vars
+SRC_DIR="/Volumes/media/developer/source"
+
+# aliases
+alias aws="ssh -i "~/Dropbox/_ssh/amazon_ec2_lita.pem" ec2-user@54.173.204.189"
+alias bbplugins="cd ~/Documents/Bitbar"
+alias motd="cd $SRC_DIR/motd"
+alias motdc="telnet localhost 3000"
+alias src="cd $SRC_DIR"
+alias sshvnctnl="ssh -L 5902:localhost:5902 -N -f -l mike portal.nebyoolae.com"

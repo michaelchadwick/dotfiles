@@ -40,7 +40,7 @@ export COLORIZE=1
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export EDITOR="/usr/bin/nano"
-export GEMEDITOR="/usr/bin/mate"
+export GEMEDITOR="/usr/bin/nano"
 
 # go
 export GOPATH="/Users/mike/Dropbox/code/go"
@@ -67,7 +67,6 @@ rbenv() {
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # git
-alias git=hub
 export GIT_PS1_SHOWDIRTYSTATE=1
 source ~/.git-prompt.sh
 
@@ -75,12 +74,6 @@ source ~/.git-prompt.sh
 _hg_ps1() {
   hg prompt " {[hg]({branch})}{ at {bookmark}{status}" 2> /dev/null
 }
-
-# cakephp
-alias icp="/usr/lib/cake/console/cake"
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
 # path
 export PATH=$PATH:$GOROOT:/Users/mike/bin:/Users/mike/.scripts:.bundle/bin:/usr/local/heroku/bin:/Users/mike/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/lib/cake/console:/usr/local/git/bin:/Developer/usr/bin:/Volumes/Media/sdk/android-sdk-macosx/tools
