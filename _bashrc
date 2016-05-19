@@ -76,7 +76,8 @@ _hg_ps1() {
 }
 
 # path
-export PATH=$PATH:$GOROOT:/Users/mike/bin:/Users/mike/.scripts:.bundle/bin:/usr/local/heroku/bin:/Users/mike/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/lib/cake/console:/usr/local/git/bin:/Developer/usr/bin:/Volumes/Media/sdk/android-sdk-macosx/tools
+export PATH=$PATH:$GOROOT:/Users/mike/bin:/Users/mike/.scripts:.bundle/bin:/usr/local/heroku/bin:/Users/mike/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/lib/cake/console:/usr/local/git/bin:/Developer/usr/bin:/Volumes/Media/sdk/android-sdk-macosx/tools:$HOME/.composer/vendor/bin
 
 # prompt
 export PS1="\[${red}\][\w]\[${darkcyan}\]\$(_hg_ps1)\$(__git_ps1)\n\[${green}\]\u\[${yellow}\]@\[${green}\]\h\[${yellow}\](\$(date +%T))\[${end}\]$ "
+

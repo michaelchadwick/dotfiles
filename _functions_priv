@@ -1,3 +1,8 @@
+# bootstrap a new site
+function strap {
+  cp -R ~/Code/web/bootstrap $1; cd $1;
+}
+
 # test sending gmail from console
 function testmail {
   tree /var/run | mail -s "contents" michael.chadwick@gmail.com

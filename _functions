@@ -10,10 +10,7 @@ function dbmv { mv "$@" ~/Dropbox; }
 # dice rolls
 function roll { echo $(($RANDOM % $1 + 1)); }
 
-# bootstrap a new site
-function strap { cp -R ~/Code/web/bootstrap $1; cd $1; }
-
-# mkdir and cd
+# make a directory and change into it
 function mdcd { mkdir $1 && eval cd $1; }
 
 # jekyll startup script
