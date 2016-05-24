@@ -82,15 +82,6 @@ audio
 #########
 config/environment_variables.yml
 
-# Custom config dotfiles to install locally, #
-# but not track on github #
-###########################
-_bashrc_simple
-_localrc
-_customrc
-_functions_priv
-_aliases_priv
-
 # Jekyll
 _site/*
 
