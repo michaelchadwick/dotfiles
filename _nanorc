@@ -4,3 +4,4 @@ set mouse
 set smooth
 set multibuffer
 set tabstospaces
+set softwrap

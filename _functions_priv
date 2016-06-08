@@ -32,7 +32,7 @@ function checkstuff {
 
 # play midi file using fluidsynth
 function playmidi {
-  SOUNDFONT='/Volumes/Media/samples/_sf2/Other/GeneralUser.v.1.44.sf2'
+  SOUNDFONT=$HOME/Dropbox/Audio/samples/GeneralUser-GS-FluidSynth-v1.44.sf2
 
   if [ -e "$SOUNDFONT" ]; then
     for i in "$@"
@@ -49,4 +49,9 @@ function playmidi {
     echo "[playmidi]: SOUNDFONT file not found at $SOUNDFONT"
     return 1
   fi
+}
+
+# query blink database
+function blink() {
+  open http://act.ucsd.edu/directory/search?entry=$1+$2  
 }

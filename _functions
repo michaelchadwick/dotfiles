@@ -6,6 +6,8 @@ fi
 # copy/move file to dropbox
 function dbcp { cp "$@" ~/Dropbox; }
 function dbmv { mv "$@" ~/Dropbox; }
+function dbcp_a { cp "$@" ~/Dropbox/Audio/misc/_demos; }
+function dpmv_a { mv "$@" ~/Dropbox/Audio/misc/_demos; }
 
 # dice rolls
 function roll { echo $(($RANDOM % $1 + 1)); }

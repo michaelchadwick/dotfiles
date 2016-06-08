@@ -11,8 +11,10 @@ alias codemac="cd ~/Developer"
 alias dotf="cd $DOTFILES"
 alias motd="cd $SRC_DIR/motd"
 alias motdc="telnet localhost 3000"
+alias namegen="~/.scripts/generate_random_name.rb"
 alias src="cd $SRC_DIR"
 alias sshvnctnl="ssh -L 5902:localhost:5902 -N -f -l mike portal.nebyoolae.com"
+alias winamp="wine ~/.wine/drive_c/Program\ Files/Winamp/winamp.exe"
 
 # editing config files
 alias nanoaliases="$TXTAPP $DOTFILES/_aliases"

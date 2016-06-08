@@ -24,6 +24,8 @@ alias dpcheck="phpcs --standard=Drupal --extensions='php,module,inc,install,test
 alias dpfix="phpcbf --standard=Drupal --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt,md'"
 alias edit=$TXTAPP
 alias gcal=gcalcli
+alias gemup="gem update"
+alias gemups="gem update --system"
 alias gitlog="git lg -20"
 alias home="cd ~"
 alias howbig="du -sh"
