@@ -82,22 +82,26 @@ audio
 #########
 config/environment_variables.yml
 
-# Jekyll
+# Jekyll #
+##########
 _site/*
 
-# Dandelion
+# Dandelion #
+#############
 dandelion.yml
 
-# Visual Studio
-#############
+# Visual Studio #
+#################
 
-# User-specific files
+# User-specific files #
+#######################
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 
-# Build results
+# Build results #
+#################
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -109,18 +113,22 @@ bld/
 [Bb]in/
 [Oo]bj/
 
-# Roslyn cache directories
+# Roslyn cache directories #
+############################
 *.ide/
 
-# MSTest test Results
+# MSTest test Results #
+#######################
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 
-#NUNIT
+# NUNIT #
+#########
 *.VisualState.xml
 TestResult.xml
 
-# Build Results of an ATL Project
+# Build Results of an ATL Project #
+###################################
 [Dd]ebugPS/
 [Rr]eleasePS/
 dlldata.c
