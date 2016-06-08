@@ -1,0 +1,3 @@
+# Don't track _priv files
+*_priv
+*_private
