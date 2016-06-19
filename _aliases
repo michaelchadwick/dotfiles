@@ -20,6 +20,7 @@ alias composer="php /usr/local/bin/composer.phar"
 alias dandeploy="dandelion deploy"
 alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
+alias docs="cd ~/Documents"
 alias dpcheck="phpcs --standard=Drupal --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt'"
 alias dpfix="phpcbf --standard=Drupal --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt,md'"
 alias edit=$TXTAPP
