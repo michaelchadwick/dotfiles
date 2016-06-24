@@ -29,11 +29,11 @@ fi
 e=`printf "\033"`
 end="$e[0m"
 red="$e[1;31m"
-green="$e[1;32m"
-yellow="$e[1;33m"
-blue="$e[1;34m"
-magenta="$e[1;35m"
-darkcyan="$e[36m"
+grn="$e[1;32m"
+yel="$e[1;33m"
+blu="$e[1;34m"
+mag="$e[1;35m"
+dcy="$e[36m"
 
 # misc settings
 export COLORIZE=1
@@ -44,7 +44,7 @@ export GEMEDITOR="/usr/bin/nano"
 export PROMPT_COMMAND="printf '\e]0;bash\7'" # fix title bar post-ssh
 
 # go
-export GOPATH="/Users/mike/Dropbox/code/go"
+export GOPATH="$HOME/Dropbox/code/go"
 export GOROOT="/usr/local/opt/go/libexec"
 export GOBIN="$GOPATH/bin"
 
@@ -77,8 +77,24 @@ _hg_ps1() {
 }
 
 # path
-export PATH=$HOME/.composer/vendor/bin:$HOME/.rbenv/shims:$HOME/bin:$HOME/.scripts:.bundle/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/lib/cake/console:/usr/local/git/bin:/Developer/usr/bin:$GOROOT:$PATH:$HOME/bin
+PATH=.bundle/bin:$PATH
+PATH=$HOME/.composer/vendor/bin:$PATH
+PATH=$HOME/.rbenv/shims:$PATH
+PATH=$HOME/.scripts:$PATH
+PATH=$HOME/bin:$PATH
+PATH=/usr/local/git/bin:$PATH
+PATH=/usr/local/heroku/bin:$PATH
+PATH=/usr/local/mysql/bin:$PATH
+PATH=/usr/local/bin:$PATH
+PATH=/usr/local/sbin:$PATH
+PATH=/usr/lib/cake/console:$PATH
+PATH=$GOBIN:$PATH
+PATH=$GOROOT:$PATH
+PATH=/Developer/usr/bin:$PATH
+PATH=$PATH:$HOME/bin
+
+export PATH
 
 # prompt
-export PS1="\[${red}\][\w]\[${darkcyan}\]\$(_hg_ps1)\$(__git_ps1)\n\[${green}\]\u\[${yellow}\]@\[${green}\]\h\[${yellow}\](\$(date +%T))\[${end}\]$ "
+export PS1="\[${red}\][\w]\[${dcy}\]\$(_hg_ps1)\$(__git_ps1)\n\[${grn}\]\u\[${yel}\]@\[${grn}\]\h\[${yel}\](\$(date +%T))\[${end}\]$ "
 
