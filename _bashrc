@@ -36,11 +36,12 @@ mag="$e[1;35m"
 dcy="$e[36m"
 
 # misc settings
+export TXTAPP=nano
 export COLORIZE=1
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-export EDITOR="/usr/bin/nano"
-export GEMEDITOR="/usr/bin/nano"
+export EDITOR=$TXTAPP
+export GEMEDITOR=$TXTAPP
 export PROMPT_COMMAND="printf '\e]0;bash\7'" # fix title bar post-ssh
 
 # go

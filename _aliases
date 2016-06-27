@@ -3,51 +3,55 @@ if [ -f ~/.aliases_priv ]; then
   source ~/.aliases_priv
 fi
 
-# vars
-TXTAPP="nano"
-
-# system commands
+# shell commands
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias apps="cd /Applications"
-alias backup="tmutil startbackup"
-alias bd=". bd -s"
-alias be="bundle exec"
-alias brewup="brew update && brew upgrade && brew cleanup"
 alias clr="clear"
 alias cls="clear"
-alias composer="php /usr/local/bin/composer.phar"
-alias dandeploy="dandelion deploy"
+alias edit=$EDITOR
+alias home="cd ~"
+alias howbig="du -sh"
+alias play="afplay"
+alias rebash="source ~/.bashrc"
+alias reweb="sudo apachectl -k restart"
+alias ytdl="youtube-dl -t"
+alias ytdla="youtube-dl --extract-audio"
+
+# mac-specific directory shortcuts
+alias apps="cd /Applications"
 alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias docs="cd ~/Documents"
+alias sites="cd ~/Sites"
+
+# mac-specific commands
+alias backup="tmutil startbackup"
+
+# php
+alias composer="php /usr/local/bin/composer.phar"
 alias dpcheck="phpcs --standard=Drupal --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt'"
 alias dpfix="phpcbf --standard=Drupal --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt,md'"
-alias edit=$TXTAPP
-alias gcal=gcalcli
+
+# git
+alias gitlog="git lg -20"
+
+# package management
+alias brewup="brew update && brew upgrade && brew cleanup"
 alias gemup="gem update"
 alias gemups="gem update --system"
-alias gitlog="git lg -20"
-alias home="cd ~"
-alias howbig="du -sh"
+
+# ruby
+alias be="bundle exec"
+
+# miscellaneous
+alias dandeploy="dandelion deploy"
+alias gcal=gcalcli
 alias myip="curl -s ip.appspot.com"
-alias play="afplay"
-alias rebash="source ~/.bashrc"
 alias repostfix="sudo launchctl stop org.postfix.master; sudo launchctl start org.postfix.master"
-alias reweb="sudo apachectl -k restart"
 alias sqlite="sqlite3"
-alias sites="cd ~/Sites"
-alias subl="sublime"
-alias ytdl="youtube-dl -t"
-alias ytdla="youtube-dl --extract-audio"
 
 # simple http servers for local directory in various flavors
 alias httphp="php -S 0.0.0.0:4567"
 alias httpy="python -m SimpleHTTPServer 4568"
 alias httruby="ruby -run -e httpd . -p 4569"
-
-# logs
-alias taildev="tail -f log/development.log"
-alias tailha="tail -f /var/log/apache2/access_log"
-alias tailhe="tail -f /var/log/apache2/error_log"
