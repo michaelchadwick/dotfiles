@@ -1,3 +1,7 @@
+# syntax highlighting
+include /usr/local/nano/*.nanorc
+
+# options
 set const
 set mouse
 set smooth
