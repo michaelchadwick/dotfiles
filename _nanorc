@@ -1,5 +1,5 @@
 # syntax highlighting
-include /usr/local/nano/*.nanorc
+include ~/.nano/syntax/*.nanorc
 
 # options
 set const
