@@ -38,7 +38,7 @@ alias gitlog="git lg -20"
 
 # package management
 alias brewup="brew update && brew upgrade && brew cleanup"
-alias gemup="gem update"
+alias gemup="gem update && gem cleanup"
 alias gemups="gem update --system"
 
 # ruby
