@@ -12,6 +12,22 @@ function dpmv_a { mv "$@" ~/Dropbox/Audio/misc/_demos; }
 # dice rolls
 function roll { echo $(($RANDOM % $1 + 1)); }
 
+# drupal modules
+function dpcheck() {
+  root_dir=.
+  if [ $# -ge 1 ]; then
+    root_dir=$1
+  fi
+  phpcs --standard=Drupal --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt,md' $root_dir
+}
+function dpfix() {
+  root_dir=.
+  if [ $# -ge 1 ]; then
+    root_dir=$1
+  fi
+  phpcbf --standard=Drupal --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt,md' $root_dir
+}
+ 
 # make a directory and change into it
 function mdcd { mkdir $1 && eval cd $1; }
 
