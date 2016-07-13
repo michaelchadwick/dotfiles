@@ -1,4 +1,6 @@
-# private aliases
+### .aliases - spend less time typing
+
+# load private, non-tracked, aliases
 if [ -f ~/.aliases_priv ]; then
   source ~/.aliases_priv
 fi

@@ -1,16 +1,15 @@
-# private functions
+### .functions - more complicated aliases, basically
+
+## load private, non-tracked, functions
 if [ -f ~/.functions_priv ]; then
   source ~/.functions_priv
 fi
 
-# copy/move file to dropbox
-function dbcp { cp "$@" ~/Dropbox; }
-function dbmv { mv "$@" ~/Dropbox; }
-function dbcp_a { cp "$@" ~/Dropbox/Audio/misc/_demos; }
-function dpmv_a { mv "$@" ~/Dropbox/Audio/misc/_demos; }
-
 # dice rolls
 function roll { echo $(($RANDOM % $1 + 1)); }
+
+# make a directory and change into it
+function mdcd { mkdir $1 && eval cd $1; }
 
 # drupal modules
 function dpcheck() {
@@ -27,9 +26,6 @@ function dpfix() {
   fi
   phpcbf --standard=Drupal --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt,md' $root_dir
 }
- 
-# make a directory and change into it
-function mdcd { mkdir $1 && eval cd $1; }
 
 # jekyll startup script
 function jsw {
