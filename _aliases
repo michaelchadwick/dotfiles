@@ -32,6 +32,7 @@ alias backup="tmutil startbackup"
 
 # php
 alias composer="php /usr/local/bin/composer.phar"
+alias compup="composer selfupdate"
 
 # git
 alias gitlog="git lg -20"
