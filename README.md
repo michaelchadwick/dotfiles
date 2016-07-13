@@ -7,13 +7,13 @@ They can be installed using (what else?) install.sh.
 * _aliases       - simple commands
 * _bashrc        - main profile; env vars; loading other config files; path and ps1
 * _functions     - complicated commands
-* _gemrc         - rubygems config
-* _gitconfig     - git config
+* _gemrc         - [rubygems](https://rubygems.org) config
+* _gitconfig     - [git](https://git-scm.com) config
 * _gitignore     - what should git globally ignore
-* _hgrc          - mercurial config
+* _hgrc          - [mercurial](https://www.mercurial-scm.org) config
 * _inputrc       - shell config
-* _litarc        - Lita chatbot config
-* _nanorc        - nano config
-* _npmrc         - nodejs config
+* _litarc        - [Lita](https://lita.io) chatbot config
+* _nanorc        - [nano](https://www.nano-editor.org) config
+* _npmrc         - [nodejs](https://nodejs.org) config
 * _sshrc         - ssh config
-* _tm_properties - textmate config
+* _tm_properties - [textmate](https://macromates.com) config
