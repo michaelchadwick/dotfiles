@@ -20,11 +20,6 @@ if [ -f ~/.litarc ]; then
   source ~/.litarc
 fi
 
-# symlink ~/code to db, if it doesn't exist
-if [ ! -e ~/Code ]; then
-  ln -s ~/Dropbox/Code ~/Code
-fi
-
 # local vars for prompt colors
 e=`printf "\033"`
 end="$e[0m"
@@ -45,7 +40,7 @@ export GEMEDITOR=$TXTAPP
 export PROMPT_COMMAND="printf '\e]0;bash\7'" # fix title bar post-ssh
 
 # go
-export GOPATH="$HOME/Dropbox/code/go"
+export GOPATH="$DROPBOX_HOME/code/go"
 export GOROOT="/usr/local/opt/go/libexec"
 export GOBIN="$GOPATH/bin"
 
