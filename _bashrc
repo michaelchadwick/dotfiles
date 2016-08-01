@@ -68,9 +68,7 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 source ~/.git-prompt.sh
 
 # hg
-_hg_ps1() {
-  hg prompt " {[hg]({branch})}{ at {bookmark}{status}" 2> /dev/null
-}
+source ~/.hg-prompt.sh
 
 # path
 PATH=.bundle/bin:$PATH
