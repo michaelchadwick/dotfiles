@@ -17,8 +17,7 @@ alias howbig="du -sh"
 alias play="afplay"
 alias rebash="source ~/.bashrc"
 alias reweb="sudo apachectl -k restart"
-alias ytdl="youtube-dl -t"
-alias ytdla="youtube-dl --extract-audio"
+alias rmd="rm -rf $1"
 
 # mac-specific directory shortcuts
 alias apps="cd /Applications"
@@ -51,6 +50,8 @@ alias gcal=gcalcli
 alias myip="curl -s ip.appspot.com"
 alias repostfix="sudo launchctl stop org.postfix.master; sudo launchctl start org.postfix.master"
 alias sqlite="sqlite3"
+alias ytdl="youtube-dl -t"
+alias ytdla="youtube-dl --extract-audio"
 
 # simple http servers for local directory in various flavors
 alias httphp="php -S 0.0.0.0:4567"
