@@ -46,6 +46,7 @@ alias be="bundle exec"
 
 # miscellaneous
 alias dandeploy="dandelion deploy"
+alias dc="docker-compose"
 alias gcal=gcalcli
 alias myip="curl -s ip.appspot.com"
 alias repostfix="sudo launchctl stop org.postfix.master; sudo launchctl start org.postfix.master"

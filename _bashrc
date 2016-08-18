@@ -24,11 +24,11 @@ fi
 e=`printf "\033"`
 end="$e[0m"
 red="$e[1;31m"
-grn="$e[1;32m"
-yel="$e[1;33m"
-blu="$e[1;34m"
-mag="$e[1;35m"
-dcy="$e[36m"
+green="$e[1;32m"
+yellow="$e[1;33m"
+blue="$e[1;34m"
+magenta="$e[1;35m"
+cyan="$e[36m"
 
 # misc settings
 export TXTAPP=nano
@@ -91,5 +91,5 @@ PATH=$PATH:$HOME/bin
 export PATH
 
 # prompt
-export PS1="\[${red}\][\w]\[${dcy}\]\$(_hg_ps1)\$(__git_ps1)\n\[${grn}\]\u\[${yel}\]@\[${grn}\]\h\[${yel}\](\$(date +%T))\[${end}\]$ "
+export PS1="\[${red}\][\w]\[${cyan}\]\$(_hg_ps1)\$(__git_ps1)\n\[${green}\]\u\[${yellow}\]@\[${green}\]\h\[${yellow}\](\$(date +%T))\[${end}\] "
 
