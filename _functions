@@ -5,6 +5,19 @@ if [ -f ~/.functions_priv ]; then
   source ~/.functions_priv
 fi
 
+# about - info about current system
+function about() {
+  if hash archey 2>/dev/null; then
+    archey
+  else
+    if [ -f /proc/version ]; then
+      cat /proc/version
+    else
+      uname -a
+    fi
+  fi
+}
+
 # dice rolls
 function roll { echo $(($RANDOM % $1 + 1)); }
 
