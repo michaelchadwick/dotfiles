@@ -67,9 +67,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export GIT_PS1_SHOWDIRTYSTATE=1
 source ~/.git-prompt.sh
 
-# hg
-source ~/.hg-prompt.sh
-
 # path
 PATH=.bundle/bin:$PATH
 PATH=$HOME/.composer/vendor/bin:$PATH
@@ -91,5 +88,5 @@ PATH=$PATH:$HOME/bin
 export PATH
 
 # prompt
-export PS1="\[${red}\][\w]\[${cyan}\]\$(_hg_ps1)\$(__git_ps1)\n\[${green}\]\u\[${yellow}\]@\[${green}\]\h\[${yellow}\](\$(date +%T))\[${end}\] "
+export PS1="\[${red}\][\w]\[${cyan}\]\$(__git_ps1)\n\[${green}\]\u\[${yellow}\]@\[${green}\]\h\[${yellow}\](\$(date +%T))\[${end}\] "
 
