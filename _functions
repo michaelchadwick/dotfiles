@@ -8,7 +8,7 @@ fi
 # about - info about current system
 function about() {
   if hash archey 2>/dev/null; then
-    archey
+    archey $1
   else
     if [ -f /proc/version ]; then
       cat /proc/version
