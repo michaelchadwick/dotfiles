@@ -73,7 +73,6 @@ PATH=.bundle/bin:$PATH
 PATH=$HOME/.composer/vendor/bin:$PATH
 PATH=$HOME/.rbenv/shims:$PATH
 PATH=$HOME/.scripts:$PATH
-PATH=$HOME/bin:$PATH
 PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:$PATH
 PATH=/usr/local/git/bin:$PATH
 PATH=/usr/local/heroku/bin:$PATH
