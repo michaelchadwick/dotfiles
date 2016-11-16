@@ -30,9 +30,13 @@ function roll {
 # make a directory and change into it
 function mdcd {
  if [ ! -d "$1" ]; then
-   mkdir $1
+   if [ ! -L "$1" ]; then
+     mkdir $1
+     eval cd $1
+   fi
+ else
+   eval cd $1
  fi
- eval cd $1
 }
 
 # drupal modules
