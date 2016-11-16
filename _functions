@@ -19,10 +19,21 @@ function about() {
 }
 
 # dice rolls
-function roll { echo $(($RANDOM % $1 + 1)); }
+function roll {
+ if [ $# -ge 1 ]; then
+   echo $(($RANDOM % $1 + 1))
+ else
+   echo $(($RANDOM % 2))
+ fi
+}
 
 # make a directory and change into it
-function mdcd { mkdir $1 && eval cd $1; }
+function mdcd {
+ if [ ! -d "$1" ]; then
+   mkdir $1
+ fi
+ eval cd $1
+}
 
 # drupal modules
 function dpcheck() {
