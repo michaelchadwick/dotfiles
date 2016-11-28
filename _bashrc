@@ -20,6 +20,9 @@ if [ -f ~/.litarc ]; then
   source ~/.litarc
 fi
 
+# load drupal settings
+source "$HOME/.console/console.rc" 2>/dev/null
+
 # local vars for prompt colors
 e=`printf "\033"`
 end="$e[0m"
@@ -47,7 +50,7 @@ export GOBIN="$GOPATH/bin"
 
 # rbenv
 export RBENV_ROOT=/usr/local/opt/rbenv
-source "/usr/local/Cellar/rbenv/1.0.0/libexec/../completions/rbenv.bash"
+source "/usr/local/Cellar/rbenv/1.1.0/libexec/../completions/rbenv.bash"
 rbenv rehash 2>/dev/null
 rbenv() {
   command="$1"

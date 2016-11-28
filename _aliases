@@ -18,6 +18,7 @@ alias play="afplay"
 alias rebash="source ~/.bashrc"
 alias reweb="sudo apachectl -k restart"
 alias rmd="rm -rf $1"
+alias untar="tar -xvf $1"
 
 # mac-specific directory shortcuts
 alias apps="cd /Applications"
