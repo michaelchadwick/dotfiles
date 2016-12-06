@@ -48,28 +48,12 @@ export GOPATH="$DROPBOX_HOME/code/go"
 export GOROOT="/usr/local/opt/go/libexec"
 export GOBIN="$GOPATH/bin"
 
-# rbenv
-export RBENV_ROOT=/usr/local/opt/rbenv
-source "/usr/local/Cellar/rbenv/1.1.0/libexec/../completions/rbenv.bash"
-rbenv rehash 2>/dev/null
-rbenv() {
-  command="$1"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
-
-  case "$command" in
-  shell)
-    eval `rbenv "sh-$command" "$@"`;;
-  *)
-    command rbenv "$command" "$@";;
-  esac
-}
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 # git
 export GIT_PS1_SHOWDIRTYSTATE=1
 source ~/.git-prompt.sh
+
+# rbenv
+eval "$(rbenv init -)"
 
 # path
 PATH=.bundle/bin:$PATH
