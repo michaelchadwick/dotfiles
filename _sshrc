@@ -1,1 +1,5 @@
 alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias clr='clear'
+alias cls='clear'
