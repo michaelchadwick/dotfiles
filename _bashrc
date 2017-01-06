@@ -20,6 +20,9 @@ if [ -f ~/.litarc ]; then
   source ~/.litarc
 fi
 
+# load rust/cargo
+source $HOME/.cargo/env
+
 # load drupal settings
 source "$HOME/.console/console.rc" 2>/dev/null
 
