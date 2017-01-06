@@ -83,3 +83,12 @@ function snow {
   sleep 0.1;
   done|gawk '{a[$3]=0;for(x in a) {o=a[x];a[x]=a[x]+1;printf "\033[%s;%sH ",o,x; printf "\033[%s;%sH*\033[0;0H",a[x],x;}}'
 }
+
+# color show in your terminal
+# source: https://twitter.com/climagic/status/817405740772184065
+function colors {
+  yes "$(seq 16 231)" | while read i;
+  do printf "\x1b[48;5;${i}m\n";
+  sleep .02;
+  done
+}
