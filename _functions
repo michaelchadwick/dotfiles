@@ -44,7 +44,7 @@ function mdcd {
 function drushinstall {
   php -r "readfile('https://s3.amazonaws.com/files.drush.org/drush.phar');" > drush;
   chmod +x drush;
-  mv /usr/local/bin;
+  mv drush /usr/local/bin;
 }
 ## modules
 function dpcheck() {
