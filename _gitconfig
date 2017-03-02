@@ -11,7 +11,7 @@
   editor = nano
   autocrlf = input
   safecrlf = false
-  filemode = false
+  fileMode = false
 [alias]
   st = status
   ci = commit
