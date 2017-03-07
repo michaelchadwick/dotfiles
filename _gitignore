@@ -46,6 +46,7 @@ Thumbs.db
 ###############
 # these should be symlinked
 audio
+music
 *.flac
 *.it
 *.m4a
