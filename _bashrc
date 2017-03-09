@@ -79,5 +79,5 @@ PATH=$PATH:$HOME/bin
 export PATH
 
 # prompt
-export PS1="\[${red}\][\w]\[${cyan}\]\$(__git_ps1)\n\[${green}\]\u\[${yellow}\]@\[${green}\]\h\[${yellow}\](\$(date +%T))\[${end}\] "
-
+export PS1="\[${red}\][\w]\[${cyan}\]\$(__git_ps1)\n"
+export PS1="$PS1\[${green}\]\u\[${yellow}\]@\[${green}\]\h\[${yellow}\](\$(date +%T))\[${end}\] "
