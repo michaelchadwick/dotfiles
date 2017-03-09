@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "Setting OS X Preferences..."
+echo "Setting macOS Preferences..."
 
 ###############################################################################
 # General System                                                              #
