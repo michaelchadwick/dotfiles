@@ -53,6 +53,7 @@ alias be="bundle exec"
 # miscellaneous
 alias dandeploy="dandelion deploy"
 alias dc="docker-compose"
+alias dm="docker-machine"
 alias gcal=gcalcli
 alias myip="curl -s ip.appspot.com"
 alias repostfix="sudo launchctl stop org.postfix.master; sudo launchctl start org.postfix.master"
@@ -61,6 +62,6 @@ alias ytdl="youtube-dl -t"
 alias ytdla="youtube-dl --extract-audio"
 
 # simple http servers for local directory in various flavors
-alias httphp="php -S 0.0.0.0:4567"
-alias httpy="python -m SimpleHTTPServer 4568"
-alias httruby="ruby -run -e httpd . -p 4569"
+alias httphp="open http://localhost:4567; php -S 0.0.0.0:4567"
+alias httpy="open http://localhost:4568; python -m SimpleHTTPServer 4568"
+alias httruby="open http://localhost:4569; ruby -run -e httpd . -p 4569"
