@@ -13,11 +13,11 @@ alias clr="clear"
 alias cls="clear"
 alias edit=$EDITOR
 alias home="cd ~"
-alias howbig="du -sh"
 alias play="afplay"
 alias rebash="source ~/.bashrc"
 alias reweb="sudo apachectl -k restart"
 alias rmd="rm -rf $1"
+alias sizeof="du -sh $1"
 alias untar="tar -xvf $1"
 
 # mac-specific directory shortcuts
@@ -50,10 +50,12 @@ alias gemups="gem update --system"
 # ruby
 alias be="bundle exec"
 
-# miscellaneous
-alias dandeploy="dandelion deploy"
+# docker
 alias dc="docker-compose"
 alias dm="docker-machine"
+
+# miscellaneous
+alias dandeploy="dandelion deploy"
 alias gcal=gcalcli
 alias myip="curl -s ip.appspot.com"
 alias repostfix="sudo launchctl stop org.postfix.master; sudo launchctl start org.postfix.master"
