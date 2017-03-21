@@ -1,0 +1,12 @@
+syntax on
+colorscheme distinguished
+set cursorline
+set wildmenu
+set tabstop=2
+set number
+set hlsearch
+set incsearch
+set laststatus=2
+set mouse=a
+set title
+set showcmd
