@@ -67,6 +67,12 @@ function jsw {
   done
 }
 
+# docker clean
+function docker-clean {
+  docker ps -q |xargs docker rm
+  docker images -q |xargs docker rmi
+}
+
 # os x toggle hidden files in finder
 function hiddentoggle {
   stat=$(defaults read com.apple.Finder AppleShowAllFiles)
