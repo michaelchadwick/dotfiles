@@ -18,6 +18,24 @@ function about() {
   fi
 }
 
+# get random local port
+function get_rand_port {
+  netstat -aln | awk '
+    $6 == "LISTEN" {
+      if ($4 ~ "[.:][0-9]+$") {
+        split($4, a, /[:.]/);
+        port = a[length(a)];
+        p[port] = 1
+      }
+    }
+    END {
+      for (i = 3000; i < 65000 && p[i]; i++){};
+      if (i == 65000) {exit 1};
+      print i
+    }
+  '
+}
+
 # dice rolls
 function roll {
  if [ $# -ge 1 ]; then
@@ -145,3 +163,13 @@ function color-ssh {
   tab-color reset
 }
 alias ssh=color-ssh
+
+# Set iTerm2 tab titles
+tabTitle() { echo -ne "\033]0;"$*"\007"; }
+
+# Always list directory contents and set title upon 'cd'
+function tab-cd() {
+  builtin cd "$@";
+  ls -lFah;
+  tabTitle ${PWD##*/};
+}
