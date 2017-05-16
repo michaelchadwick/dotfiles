@@ -20,6 +20,9 @@ if [ -f ~/.litarc ]; then
   source ~/.litarc
 fi
 
+# bash completion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
 # load rust/cargo
 source $HOME/.cargo/env
 
@@ -70,6 +73,7 @@ PATH=/usr/local/heroku/bin:$PATH
 PATH=/usr/local/mysql/bin:$PATH
 PATH=/usr/local/bin:$PATH
 PATH=/usr/local/sbin:$PATH
+PATH=/usr/sbin:$PATH
 PATH=/usr/lib/cake/console:$PATH
 PATH=$GOBIN:$PATH
 PATH=$GOROOT:$PATH
@@ -81,3 +85,6 @@ export PATH
 # prompt
 export PS1="\[${red}\][\w]\[${cyan}\]\$(__git_ps1)\n"
 export PS1="$PS1\[${green}\]\u\[${yellow}\]@\[${green}\]\h\[${yellow}\](\$(date +%T))\[${end}\] "
+
+export PATH="$PATH:/Applications/DevDesktop/tools"
+
