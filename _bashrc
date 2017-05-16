@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-# load aliases
-if [ -f ~/.aliases ]; then
-  source ~/.aliases
-fi
-
 # load functions
 if [ -f ~/.functions ]; then
   source ~/.functions
+fi
+
+# load aliases
+if [ -f ~/.aliases ]; then
+  source ~/.aliases
 fi
 
 # load local (private) settings

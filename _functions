@@ -19,7 +19,7 @@ function about() {
 }
 
 # get random local port
-function get_rand_port {
+function get_rand_port() {
   netstat -aln | awk '
     $6 == "LISTEN" {
       if ($4 ~ "[.:][0-9]+$") {
