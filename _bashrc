@@ -86,5 +86,3 @@ export PATH
 export PS1="\[${red}\][\w]\[${cyan}\]\$(__git_ps1)\n"
 export PS1="$PS1\[${green}\]\u\[${yellow}\]@\[${green}\]\h\[${yellow}\](\$(date +%T))\[${end}\] "
 
-export PATH="$PATH:/Applications/DevDesktop/tools"
-
