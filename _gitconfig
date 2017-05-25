@@ -1,11 +1,20 @@
-[user]
-  name = mjchadwick
-  email = michael.chadwick@gmail.com
+[include]
+  # pull specific user I want to use on the machine
+  path = .gitconfig.d/user.txt
 [color]
   interactive = auto
+  ui = auto
   branch = auto
-  diff = auto
-  status = auto
+[color "diff"]
+  added = green bold
+  changed = yellow bold
+  modified = yellow bold
+  untracked = red bold
+[color "status"]
+  added = green bold
+  changed = yellow bold
+  modified = yellow bold
+  untracked = red bold
 [core]
   excludesfile = ~/.gitignore
   editor = nano
@@ -13,15 +22,26 @@
   safecrlf = false
   fileMode = false
 [alias]
+  # general
+  aa = add --all
   st = status
   ci = commit
   co = checkout
+  pushall = push --recurse-submodules=on-demand
+
+  # branching
   br = branch
-  aa = add --all
+  bnew = checkout -b
+
+  # diff
+  diffs = diff --staged
+  today = git diff --stat 'HEAD@{midnight}'
+
+  # logging
+  last = log -1
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   lc = log -p -1
   quick-stats = ! /usr/local/bin/git-quick-stats
-  pushall = push --recurse-submodules=on-demand
 [push]
   default = matching
 [diff]
@@ -34,3 +54,5 @@
   clean = git lfs clean %f
   smudge = git lfs smudge %f
   required = true
+[status]
+  submodulesummary = true
