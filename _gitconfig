@@ -28,6 +28,7 @@
   ci = commit
   co = checkout
   pushall = push --recurse-submodules=on-demand
+  subup = submodule update
 
   # branching
   br = branch
