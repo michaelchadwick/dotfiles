@@ -27,6 +27,7 @@
   st = status
   ci = commit
   co = checkout
+  ls = ls-tree -r HEAD --name-only
   pushall = push --recurse-submodules=on-demand
   subup = submodule update
 
