@@ -9,4 +9,3 @@ fi
 export PATH="/Users/mchadwick/.platformsh/bin:$PATH"
 . '/Users/mchadwick/.platformsh/shell-config.rc' 2>/dev/null
 
-export PATH="$PATH:/Applications/DevDesktop/tools"
