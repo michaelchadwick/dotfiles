@@ -8,3 +8,4 @@ set smooth
 set multibuffer
 set tabstospaces
 set softwrap
+set tabsize 2
