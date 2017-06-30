@@ -41,9 +41,9 @@
 
   # logging
   last = log -1
-  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   lc = log -p -1
-  quick-stats = ! /usr/local/bin/git-quick-stats
+  stats = ! /usr/local/bin/git-quick-stats
+  tree = log --color --graph --abbrev-commit --oneline -n 15
 [push]
   default = matching
 [diff]
