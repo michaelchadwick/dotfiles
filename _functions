@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 ### .functions - more complicated aliases, basically
 
 ## load private, non-tracked, functions
@@ -34,6 +35,23 @@ function get_rand_port() {
       print i
     }
   '
+}
+
+# simple http servers for local directory in various flavors
+function httphp() {
+  rport=$(get_rand_port);
+  open http://localhost:$rport;
+  php -S 127.0.0.1:$rport;
+}
+function httpy() {
+  rport=$(get_rand_port);
+  open http://localhost:$rport;
+  python -m SimpleHTTPServer $rport;
+}
+function httruby() {
+  rport=$(get_rand_port);
+  open http://localhost:$rport;
+  ruby -run -e httpd . -p $rport;
 }
 
 # dice rolls
