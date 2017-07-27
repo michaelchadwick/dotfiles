@@ -61,6 +61,9 @@ export GOBIN="$GOPATH/bin"
 export GIT_PS1_SHOWDIRTYSTATE=1
 source ~/.git-prompt.sh
 
+# node
+export NODE_PATH="~/.npm"
+
 # rbenv
 eval "$(rbenv init -)"
 
