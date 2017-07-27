@@ -16,7 +16,7 @@
   modified = yellow bold
   untracked = red bold
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/mike/.gitignore
   editor = nano
   autocrlf = input
   safecrlf = false
@@ -58,3 +58,14 @@
   required = true
 [status]
   submodulesummary = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = Michael Chadwick
+	email = mike@codana.me
+[commit]
+	template = /Users/mike/.stCommitMsg
