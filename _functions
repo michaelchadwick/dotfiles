@@ -78,7 +78,7 @@ function mdcd {
 # drupal
 # install drush
 function drushinstall {
-  php -r "readfile('https://s3.amazonaws.com/files.drush.org/drush.phar');" > drush;chmod +x drush;mv drush /usr/local/bin;
+  php -r "readfile('https://s3.amazonaws.com/files.drush.org/drush.phar');" > ~/drush;chmod +x ~/drush;mv ~/drush /usr/local/bin;
 }
 ## modules
 function dpcheck() {
