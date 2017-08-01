@@ -1,6 +1,7 @@
 [include]
-  # pull specific user I want to use on the machine
+  # pull machine-specific info I want to use on the machine
   path = .gitconfig.d/user.txt
+  path = .gitconfig.d/excludes.txt
 [color]
   interactive = auto
   ui = auto
@@ -16,7 +17,6 @@
   modified = yellow bold
   untracked = red bold
 [core]
-	excludesfile = /Users/mike/.gitignore
   editor = nano
   autocrlf = input
   safecrlf = false
@@ -66,6 +66,6 @@
 	trustExitCode = true
 [user]
 	name = Michael Chadwick
-	email = mike@codana.me
+	email = mchadwick@ucsd.edu
 [commit]
 	template = /Users/mike/.stCommitMsg
