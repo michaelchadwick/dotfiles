@@ -53,6 +53,10 @@ function httruby() {
   open http://localhost:$rport;
   ruby -run -e httpd . -p $rport;
 }
+function httnode() {
+  rport=$(get_rand_port);
+  http-server -o -p $rport;
+}
 
 # dice rolls
 function roll {
