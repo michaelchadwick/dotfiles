@@ -100,11 +100,10 @@ function dpfix() {
   phpcbf --standard=Drupal --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt,md' $root_dir
 }
 
-# jekyll startup script
-function jsw {
-  (jekyll serve -w --drafts) | while read line; do
-    [[ $line =~ "Server running" ]] && open http://127.0.0.1:4000
-  done
+# jekyll serve script
+function jekyll-serve {
+  rport=$(get_rand_port);
+  jekyll serve --port $rport
 }
 
 # os x toggle hidden files in finder
