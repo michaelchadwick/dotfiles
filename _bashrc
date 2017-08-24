@@ -84,7 +84,6 @@ PATH=/usr/lib/cake/console:$PATH
 PATH=$GOBIN:$PATH
 PATH=$GOROOT:$PATH
 PATH=/Developer/usr/bin:$PATH
-PATH=$PATH:$HOME/bin
 
 export PATH
 
