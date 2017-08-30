@@ -35,9 +35,6 @@ alias sites="cd ~/Sites"
 # mac-specific commands
 alias backup="tmutil startbackup"
 
-# php
-alias composer="php /usr/local/bin/composer.phar"
-alias compup="composer selfupdate"
 # symfony
 alias sf="symfony"
 alias sfstart="php bin/console server:start"
