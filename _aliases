@@ -13,12 +13,12 @@ alias ....="cd ../../.."
 alias clr="clear"
 alias cls="clear"
 alias edit=$EDITOR
+alias getid="cat ~/.ssh/id_rsa.pub | pbcopy"
 alias grep="`which grep` --color=always"
 alias home="cd ~"
 alias modify=$EDITOR
 alias play="afplay"
 alias rebash="source ~/.bashrc"
-alias reweb="sudo apachectl -k restart"
 alias rmd="rm -rf $1"
 alias sizeof="du -sh $1"
 alias tailhttp="tail -f $1 | awk '/[5[0-9][0-9]|4[0-9][0-9]]/ {print \"\033[31m\" $0 \"\033[39m\"} /3[0-9][0-9] {print \"\033[33m\" $0 \"\033[39m\"} /20[0-9]/ {print
