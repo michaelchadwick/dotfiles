@@ -68,6 +68,10 @@ export NODE_PATH="~/.npm"
 eval "$(rbenv init -)"
 
 # path
+DEFAULT_PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+PATH=$DEFAULT_PATH
+PATH=/usr/local/sbin:$PATH
 PATH=.bundle/bin:$PATH
 PATH=$HOME/.composer/vendor/bin:$PATH
 PATH=$HOME/.rbenv/shims:$PATH
@@ -77,13 +81,14 @@ PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:$PATH
 PATH=/usr/local/git/bin:$PATH
 PATH=/usr/local/heroku/bin:$PATH
 PATH=/usr/local/mysql/bin:$PATH
-PATH=/usr/local/bin:$PATH
-PATH=/usr/local/sbin:$PATH
-PATH=/usr/sbin:$PATH
 PATH=/usr/lib/cake/console:$PATH
 PATH=$GOBIN:$PATH
 PATH=$GOROOT:$PATH
 PATH=/Developer/usr/bin:$PATH
+PATH=/opt/X11/bin:$PATH
+PATH=/usr/local/MacGPG2/bin:$PATH
+PATH=/Library/Frameworks/Mono.framework/Versions/Current/Commands:$PATH
+PATH=/usr/local/munki:$PATH
 
 export PATH
 
