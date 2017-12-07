@@ -16,7 +16,7 @@
   modified = yellow bold
   untracked = red bold
 [core]
-  editor = nano
+  editor = vim
   excludesfile = ~/.gitignore
   autocrlf = input
   safecrlf = false
