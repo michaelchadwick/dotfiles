@@ -1,1 +1,4 @@
+#!/usr/bin/env bash
+### .litarc - Lita chat bot stuff
+
 alias lita-d="lita start &" # start lita instance as daemon

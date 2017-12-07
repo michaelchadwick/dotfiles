@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+### .functions_iterm - functions specific to iterm
+
 # change tab color
 function tab-color {
  case $1 in

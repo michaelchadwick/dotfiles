@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 ### .sshrc - commands to be available when sshing
 
 alias ..='cd ..'
