@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# variables
-failure="\x1B[31m"
-success="\x1B[32m"
-misc="\x1B[34m"
-reset="\x1B[0m"
+# color variables
+C_FAILURE="\x1B[31m"
+C_SUCCESS="\x1B[32m"
+C_MISC="\x1B[34m"
+C_RESET="\x1B[0m"
 
 err_linked="ALREADY-LINKED"
 err_exists="ALREADY-EXISTS"
@@ -12,17 +12,17 @@ err_exists="ALREADY-EXISTS"
 # methods
 function backup_file() {
   mv $1 ${1}.bak
-  echo -e "${misc}Backed up $1 to ${1}.bak${reset}"
+  echo -e "${C_MISC}Backed up $1 to ${1}.bak${C_RESET}"
 }
 function link_file() {
   ln -nfs $1 $2
-  echo -e "${success}Linked $1 to $2${reset}"
+  echo -e "${C_SUCCESS}Linked $2 to $1${C_RESET}"
 }
 function skip_file() {
-  echo -e "${failure}Skipped $1: $2${reset}"
+  echo -e "${C_FAILURE}Skipped $1: $2${C_RESET}"
 }
 
-echo -e "Linking local ~/. files to custom dotfiles...\r"
+echo -e "Linking custom _dotfiles to local ~/. files ...\r"
 
 for src_file in _*; do
   src_path="$PWD/$src_file"
@@ -34,13 +34,13 @@ for src_file in _*; do
   else
     if [ "$1" == "-d" ]; then
       if [ -h $dest_path ]; then
-        skip_file $src_path $err_linked
+        skip_file $dest_path $err_linked
       else
         backup_file $dest_path
         link_file $src_path $dest_path
       fi
     else
-      skip_file $src_path $err_exists
+      skip_file $dest_path $err_exists
     fi
   fi
 done

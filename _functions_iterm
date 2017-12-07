@@ -1,0 +1,56 @@
+# change tab color
+function tab-color {
+ case $1 in
+   green)
+   echo -n -e "\033]6;1;bg;red;brightness;57\a"
+   echo -n -e "\033]6;1;bg;green;brightness;197\a"
+   echo -n -e "\033]6;1;bg;blue;brightness;77\a"
+   ;;
+   red)
+   echo -n -e "\033]6;1;bg;red;brightness;270\a"
+   echo -n -e "\033]6;1;bg;green;brightness;60\a"
+   echo -n -e "\033]6;1;bg;blue;brightness;83\a"
+   ;;
+   orange)
+   echo -n -e "\033]6;1;bg;red;brightness;227\a"
+   echo -n -e "\033]6;1;bg;green;brightness;143\a"
+   echo -n -e "\033]6;1;bg;blue;brightness;10\a"
+   ;;
+   blue)
+   echo -n -e "\033]6;1;bg;red;brightness;30\a"
+   echo -n -e "\033]6;1;bg;green;brightness;144\a"
+   echo -n -e "\033]6;1;bg;blue;brightness;255\a"
+   ;;
+   purple)
+   echo -n -e "\033]6;1;bg;red;brightness;147\a"
+   echo -n -e "\033]6;1;bg;green;brightness;112\a"
+   echo -n -e "\033]6;1;bg;blue;brightness;219\a"
+   ;;
+   yellow)
+   echo -n -e "\033]6;1;bg;red;brightness;255\a"
+   echo -n -e "\033]6;1;bg;green;brightness;255\a"
+   echo -n -e "\033]6;1;bg;blue;brightness;0\a"
+   ;;
+   reset)
+   echo -n -e "\033]6;1;bg;red;brightness;255\a"
+   echo -n -e "\033]6;1;bg;green;brightness;255\a"
+   echo -n -e "\033]6;1;bg;blue;brightness;255\a"
+   ;;
+ esac
+}
+# make ssh tabs red
+function color-ssh {
+ tab-color red
+ ssh $1
+ tab-color reset
+}
+alias ssh=color-ssh
+
+# set window/tab namee
+function set_iterm_name() {
+  mode=$1; shift
+  echo -ne "\033]$mode;$@\007"
+}
+function iterm_both { set_iterm_name 0 $@; }
+function iterm_tab { set_iterm_name 1 $@; }
+function iterm_window { set_iterm_name 2 $@; }
