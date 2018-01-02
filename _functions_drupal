@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+### .functions_drupal - more complicated aliases, for drupal
+
+# drupal
+# install drush
+function drushinstall {
+  php -r "readfile('https://s3.amazonaws.com/files.drush.org/drush.phar');" > ~/drush;chmod +x ~/drush;mv ~/drush /usr/local/bin;
+}
+## modules
+function dpcheck() {
+  root_dir=.
+  if [ $# -ge 1 ]; then
+    root_dir=$1
+  fi
+  phpcs --standard=Drupal --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt,md' $root_dir
+}
+function dpfix() {
+  root_dir=.
+  if [ $# -ge 1 ]; then
+    root_dir=$1
+  fi
+  phpcbf --standard=Drupal --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt,md' $root_dir
+}
