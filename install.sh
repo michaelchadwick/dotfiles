@@ -22,7 +22,7 @@ function skip_file() {
   echo -e "${C_FAILURE}Skipped $1: $2${C_RESET}"
 }
 
-echo -e "Linking custom _dotfiles to local ~/. files ...\r"
+echo -e "Linking local ~/. files to custom _dotfiles...\r"
 
 for src_file in _*; do
   src_path="$PWD/$src_file"
