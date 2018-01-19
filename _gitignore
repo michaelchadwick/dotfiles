@@ -298,3 +298,6 @@ FakesAssemblies/
 *~.nib
 DerivedData/
 xcuserdata/
+
+# environment variables
+.env
