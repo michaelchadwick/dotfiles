@@ -2,14 +2,8 @@
 ### .functions - more complicated aliases, basically
 
 ## load private, non-tracked, functions
-if [ -f ~/.functions_priv ]; then
-  source ~/.functions_priv
-fi
-
-## load iterm functions
-if [ -f ~/.functions_iterm ]; then
-  source ~/.functions_iterm
-fi
+if [ -f ~/.functions_priv ]; then source ~/.functions_priv; fi
+if [ -f ~/.functions_iterm ]; then source ~/.functions_iterm; fi
 
 ###################################################
 
@@ -71,15 +65,15 @@ function jekyll-serve {
   jekyll serve --port $rport
 }
 
-# os x toggle hidden files in finder
-function hiddentoggle {
-  stat=$(defaults read com.apple.Finder AppleShowAllFiles)
-  if [ "$stat" = "YES" ]; then
-    defaults write com.apple.Finder AppleShowAllFiles NO
-  else
-    defaults write com.apple.Finder AppleShowAllFiles YES
+# Convert all mp3 files in directory to ogg
+function mpg2ogg {
+  if [ ! -d "ogg" ]; then
+    mkdir ogg
   fi
-  killall Finder
+
+  for f in *.mp3; do
+    ffmpeg -i "$f" -c:a libvorbis -q:a 4 "./ogg/${f%.mp3}.ogg";
+  done
 }
 
 # Always list directory contents and set title upon 'cd'
