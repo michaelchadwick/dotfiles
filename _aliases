@@ -41,16 +41,13 @@ alias sfstart="php bin/console server:start"
 alias sfstop="php bin/console server:stop"
 alias sfup="symfony self-update"
 
-# react
-alias crna="create-react-native-app $1"
-
 # git
 alias gitlog="git lg -20"
 alias sgit="git branch -a | grep $1"
 
 # package management
 alias brewup="brew update && brew upgrade && brew cleanup"
-alias gemup="gem update && gem cleanup"
+alias gemup="gem update --system && gem update && gem cleanup"
 alias gemups="gem update --system"
 
 # ruby
