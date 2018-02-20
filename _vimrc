@@ -30,5 +30,8 @@ set mouse=a
 set title
 set backspace=indent,eol,start  " make sure backspace works everywhere
 
+set list
+set listchars=tab:>-
+
 " clear highlighting
 nnoremap <silent> <C-l> :nohl<CR><C-l>
