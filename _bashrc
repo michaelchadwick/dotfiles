@@ -5,7 +5,7 @@ if [ -f ~/.aliases ]; then
   source ~/.aliases
 fi
 
-# load functions
+# load main functions file
 if [ -f ~/.functions ]; then
   source ~/.functions
 fi

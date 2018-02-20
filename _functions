@@ -4,7 +4,11 @@
 ## load private, non-tracked, functions
 if [ -f ~/.functions_priv ]; then source ~/.functions_priv; fi
 if [ -f ~/.functions_iterm ]; then source ~/.functions_iterm; fi
-
+if [ -d ~/.functions.d ]; then
+  for sh in ~/.functions.d/*.sh; do
+    source $sh
+  done
+fi
 ###################################################
 
 # about - info about current system
@@ -63,37 +67,6 @@ function httnode() {
 function jekyll-serve {
   rport=$(get_rand_port);
   jekyll serve --port $rport
-}
-
-# Convert all mp3 files in directory to ogg
-function mpg2ogg {
-  MP3_DIR="."
-
-  if [ "$1" == "-o" ]; then
-    OGG_DIR=$2
-  else
-    OGG_DIR="./ogg"
-  fi
-
-  if [ ! -d $OGG_DIR ]; then
-    mkdir $OGG_DIR
-  fi
-  
-  if [ "$3" == "--overwrite" ]; then
-    OVERWRITE="-y "
-  fi
-  if [ "$3" == "--no-overwrite" ]; then
-    OVERWRITE="-n "
-  fi 
-
-  for f in *.mp3; do
-    ffmpeg -nostats ${OVERWRITE}-i "$f" -c:a libvorbis -q:a 4 "${OGG_DIR}/${f%.mp3}.ogg";
-  done
-
-  if [ "$4" == "--zip" ]; then
-    (cd "${MP3_DIR}" && tar -cvf "${MP3_DIR}/_rorasuketo-ost-mp3.zip" *.mp3)
-    (cd "${OGG_DIR}" && tar -cvf "${OGG_DIR}/_rorasuketo-ost-ogg.zip" *.ogg)
-  fi
 }
 
 # Always list directory contents and set title upon 'cd'
