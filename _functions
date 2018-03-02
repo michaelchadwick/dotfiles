@@ -4,11 +4,6 @@
 ## load private, non-tracked, functions
 if [ -f ~/.functions_priv ]; then source ~/.functions_priv; fi
 if [ -f ~/.functions_iterm ]; then source ~/.functions_iterm; fi
-if [ -d ~/.functions.d ]; then
-  for sh in ~/.functions.d/*.sh; do
-    source $sh
-  done
-fi
 ###################################################
 
 # about - info about current system
