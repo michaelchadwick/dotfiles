@@ -20,6 +20,13 @@ if [ -f ~/.litarc ]; then
   source ~/.litarc
 fi
 
+# load random scripts
+if [ -d ~/.scripts ]; then
+  for f in ~/.scripts/*.sh; do
+    source $f
+  done
+fi
+
 # bash completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
