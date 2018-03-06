@@ -56,7 +56,7 @@ alias be="bundle exec"
 # docker
 alias dc="docker-compose"
 alias dm="docker-machine"
-alias ds="docker exec -it $1 $2"
+alias ds="docker exec -it -e COLUMNS=$COLUMNS $1 $2"
 alias dockers="cd ~/Dockers"
 
 # miscellaneous
