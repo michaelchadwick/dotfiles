@@ -4,15 +4,15 @@
 # local vars for prompt colors
 e=`printf "\033"`
 end="$e[0m"
-black="$e[1;30m"
+# black="$e[1;30m"
 red="$e[1;31m"
 green="$e[1;32m"
 yellow="$e[1;33m"
-blue="$e[1;34m"
-magenta="$e[1;35m"
+# blue="$e[1;34m"
+# magenta="$e[1;35m"
 cyan="$e[1;36m"
-white="$e[1;97m"
-red_bg="$e[0;41m"
+# white="$e[1;97m"
+# red_bg="$e[0;41m"
 
 # prompt
 PS1_USER="\[${green}\]\u\[${yellow}\]@\[${green}\]\h\[${end}\]"

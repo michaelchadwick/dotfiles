@@ -26,8 +26,7 @@ echo -e "Linking local ~/. files to custom _dotfiles...\r"
 
 for src_file in _*; do
   src_path="$PWD/$src_file"
-  dest_path=~/.${src_file:1}
-  dest_bak_path=~/.${src_file:1}.bak
+  dest_path=$HOME/.${src_file:1}
 
   if [ ! -e $dest_path ]; then
     link_file $src_path $dest_path

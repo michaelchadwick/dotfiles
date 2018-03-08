@@ -56,7 +56,7 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 source ~/.git-prompt.sh
 
 # node
-export NODE_PATH="~/.npm"
+export NODE_PATH="$HOME/.npm"
 
 # rbenv
 eval "$(rbenv init -)"
