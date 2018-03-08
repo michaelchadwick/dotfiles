@@ -10,6 +10,7 @@ set wildmenu                    " visual autocomplete for command menu
 set tabstop=2                   " show tabs as two spaces
 set softtabstop=2               " number of spaces in tab when editing
 set expandtab                   " tabs are spaces
+set shiftwidth=2                " number of spaces to indent
 
 " vi ui
 set showcmd                     " show command in bottom bar
