@@ -32,7 +32,9 @@ set title
 set backspace=indent,eol,start  " make sure backspace works everywhere
 
 set list
-set listchars=tab:>-
+set listchars=tab:->
+
+highlight SpecialKey guifg=#4a4a59
 
 " clear highlighting
 nnoremap <silent> <C-l> :nohl<CR><C-l>
