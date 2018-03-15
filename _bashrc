@@ -25,6 +25,11 @@ if [ -d ~/.scripts ]; then
   for f in ~/.scripts/*.sh; do
     source $f
   done
+  # additional function-scoped scripts
+  source ~/.scripts/_others/goto
+  if [ -f ~/.gotorc ]; then
+    source ~/.gotorc >/dev/null 2>&1
+  fi
 fi
 
 # bash completion

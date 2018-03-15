@@ -1,0 +1,4 @@
+goto -r db ~/Dropbox
+goto -r dl ~/Downloads
+goto -r sites ~/Sites
+goto -r websites ~/Dropbox/Code/web/sites
