@@ -12,7 +12,6 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias clr="clear"
 alias cls="clear"
-alias getid="cat ~/.ssh/id_rsa.pub | pbcopy"
 alias grep='$(which grep) --color=always'
 alias home="cd ~"
 alias play="afplay"
@@ -22,10 +21,8 @@ alias sizeof="du -sh"
 alias untar="tar -xvf"
 
 # mac-specific directory shortcuts
-alias apps="cd /Applications"
 alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
-alias docs="cd ~/Documents"
 alias sites="cd ~/Sites"
 
 # mac-specific commands
