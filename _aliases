@@ -52,6 +52,9 @@ alias dm="docker-machine"
 alias ds='docker exec -it -e COLUMNS=$COLUMNS'
 alias dockers="cd ~/Dockers"
 
+# hugo
+alias hugos="hugo serve --disableFastRender"
+
 # miscellaneous
 HTTP_SERVICES="httpd\|vpnkit\|java\|nc\|node\|ng\|php\|ruby\|hugo"
 
