@@ -38,3 +38,7 @@ highlight SpecialKey guifg=#4a4a59
 
 " clear highlighting
 nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+" blank lines
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
