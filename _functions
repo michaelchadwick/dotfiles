@@ -59,7 +59,7 @@ function httnode() {
 }
 
 # jekyll serve script
-function jekyll-serve {
+function jekylls {
   rport=$(get_rand_port);
   jekyll serve --port $rport
 }
