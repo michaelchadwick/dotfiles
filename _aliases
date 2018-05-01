@@ -20,6 +20,9 @@ alias rmd='rm -rf'
 alias sizeof="du -sh"
 alias untar="tar -xvf"
 
+# vscode
+alias vsc="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+
 # mac-specific directory shortcuts
 alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
@@ -56,7 +59,7 @@ alias dockers="cd ~/Dockers"
 alias hugos="hugo serve --disableFastRender"
 
 # miscellaneous
-HTTP_SERVICES="httpd\|vpnkit\|java\|nc\|node\|ng\|php\|ruby\|hugo\|docker\|com.docker\|com.docke"
+export HTTP_SERVICES="httpd\|vpnkit\|java\|nc\|node\|ng\|php\|ruby\|hugo\|docker\|com.docker\|com.docke"
 
 alias dandeploy="dandelion deploy"
 alias gcal=gcalcli
