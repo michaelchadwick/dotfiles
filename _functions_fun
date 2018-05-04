@@ -23,9 +23,9 @@ function colors {
 
 # dice rolls
 function roll {
- if [ $# -ge 1 ]; then
-   echo $(($RANDOM % $1 + 1))
- else
-   echo $(($RANDOM % 2))
- fi
+  if [ $# -ge 1 ]; then
+    echo $(($RANDOM % $1 + 1))
+  else
+    echo $(($RANDOM % 2))
+  fi
 }
