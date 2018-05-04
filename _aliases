@@ -6,10 +6,13 @@ if [ -f ~/.aliases_priv ]; then
   source ~/.aliases_priv
 fi
 
+export HTTP_SERVICES="httpd\|vpnkit\|java\|nc\|node\|ng\|php\|ruby\|hugo\|docker\|com.docker\|com.docke"
+
 # shell commands
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+alias cat="bat"
 alias clr="clear"
 alias cls="clear"
 alias grep='$(which grep) --color=always'
@@ -54,12 +57,6 @@ alias dc="docker-compose"
 alias dm="docker-machine"
 alias ds='docker exec -it -e COLUMNS=$COLUMNS'
 alias dockers="cd ~/Dockers"
-
-# hugo
-alias hugos="hugo serve --disableFastRender"
-
-# miscellaneous
-export HTTP_SERVICES="httpd\|vpnkit\|java\|nc\|node\|ng\|php\|ruby\|hugo\|docker\|com.docker\|com.docke"
 
 alias dandeploy="dandelion deploy"
 alias gcal=gcalcli
