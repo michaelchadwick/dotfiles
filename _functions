@@ -19,6 +19,13 @@ function about() {
   fi
 }
 
+# Always list directory contents and set title upon 'cd'
+function tab-cd() {
+  builtin cd "$@";
+  ls -lFah;
+  tabTitle ${PWD##*/};
+}
+
 # get random local port
 function get_rand_port() {
   netstat -aln | awk '
@@ -61,12 +68,11 @@ function httnode() {
 # jekyll serve script
 function jekylls {
   rport=$(get_rand_port);
-  jekyll serve --port $rport
+  bundle exec jekyll serve --port $rport
 }
 
-# Always list directory contents and set title upon 'cd'
-function tab-cd() {
-  builtin cd "$@";
-  ls -lFah;
-  tabTitle ${PWD##*/};
+# hugo static html generator
+function hugos {
+  hugo serve --disableFastRender
 }
+
