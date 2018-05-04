@@ -42,6 +42,8 @@ source $HOME/.cargo/env
 source "$HOME/.console/console.rc" 2>/dev/null
 
 # misc settings
+export LESS="-R"
+export LESSOPEN="| bat %s"
 export TXTAPP=vi
 export COLORIZE=1
 export CLICOLOR=1
