@@ -44,6 +44,10 @@ function get_rand_port() {
   '
 }
 
+function port() {
+  </dev/tcp/$1/$2 && echo "$2 open" || echo "$2 closed"
+}
+
 # simple http servers for local directory in various flavors
 function httphp() {
   rport=$(get_rand_port);

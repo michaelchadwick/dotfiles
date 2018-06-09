@@ -24,5 +24,6 @@ PATH=/usr/local/MacGPG2/bin:$PATH
 PATH=/Library/Frameworks/Mono.framework/Versions/Current/Commands:$PATH
 PATH=/usr/local/munki:$PATH
 PATH=/usr/local/opt/imagemagick@6/bin:$PATH
+PATH=$HOME/.cargo/bin:$PATH
 
 export PATH

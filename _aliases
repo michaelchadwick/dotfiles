@@ -12,7 +12,6 @@ export HTTP_SERVICES="httpd\|vpnkit\|java\|nc\|node\|ng\|php\|ruby\|hugo\|docker
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias cat="bat"
 alias clr="clear"
 alias cls="clear"
 alias grep='$(which grep) --color=always'
