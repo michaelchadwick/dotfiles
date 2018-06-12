@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+### .exports - global env vars
+
+export HTTP_SERVICES="httpd\|vpnkit\|java\|nc\|node\|ng\|php\|ruby\|hugo\|docker\|com.docker\|com.docke"
+
+export TXTAPP=vi
+export COLORIZE=1
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export EDITOR=$TXTAPP
+export GEMEDITOR=$TXTAPP
+export PROMPT_COMMAND="printf '\e]0;bash\7'" # fix title bar post-ssh
+export HISTTIMEFORMAT='%F %T %t'
+
+# go
+export GOPATH="$DROPBOX_HOME/code/go"
+export GOROOT="/usr/local/opt/go/libexec"
+export GOBIN="$GOPATH/bin"
+
+# git
+export GIT_PS1_SHOWDIRTYSTATE=1
+
+# node
+export NODE_PATH="$HOME/.npm"
+export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+export NVM_DIR="$HOME/.nvm"

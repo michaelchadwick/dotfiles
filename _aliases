@@ -6,8 +6,6 @@ if [ -f ~/.aliases_priv ]; then
   source ~/.aliases_priv
 fi
 
-export HTTP_SERVICES="httpd\|vpnkit\|java\|nc\|node\|ng\|php\|ruby\|hugo\|docker\|com.docker\|com.docke"
-
 # shell commands
 alias ..="cd .."
 alias ...="cd ../.."
@@ -29,15 +27,6 @@ alias vsc="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/cod
 alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias sites="cd ~/Sites"
-
-# mac-specific commands
-alias backup="tmutil startbackup"
-
-# symfony
-alias sf="symfony"
-alias sfstart="php bin/console server:start"
-alias sfstop="php bin/console server:stop"
-alias sfup="symfony self-update"
 
 # git
 alias gitlog="git lg -20"
