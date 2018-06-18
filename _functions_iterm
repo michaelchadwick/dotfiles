@@ -41,18 +41,49 @@ function tab-color {
     ;;
   esac
 }
-# make ssh tabs red
+# change bg color
+function bg-color {
+  local R=$1
+  local G=$2
+  local B=$3
+  /usr/bin/osascript <<EOF
+	tell application "iTerm2"
+	  tell the current window
+      tell the current session
+	      set background color to {$(echo "scale=2; ($1/255.0)*65535" | bc),$(echo "scale=2; ($2/255.0)*65535" | bc),$(echo "scale=2; ($3/255.0)*65535" | bc)}
+      end tell
+	  end tell
+	end tell
+EOF
+}
+
+# color ssh session tabs and backgrounds
 function color-ssh {
-  tab-color red
+  if [[ "$@" =~ sioatomic-dev ]]; then
+    tab-color green
+    bg-color 0 60 2
+  elif [[ "$@" =~ sioatomic-stage ]]; then
+    tab-color blue
+    bg-color 0 12 59
+  elif [[ "$@" =~ sioatomic ]]; then
+    tab-color red
+    bg-color 59 7 0
+  fi
+
   ssh "$@"
   tab-color reset
+  bg-color 0 0 0
 }
 alias ssh=color-ssh
 
 # set window/tab namee
-function set_iterm_name() {
+function set_iterm_name {
   mode=$1; shift
   echo -ne "\033]$mode;$@\007"
+}
+
+function set_term_random_bgcolor {
+	set_term_bgcolor $(echo $(echo 0."$RANDOM")*255 | bc) $(echo $(echo 0."$RANDOM")*255 | bc) $(echo $(echo 0."$RANDOM")*255 | bc)
 }
 function iterm_both { set_iterm_name 0 "$@"; }
 function iterm_tab { set_iterm_name 1 "$@"; }
