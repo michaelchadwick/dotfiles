@@ -22,7 +22,8 @@ function skip_file() {
   echo -e "${C_FAILURE}Skipped $1: $2${C_RESET}"
 }
 
-echo -e "Linking local ~/. files to custom _dotfiles...\r"
+echo "Linking local ~/. files to custom _dotfiles..."
+echo "**********************************************"
 
 for src_file in _*; do
   src_path="$PWD/$src_file"
@@ -44,4 +45,15 @@ for src_file in _*; do
   fi
 done
 
+if [ ! -d $HOME/.gitconfig.d ]; then
+  mkdir $HOME/.gitconfig.d
+fi
+
+if [ ! -d $HOME/.vim ]; then
+  mkdir -p $HOME/.vim/colors
+  cd $HOME/.vim/colors
+  wget https://raw.githubusercontent.com/sjl/badwolf/master/colors/badwolf.vim
+fi
+
+echo "*********************************************"
 echo -e "Done!"
