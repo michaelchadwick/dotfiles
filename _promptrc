@@ -28,6 +28,10 @@ export PS1_CUSTOM1="$PS1_CUSTOM1$PS1_DIR "
 # [dir] (git)
 # user(date) $
 export PS1_CUSTOM2="\[${red}\][\w]\[${cyan}\]\$(__git_ps1)\n"
+# adding emoji via emo
+if [ -f $GOPATH/bin/emo ]; then
+  export PS1_CUSTOM2="$PS1_CUSTOM2$($GOPATH/bin/emo -n house-building) "
+fi
 export PS1_CUSTOM2="$PS1_CUSTOM2\[${green}\]\u\[${yellow}\]@\[${green}\]\h\[${yellow}\](\$(date +%T))\[${end}\] "
 
 export PS1=$PS1_CUSTOM2
