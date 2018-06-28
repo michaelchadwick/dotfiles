@@ -44,6 +44,13 @@ function get_rand_port() {
   '
 }
 
+# start a full-screen countdown
+function countdown(){
+  start=${1:60}
+  now=$(date +%s)
+  watch -tn1 echo '$((now-$(date +%s)+start))'
+}
+
 function port() {
   </dev/tcp/$1/$2 && echo "$2 open" || echo "$2 closed"
 }
