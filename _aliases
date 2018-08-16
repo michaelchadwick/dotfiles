@@ -42,8 +42,10 @@ alias be="bundle exec"
 
 # docker
 alias dc="docker-compose"
+alias de='docker exec -it -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM'
 alias dm="docker-machine"
-alias ds='docker exec -it -e COLUMNS=$COLUMNS'
+alias dsp="docker system prune -af --volumes"
+alias dclean="docker-clean -a"
 alias dockers="cd ~/Dockers"
 
 alias dandeploy="dandelion deploy"
