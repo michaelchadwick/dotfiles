@@ -38,11 +38,16 @@
 
   # diff
   diffs = diff --staged
+  diff = icdiff
+  show = icdiff
   today = git diff --stat 'HEAD@{midnight}'
 
   # logging
   last = log -1
   lc = log -p -1
+  logp = log --oneline -10
+  logpp = log --oneline -25
+  logppp = log --oneline -50
   stats = ! /usr/local/bin/git-quick-stats
   tree = log --color --graph --abbrev-commit --oneline -n 15
 [push]
