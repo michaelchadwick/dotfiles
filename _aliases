@@ -12,6 +12,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias clr="clear"
 alias cls="clear"
+alias copy="cp"
 alias grep='$(which grep) --color=always'
 alias home="cd ~"
 alias play="afplay"
@@ -57,3 +58,14 @@ alias repostfix="sudo launchctl stop org.postfix.master; sudo launchctl start or
 alias sqlite="sqlite3"
 alias ytdl="youtube-dl -t"
 alias ytdla="youtube-dl --extract-audio --audio-format mp3"
+
+# third-party
+if hash prettyping 2>/dev/null; then
+  alias ping="prettyping --nolegend"
+fi
+if hash fd 2>/dev/null; then
+  alias find="fd"
+fi
+if hash ncdu 2>/dev/null; then
+  alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+fi
