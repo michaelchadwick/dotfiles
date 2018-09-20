@@ -17,7 +17,8 @@ cyan="$e[1;36m"
 # prompt
 PS1_USER="\[${green}\]\u\[${yellow}\]@\[${green}\]\h\[${end}\]"
 PS1_DATE="\[${yellow}\](\$(date +%T))\[${end}\]"
-PS1_GIT="\[${cyan}\]\$(__git_ps1)\[${end}\]"
+#PS1_GIT="\[${cyan}\]\$(__git_ps1)\[${end}\]"
+PS1_GIT="\$(__git_ps1)"
 PS1_DIR="\[${red}\][\w]\[${end}\]"
 
 # user(date) (git)
@@ -27,7 +28,8 @@ export PS1_CUSTOM1="$PS1_CUSTOM1$PS1_DIR "
 
 # [dir] (git)
 # user(date) $
-export PS1_CUSTOM2="\[${red}\][\w]\[${cyan}\]\$(__git_ps1)\n"
+export PS1_CUSTOM2="\[${red}\][\w]\[${end}\]\[${cyan}\]\$(__git_ps1)\n"
+#export PS1_CUSTOM2="\[${red}\][\w]\[${end}\]\$(__git_ps1)\n"
 # adding emoji via emo
 if [ -f $GOPATH/bin/emo ]; then
   export PS1_CUSTOM2="$PS1_CUSTOM2$($GOPATH/bin/emo -n house-building) "
