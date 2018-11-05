@@ -301,3 +301,6 @@ xcuserdata/
 
 # environment variables
 .env
+
+# Visual Studio Code
+.vscode
