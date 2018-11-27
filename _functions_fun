@@ -41,3 +41,10 @@ function roll {
     echo $(($RANDOM % 2))
   fi
 }
+
+# play rainymood music
+function rainymood {
+  FILE=$((RADNOM%4))
+  URL="https://rainymood.com/audio1110/${FILE}.ogg"
+  mpv "$URL" && rainymood
+}
