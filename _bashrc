@@ -8,6 +8,7 @@ if [ -f $HOME/.litarc ]; then source ~/.litarc; fi
 if [ -f $HOME/.cargo/env ]; then source $HOME/.cargo/env; fi
 if [ -f $HOME/.console/console.rc ]; then source "$HOME/.console/console.rc" 2>/dev/null; fi
 if [ -f $HOME/.git-prompt.sh ]; then source $HOME/.git-prompt.sh; fi
+if [ -f $HOME/.git-completion.bash ]; then source $HOME/.git-completion.bash; fi
 
 # load random scripts
 if [ -d ~/.scripts ]; then
