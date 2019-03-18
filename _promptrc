@@ -4,7 +4,8 @@
 # local vars for prompt colors
 e=`printf "\033"`
 end="$e[0m"
-# black="$e[1;30m"
+# fg colors
+black="$e[1;30m"
 red="$e[1;31m"
 green="$e[1;32m"
 yellow="$e[1;33m"
@@ -12,32 +13,27 @@ purple="$e[1;34m"
 magenta="$e[1;35m"
 cyan="$e[1;36m"
 white="$e[1;97m"
-# red_bg="$e[0;41m"
+# fg on bg colors
+green_on_black="$e[032;40m"
+white_on_green="$e[1;37;42m"
+cyan_on_black="$e[1;36;40m"
 
-# prompt
+# prompt vars
+PS1_DIR="${green_on_black}[\w]${end}"
+PS1_GIT="${cyan_on_black}\$(__git_ps1)${end}"
 PS1_USER="\[${green}\]\u\[${yellow}\]@\[${green}\]\h\[${end}\]"
 PS1_DATE="\[${yellow}\](\$(date +%T))\[${end}\]"
-#PS1_GIT="\[${cyan}\]\$(__git_ps1)\[${end}\]"
-PS1_GIT="\$(__git_ps1)"
-PS1_DIR="\[${red}\][\w]\[${end}\]"
 
-# custom prompt type 1
-# user(date) (git)
-# [dir] $
-export PS1_CUSTOM1="$PS1_USER$PS1_DATE$PS1_GIT\n"
-export PS1_CUSTOM1="$PS1_CUSTOM1$PS1_DIR "
-
-# custom prompt type 2
 # [dir] (git)
-export PS1_CUSTOM2="\[${white}\][${purple}\w${white}]\[${cyan}\]\[${cyan}\]\$(__git_ps1)\n"
+export PS1_CUSTOM1="$PS1_DIR$PS1_GIT\n"
 
 # adding emoji via emo
 if [ -f $GOPATH/bin/emo ]; then
-  export PS1_CUSTOM2="$PS1_CUSTOM2$($GOPATH/bin/emo -n house-building) "
+  export PS1_CUSTOM1="$PS1_CUSTOM1$($GOPATH/bin/emo -n house-building) "
 fi
 
 # user(date) $
-export PS1_CUSTOM2="$PS1_CUSTOM2\[${green}\]\u\[${yellow}\]@\[${green}\]\h\[${yellow}\](\$(date +%T))\[${end}\] "
+export PS1_CUSTOM1="$PS1_CUSTOM1$PS1_USER$PS1_DATE "
 
 # save prompt
-export PS1=$PS1_CUSTOM2
+export PS1=$PS1_CUSTOM1
