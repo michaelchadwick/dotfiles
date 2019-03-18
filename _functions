@@ -6,7 +6,7 @@ if [ -f ~/.functions_priv ]; then source ~/.functions_priv; fi
 if [ -f ~/.functions_iterm_priv ]; then source ~/.functions_iterm_priv; fi
 ##########################################################
 
-# about - info about current system
+# about: display info about current system
 function about() {
   if hash neofetch 2>/dev/null; then
     neofetch
@@ -23,14 +23,26 @@ function about() {
   fi
 }
 
-# Always list directory contents and set title upon 'cd'
+# ansicolors: display all fg and bg ansi color escape codes
+function ansicolors() {
+  for attr in $(seq 0 1); do
+    for fg in $(seq 30 37); do
+      for bg in $(seq 40 47); do
+        printf "\033[$attr;${bg};${fg}m$attr;$fg;$bg\033[m "
+      done
+      echo
+    done
+  done
+}
+
+# tab-cd: lways list directory contents and set title upon 'cd'
 function tab-cd() {
   builtin cd "$@";
   ls -lFah;
   tabTitle ${PWD##*/};
 }
 
-# get random local port
+# get_rand_port: get random available local port for local webservers
 function get_rand_port() {
   netstat -aln | awk '
     $6 == "LISTEN" {
@@ -48,13 +60,14 @@ function get_rand_port() {
   '
 }
 
-# start a full-screen countdown
+# countdown: start a full-screen countdown
 function countdown(){
   start=${1:60}
   now=$(date +%s)
   watch -tn1 echo '$((now-$(date +%s)+start))'
 }
 
+# ???
 function port() {
   </dev/tcp/$1/$2 && echo "$2 open" || echo "$2 closed"
 }
