@@ -28,6 +28,10 @@
 ###########
 testing/*
 
+# Debug #
+#########
+_dev.sh
+
 # Temp files #
 ##############
 tmp/*
