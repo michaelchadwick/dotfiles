@@ -25,5 +25,7 @@ PATH=/Library/Frameworks/Mono.framework/Versions/Current/Commands:$PATH
 PATH=/usr/local/munki:$PATH
 PATH=/usr/local/opt/imagemagick@6/bin:$PATH
 PATH=$HOME/.cargo/bin:$PATH
+PATH=$HOME/Library/Python/2.7/bin:$PATH
+PATH=$HOME/Library/Python/3.7/bin:$PATH
 
 export PATH
