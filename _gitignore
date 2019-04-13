@@ -28,6 +28,10 @@
 ###########
 testing/*
 
+# Development #
+###############
+*.patch
+
 # Debug #
 #########
 _dev.sh
