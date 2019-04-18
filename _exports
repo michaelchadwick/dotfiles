@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 ### .exports - global env vars
 
+# load private, non-tracked, exports
+if [ -f ~/.exports_priv ]; then
+  source ~/.exports_priv
+fi
+
 export DROPBOX_HOME="$HOME/Dropbox"
 export HTTP_SERVICES="httpd\|vpnkit\|java\|nc\|node\|ng\|php\|ruby\|hugo\|docker\|com.docker\|com.docke"
 
