@@ -27,5 +27,6 @@ PATH=/usr/local/opt/imagemagick@6/bin:$PATH
 PATH=$HOME/.cargo/bin:$PATH
 PATH=$HOME/Library/Python/2.7/bin:$PATH
 PATH=$HOME/Library/Python/3.7/bin:$PATH
+PATH=$HOME/.jenv/bin:$PATH
 
 export PATH
