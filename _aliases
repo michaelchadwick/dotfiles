@@ -58,6 +58,9 @@ alias sqlite="sqlite3"
 alias ytdl="youtube-dl -t"
 alias ytdla="youtube-dl --extract-audio --audio-format mp3"
 
+# sass - dart > ruby
+alias sass="/usr/local/bin/sass"
+
 # third-party
 if hash prettyping 2>/dev/null; then
   alias ping="prettyping --nolegend"
