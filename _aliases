@@ -45,6 +45,7 @@ alias be="bundle exec"
 alias dc="docker-compose"
 alias de='docker exec -it -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM'
 alias dm="docker-machine"
+alias docker-ps="docker ps --format \"table {{.ID}}\t{{.Image}}\t{{.Status}}\""
 alias dockers="cd ~/Dockers"
 
 alias dandeploy="dandelion deploy"
