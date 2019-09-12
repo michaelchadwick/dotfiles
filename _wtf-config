@@ -130,25 +130,6 @@ wtf:
         width: 1
         height: 2
       updateInterval: 14400
-    github:
-      apiKey: "375b10d78b761286ad4c22c906b734a79e512a9d"
-      baseURL: ""
-      customQueries:
-        othersPRs:
-          title: "Others Pull Requests"
-          filter: "is:open is:pr -author:wtfutil"
-      enabled: true
-      enableStatus: true
-      position:
-        top: 2
-        left: 3
-        height: 2
-        width: 1
-      refreshInterval: 300
-      repositories:
-        nebyoomusic: "music.nebyoolae.com"
-      uploadURL: ""
-      username: "michaelchadwick"
     hackernews:
       enabled: true
       numberOfStories: 20

@@ -1,35 +1,35 @@
 #!/usr/bin/env bash
-### .exports - global env vars
+### .exports - public global env vars
 
 # load private, non-tracked, exports
 if [ -f ~/.exports_priv ]; then
   source ~/.exports_priv
 fi
 
-export DROPBOX_HOME="$HOME/Dropbox"
-export HTTP_SERVICES="httpd\|vpnkit\|java\|nc\|node\|ng\|php\|ruby\|hugo\|docker\|com.docker\|com.docke"
-
-export TXTAPP=vi
-export COLORIZE=1
+# misc
 export CLICOLOR=1
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export COLORIZE=1
+export COMPOSE_HTTP_TIMEOUT=300 # docker-compose increase timeout
+export DROPBOX_HOME="$HOME/Dropbox"
 export EDITOR=$TXTAPP
 export GEMEDITOR=$TXTAPP
-export PROMPT_COMMAND='printf "\e]0;bash\7"' # fix prompt post-ssh
 export HISTTIMEFORMAT='%F %T %t'
-export COMPOSE_HTTP_TIMEOUT=300 # docker-compose increase timeout
+export HTTP_SERVICES="httpd\|vpnkit\|java\|nc\|node\|ng\|php\|ruby\|hugo\|docker\|com.docker\|com.docke"
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export PROMPT_COMMAND='printf "\e]0;bash\7"' # fix prompt post-ssh
+export TXTAPP=vi
 
 # go
+export GOBIN="$GOPATH/bin"
 export GOPATH="$DROPBOX_HOME/code/go"
 export GOROOT="/usr/local/opt/go/libexec"
-export GOBIN="$GOPATH/bin"
 
 # git
+export GIT_PS1_SHOWCOLORHINTS=1
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM="verbose name"
-export GIT_PS1_SHOWCOLORHINTS=1
 
 # node
 export NODE_PATH="$HOME/.npm"

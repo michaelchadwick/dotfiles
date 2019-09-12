@@ -13,12 +13,9 @@ alias ....="cd ../../.."
 alias clr="clear"
 alias cls="clear"
 alias copy="cp"
-alias grep='$(which grep) --color=always'
+alias grep="$(which grep) --color=always"
 alias home="cd ~"
-alias play="afplay"
 alias rebash="source ~/.bashrc"
-alias rmd='rm -rf'
-alias sizeof="du -sh"
 alias untar="tar -xvf"
 
 # vscode
@@ -50,16 +47,14 @@ alias dockers="cd ~/Dockers"
 
 # misc
 alias dandeploy="dandelion deploy"
-alias gcal=gcalcli
 alias httports='lsof -i -n -P | grep $HTTP_SERVICES | grep LISTEN | egrep -o ":[0-9]{2,5}" | cut -f2- -d: | sort -n | uniq'
 alias httportss='sudo lsof -i -n -P | grep $HTTP_SERVICES | grep LISTEN | egrep -o ":[0-9]{2,5}" | cut -f2- -d: | sort -n | uniq'
-alias mco="~/Developer/mco/script/overviewer.py"
 alias myip="curl icanhazip.com"
 alias repostfix="sudo launchctl stop org.postfix.master; sudo launchctl start org.postfix.master"
 alias sqlite="sqlite3"
+alias wtf="wtfutil --config=~/.wtf-config"
 alias ytdl="youtube-dl -t"
 alias ytdla="youtube-dl --extract-audio --audio-format mp3"
-alias wtf="wtfutil --config=~/.wtf-config"
 
 # sass - dart > ruby
 alias sass="/usr/local/bin/sass"
