@@ -1,0 +1,162 @@
+
+wtf:
+  colors:
+    border:
+      focusable: darkslateblue
+      focused: orange
+      normal: gray
+  grid:
+    columns: [45, 45, 45, 45]
+    rows: [10, 10, 10, 15]
+  refreshInterval: 1
+  mods:
+    clocks_a:
+      colors:
+        rows:
+          even: "lightblue"
+          odd: "white"
+      enabled: true
+      locations:
+        San Diego, CA: "America/Los_Angeles"
+        Santa Fe, NM: "America/Kentucky/Louisville"
+        Lexington, KY: "America/Kentucky/Louisville"
+      position:
+        top: 0
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 15
+      sort: "chronological"
+      title: "🕒 USA"
+      type: "clocks"
+    ipinfo:
+      colors:
+        name: "lightblue"
+        value: "white"
+      enabled: true
+      position:
+        top: 0
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 150
+    power:
+      enabled: true
+      position:
+        top: 0
+        left: 2
+        height: 1
+        width: 1
+      refreshInterval: 15
+      title: "⚡️"
+    security:
+      enabled: true
+      position:
+        top: 0
+        left: 3
+        height: 1
+        width: 2
+      refreshInterval: 3600
+      title: "🔒"
+    clocks_b:
+      colors:
+        rows:
+          even: "lightblue"
+          odd: "white"
+      enabled: true
+      locations:
+        Avignon: "Europe/Paris"
+        Barcelona: "Europe/Madrid"
+        Dubai: "Asia/Dubai"
+      position:
+        top: 1
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 15
+      sort: "alphabetical"
+      title: "🕘 Europe"
+      type: "clocks"
+    uptime:
+      args: [""]
+      cmd: "uptime"
+      enabled: true
+      position:
+        top: 1
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 30
+      type: cmdrunner
+    prettyweather:
+      enabled: true
+      city: "san diego"
+      position:
+        top: 1
+        left: 2
+        height: 1
+        width: 1
+      refreshInterval: 300
+      unit: "u"
+      view: 0
+      language: "en"
+    logger:
+      enabled: true
+      position:
+        top: 1
+        left: 3
+        height: 1
+        width: 1
+      refreshInterval: 1
+    textfile:
+      enabled: true
+      filePath: "~/.config/wtf/config.yml"
+      format: true
+      position:
+        top: 2
+        left: 0
+        height: 3
+        width: 2
+      refreshInterval: 30
+      wrapText: false
+    feedreader:
+      enabled: true
+      feeds:
+      - http://wtfutil.com/blog/index.xml
+      feedLimit: 20
+      position:
+        top: 2
+        left: 2
+        width: 1
+        height: 2
+      updateInterval: 14400
+    github:
+      apiKey: "375b10d78b761286ad4c22c906b734a79e512a9d"
+      baseURL: ""
+      customQueries:
+        othersPRs:
+          title: "Others Pull Requests"
+          filter: "is:open is:pr -author:wtfutil"
+      enabled: true
+      enableStatus: true
+      position:
+        top: 2
+        left: 3
+        height: 2
+        width: 1
+      refreshInterval: 300
+      repositories:
+        nebyoomusic: "music.nebyoolae.com"
+      uploadURL: ""
+      username: "michaelchadwick"
+    hackernews:
+      enabled: true
+      numberOfStories: 20
+      position:
+        top: 4
+        left: 2
+        height: 1
+        width: 4
+      storyType: top
+      refreshInterval: 900
+
