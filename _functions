@@ -38,6 +38,11 @@ function ansicolors() {
   done
 }
 
+# dummy: create dummy binary file
+function dummy() {
+  dd if=/dev/urandom bs=1024 count=$1 of=dummy
+}
+
 # tab-cd: lways list directory contents and set title upon 'cd'
 function tab-cd() {
   builtin cd "$@";
