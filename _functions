@@ -38,16 +38,33 @@ function ansicolors() {
   done
 }
 
+# countdown: start a full-screen countdown
+function countdown(){
+  start=${1:60}
+  now=$(date +%s)
+  watch -tn1 echo '$((now-$(date +%s)+start))'
+}
+
+# drupal check
+function dpcheck() {
+  root_dir=.
+  if [ $# -ge 1 ]; then
+    root_dir=$1
+  fi
+  phpcs --standard=Drupal --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt,md' $root_dir
+}
+# drupal fix
+function dpfix() {
+  root_dir=.
+  if [ $# -ge 1 ]; then
+    root_dir=$1
+  fi
+  phpcbf --standard=Drupal --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt,md' $root_dir
+}
+
 # dummy: create dummy binary file
 function dummy() {
   dd if=/dev/urandom bs=1024 count=$1 of=dummy
-}
-
-# tab-cd: lways list directory contents and set title upon 'cd'
-function tab-cd() {
-  builtin cd "$@";
-  ls -lFah;
-  tabTitle ${PWD##*/};
 }
 
 # get_rand_port: get random available local port for local webservers
@@ -68,18 +85,6 @@ function get_rand_port() {
   '
 }
 
-# countdown: start a full-screen countdown
-function countdown(){
-  start=${1:60}
-  now=$(date +%s)
-  watch -tn1 echo '$((now-$(date +%s)+start))'
-}
-
-# ???
-function port() {
-  </dev/tcp/$1/$2 && echo "$2 open" || echo "$2 closed"
-}
-
 # simple http servers for local directory in various flavors
 function httphp() {
   rport=$(get_rand_port);
@@ -91,14 +96,14 @@ function httpy() {
   open http://localhost:$rport;
   python -m SimpleHTTPServer $rport;
 }
+function httnode() {
+  rport=$(get_rand_port);
+  http-server -o -p $rport;
+}
 function httruby() {
   rport=$(get_rand_port);
   open http://localhost:$rport;
   ruby -run -e httpd . -p $rport;
-}
-function httnode() {
-  rport=$(get_rand_port);
-  http-server -o -p $rport;
 }
 
 # jekyll serve script
@@ -107,8 +112,30 @@ function jekylls {
   bundle exec jekyll serve --port $rport
 }
 
-# hugo static html generator
-function hugos {
-  hugo serve --disableFastRender
+# ???
+function port() {
+  </dev/tcp/$1/$2 && echo "$2 open" || echo "$2 closed"
 }
 
+# play rainymood music
+function rainymood {
+  FILE=$((RADNOM%4))
+  URL="https://rainymood.com/audio1110/${FILE}.ogg"
+  mpv "$URL" && rainymood
+}
+
+# dice roll
+function roll() {
+  if [ $# -ge 1 ]; then
+    echo $(($RANDOM % $1 + 1))
+  else
+    echo $(($RANDOM % 2))
+  fi
+}
+
+# tab-cd: lways list directory contents and set title upon 'cd'
+function tab-cd() {
+  builtin cd "$@";
+  ls -lFah;
+  tabTitle ${PWD##*/};
+}

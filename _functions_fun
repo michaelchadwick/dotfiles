@@ -10,6 +10,14 @@ function fun() {
   do
   key="$1"
     case $key in
+      colors)
+      # color show in your terminal
+      # source: https://twitter.com/climagic/status/817405740772184065
+      yes "$(seq 16 231)" | while read i;
+      do printf "\x1b[48;5;${i}m\n";
+      sleep .02;
+      done
+      ;;
       snow)
       # make it snow in your terminal
       # source: http://climagic.org/coolstuff/let-it-snow.html
@@ -20,31 +28,9 @@ function fun() {
       sleep 0.1;
       done|gawk '{a[$3]=0;for(x in a) {o=a[x];a[x]=a[x]+1;printf "\033[%s;%sH ",o,x; printf "\033[%s;%sH*\033[0;0H",a[x],x;}}'
       ;;
-      colors)
-      # color show in your terminal
-      # source: https://twitter.com/climagic/status/817405740772184065
-      yes "$(seq 16 231)" | while read i;
-      do printf "\x1b[48;5;${i}m\n";
-      sleep .02;
-      done
-      ;;
     esac
     shift
   done
 }
 
-# dice rolls
-function roll {
-  if [ $# -ge 1 ]; then
-    echo $(($RANDOM % $1 + 1))
-  else
-    echo $(($RANDOM % 2))
-  fi
-}
 
-# play rainymood music
-function rainymood {
-  FILE=$((RADNOM%4))
-  URL="https://rainymood.com/audio1110/${FILE}.ogg"
-  mpv "$URL" && rainymood
-}
