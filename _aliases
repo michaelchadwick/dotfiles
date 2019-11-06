@@ -23,6 +23,7 @@ alias vsc="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/cod
 
 # mac-specific directory shortcuts
 alias db="cd ~/Dropbox"
+alias dev="cd ~/Developer"
 alias dl="cd ~/Downloads"
 alias sites="cd ~/Sites"
 
