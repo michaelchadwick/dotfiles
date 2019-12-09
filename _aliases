@@ -32,9 +32,9 @@ alias gitlog="git lg -20"
 alias sgit='git branch -a | grep'
 
 # package management
-alias brewup="brew update && brew upgrade && brew cleanup"
 alias gemup="gem update --system && gem update && gem cleanup"
 alias gemups="gem update --system"
+alias steep="brew update && brew upgrade && brew cask upgrade && brew cleanup"
 
 # ruby
 alias be="bundle exec"
