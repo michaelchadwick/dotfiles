@@ -13,6 +13,7 @@ export COMPOSE_HTTP_TIMEOUT=300 # docker-compose increase timeout
 export DROPBOX_HOME="$HOME/Dropbox"
 export EDITOR=$TXTAPP
 export GEMEDITOR=$TXTAPP
+export GREP_OPTIONS="--color=always"
 export HISTTIMEFORMAT='%F %T %t'
 export HTTP_SERVICES="httpd\|vpnkit\|java\|nc\|node\|ng\|php\|ruby\|hugo\|docker\|com.docker\|com.docke"
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
