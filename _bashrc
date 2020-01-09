@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
 
-if [ -f $HOME/.exports ]; then source ~/.exports; fi
+# included files
 if [ -f $HOME/.aliases ]; then source ~/.aliases; fi
-if [ -f $HOME/.functions ]; then source ~/.functions; fi
-if [ -f $HOME/.localrc ]; then source ~/.localrc; fi
-if [ -f $HOME/.litarc ]; then source ~/.litarc; fi
 if [ -f $HOME/.cargo/env ]; then source $HOME/.cargo/env; fi
 if [ -f $HOME/.console/console.rc ]; then source "$HOME/.console/console.rc" 2>/dev/null; fi
+if [ -f $HOME/.exports ]; then source ~/.exports; fi
+if [ -f $HOME/.functions ]; then source ~/.functions; fi
 if [ -f $HOME/.git-prompt.sh ]; then source $HOME/.git-prompt.sh; fi
 if [ -f $HOME/.git-completion.bash ]; then source $HOME/.git-completion.bash; fi
+if [ -f $HOME/.localrc ]; then source ~/.localrc; fi
+if [ -f $HOME/.litarc ]; then source ~/.litarc; fi
+# load custom path
+if [ -f $HOME/.pathrc ]; then source ~/.pathrc; fi
+# load custom prompt
+if [ -f $HOME/.promptrc ]; then source ~/.promptrc; fi
 
 # load random scripts
 if [ -d ~/.scripts ]; then
@@ -30,12 +35,3 @@ eval "$(rbenv init -)"
 
 # jenv
 eval "$(jenv init -)"
-
-# nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # nvm bash_completion
-
-# load custom path
-if [ -f ~/.pathrc ]; then source ~/.pathrc; fi
-# load custom prompt
-if [ -f ~/.promptrc ]; then source ~/.promptrc; fi
