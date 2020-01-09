@@ -27,7 +27,7 @@ function about() {
 }
 
 # ansicolors: display all fg and bg ansi color escape codes
-function ansicolors() {
+function ansicolors {
   for attr in $(seq 0 1); do
     for fg in $(seq 30 37); do
       for bg in $(seq 40 47); do
@@ -39,7 +39,7 @@ function ansicolors() {
 }
 
 # countdown: start a full-screen countdown
-function countdown(){
+function countdown {
   start=${1:60}
   now=$(date +%s)
   watch -tn1 echo '$((now-$(date +%s)+start))'
@@ -67,8 +67,41 @@ function dummy() {
   dd if=/dev/urandom bs=1024 count=$1 of=dummy
 }
 
+# fun terminal thingies
+function fun() {
+  if [ $# -eq 0 ]; then
+    echo "Wasn't that fun? Maybe add 'snow' or some other word next time."
+  fi
+
+  while [[ $# -gt 0 ]]
+  do
+  key="$1"
+    case $key in
+      colors)
+      # color show in your terminal
+      # source: https://twitter.com/climagic/status/817405740772184065
+      yes "$(seq 16 231)" | while read i;
+      do printf "\x1b[48;5;${i}m\n";
+      sleep .02;
+      done
+      ;;
+      snow)
+      # make it snow in your terminal
+      # source: http://climagic.org/coolstuff/let-it-snow.html
+      export LINES COLUMNS;
+      clear;
+      while :;
+      do echo $LINES $COLUMNS $(($RANDOM%$COLUMNS));
+      sleep 0.1;
+      done|gawk '{a[$3]=0;for(x in a) {o=a[x];a[x]=a[x]+1;printf "\033[%s;%sH ",o,x; printf "\033[%s;%sH*\033[0;0H",a[x],x;}}'
+      ;;
+    esac
+    shift
+  done
+}
+
 # get_rand_port: get random available local port for local webservers
-function get_rand_port() {
+function get_rand_port {
   netstat -aln | awk '
     $6 == "LISTEN" {
       if ($4 ~ "[.:][0-9]+$") {
@@ -86,21 +119,21 @@ function get_rand_port() {
 }
 
 # simple http servers for local directory in various flavors
-function httphp() {
+function httphp {
   rport=$(get_rand_port);
   open http://localhost:$rport;
   php -S 127.0.0.1:$rport;
 }
-function httpy() {
+function httpy {
   rport=$(get_rand_port);
   open http://localhost:$rport;
   python -m SimpleHTTPServer $rport;
 }
-function httnode() {
+function httnode {
   rport=$(get_rand_port);
   http-server -o -p $rport;
 }
-function httruby() {
+function httruby {
   rport=$(get_rand_port);
   open http://localhost:$rport;
   ruby -run -e httpd . -p $rport;
