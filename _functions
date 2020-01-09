@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 ### .functions - more complicated aliases, basically
 
-## load silly functions
-if [ -f ~/.functions_fun ]; then source ~/.functions_fun; fi
-
 ## load private, non-tracked, functions
 if [ -f ~/.functions_priv ]; then source ~/.functions_priv; fi
-if [ -f ~/.functions_iterm_priv ]; then source ~/.functions_iterm_priv; fi
+if [ -f ~/.functions_priv_iterm ]; then source ~/.functions_priv_iterm; fi
 ##########################################################
 
 # about: display info about current system
