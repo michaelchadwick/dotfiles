@@ -3,6 +3,7 @@
 
 ## load private, non-tracked, functions
 if [ -f ~/.functions_priv ]; then source ~/.functions_priv; fi
+if [ -f ~/.functions_priv_drupal ]; then source ~/.functions_priv_drupal; fi
 if [ -f ~/.functions_priv_iterm ]; then source ~/.functions_priv_iterm; fi
 ##########################################################
 
