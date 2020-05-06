@@ -25,6 +25,7 @@ function skip_file() {
 echo "Linking local ~/. files to custom _dotfiles..."
 echo "**********************************************"
 
+# loop through template config and symlink to $HOME
 for src_file in _*; do
   src_path="$PWD/$src_file"
   dest_path=$HOME/.${src_file:1}
@@ -49,10 +50,21 @@ if [ ! -d $HOME/.gitconfig.d ]; then
   mkdir $HOME/.gitconfig.d
 fi
 
+# set up vim color theme
 if [ ! -d $HOME/.vim ]; then
   mkdir -p $HOME/.vim/colors
   cd $HOME/.vim/colors
   wget https://raw.githubusercontent.com/sjl/badwolf/master/colors/badwolf.vim
+fi
+
+# make ssh if doesn't exist
+if [ ! -d $HOME/.ssh ]; then
+  mkdir -p $HOME/.ssh
+fi
+
+# link in custom ssh config
+if [ ! -f $HOME/.ssh/config ]; then
+  ln -s $PWD/ssh/_config $HOME/.ssh/config
 fi
 
 echo "*********************************************"
