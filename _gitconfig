@@ -41,7 +41,7 @@
   diffs = diff --staged
   diff = icdiff
   show = icdiff
-  today = git diff --stat 'HEAD@{midnight}'
+  today = diff --stat 'HEAD@{midnight}'
 
   # logging
   last = log -1
