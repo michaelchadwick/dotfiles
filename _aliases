@@ -43,7 +43,7 @@ alias sites="cd ~/Sites"
 # package management
 alias gemup="gem update --system && gem update && gem cleanup"
 alias gemups="gem update --system"
-alias steep="brew update && brew upgrade && brew cask upgrade && brew cleanup"
+alias steep="brew update && brew upgrade && brew upgrade --cask && brew cleanup"
 
 # ruby
 alias be="bundle exec"
