@@ -39,7 +39,7 @@
 
   # diff
   diffs = diff --staged
-  diff = icdiff
+  #diff = icdiff
   show = icdiff
   today = diff --stat 'HEAD@{midnight}'
 
@@ -73,3 +73,5 @@
 	trustExitCode = true
 [commit]
 	template = /Users/mike/.stCommitMsg
+[icdiff]
+	options = --highlight --line-numbers
