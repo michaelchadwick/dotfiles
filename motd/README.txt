@@ -1,0 +1,1 @@
+Copy into /etc/update-motd.d
