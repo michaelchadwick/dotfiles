@@ -7,6 +7,13 @@ if [ -f ~/.functions_priv_drupal ]; then source ~/.functions_priv_drupal; fi
 if [ -f ~/.functions_priv_iterm ]; then source ~/.functions_priv_iterm; fi
 ##########################################################
 
+# list: display all functions in custom dotfiles
+function funclist {
+  if hash ag 2>/dev/null; then
+    ag '(function )([A-Za-z0-9_-]+)' ~/.functions* --nonumbers
+  fi
+}
+
 # about: display info about current system
 function about() {
   if hash neofetch 2>/dev/null; then
