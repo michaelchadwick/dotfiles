@@ -18,6 +18,7 @@ alias copy="cp"
 alias grep="$(which grep) --color=always"
 alias home="cd ~"
 alias rebash="source ~/.bashrc"
+alias redns="sudo killall -HUP mDNSResponder"
 alias untar="tar -xvf"
 
 # composer
