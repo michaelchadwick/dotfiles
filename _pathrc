@@ -28,5 +28,7 @@ PATH=$HOME/.cargo/bin:$PATH
 PATH=$HOME/Library/Python/2.7/bin:$PATH
 PATH=$HOME/Library/Python/3.7/bin:$PATH
 PATH=$HOME/.jenv/bin:$PATH
+PATH=/usr/local/opt/php@7.4/bin:$PATH
+PATH=/usr/local/opt/php@7.4/sbin:$PATH
 
 export PATH
