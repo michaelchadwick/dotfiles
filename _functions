@@ -177,3 +177,22 @@ function tab-cd() {
   ls -lFah;
   tabTitle ${PWD##*/};
 }
+
+# uplangs: update various programming languages/package managers
+function uplangs {
+  echo '**************************'
+  echo '* START: RubyGems Update *'
+  echo '--------------------------'
+  gem update --system && gem update && gem cleanup
+  echo '------------------------'
+  echo '* END: RubyGems Update *'
+  echo '************************'
+  echo
+  echo '**********************'
+  echo '* START: Rust Update *'
+  echo '----------------------'
+  rustup update
+  echo '--------------------'
+  echo '* END: Rust Update *'
+  echo '********************'
+}
