@@ -150,11 +150,6 @@ function jekylls {
   bundle exec jekyll serve --port $rport
 }
 
-# ???
-function port() {
-  </dev/tcp/$1/$2 && echo "$2 open" || echo "$2 closed"
-}
-
 # play rainymood music
 function rainymood {
   FILE=$((RADNOM%4))
