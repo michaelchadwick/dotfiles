@@ -22,10 +22,14 @@ function about() {
     if hash archey 2>/dev/null; then
       archey -c $1
     else
-      if [ -f /proc/version ]; then
-        cat /proc/version
+      if [ -f /etc/os-release ]; then
+        cat /etc/os-release
       else
-        uname -a
+        if [ -f /proc/version ]; then
+          cat /proc/version
+        else
+          uname -a
+        fi
       fi
     fi
   fi
