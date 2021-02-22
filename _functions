@@ -54,6 +54,33 @@ function countdown {
   watch -tn1 echo '$((now-$(date +%s)+start))'
 }
 
+# decache: remove all known caches
+function decache {
+  duf --output avail / # check current hard drive space usage
+
+  if hash brew 2>/dev/null; then
+    echo 'Homebrew cleanup...'
+    brew cleanup -s
+  fi
+
+  if hash composer 2>/dev/null; then
+    echo 'Composer cache clear...'
+    composer clearcache
+  fi
+
+  if hash cypress 2>/dev/null; then
+    echo 'Cypress cache prune...'
+    cypress cache prune
+  fi
+
+  if hash docker 2>/dev/null; then
+    echo 'Docker system prune...'
+    docker system prune -a -f
+  fi
+
+  duf --output avail / # check space post-clean
+}
+
 # drupal check
 function dpcheck() {
   root_dir=.
