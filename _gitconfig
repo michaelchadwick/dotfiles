@@ -49,7 +49,6 @@
   logp = log --oneline -10
   logpp = log --oneline -25
   logppp = log --oneline -50
-  stats = ! /usr/local/bin/git-quick-stats
   tree = log --color --graph --abbrev-commit --oneline -n 15
 [push]
   default = matching
