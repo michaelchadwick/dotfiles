@@ -58,25 +58,25 @@ function countdown {
 function decache {
   duf --output avail / # check current hard drive space usage
 
-  if hash brew 2>/dev/null; then
-    echo 'Homebrew cleanup...'
-    brew cleanup -s
-  fi
+  echo '---------------------------'
+  echo '| Homebrew cleanup...     |'
+  echo '---------------------------'
+  brew cleanup -s
 
-  if hash composer 2>/dev/null; then
-    echo 'Composer cache clear...'
-    composer clearcache
-  fi
+  echo '---------------------------'
+  echo '| Composer cache clear... |'
+  echo '---------------------------'
+  composer clearcache
 
-  if hash cypress 2>/dev/null; then
-    echo 'Cypress cache prune...'
-    cypress cache prune
-  fi
+  echo '---------------------------'
+  echo '| Cypress cache prune...  |'
+  echo '---------------------------'
+  cypress cache prune
 
-  if hash docker 2>/dev/null; then
-    echo 'Docker system prune...'
-    docker system prune -a -f
-  fi
+  echo '---------------------------'
+  echo '| Docker system prune...  |'
+  echo '---------------------------'
+  docker system prune -a -f
 
   duf --output avail / # check space post-clean
 }
@@ -206,19 +206,27 @@ function tab-cd() {
 
 # uplangs: update various programming languages/package managers
 function uplangs {
-  echo '**************************'
-  echo '* START: RubyGems Update *'
+  echo '--------------------------'
+  echo '| START: NPM Update      |'
+  echo '--------------------------'
+  npm -g update
+  echo '--------------------------'
+  echo '| END: NPM Update        |'
+  echo '--------------------------'
+  echo
+  echo '--------------------------'
+  echo '| START: RubyGems Update |'
   echo '--------------------------'
   gem update --system && gem update && gem cleanup
-  echo '------------------------'
-  echo '* END: RubyGems Update *'
-  echo '************************'
+  echo '--------------------------'
+  echo '| END:  RubyGems Update  |'
+  echo '--------------------------'
   echo
-  echo '**********************'
-  echo '* START: Rust Update *'
-  echo '----------------------'
+  echo '--------------------------'
+  echo '| START: Rust Update     |'
+  echo '--------------------------'
   rustup update
-  echo '--------------------'
-  echo '* END: Rust Update *'
-  echo '********************'
+  echo '--------------------------'
+  echo '| END: Rust Update        |'
+  echo '--------------------------'
 }
