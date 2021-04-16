@@ -3,4 +3,4 @@
 username = Michael Chadwick <michael.chadwick@gmail.com>
 
 [extensions]
-prompt = ~/code/python/hg-prompt/prompt.py
+prompt = $CODE/python/hg-prompt/prompt.py

@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 # included files
+if [ -f $HOME/.exports ]; then source ~/.exports; fi
+
 if [ -f $HOME/.aliases ]; then source ~/.aliases; fi
 if [ -f $HOME/.cargo/env ]; then source $HOME/.cargo/env; fi
 if [ -f $HOME/.console/console.rc ]; then source "$HOME/.console/console.rc" 2>/dev/null; fi
-if [ -f $HOME/.exports ]; then source ~/.exports; fi
 if [ -f $HOME/.functions ]; then source ~/.functions; fi
 if [ -f $HOME/.git-prompt.sh ]; then source $HOME/.git-prompt.sh; fi
 if [ -f $HOME/.git-completion.bash ]; then source $HOME/.git-completion.bash; fi
@@ -20,11 +21,6 @@ if [ -d ~/.scripts ]; then
   for f in ~/.scripts/*.sh; do
     source $f
   done
-  # additional function-scoped scripts
-  source ~/.scripts/_others/goto
-  if [ -f ~/.gotorc ]; then
-    source ~/.gotorc >/dev/null 2>&1
-  fi
 fi
 
 # bash completion

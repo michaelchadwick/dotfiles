@@ -8,6 +8,7 @@ fi
 
 # misc
 export CLICOLOR=1
+export CODE="$HOME/Code"
 export COLORIZE=1
 export COMPOSE_HTTP_TIMEOUT=300 # docker-compose increase timeout
 export DROPBOX_HOME="$HOME/Dropbox"
@@ -21,8 +22,8 @@ export PROMPT_COMMAND='printf "\e]0;bash\7"' # fix prompt post-ssh
 export TXTAPP=vi
 
 # go
+export GOPATH="$CODE/go"
 export GOBIN="$GOPATH/bin"
-export GOPATH="$DROPBOX_HOME/code/go"
 export GOROOT="/usr/local/opt/go/libexec"
 
 # git
