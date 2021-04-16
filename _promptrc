@@ -30,9 +30,9 @@ PS1_DATE="\[${yellow_bold}\](\$(date +%T))\[${end}\]"
 export PS1_CUSTOM1="$PS1_DIR$PS1_GIT\n"
 
 # adding emoji via emo
-if [ -f $GOPATH/bin/emo ]; then
-  export PS1_CUSTOM1="$PS1_CUSTOM1$($GOPATH/bin/emo -n house-building) "
-fi
+# if [ -f $GOPATH/bin/emo ]; then
+#  export PS1_CUSTOM1="$($GOPATH/bin/emo -n house-building) $PS1_CUSTOM1"
+# fi
 
 # user(date) $
 export PS1_CUSTOM1="$PS1_CUSTOM1$PS1_USER$PS1_DATE "
