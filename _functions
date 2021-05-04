@@ -11,6 +11,8 @@ if [ -f ~/.functions_priv_iterm ]; then source ~/.functions_priv_iterm; fi
 function funclist {
   if hash ag 2>/dev/null; then
     ag '(function )([A-Za-z0-9_-]+)' ~/.functions* --nonumbers
+  else
+    echo 'Error: Missing ag (silver searcher). Cannot display functions.'
   fi
 }
 
@@ -54,23 +56,6 @@ function countdown() {
   watch -tn1 echo '$((now-$(date +%s)+start))'
 }
 
-# drupal check
-function dpcheck() {
-  root_dir=.
-  if [ $# -ge 1 ]; then
-    root_dir=$1
-  fi
-  phpcs --standard=Drupal --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt,md' $root_dir
-}
-# drupal fix
-function dpfix() {
-  root_dir=.
-  if [ $# -ge 1 ]; then
-    root_dir=$1
-  fi
-  phpcbf --standard=Drupal --extensions='php,module,inc,install,test,profile,theme,js,css,info,txt,md' $root_dir
-}
-
 # dummy: create dummy binary file
 function dummy() {
   dd if=/dev/urandom bs=1024 count=$1 of=dummy
@@ -79,7 +64,8 @@ function dummy() {
 # fun terminal thingies
 function fun() {
   if [ $# -eq 0 ]; then
-    echo "Wasn't that fun? Maybe add 'snow' or some other word next time."
+    echo "FFFFFFFFFFFUUUUUUUUUUUUUUNNNNNNNNNNNN!!!!!!"
+    echo "Wasn't that fun? Maybe add 'colors' or 'snow' as an argument next time."
   fi
 
   while [[ $# -gt 0 ]]
@@ -148,12 +134,6 @@ function httruby {
   ruby -run -e httpd . -p $rport;
 }
 
-# jekyll serve script
-function jekylls {
-  rport=$(get_rand_port);
-  bundle exec jekyll serve --port $rport
-}
-
 # play rainymood music
 function rainymood {
   FILE=$((RANDOM%4))
@@ -161,45 +141,11 @@ function rainymood {
   mpv "$URL" && rainymood
 }
 
-# dice roll
+# roll a die
 function roll() {
   if [ $# -ge 1 ]; then
     echo $(($RANDOM % $1 + 1))
   else
     echo $(($RANDOM % 2))
   fi
-}
-
-# tab-cd: lways list directory contents and set title upon 'cd'
-function tab-cd() {
-  builtin cd "$@";
-  ls -lFah;
-  tabTitle ${PWD##*/};
-}
-
-# uplangs: update various programming languages/package managers
-function uplangs {
-  echo '--------------------------'
-  echo '| START: NPM Update      |'
-  echo '--------------------------'
-  npm -g update
-  echo '--------------------------'
-  echo '| END: NPM Update        |'
-  echo '--------------------------'
-  echo
-  echo '--------------------------'
-  echo '| START: RubyGems Update |'
-  echo '--------------------------'
-  gem update --system && gem update && gem cleanup
-  echo '--------------------------'
-  echo '| END:  RubyGems Update  |'
-  echo '--------------------------'
-  echo
-  echo '--------------------------'
-  echo '| START: Rust Update     |'
-  echo '--------------------------'
-  rustup update
-  echo '--------------------------'
-  echo '| END: Rust Update        |'
-  echo '--------------------------'
 }
