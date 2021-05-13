@@ -1,2 +1,51 @@
 # Inserts a blank line between shell prompts
 add_newline = false
+
+# How long to wait before timing out on a command
+command_timeout = 500
+
+[cmd_duration]
+min_time = 5_000
+format = "took [$duration](bold yellow)"
+
+[directory]
+truncation_length = 8
+truncation_symbol = "…/"
+
+[docker_context]
+format = "via [🐋 $context](blue bold)"
+
+[git_branch]
+always_show_remote = true
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = "[🍒 PICKING](bold red)"
+
+[git_status]
+conflicted = "conflicted"
+untracked = "untracked"
+stashed = "stashed"
+modified = "modified"
+staged = '[++\($count\)](green)'
+renamed = "renamed"
+deleted = "deleted"
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+
+[hostname]
+style = "green bold"
+ssh_only = false
+
+[time]
+disabled = false
+format = '[\($time\)]($style) '
+time_format = "%T"
+utc_time_offset = "-7"
+
+[username]
+style_user = "green bold"
+style_root = "red bold"
+format = "[$user]($style)@"
+show_always = true
