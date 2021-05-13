@@ -67,5 +67,11 @@ if [ ! -f $HOME/.ssh/config ]; then
   ln -s $PWD/ssh/_config $HOME/.ssh/config
 fi
 
+# link in custom starship.rs config
+if [ ! -d $HOME/.starship ]; then
+  mkdir -p $HOME/.starship
+  ln -s $PWD/_starship/_config.toml $HOME/.starship/config.toml
+fi
+
 echo "*********************************************"
 echo -e "Done!"
