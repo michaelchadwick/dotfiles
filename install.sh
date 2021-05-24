@@ -11,11 +11,11 @@ err_exists="ALREADY-EXISTS"
 
 # methods
 function backup_file() {
-  mv $1 ${1}.bak
+  mv "$1" "${1}".bak
   echo -e "${C_MISC}Backed up $1 to ${1}.bak${C_RESET}"
 }
 function link_file() {
-  ln -nfs $1 $2
+  ln -nfs "$1" "$2"
   echo -e "${C_SUCCESS}Linked $2 to $1${C_RESET}"
 }
 function skip_file() {
@@ -28,52 +28,52 @@ echo "**********************************************"
 # loop through template config and symlink to $HOME
 for src_file in _*; do
   src_path="$PWD/$src_file"
-  dest_path=$HOME/.${src_file:1}
+  dest_path="$HOME"/.${src_file:1}
 
-  if [ ! -e $dest_path ]; then
-    link_file $src_path $dest_path
+  if [ ! -e "$dest_path" ]; then
+    link_file "$src_path" "$dest_path"
   else
     if [ "$1" == "-d" ]; then
-      if [ -h $dest_path ]; then
-        skip_file $dest_path $err_linked
+      if [ -h "$dest_path" ]; then
+        skip_file "$dest_path" $err_linked
       else
-        backup_file $dest_path
-        link_file $src_path $dest_path
+        backup_file "$dest_path"
+        link_file "$src_path" "$dest_path"
       fi
     else
-      skip_file $dest_path $err_exists
+      skip_file "$dest_path" $err_exists
     fi
   fi
 done
 
-if [ ! -d $HOME/.gitconfig.d ]; then
-  mkdir $HOME/.gitconfig.d
+if [ ! -d "$HOME"/.gitconfig.d ]; then
+  mkdir "$HOME"/.gitconfig.d
 fi
 
 # set up vim color theme
-if [ ! -d $HOME/.vim ]; then
-  mkdir -p $HOME/.vim/colors
-  cd $HOME/.vim/colors
+if [ ! -d "$HOME"/.vim ]; then
+  mkdir -p "$HOME"/.vim/colors
+  cd "$HOME"/.vim/colors || exit
   wget https://raw.githubusercontent.com/sjl/badwolf/master/colors/badwolf.vim
 fi
 
 # make ssh if doesn't exist
-if [ ! -d $HOME/.ssh ]; then
-  mkdir -p $HOME/.ssh
+if [ ! -d "$HOME"/.ssh ]; then
+  mkdir -p "$HOME"/.ssh
 fi
 
 # link in custom ssh config
-if [ ! -f $HOME/.ssh/config ]; then
-  ln -s $PWD/ssh/_config $HOME/.ssh/config
+if [ ! -f "$HOME"/.ssh/config ]; then
+  ln -s "$PWD"/ssh/_config "$HOME"/.ssh/config
 fi
 
 # link in custom starship.rs config
-if [ ! -d $HOME/.starship ]; then
-  mkdir -p $HOME/.starship
+if [ ! -d "$HOME"/.starship ]; then
+  mkdir -p "$HOME"/.starship
 fi
 
-if [ ! -f $HOME/.starship/config.toml ]; then
-  ln -s $PWD/_starship/_config.toml $HOME/.starship/config.toml
+if [ ! -f "$HOME"/.starship/config.toml ]; then
+  ln -s "$PWD"/_starship/_config.toml "$HOME"/.starship/config.toml
 fi
 
 echo "*********************************************"

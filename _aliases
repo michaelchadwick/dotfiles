@@ -2,6 +2,7 @@
 ### .aliases - public typing shortcuts
 
 # load private, non-tracked, aliases
+# shellcheck source=/dev/null
 if [ -f ~/.aliases_priv ]; then
   source ~/.aliases_priv
 fi
@@ -15,10 +16,10 @@ alias ....="cd ../../.."
 alias clr="clear"
 alias cls="clear"
 alias copy="cp"
-alias grep="$(which grep) --color=always"
+alias grep='$(which grep) --color=always'
 alias home="cd ~"
 alias rebash="source ~/.bashrc"
-alias redns="sudo killall -HUP mDNSResponder"
+alias redns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias untar="tar -xvf"
 
 # composer

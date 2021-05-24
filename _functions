@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 ### .functions - more complicated aliases, basically
+# shellcheck source=/dev/null
 
 ## load private, non-tracked, functions
 if [ -f ~/.functions_priv ]; then source ~/.functions_priv; fi
@@ -22,7 +23,7 @@ function about {
     neofetch
   else
     if hash archey 2>/dev/null; then
-      archey -c $1
+      archey -c "$1"
     else
       if [ -f /etc/os-release ]; then
         cat /etc/os-release
@@ -42,7 +43,7 @@ function ansicolors {
   for attr in $(seq 0 1); do
     for fg in $(seq 30 37); do
       for bg in $(seq 40 47); do
-        printf "\033[$attr;${bg};${fg}m$attr;$fg;$bg\033[m "
+        printf "\033[%i;%i;%im%i;$i;%i\033[m " "$attr" "$bg" "$fg" "$attr" "$fg" "$bg"
       done
       echo
     done
@@ -53,12 +54,12 @@ function ansicolors {
 function countdown() {
   start=${1:60}
   now=$(date +%s)
-  watch -tn1 echo '$((now-$(date +%s)+start))'
+  watch -tn1 echo "$((now-$(date +%s)+start))"
 }
 
 # dummy: create dummy binary file
 function dummy() {
-  dd if=/dev/urandom bs=1024 count=$1 of=dummy
+  dd if=/dev/urandom bs=1024 count="$1" of=dummy
 }
 
 # fun terminal thingies
@@ -75,8 +76,8 @@ function fun() {
       colors)
       # color show in your terminal
       # source: https://twitter.com/climagic/status/817405740772184065
-      yes "$(seq 16 231)" | while read i;
-      do printf "\x1b[48;5;${i}m\n";
+      yes "$(seq 16 231)" | while read -r i;
+      do printf "\x1b[48;5;%im\n" "$i";
       sleep .02;
       done
       ;;
@@ -86,7 +87,7 @@ function fun() {
       export LINES COLUMNS;
       clear;
       while :;
-      do echo $LINES $COLUMNS $(($RANDOM%$COLUMNS));
+      do echo $LINES $COLUMNS $((RANDOM % COLUMNS));
       sleep 0.1;
       done|gawk '{a[$3]=0;for(x in a) {o=a[x];a[x]=a[x]+1;printf "\033[%s;%sH ",o,x; printf "\033[%s;%sH*\033[0;0H",a[x],x;}}'
       ;;
@@ -116,22 +117,22 @@ function get_rand_port {
 # simple http servers for local directory in various flavors
 function httphp {
   rport=$(get_rand_port);
-  open http://localhost:$rport;
-  php -S 127.0.0.1:$rport;
+  open http://localhost:"$rport";
+  php -S 127.0.0.1:"$rport";
 }
 function httpy {
   rport=$(get_rand_port);
-  open http://localhost:$rport;
-  python -m SimpleHTTPServer $rport;
+  open http://localhost:"$rport";
+  python -m SimpleHTTPServer "$rport";
 }
 function httnode {
   rport=$(get_rand_port);
-  http-server -o -p $rport;
+  http-server -o -p "$rport";
 }
 function httruby {
   rport=$(get_rand_port);
-  open http://localhost:$rport;
-  ruby -run -e httpd . -p $rport;
+  open http://localhost:"$rport";
+  ruby -run -e httpd . -p "$rport";
 }
 
 # play rainymood music
@@ -144,8 +145,8 @@ function rainymood {
 # roll a die
 function roll() {
   if [ $# -ge 1 ]; then
-    echo $(($RANDOM % $1 + 1))
+    echo $((RANDOM % 1 + 1))
   else
-    echo $(($RANDOM % 2))
+    echo $((RANDOM % 2))
   fi
 }
