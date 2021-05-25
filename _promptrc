@@ -2,23 +2,23 @@
 ### .promptrc - custom command prompt
 
 # local vars for prompt colors
-e=`printf "\033"`
+e=$(printf "\033")
 end="$e[0m"
 # fg colors
-black="$e[1;30m"
-red="$e[1;31m"
+#black="$e[1;30m"
+#red="$e[1;31m"
 green="$e[0;32m"
 green_bold="$e[1;32m"
-yellow="$e[0;33m"
+#yellow="$e[0;33m"
 yellow_bold="$e[1;33m"
-purple="$e[1;34m"
-magenta="$e[1;35m"
+#purple="$e[1;34m"
+#magenta="$e[1;35m"
 cyan="$e[1;36m"
-white="$e[1;97m"
+#white="$e[1;97m"
 # fg on bg colors
-green_on_black="$e[0;32;40m"
-white_on_green="$e[1;37;42m"
-cyan_on_black="$e[1;36;40m"
+#green_on_black="$e[0;32;40m"
+#white_on_green="$e[1;37;42m"
+#cyan_on_black="$e[1;36;40m"
 
 # prompt vars
 PS1_DIR="${green}[\w]${end}"
