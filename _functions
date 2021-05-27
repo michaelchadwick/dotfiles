@@ -115,20 +115,30 @@ function get_rand_port {
 }
 
 # simple http servers for local directory in various flavors
+## php
 function httphp {
   rport=$(get_rand_port);
   open http://localhost:"$rport";
   php -S 127.0.0.1:"$rport";
 }
-function httpy {
+## python 2.x
+function httpy2 {
   rport=$(get_rand_port);
   open http://localhost:"$rport";
   python -m SimpleHTTPServer "$rport";
 }
+## python 3.x
+function httpy3 {
+  rport=$(get_rand_port);
+  open http://localhost:"$rport";
+  python3 -m http.server "$rport";
+}
+## nodejs (http-server)
 function httnode {
   rport=$(get_rand_port);
   http-server -o -p "$rport";
 }
+## ruby 1.9.2+
 function httruby {
   rport=$(get_rand_port);
   open http://localhost:"$rport";
