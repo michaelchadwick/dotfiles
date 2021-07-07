@@ -33,6 +33,11 @@ eval "$(rbenv init -)"
 # jenv - Java version manager
 eval "$(jenv init -)"
 
+# nvm - Node version manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded) add the following
+# to your /Users/mchadwick/.bash_profile:
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
