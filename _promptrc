@@ -9,7 +9,7 @@ end="$e[0m"
 #red="$e[1;31m"
 green="$e[0;32m"
 green_bold="$e[1;32m"
-#yellow="$e[0;33m"
+yellow="$e[0;33m"
 yellow_bold="$e[1;33m"
 #purple="$e[1;34m"
 #magenta="$e[1;35m"
@@ -20,14 +20,20 @@ cyan="$e[1;36m"
 #white_on_green="$e[1;37;42m"
 #cyan_on_black="$e[1;36;40m"
 
+_ddev_pst1() {
+  if [ -f ".ddev/config.yaml" ]; then
+    echo " [DDEV!]"
+  fi
+}
 # prompt vars
 PS1_DIR="${green}[\w]${end}"
 PS1_GIT="${cyan}\$(__git_ps1)${end}"
+PS1_DDEV="${yellow}\$(_ddev_pst1)${end}"
 PS1_USER="\[${green_bold}\]\u\[${yellow_bold}\]@\[${green_bold}\]\h\[${end}\]"
 PS1_DATE="\[${yellow_bold}\](\$(date +%T))\[${end}\]"
 
-# [dir] (git)
-export PS1_CUSTOM1="$PS1_DIR$PS1_GIT\n"
+# [dir] [ddev] (git)
+export PS1_CUSTOM1="$PS1_DIR$PS1_DDEV$PS1_GIT\n"
 
 # adding emoji via emo
 # if [ -f $GOPATH/bin/emo ]; then
