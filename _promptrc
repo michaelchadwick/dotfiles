@@ -22,13 +22,13 @@ cyan="$e[1;36m"
 
 _ddev_pst1() {
   if [ -f ".ddev/config.yaml" ]; then
-    echo " [DDEV!]"
+    echo " [ddev]"
   fi
 }
 # prompt vars
 PS1_DIR="${green}[\w]${end}"
 PS1_GIT="${cyan}\$(__git_ps1)${end}"
-PS1_DDEV="${yellow}\$(_ddev_pst1)${end}"
+PS1_DDEV="${yellow_bold}\$(_ddev_pst1)${end}"
 PS1_USER="\[${green_bold}\]\u\[${yellow_bold}\]@\[${green_bold}\]\h\[${end}\]"
 PS1_DATE="\[${yellow_bold}\](\$(date +%T))\[${end}\]"
 
