@@ -9,9 +9,10 @@ if [ -f ~/.functions_priv_iterm ]; then source ~/.functions_priv_iterm; fi
 ##########################################################
 
 # colors
-wht="$e[0;97m"
-yelb="$e[1;33m"
-end="$e[0m"
+_WHITE="$(tput setaf 7)"
+_YELLOW="$(tput setaf 3)"
+_BOLD="$(tput bold)"
+_RESET="$(tput sgr0)"
 
 # list: display all functions in custom dotfiles
 function funclist {
@@ -43,21 +44,20 @@ function about {
     fi
   fi
   # programming versions
-  echo "${yelb}dart${end}:    ${wht}$(dart --version)${end} $(which dart)"
-  echo "${yelb}go${end}:      ${wht}$(go version)${end} $(which go)"
-  echo "${yelb}java${end}:    ${wht}$(java --version | head -1)${end} $(which java)"
-  echo "${yelb}node${end}:    ${wht}$(node -v)${end} $(which node)"
-  echo "${yelb}- npm${end}:   ${wht}$(npm -v)${end} $(which npm)"
-  echo "${yelb}- npx${end}:   ${wht}$(npx -v)${end} $(which npx)"
-  echo "${yelb}php${end}:     ${wht}$(php -v | head -1)${end} $(which php)"
-  echo "${yelb}python${end}:  ${wht}$(python -c 'import sys; print(sys.version)' | head -1)${end}$(which python)"
-  echo "${yelb}python2${end}: ${wht}$(python -c 'import sys; print(sys.version)' | head -1)${end}$(which python2)"
-  echo "${yelb}python3${end}: ${wht}$(python3 --version)${end} $(which python3)"
-  echo "${yelb}- pyenv${end}  ${wht}$(pyenv -v)${end}; using: $(pyenv global)"
-  echo "${yelb}ruby${end}:    ${wht}$(ruby -v)${end} $(which ruby)"
-  echo "${yelb}- gem${end}:   ${wht}$(gem -v)${end} $(which gem)"
-  echo "${yelb}- rbenv${end}  ${wht}$(rbenv -v)${end}; using: $(rbenv global)"
-  echo "${yelb}rust${end}:    ${wht}$(rustc --version)${end}"
+  echo "${_BOLD}${_YELLOW}go${_RESET}:      ${_BOLD}${_WHITE}$(go version)${_RESET} $(which go)"
+  echo "${_BOLD}${_YELLOW}java${_RESET}:    ${_BOLD}${_WHITE}$(java --version | head -1)${_RESET} $(which java)"
+  echo "${_BOLD}${_YELLOW}node${_RESET}:    ${_BOLD}${_WHITE}$(node -v)${_RESET} $(which node)"
+  echo "${_BOLD}${_YELLOW}- npm${_RESET}:   ${_BOLD}${_WHITE}$(npm -v)${_RESET} $(which npm)"
+  echo "${_BOLD}${_YELLOW}- npx${_RESET}:   ${_BOLD}${_WHITE}$(npx -v)${_RESET} $(which npx)"
+  echo "${_BOLD}${_YELLOW}php${_RESET}:     ${_BOLD}${_WHITE}$(php -v | head -1)${_RESET} $(which php)"
+  echo "${_BOLD}${_YELLOW}python${_RESET}:  ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | head -1)${_RESET}$(which python)"
+  echo "${_BOLD}${_YELLOW}python2${_RESET}: ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | head -1)${_RESET}$(which python2)"
+  echo "${_BOLD}${_YELLOW}python3${_RESET}: ${_BOLD}${_WHITE}$(python3 --version)${_RESET} $(which python3)"
+  echo "${_BOLD}${_YELLOW}- pyenv${_RESET}  ${_BOLD}${_WHITE}$(pyenv -v)${_RESET}; using: $(pyenv global)"
+  echo "${_BOLD}${_YELLOW}ruby${_RESET}:    ${_BOLD}${_WHITE}$(ruby -v)${_RESET} $(which ruby)"
+  echo "${_BOLD}${_YELLOW}- gem${_RESET}:   ${_BOLD}${_WHITE}$(gem -v)${_RESET} $(which gem)"
+  echo "${_BOLD}${_YELLOW}- rbenv${_RESET}  ${_BOLD}${_WHITE}$(rbenv -v)${_RESET}; using: $(rbenv global)"
+  echo "${_BOLD}${_YELLOW}rust${_RESET}:    ${_BOLD}${_WHITE}$(rustc --version)${_RESET}"
 }
 
 # ansicolors: display all fg and bg ansi color escape codes
