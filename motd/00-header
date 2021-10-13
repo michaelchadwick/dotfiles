@@ -29,9 +29,9 @@ if [ -z "$DISTRIB_DESCRIPTION" ] && [ -x /usr/bin/lsb_release ]; then
 fi
 
 if hash figlet 2>/dev/null; then
-        figlet $(hostname)
+        figlet "$(hostname)"
 else
-        printf "Host: $(hostname)\n\n"
+        printf "Host: %s\n\n", "$(hostname)"
 fi
 
 printf "Welcome to %s (%s).\n" "$DISTRIB_DESCRIPTION" "$(uname -r)"
