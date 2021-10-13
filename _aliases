@@ -47,6 +47,9 @@ alias gemup="gem update --system && gem update && gem cleanup"
 alias gemups="gem update --system"
 alias steep="brew update && brew upgrade && brew upgrade --cask"
 
+# python (make python3 default)
+alias python=/usr/local/bin/python3
+
 # ruby
 alias be="bundle exec"
 
