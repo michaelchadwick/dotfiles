@@ -55,6 +55,10 @@ alias steep="brew update && brew upgrade && brew upgrade --cask"
 # hugo static site generator
 alias hugos="hugo serve --disableFastRender"
 
+# nodejs
+## requires 'npm i -g npm-audit-html' first to work
+alias npm-audit-html="npm audit --json | npm-audit-html; open npm-audit.html"
+
 # python (make python3 default)
 alias python=/usr/local/bin/python3
 
