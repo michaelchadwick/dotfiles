@@ -4,7 +4,7 @@
 
 ## load private, non-tracked, functions
 if [ -f ~/.functions_priv ]; then source ~/.functions_priv; fi
-##########################################################
+##############################################################
 
 # colors
 _WHITE="$(tput setaf 7)"

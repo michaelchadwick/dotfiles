@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 ### .aliases - public typing shortcuts
+# shellcheck source=/dev/null
 
 # load private, non-tracked, aliases
-# shellcheck source=/dev/null
-if [ -f ~/.aliases_priv ]; then
-  source ~/.aliases_priv
-fi
+if [ -f ~/.aliases_priv ]; then source ~/.aliases_priv; fi
+##########################################################
 
 ##################
 # system aliases #
@@ -21,6 +20,7 @@ alias home="cd ~"
 alias rebash="source ~/.bashrc"
 alias redns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias repostfix="sudo launchctl stop org.postfix.master; sudo launchctl start org.postfix.master"
+alias sizeof="du -sh $1"
 alias untar="tar -xvf"
 
 ##########################
@@ -70,6 +70,12 @@ alias sass="/usr/local/bin/sass"
 
 # sqlite
 alias sqlite="sqlite3"
+
+# symfony
+alias sf="symfony"
+alias sfstart="php bin/console server:start"
+alias sfstop="php bin/console server:stop"
+alias sfup="symfony self-update"
 
 # vscode
 alias vsc="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
