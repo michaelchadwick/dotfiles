@@ -4,8 +4,6 @@
 
 ## load private, non-tracked, functions
 if [ -f ~/.functions_priv ]; then source ~/.functions_priv; fi
-if [ -f ~/.functions_priv_drupal ]; then source ~/.functions_priv_drupal; fi
-if [ -f ~/.functions_priv_iterm ]; then source ~/.functions_priv_iterm; fi
 ##########################################################
 
 # colors
@@ -82,6 +80,19 @@ function countdown() {
 # dummy: create dummy binary file
 function dummy() {
   dd if=/dev/urandom bs=1024 count="$1" of=dummy
+}
+
+# print out list of generic variables
+function foobarlist() {
+  list=('foo' 'bar' 'baz' 'qux' 'quux' 'quuz' 'corge' 'grault' 'garply' 'waldo' 'fred' 'plugh' 'xyzzy' 'thud')
+
+  if [ $# -eq 0 ]; then
+    for w in "${!list[@]}"; do
+      echo "${list[$w]}"
+    done
+  elif [ $# -ge 1 ]; then
+    echo "${list[$1]}"
+  fi
 }
 
 # fun terminal thingies
