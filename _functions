@@ -147,6 +147,11 @@ function get_rand_port {
   '
 }
 
+# list all groups
+function groups-all {
+  cut -d: -f1 /etc/group
+}
+
 # simple http servers for local directory in various flavors
 ## php
 function httphp {
@@ -192,4 +197,14 @@ function roll() {
   else
     echo $((RANDOM % 2))
   fi
+}
+
+# list all screens
+function screens-all {
+  ls -laR /var/run/screen
+}
+
+# list all users
+function users-all {
+  getent passwd | cut -d: -f1
 }
