@@ -3,9 +3,8 @@
 # shellcheck source=/dev/null
 
 # load private, non-tracked, exports
-if [ -f ~/.exports_priv ]; then
-  source ~/.exports_priv
-fi
+if [ -f ~/.exports_priv ]; then source ~/.exports_priv; fi
+##########################################################
 
 # misc
 export BASH_SILENCE_DEPRECATION_WARNING=1
