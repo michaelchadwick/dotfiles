@@ -21,6 +21,7 @@ alias home="cd ~"
 alias rebash="source ~/.bashrc"
 alias redns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias repostfix="sudo launchctl stop org.postfix.master; sudo launchctl start org.postfix.master"
+alias reweb="sudo systemctl reload apache2"
 alias untar="tar -xvf"
 
 # unix system
@@ -37,7 +38,7 @@ alias modscfga="cd /etc/apache2/mods-available"
 alias modscfge="cd /etc/apache2/mods-enabled"
 alias sites="cd /var/www"
 alias sitescfga="cd /etc/apache2/sites-available"
-alias sitesscfge="cd /etc/apache2/sites-enabled"
+alias sitescfge="cd /etc/apache2/sites-enabled"
 
 # composer
 alias compi="composer install"
