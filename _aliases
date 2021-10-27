@@ -91,18 +91,25 @@ alias wtf="wtfutil --config=~/.wtf-config"
 alias ytdl="youtube-dl -t"
 alias ytdla="youtube-dl --extract-audio --audio-format mp3"
 
-#################
-# miscellaneous #
-#################
+#####################
+# improved commands #
+#####################
 
+# prettyping: prettier ping
 if hash prettyping 2>/dev/null; then
   alias ping="prettyping --nolegend"
 fi
+# fd: better find
 if hash fd 2>/dev/null; then
   alias find="fd"
 fi
+# ncdu: better du
 if hash ncdu 2>/dev/null; then
   alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+fi
+# bat: better cat
+if hash bat 2>/dev/null; then
+  alias cat="bat"
 fi
 
 alias myip="curl icanhazip.com"
