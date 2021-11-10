@@ -77,6 +77,26 @@ function countdown() {
   watch -tn1 echo "$((now-$(date +%s)+start))"
 }
 
+# color show in your terminal
+# source: https://twitter.com/climagic/status/817405740772184065
+function display_colors {
+  yes "$(seq 16 231)" | while read -r i;
+  do printf "\x1b[48;5;%im\n" "$i";
+  sleep .02;
+  done
+}
+
+# make it snow in your terminal
+# source: http://climagic.org/coolstuff/let-it-snow.html
+function display_snow {
+  export LINES COLUMNS;
+  clear;
+  while :;
+  do echo $LINES $COLUMNS $((RANDOM % COLUMNS));
+  sleep 0.1;
+  done|gawk '{a[$3]=0;for(x in a) {o=a[x];a[x]=a[x]+1;printf "\033[%s;%sH ",o,x; printf "\033[%s;%sH*\033[0;0H",a[x],x;}}'
+}
+
 # dummy: create dummy binary file
 function dummy() {
   dd if=/dev/urandom bs=1024 count="$1" of=dummy
@@ -93,40 +113,6 @@ function foobarlist() {
   elif [ $# -ge 1 ]; then
     echo "${list[$1]}"
   fi
-}
-
-# fun terminal thingies
-function fun() {
-  if [ $# -eq 0 ]; then
-    echo "FFFFFFFFFFFUUUUUUUUUUUUUUNNNNNNNNNNNN!!!!!!"
-    echo "Wasn't that fun? Maybe add 'colors' or 'snow' as an argument next time."
-  fi
-
-  while [[ $# -gt 0 ]]
-  do
-  key="$1"
-    case $key in
-      colors)
-      # color show in your terminal
-      # source: https://twitter.com/climagic/status/817405740772184065
-      yes "$(seq 16 231)" | while read -r i;
-      do printf "\x1b[48;5;%im\n" "$i";
-      sleep .02;
-      done
-      ;;
-      snow)
-      # make it snow in your terminal
-      # source: http://climagic.org/coolstuff/let-it-snow.html
-      export LINES COLUMNS;
-      clear;
-      while :;
-      do echo $LINES $COLUMNS $((RANDOM % COLUMNS));
-      sleep 0.1;
-      done|gawk '{a[$3]=0;for(x in a) {o=a[x];a[x]=a[x]+1;printf "\033[%s;%sH ",o,x; printf "\033[%s;%sH*\033[0;0H",a[x],x;}}'
-      ;;
-    esac
-    shift
-  done
 }
 
 # get_rand_port: get random available local port for local webservers
@@ -207,5 +193,25 @@ function roll() {
     echo $((RANDOM % 1 + 1))
   else
     echo $((RANDOM % 2))
+  fi
+}
+
+# speedtest
+function speedtest() {
+  if hash speedtest-cli 2>/dev/null; then
+    logfile=~/Documents/speedtest_log.txt
+
+    echo "Checking internet speed and logging..."
+    {
+      date
+      echo "============================"
+      hostname
+      speedtest-cli --simple
+      echo "----------------------------"
+      echo ""
+    } >> $logfile
+    echo "Done and logged to $logfile"
+  else
+    echo "speedtest-cli not installed; try brew install speedtest-cli"
   fi
 }
