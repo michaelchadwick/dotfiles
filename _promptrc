@@ -17,13 +17,18 @@ _BOLD="$(tput bold)"
 
 _ddev_pst1() {
   if [ -f ".ddev/config.yaml" ]; then
-    echo " [ddev]"
+    # if [ "$(ddev st)" ]; then
+    #   echo "${_YELLOW_FG}${_BOLD} [ddev-on]${_RESET}"
+    # else
+    #   echo "${_YELLOW_FG} [ddev-off]${_RESET}"
+    # fi
+    echo "${_YELLOW_FG} [ddev]${_RESET}"
   fi
 }
 # prompt vars
 PS1_DIR="${_GREEN_FG}[\w]${_RESET}"
 PS1_GIT="${_BRIGHTCYAN_FG}${_BOLD}\$(__git_ps1)${_RESET}"
-PS1_DDEV="${_YELLOW_FG}${_BOLD}\$(_ddev_pst1)${_RESET}"
+PS1_DDEV="\$(_ddev_pst1)"
 PS1_USER="\[${_GREEN_FG}${_BOLD}\]\u\[${_YELLOW_FG}${_BOLD}\]@\[${_GREEN_FG}${_BOLD}\]\h\[${_RESET}\]"
 PS1_DATE="\[${_YELLOW_FG}${_BOLD}\](\$(date +%T))\[${_RESET}\]"
 
