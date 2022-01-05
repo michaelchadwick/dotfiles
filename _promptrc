@@ -17,11 +17,14 @@ _BOLD="$(tput bold)"
 
 _ddev_pst1() {
   if [ -f ".ddev/config.yaml" ]; then
-    # if [ "$(ddev st)" ]; then
+    # mycmd="$(grep 'OK' <(ddev st))"
+
+    # if [ "$mycmd" -eq 0 ]; then
     #   echo "${_YELLOW_FG}${_BOLD} [ddev-on]${_RESET}"
     # else
     #   echo "${_YELLOW_FG} [ddev-off]${_RESET}"
     # fi
+
     echo "${_YELLOW_FG} [ddev]${_RESET}"
   fi
 }
