@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
-echo "Setting macOS Preferences..."
+echo "Setting macOS 12.1 (Monterey) Preferences..."
 
 ###############################################################################
 # General System                                                              #
 ###############################################################################
 
 # Disable menu bar transparency
-defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
+# Does nothing in macOS 12.0?
+# defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
 # Show remaining battery percentage; hide time
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
