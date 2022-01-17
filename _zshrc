@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# shellcheck source=/dev/null
+
+# included files
+if [ -f "$HOME"/.exports ]; then source ~/.exports; fi
+
+if [ -f "$HOME"/.aliases ]; then source ~/.aliases; fi
+if [ -f "$HOME"/.cargo/env ]; then source "$HOME"/.cargo/env; fi
+if [ -f "$HOME"/.console/console.rc ]; then source "$HOME/.console/console.rc" 2>/dev/null; fi
+if [ -f "$HOME"/.functions ]; then source ~/.functions; fi
+if [ -f "$HOME"/.git-prompt.sh ]; then source "$HOME"/.git-prompt.sh; fi
+if [ -f "$HOME"/.git-completion.bash ]; then source "$HOME"/.git-completion.bash; fi
+if [ -f "$HOME"/.localrc ]; then source ~/.localrc; fi
+if [ -f "$HOME"/.litarc ]; then source ~/.litarc; fi
+# load custom path
+if [ -f "$HOME"/.pathrc ]; then source ~/.pathrc; fi
+# load custom prompt
+if [ -f "$HOME"/.promptrc ]; then source ~/.promptrc; fi
+
+# load random scripts
+if [ -d ~/.scripts ]; then
+  for f in ~/.scripts/*.sh; do
+    source "$f"
+  done
+fi
+
+# bash completion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+# rbenv - Ruby version manager
+eval "$(rbenv init -)"
+
+# jenv - Java version manager
+eval "$(jenv init -)"
+
+# nvm - Node version manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded) add the following
+# to your /Users/mchadwick/.bash_profile:
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
