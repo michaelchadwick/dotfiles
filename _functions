@@ -13,7 +13,7 @@ _BOLD="$(tput bold)"
 _RESET="$(tput sgr0)"
 
 # list: display all functions in custom dotfiles
-function funclist {
+function _funclist {
   if hash ag 2>/dev/null; then
     ag '(function )([A-Za-z0-9_-]+)' ~/.functions* --nonumbers
   else
