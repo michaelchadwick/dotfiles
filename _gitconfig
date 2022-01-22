@@ -74,3 +74,6 @@
 	template = /Users/mike/.stCommitMsg
 [icdiff]
 	options = --highlight --line-numbers
+[user]
+	name = Michael Chadwick
+	email = michael.chadwick@gmail.com

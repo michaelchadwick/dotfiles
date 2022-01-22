@@ -1,0 +1,29 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]
+success_symbol = "[➜](bold green)"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = false
+
+[docker_context]
+format = "via [🐋 $context](blue bold)"
+
+[git_status]
+conflicted = "🏳"
+ahead = "🏎💨⇡${count}"
+behind = "😰⇣${count}"
+diverged = "😵⇕⇡${ahead_count}⇣${behind_count}"
+up_to_date = "✓"
+untracked = "🤷‍"
+stashed = "📦"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
+
+[cmd_duration]
+min_time = 500
+format = "took [$duration](bold yellow)"

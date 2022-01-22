@@ -57,25 +57,26 @@ if [ ! -d "$HOME"/.vim ]; then
   wget https://raw.githubusercontent.com/sjl/badwolf/master/colors/badwolf.vim
 fi
 
-# make ssh if doesn't exist
+# make ssh dir if doesn't exist
 if [ ! -d "$HOME"/.ssh ]; then
   mkdir -p "$HOME"/.ssh
 fi
 
-# link in custom ssh config
+# then link custom ssh config
 if [ ! -f "$HOME"/.ssh/config ]; then
   ln -s "$PWD"/ssh/_config "$HOME"/.ssh/config
 fi
 
-# link in custom starship.rs config
+# make starship dir if doesn't exist
 if [ -d .starship ]; then
   if [ ! -d "$HOME"/.starship ]; then
     mkdir -p "$HOME"/.starship
   fi
+fi
 
-  if [ ! -f "$HOME"/.starship/config.toml ]; then
-    ln -s "$PWD"/_starship/_config.toml "$HOME"/.starship/config.toml
-  fi
+# then link custom starship.rs config
+if [ ! -f "$HOME"/.starship/config.toml ]; then
+  ln -s "$PWD"/starship/_config.toml "$HOME"/.starship/config.toml
 fi
 
 echo "*********************************************"
