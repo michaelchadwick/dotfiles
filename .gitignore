@@ -1,4 +1,5 @@
 # Don't track _priv files
+*_priv
 *_priv_*
 *_private
 ssh/*
