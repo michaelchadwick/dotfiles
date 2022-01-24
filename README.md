@@ -4,6 +4,9 @@ These are my macOS dotfiles (e.g. `.bashrc`, etc.), on Github for safe-keeping, 
 
 They can be installed using (what else?) `install.sh`.
 
+<!-- markdownlint-disable MD037 -->
+<pre>
+# home dir
 * _aliases       - simple commands
 * _bash_profile  - essentially just pointing to _bashrc
 * _bashrc        - main profile; env vars; loading other config files; path and ps1
@@ -25,3 +28,12 @@ They can be installed using (what else?) `install.sh`.
 * _tm_properties - [textmate](https://macromates.com) config
 * _vimrc         - [vim](https://www.vim.org) config
 * _wtf-config    - [wtfutil](https://github.com/wtfutil/wtf) go-based terminal dashboard config
+
+# subdirs
+* motd
+  * 00-header    - header file for motd on a server
+  * 10-sysinfo   - what specs of the machine to display
+  * 90-header    - footer file for motd on a server
+* starship
+  * _config.toml - [starship](https://starship.rs) nifty [Rust-powered](https://www.rust-lang.org) customizable CLI prompt
+</pre>
