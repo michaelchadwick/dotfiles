@@ -1,16 +1,66 @@
+### BASICS
+
 # Inserts a blank line between shell prompts
 add_newline = true
+command_timeout = 2000
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character]
 success_symbol = "[➜](bold green)"
 
+[cmd_duration]
+min_time = 500
+format = "took [$duration](bold yellow)"
+
+[hostname]
+ssh_only = false
+format =  "[$hostname](bold red) "
+disabled = false
+
 # Disable the package module, hiding it from the prompt completely
 [package]
 disabled = false
 
+[sudo]
+style = "bold red"
+symbol = "👩‍💻 "
+disabled = false
+
+[time]
+disabled = false
+format = '[\[ $time \]]($style) '
+time_format = "%T"
+utc_time_offset = "-8"
+time_range = "10:00:00-14:00:00"
+
+[username]
+style_user = "white bold"
+style_root = "black bold"
+format = "[$user]($style)@"
+disabled = false
+show_always = true
+
+### APP-SPECIFIC
+
+[crystal]
+#format = "via [✨ $version](bold blue) "
+
+[dart]
+#format = "via [🔰 $version](bold red) "
+
 [docker_context]
 format = "via [🐋 $context](blue bold)"
+
+[elm]
+#format = "via [ $version](cyan bold) "
+
+[git_metrics]
+added_style = "bold blue"
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = "[🍒 PICKING](bold red)"
 
 [git_status]
 conflicted = "🏳"
@@ -24,6 +74,30 @@ staged = '[++\($count\)](green)'
 renamed = "👅"
 deleted = "🗑"
 
-[cmd_duration]
-min_time = 500
-format = "took [$duration](bold yellow)"
+[golang]
+#format = "via [🏎💨 $version](bold cyan) "
+
+[java]
+format = "via [☕ $version](bold #8c6f38) "
+
+[lua]
+format = "via [🌕 $version](bold blue) "
+
+[nodejs]
+format = "via [🤖 $version](bold green) "
+
+[php]
+#format = "via [🔹 $version](147 bold) "
+
+[python]
+symbol = "👾 "
+pyenv_version_name = true
+
+[ruby]
+#symbol = "🔺 "
+
+[rust]
+format = "via [⚙️ $version](red bold)"
+
+[swift]
+format = "via [🏎  $version](red bold)"
