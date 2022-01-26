@@ -22,7 +22,7 @@ function skip_file() {
   echo -e "${C_FAILURE}Skipped $1: $2${C_RESET}"
 }
 
-echo "Linking local ~/. files to custom _dotfiles..."
+echo "Linking local $HOME/. files to custom _dotfiles..."
 echo "**********************************************"
 
 # loop through template config and symlink to $HOME

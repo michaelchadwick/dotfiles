@@ -1,4 +1,5 @@
 syntax on
+" wget https://raw.githubusercontent.com/sjl/badwolf/master/colors/badwolf.vim
 colorscheme badwolf
 
 " basics

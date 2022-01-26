@@ -3,7 +3,7 @@
 # shellcheck source=/dev/null
 
 ## load private, non-tracked, functions
-if [ -f ~/.functions_priv ]; then source ~/.functions_priv; fi
+if [ -f "$HOME"/.functions_priv ]; then source "$HOME"/.functions_priv; fi
 ##############################################################
 
 # colors
@@ -15,7 +15,7 @@ _RESET="$(tput sgr0)"
 # list: display all functions in custom dotfiles
 function _funclist {
   if hash ag 2>/dev/null; then
-    ag '(function )([A-Za-z0-9_-]+)' ~/.functions* --nonumbers
+    ag '(function )([A-Za-z0-9_-]+)' "$HOME"/.functions* --nonumbers
   else
     echo 'Error: Missing ag (silver searcher). Cannot display functions.'
   fi
@@ -199,7 +199,7 @@ function roll() {
 # speedtest
 function speedtest() {
   if hash speedtest-cli 2>/dev/null; then
-    logfile=~/Documents/speedtest_log.txt
+    logfile="$HOME"/Documents/speedtest_log.txt
 
     echo "Checking internet speed and logging..."
     {
@@ -209,7 +209,7 @@ function speedtest() {
       speedtest-cli --simple
       echo "----------------------------"
       echo ""
-    } >> $logfile
+    } >> "$logfile"
     echo "Done and logged to $logfile"
   else
     echo "speedtest-cli not installed; try brew install speedtest-cli"

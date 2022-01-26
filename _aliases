@@ -3,7 +3,7 @@
 # shellcheck source=/dev/null
 
 # load private, non-tracked, aliases
-if [ -f ~/.aliases_priv ]; then source ~/.aliases_priv; fi
+if [ -f "$HOME"/.aliases_priv ]; then source "$HOME"/.aliases_priv; fi
 ##########################################################
 
 ##################
@@ -17,8 +17,8 @@ alias clr="clear"
 alias cls="clear"
 alias copy="cp"
 alias grep='$(which grep) --color=always'
-alias home="cd ~"
-alias rebash="source ~/.bashrc"
+alias home='cd $HOME'
+alias rebash='source $HOME/.bashrc'
 alias redns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias repostfix="sudo launchctl stop org.postfix.master; sudo launchctl start org.postfix.master"
 alias reweb="sudo systemctl reload apache2"
@@ -86,7 +86,7 @@ alias sfstop="php bin/console server:stop"
 alias sfup="symfony self-update"
 
 # wtfutil cli dashboard
-alias wtf="wtfutil --config=~/.wtf-config"
+alias wtf='wtfutil --config=$HOME/.wtf-config'
 
 # youtube-dl
 alias ytdl="youtube-dl -t"
