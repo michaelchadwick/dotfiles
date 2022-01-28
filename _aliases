@@ -16,7 +16,7 @@ alias ....="cd ../../.."
 alias clr="clear"
 alias cls="clear"
 alias copy="cp"
-alias grep='$(which grep) --color=always'
+alias grep='grep --color=always'
 alias home='cd $HOME'
 alias rebash='source $HOME/.bashrc'
 alias redns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
