@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 ### .functions - more complicated aliases, basically
-# shellcheck source=/dev/null
 
 ## load private, non-tracked, functions
 if [ -f "$HOME"/.functions_priv ]; then source "$HOME"/.functions_priv; fi
@@ -107,8 +106,8 @@ function foobarlist() {
   list=('foo' 'bar' 'baz' 'qux' 'quux' 'quuz' 'corge' 'grault' 'garply' 'waldo' 'fred' 'plugh' 'xyzzy' 'thud')
 
   if [ $# -eq 0 ]; then
-    for w in "${!list[@]}"; do
-      echo "${list[$w]}"
+    for w in "${list[@]}"; do
+      echo "$w"
     done
   elif [ $# -ge 1 ]; then
     echo "${list[$1]}"
