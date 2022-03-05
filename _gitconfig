@@ -77,3 +77,5 @@
 [user]
 	name = Michael Chadwick
 	email = michael.chadwick@gmail.com
+[init]
+	defaultBranch = main
