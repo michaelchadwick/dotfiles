@@ -43,7 +43,7 @@ function about {
   # programming versions
   echo "${_BOLD}${_YELLOW}go${_RESET}:      ${_BOLD}${_WHITE}$(go version)${_RESET} $(which go)"
   echo "${_BOLD}${_YELLOW}java${_RESET}:    ${_BOLD}${_WHITE}$(java -version | head -1)${_RESET} $(which java)"
-  echo "${_BOLD}${_YELLOW}- jenv${_RESET}:    ${_BOLD}${_WHITE}$(jenv --version)${_RESET}
+  echo "${_BOLD}${_YELLOW}- jenv${_RESET}:    ${_BOLD}${_WHITE}$(jenv --version)${_RESET}"
   echo "${_BOLD}${_YELLOW}node${_RESET}:    ${_BOLD}${_WHITE}$(node -v)${_RESET} $(which node)"
   echo "${_BOLD}${_YELLOW}- npm${_RESET}:   ${_BOLD}${_WHITE}$(npm -v)${_RESET} $(which npm)"
   echo "${_BOLD}${_YELLOW}- npx${_RESET}:   ${_BOLD}${_WHITE}$(npx -v)${_RESET} $(which npx)"
