@@ -32,7 +32,7 @@ fi
 eval "$(rbenv init -)"
 
 # jenv - Java version manager
-eval "$(jenv init -)"
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
 # nvm - Node version manager
 export NVM_DIR="$HOME/.nvm"
