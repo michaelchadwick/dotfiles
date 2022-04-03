@@ -74,7 +74,7 @@ alias python=/usr/local/bin/python3
 alias be="bundle exec"
 
 # sass - dart > ruby
-alias sass="/usr/local/bin/sass"
+# alias sass="/usr/local/bin/sass"
 
 # sqlite
 alias sqlite="sqlite3"
