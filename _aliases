@@ -89,8 +89,10 @@ alias sfup="symfony self-update"
 alias wtf='wtfutil --config=$HOME/.wtf-config'
 
 # youtube-dl
-alias ytdl="youtube-dl -t"
-alias ytdla="youtube-dl --extract-audio --audio-format mp3"
+#alias ytdl="youtube-dl"
+#alias ytdla="youtube-dl --extract-audio --audio-format mp3"
+alias ytdl="yt-dlp -f 'bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b'"
+alias ytdla="yt-dlp --extract-audio --audio-format mp3"
 
 #####################
 # improved commands #
