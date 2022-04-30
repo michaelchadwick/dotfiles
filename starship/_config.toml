@@ -9,7 +9,7 @@ command_timeout = 2000
 success_symbol = "[➜](bold green)"
 
 [cmd_duration]
-min_time = 500
+min_time = 5000
 format = "took [$duration](bold yellow)"
 
 [hostname]
