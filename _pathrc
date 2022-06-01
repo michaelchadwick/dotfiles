@@ -2,33 +2,60 @@
 ### .pathrc - custom command path
 
 # path
-DEFAULT_PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+DEFAULT_PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 
+# basepath
 PATH=$DEFAULT_PATH
-PATH=/usr/local/sbin:$PATH
-PATH=.bundle/bin:$PATH
-PATH=$HOME/.composer/vendor/bin:$PATH
-PATH=$HOME/.rbenv/shims:$PATH
+
+# my scripts
 PATH=$HOME/.scripts:$PATH
 PATH=$HOME/.scripts/_others:$PATH
-PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:$PATH
+
+# git/heroku/mysql
 PATH=/usr/local/git/bin:$PATH
 PATH=/usr/local/heroku/bin:$PATH
 PATH=/usr/local/mysql/bin:$PATH
+
+# composer
+PATH=$HOME/.composer/vendor/bin:$PATH
+
+# npm/yarn stuff
+PATH=.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH
+
+# ruby
+PATH=$HOME/.rbenv/shims:$PATH
+PATH=.bundle/bin:$PATH
+
+# cakephp
 PATH=/usr/lib/cake/console:$PATH
+
+# go
 PATH=$GOBIN:$PATH
 PATH=$GOROOT:$PATH
-PATH=/Developer/usr/bin:$PATH
-PATH=/opt/X11/bin:$PATH
-PATH=/usr/local/MacGPG2/bin:$PATH
-PATH=/Library/Frameworks/Mono.framework/Versions/Current/Commands:$PATH
-PATH=/usr/local/munki:$PATH
-PATH=/usr/local/opt/imagemagick@6/bin:$PATH
+
+# rust
 PATH=$HOME/.cargo/bin:$PATH
+
+# python
 PATH=$HOME/Library/Python/2.7/bin:$PATH
 PATH=$HOME/Library/Python/3.7/bin:$PATH
+
+# java
 PATH=$HOME/.jenv/bin:$PATH
+
+# php
 PATH=/usr/local/opt/php@7.4/bin:$PATH
 PATH=/usr/local/opt/php@7.4/sbin:$PATH
+
+# xcode
+PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:$PATH
+PATH=/Developer/usr/bin:$PATH
+PATH=/Library/Frameworks/Mono.framework/Versions/Current/Commands:$PATH
+PATH=/opt/X11/bin:$PATH
+PATH=/usr/local/opt/imagemagick@6/bin:$PATH
+
+# mac stuff
+PATH=/usr/local/MacGPG2/bin:$PATH
+PATH=/usr/local/munki:$PATH
 
 export PATH
