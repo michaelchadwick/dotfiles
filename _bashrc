@@ -10,7 +10,6 @@ if [ -f "$HOME"/.console/console.rc ]; then source "$HOME/.console/console.rc" 2
 if [ -f "$HOME"/.functions ]; then source "$HOME"/.functions; fi
 if [ -f "$HOME"/.git-prompt.sh ]; then source "$HOME"/.git-prompt.sh; fi
 if [ -f "$HOME"/.git-completion.bash ]; then source "$HOME"/.git-completion.bash; fi
-if [ -f "$HOME"/.localrc ]; then source "$HOME"/.localrc; fi
 if [ -f "$HOME"/.litarc ]; then source "$HOME"/.litarc; fi
 # load custom path
 if [ -f "$HOME"/.pathrc ]; then source "$HOME"/.pathrc; fi
@@ -23,6 +22,9 @@ if [ -d "$HOME"/.scripts ]; then
     source "$f"
   done
 fi
+
+# load computer-specific local settings last
+if [ -f "$HOME"/.localrc ]; then source "$HOME"/.localrc; fi
 
 # bash completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
