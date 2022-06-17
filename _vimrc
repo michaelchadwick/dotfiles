@@ -1,6 +1,8 @@
 syntax on
 " wget https://raw.githubusercontent.com/sjl/badwolf/master/colors/badwolf.vim
-colorscheme badwolf
+" colorscheme badwolf
+" wget https://raw.githubusercontent.com/taniarascia/new-moon.vim/master/colors/new-moon.vim
+colorscheme new-moon
 
 " basics
 set number                      " line numbers
