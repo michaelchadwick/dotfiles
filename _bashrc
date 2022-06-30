@@ -16,6 +16,9 @@ if [ -f "$HOME"/.pathrc ]; then source "$HOME"/.pathrc; fi
 # load custom prompt
 if [ -f "$HOME"/.promptrc ]; then source "$HOME"/.promptrc; fi
 
+# load local (private, machine-specific) settings
+if [ -f "$HOME"/.localrc ]; then source "$HOME"/.localrc; fi
+
 # load random scripts
 if [ -d "$HOME"/.scripts ]; then
   for f in "$HOME"/.scripts/*.sh; do
