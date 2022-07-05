@@ -2,10 +2,6 @@
 ### .aliases - public typing shortcuts
 # shellcheck source=/dev/null
 
-# load private, non-tracked, aliases
-if [ -f "$HOME"/.aliases_priv ]; then source "$HOME"/.aliases_priv; fi
-##########################################################
-
 ##################
 # system aliases #
 ##################
@@ -116,3 +112,8 @@ if hash bat 2>/dev/null; then
 fi
 
 alias myip="curl icanhazip.com"
+
+##########################################################
+
+# load private, non-tracked, aliases
+if [ -f "$HOME"/.aliases_priv ]; then source "$HOME"/.aliases_priv; fi

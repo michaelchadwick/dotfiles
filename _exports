@@ -2,10 +2,6 @@
 ### .exports - public global env vars
 # shellcheck source=/dev/null
 
-# load private, non-tracked, exports
-if [ -f "$HOME"/.exports_priv ]; then source "$HOME"/.exports_priv; fi
-##########################################################
-
 # misc
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export CLICOLOR=1
@@ -39,3 +35,8 @@ export GIT_PS1_SHOWUPSTREAM="verbose name"
 export NODE_PATH="$HOME/.npm"
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 export NVM_DIR="$HOME/.nvm"
+
+##########################################################
+
+# load private, non-tracked, exports
+if [ -f "$HOME"/.exports_priv ]; then source "$HOME"/.exports_priv; fi
