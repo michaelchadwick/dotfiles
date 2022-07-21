@@ -1,0 +1,24 @@
+{
+  "plugins": {
+    "eslint": {
+      "enabled": true
+    },
+    "fixme": {
+      "enabled": true
+    },
+    "phpcodesniffer": {
+      "enabled": true
+    },
+    "phpmd": {
+      "enabled": true
+    },
+    "stylelint": {
+      enabled: true
+    }
+  },
+  "exclude_paths": {
+    "dist/",
+    "public/",
+    "scripts/"
+  }
+}
