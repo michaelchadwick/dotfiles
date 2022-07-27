@@ -6,7 +6,7 @@
   },
   "extends": "eslint:recommended",
   "parserOptions": {
-    "ecmaVersion": "latest"
+    "ecmaVersion": 7
   },
   "rules": {
     "indent": [
@@ -20,10 +20,6 @@
     "quotes": [
       "error",
       "single"
-    ],
-    "semi": [
-      "error",
-      "never"
     ],
     "no-console": 0
   }
