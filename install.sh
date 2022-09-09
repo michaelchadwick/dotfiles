@@ -83,6 +83,12 @@ echo -e "${C_RESET}"
 if [ ! -d "$HOME"/.gitconfig.d ]; then
   mkdir "$HOME"/.gitconfig.d
 fi
+# grab git-prompt.sh if nonexistent
+if [ ! -f "$HOME"/.git-prompt.sh ]; then
+  cd "$HOME" || exit
+  wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+  mv git-prompt.sh .git-prompt.sh
+fi
 
 ## SSH
 # make ssh dir if nonexistent
