@@ -13,31 +13,31 @@ min_time = 5000
 format = "took [$duration](bold yellow)"
 
 [hostname]
+disabled = false
 ssh_only = false
 format =  "[$hostname](bold red) "
-disabled = false
 
 # Disable the package module, hiding it from the prompt completely
 [package]
 disabled = false
 
 [sudo]
+disabled = false
 style = "bold red"
 symbol = "👩‍💻 "
-disabled = false
 
 [time]
 disabled = false
-format = '[\[ $time \]]($style) '
+format = '[\[$time\]]($style) '
 time_format = "%T"
+use_12hr = true
 utc_time_offset = "-8"
-time_range = "10:00:00-14:00:00"
 
 [username]
+disabled = false
 style_user = "white bold"
 style_root = "black bold"
 format = "[$user]($style)@"
-disabled = false
 show_always = true
 
 ### APP-SPECIFIC
