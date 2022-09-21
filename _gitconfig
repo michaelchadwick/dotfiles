@@ -39,7 +39,7 @@
 
   # diff
   diffs = diff --staged
-  #diff = icdiff
+  diff-no-locks = diff -- ':!package-lock.json' ':!composer.lock' ':!Gemfile.lock'
   show = icdiff
   today = diff --stat 'HEAD@{midnight}'
 
