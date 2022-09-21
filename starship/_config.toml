@@ -31,7 +31,7 @@ disabled = false
 format = '[\[$time\]]($style) '
 time_format = "%T"
 use_12hr = true
-utc_time_offset = "-8"
+utc_time_offset = "-7"
 
 [username]
 disabled = false
