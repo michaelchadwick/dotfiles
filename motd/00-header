@@ -21,6 +21,7 @@
 #    with this program; if not, write to the Free Software Foundation, Inc.,
 #    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
+# shellcheck source=/dev/null
 [ -r /etc/lsb-release ] && . /etc/lsb-release
 
 if [ -z "$DISTRIB_DESCRIPTION" ] && [ -x /usr/bin/lsb_release ]; then

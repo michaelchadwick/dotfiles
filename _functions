@@ -219,4 +219,5 @@ function speedtest() {
 ##############################################################
 
 ## load private, non-tracked, functions
+# shellcheck source=/dev/null
 if [ -f "$HOME"/.functions_priv ]; then source "$HOME"/.functions_priv; fi

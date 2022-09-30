@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# shellcheck source=/dev/null
 
 if [ -f "$HOME"/.bashrc ]; then source "$HOME"/.bashrc; fi
 
