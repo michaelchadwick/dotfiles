@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "plugins": {
     "eslint": {
       "enabled": true
@@ -13,10 +14,10 @@
       "enabled": true
     },
     "stylelint": {
-      enabled: true
+      "enabled": true
     }
   },
-  "exclude_paths": {
+  "exclude_patterns": {
     "dist/",
     "public/",
     "scripts/"
