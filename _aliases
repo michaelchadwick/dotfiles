@@ -110,6 +110,10 @@ fi
 if hash bat 2>/dev/null; then
   alias cat="bat"
 fi
+# prettybat: better bat
+if hash prettybat 2>/dev/null; then
+  alias bat="prettybat"
+fi
 
 alias myip="curl icanhazip.com"
 
