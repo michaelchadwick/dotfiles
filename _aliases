@@ -115,7 +115,9 @@ if hash prettybat 2>/dev/null; then
   alias bat="prettybat"
 fi
 
-alias myip="curl icanhazip.com"
+alias myip4="dig +short txt ch whoami.cloudflare @1.0.0.1"
+alias myip6="dig -6 TXT +short o-o.myaddr.l.google.com @ns1.google.com"
+alias myip='dig +short txt ch whoami.cloudflare @1.0.0.1 && dig -6 TXT +short o-o.myaddr.l.google.com @ns1.google.com'
 
 ##########################################################
 
