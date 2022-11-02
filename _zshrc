@@ -94,6 +94,7 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   ag
+  asdf
   brew
   bundler
   catimg
@@ -103,15 +104,12 @@ plugins=(
   git
   golang
   gulp
-  jenv
   macos
   ng
   npm
-  nvm
   pyenv
   python
   rake
-  rbenv
   ruby
   rust
   symfony

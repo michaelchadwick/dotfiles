@@ -32,18 +32,3 @@ if [ -f "$HOME"/.localrc ]; then source "$HOME"/.localrc; fi
 # bash completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-
-# rbenv - Ruby version manager
-eval "$(rbenv init -)"
-
-# jenv - Java version manager
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi
-
-# nvm - Node version manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded) add the following
-# to your /Users/mchadwick/.bash_profile:
-# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
