@@ -62,6 +62,7 @@ alias hugos="hugo serve --disableFastRender"
 # nodejs
 ## requires 'npm i -g npm-audit-html' first to work
 alias npm-audit-html="npm audit --json | npm-audit-html; open npm-audit.html"
+alias npm-global-audit="npx npm-global-audit --auditor npm"
 
 # python (make python3 default)
 alias python=/usr/local/bin/python3
