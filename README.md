@@ -10,6 +10,7 @@ They can be installed using (what else?) `install.sh`.
 * _aliases       - simple commands
 * _bash_profile  - essentially just pointing to _bashrc
 * _bashrc        - main profile; env vars; loading other config files; path and ps1
+* _eslintignore  - public global [ESLint](https://eslint.org) ignore rules
 * _exports       - public global env vars
 * _functions     - complicated commands
 * _gemrc         - [rubygems](https://rubygems.org) config
@@ -28,8 +29,13 @@ They can be installed using (what else?) `install.sh`.
 * _tm_properties - [textmate](https://macromates.com) config
 * _vimrc         - [vim](https://www.vim.org) config
 * _wtf-config    - [wtfutil](https://github.com/wtfutil/wtf) go-based terminal dashboard config
+* _zshrc         - [zsh](https://www.zsh.org) config
 
 # subdirs
+* linting
+  * _codeclimate - [Code Climate](https://github.com/codeclimate/codeclimate) config
+  * _eslintrc    - [ESLint](https://eslint.org) config
+  * _stylelintrc - CSS/SASS/LESS config
 * motd
   * 00-header    - header file for motd on a server
   * 10-sysinfo   - what specs of the machine to display
