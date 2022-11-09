@@ -178,6 +178,30 @@ function httruby {
   ruby -run -e httpd . -p "$rport";
 }
 
+# display public IP using cloudflare/google
+# myip 4 -> IPv4, myip 6 -> IPv6, myip -> IPv4 and IPv6
+function myip() {
+  if [ $# -eq 0 ]; then
+    myip4=$(dig +short txt ch whoami.cloudflare @1.0.0.1)
+    myip6=$(dig -6 TXT +short o-o.myaddr.l.google.com @ns1.google.com)
+
+    echo "$myip4" | xargs
+    echo "$myip6" | xargs
+  elif [ $# -ge 1 ]; then
+    if [ "$1" -eq '4' ]; then
+      myip=$(dig +short txt ch whoami.cloudflare @1.0.0.1)
+
+      echo "$myip" | xargs
+    elif [ "$1" -eq '6' ]; then
+      myip=$(dig -6 TXT +short o-o.myaddr.l.google.com @ns1.google.com)
+
+      echo "$myip" | xargs
+    else
+      echo "only IPv4 and IPv6 supported"
+    fi
+  fi
+}
+
 # play rainymood music
 function rainymood {
   FILE=$((RANDOM%4))
