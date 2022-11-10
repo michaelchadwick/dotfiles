@@ -32,3 +32,10 @@ if [ -f "$HOME"/.localrc ]; then source "$HOME"/.localrc; fi
 # bash completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+hash asdf 2>/dev/null || {
+  if hash rbenv 2>/dev/null; then
+    export PATH="$PATH:$HOME/.rbenv/bin"
+    eval "$(rbenv init -)"
+  fi
+}
