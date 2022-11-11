@@ -14,10 +14,12 @@ alias cls="clear"
 alias copy="cp"
 alias grep='grep --color=always'
 alias home='cd $HOME'
+alias reapache="sudo systemctl restart apache2"
 alias rebash='source $HOME/.bashrc'
 alias redns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+alias renginx="sudo systemctl restart nginx"
 alias repostfix="sudo launchctl stop org.postfix.master; sudo launchctl start org.postfix.master"
-alias reweb="sudo systemctl reload apache2"
+alias svcs="sudo systemctl list-units --type=service"
 alias untar="tar -xvf"
 
 # unix system
