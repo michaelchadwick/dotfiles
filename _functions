@@ -40,35 +40,90 @@ function about {
       fi
     fi
   fi
-  # programming versions
-  echo "${_BOLD}${_YELLOW}go${_RESET}:      ${_BOLD}${_WHITE}$(go version)${_RESET} $(which go)"
-  echo "${_BOLD}${_YELLOW}java${_RESET}:    ${_BOLD}${_WHITE}$(java -version 2>&1 | head -n 1)${_RESET} $(which java)"
 
-  if hash jenv 2>/dev/null; then
-    echo "${_BOLD}${_YELLOW}- jenv${_RESET}:    ${_BOLD}${_WHITE}$(jenv --version)${_RESET}; using: $(jenv global)"
+  # programming versions
+  if hash asdf 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}asdf${_RESET}:      ${_BOLD}${_WHITE}$(asdf version)${_RESET} $(which asdf)"
+  else
+    echo "asdf not installed"
   fi
 
-  echo "${_BOLD}${_YELLOW}node${_RESET}:    ${_BOLD}${_WHITE}$(node -v)${_RESET} $(which node)"
-  echo "${_BOLD}${_YELLOW}- npm${_RESET}:   ${_BOLD}${_WHITE}$(npm -v)${_RESET} $(which npm)"
-  echo "${_BOLD}${_YELLOW}- npx${_RESET}:   ${_BOLD}${_WHITE}$(npx -v)${_RESET} $(which npx)"
+  if hash go 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}go${_RESET}:      ${_BOLD}${_WHITE}$(go version)${_RESET} $(which go)"
+  else
+    echo "go not installed"
+  fi
 
-  if hash nvm 2>/dev/null; then
-    echo "${_BOLD}${_YELLOW}- nvm${_RESET}:   ${_BOLD}${_WHITE}$(nvm -v)${_RESET} $(which nvm)"
+  if hash java 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}java${_RESET}:    ${_BOLD}${_WHITE}$(java -version 2>&1 | head -n 1)${_RESET} $(which java)"
+
+    if hash jenv 2>/dev/null; then
+      echo "${_BOLD}${_YELLOW}- jenv${_RESET}:    ${_BOLD}${_WHITE}$(jenv --version)${_RESET}; using: $(jenv global)"
+    else
+      echo "jenv not installed"
+    fi
+  else
+    echo "java not installed"
+  fi
+
+  if hash node 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}node${_RESET}:    ${_BOLD}${_WHITE}$(node -v)${_RESET} $(which node)"
+    echo "${_BOLD}${_YELLOW}- npm${_RESET}:   ${_BOLD}${_WHITE}$(npm -v)${_RESET} $(which npm)"
+    echo "${_BOLD}${_YELLOW}- npx${_RESET}:   ${_BOLD}${_WHITE}$(npx -v)${_RESET} $(which npx)"
+
+    if hash nvm 2>/dev/null; then
+      echo "${_BOLD}${_YELLOW}- nvm${_RESET}:   ${_BOLD}${_WHITE}$(nvm --version)${_RESET} $(which nvm)"
+    else
+      echo "nvm not installed"
+    fi
+  else
+    echo "node not installed"
   fi
 
   echo "${_BOLD}${_YELLOW}php${_RESET}:     ${_BOLD}${_WHITE}$(php -v | head -1)${_RESET} $(which php)"
-  echo "${_BOLD}${_YELLOW}python${_RESET}:  ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | head -1)${_RESET}$(which python)"
-  echo "${_BOLD}${_YELLOW}python2${_RESET}: ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | head -1)${_RESET}$(which python2)"
-  echo "${_BOLD}${_YELLOW}python3${_RESET}: ${_BOLD}${_WHITE}$(python3 --version)${_RESET} $(which python3)"
-  echo "${_BOLD}${_YELLOW}- pyenv${_RESET}  ${_BOLD}${_WHITE}$(pyenv -v)${_RESET}; using: $(pyenv global)"
-  echo "${_BOLD}${_YELLOW}ruby${_RESET}:    ${_BOLD}${_WHITE}$(ruby -v)${_RESET} $(which ruby)"
-  echo "${_BOLD}${_YELLOW}- gem${_RESET}:   ${_BOLD}${_WHITE}$(gem -v)${_RESET} $(which gem)"
 
-  if hash rbenv 2>/dev/null; then
-    echo "${_BOLD}${_YELLOW}- rbenv${_RESET}  ${_BOLD}${_WHITE}$(rbenv -v)${_RESET}; using: $(rbenv global)"
+  if hash python 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}python${_RESET}:  ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | head -1)${_RESET}$(which python)"
+  else
+    echo "python not installed"
   fi
 
-  echo "${_BOLD}${_YELLOW}rust${_RESET}:    ${_BOLD}${_WHITE}$(rustc --version)${_RESET} $(which rustc)"
+  if hash python2 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}python2${_RESET}: ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | head -1)${_RESET}$(which python2)"
+  else
+    echo "python2 not installed"
+  fi
+
+  if hash python3 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}python3${_RESET}: ${_BOLD}${_WHITE}$(python3 --version)${_RESET} $(which python3)"
+  else
+    echo "python3 not installed"
+  fi
+
+  if hash pyenv 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}- pyenv${_RESET}  ${_BOLD}${_WHITE}$(pyenv -v)${_RESET}; using: $(pyenv global)"
+  else
+    echo "pyenv not installed"
+  fi
+
+  if hash ruby 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}ruby${_RESET}:    ${_BOLD}${_WHITE}$(ruby -v)${_RESET} $(which ruby)"
+    echo "${_BOLD}${_YELLOW}- gem${_RESET}:   ${_BOLD}${_WHITE}$(gem -v)${_RESET} $(which gem)"
+
+    if hash rbenv 2>/dev/null; then
+      echo "${_BOLD}${_YELLOW}- rbenv${_RESET}  ${_BOLD}${_WHITE}$(rbenv -v)${_RESET}; using: $(rbenv global)"
+    else
+      echo "rbenv not installed"
+    fi
+  else
+    echo "ruby not installed"
+  fi
+
+  if hash rustc 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}rust${_RESET}:    ${_BOLD}${_WHITE}$(rustc --version)${_RESET} $(which rustc)"
+  else
+    echo "rustc not installed"
+  fi
 }
 
 # ansicolors: display all fg and bg ansi color escape codes
