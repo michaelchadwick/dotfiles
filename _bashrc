@@ -37,7 +37,7 @@ if [ -f "$HOME"/.localrc ]; then source "$HOME"/.localrc; fi
 # but if it doesn't exist, check for others
 hash asdf 2>/dev/null || {
   # nvm - Node version manager
-  if hash nvm 2>/dev/null; then
+  if hash "$HOME"/.nvm 2>/dev/null; then
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
