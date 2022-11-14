@@ -24,6 +24,7 @@ PATH=$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin
 
 # ruby
 PATH=$PATH:.bundle/bin
+PATH=$PATH:$HOME/.rbenv/shims
 
 # cakephp
 PATH=$PATH:/usr/lib/cake/console
@@ -38,6 +39,9 @@ PATH=$PATH:$HOME/.cargo/bin
 # python
 PATH=$PATH:$HOME/Library/Python/2.7/bin
 PATH=$PATH:$HOME/Library/Python/3.7/bin
+
+# java
+PATH=$PATH:$HOME/.jenv/bin
 
 # php
 PATH=$PATH:/usr/local/opt/php@7.4/bin

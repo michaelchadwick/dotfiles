@@ -33,7 +33,17 @@ if [ -f "$HOME"/.localrc ]; then source "$HOME"/.localrc; fi
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
+# asdf is the uber version control manager
+# but if it doesn't exist, check for others
 hash asdf 2>/dev/null || {
+  # nvm - Node version manager
+  if hash nvm 2>/dev/null; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+  fi
+
+  # rbenv - Ruby version manager
   if hash rbenv 2>/dev/null; then
     export PATH="$PATH:$HOME/.rbenv/bin"
     eval "$(rbenv init -)"

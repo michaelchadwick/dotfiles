@@ -43,9 +43,19 @@ function about {
   # programming versions
   echo "${_BOLD}${_YELLOW}go${_RESET}:      ${_BOLD}${_WHITE}$(go version)${_RESET} $(which go)"
   echo "${_BOLD}${_YELLOW}java${_RESET}:    ${_BOLD}${_WHITE}$(java -version | head -1)${_RESET} $(which java)"
+
+  if hash jenv 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}- jenv${_RESET}:    ${_BOLD}${_WHITE}$(jenv --version)${_RESET}"
+  fi
+
   echo "${_BOLD}${_YELLOW}node${_RESET}:    ${_BOLD}${_WHITE}$(node -v)${_RESET} $(which node)"
   echo "${_BOLD}${_YELLOW}- npm${_RESET}:   ${_BOLD}${_WHITE}$(npm -v)${_RESET} $(which npm)"
   echo "${_BOLD}${_YELLOW}- npx${_RESET}:   ${_BOLD}${_WHITE}$(npx -v)${_RESET} $(which npx)"
+
+  if hash nvm 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}- nvm${_RESET}:   ${_BOLD}${_WHITE}$(nvm -v)${_RESET} $(which nvm)"
+  fi
+
   echo "${_BOLD}${_YELLOW}php${_RESET}:     ${_BOLD}${_WHITE}$(php -v | head -1)${_RESET} $(which php)"
   echo "${_BOLD}${_YELLOW}python${_RESET}:  ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | head -1)${_RESET}$(which python)"
   echo "${_BOLD}${_YELLOW}python2${_RESET}: ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | head -1)${_RESET}$(which python2)"
@@ -53,6 +63,11 @@ function about {
   echo "${_BOLD}${_YELLOW}- pyenv${_RESET}  ${_BOLD}${_WHITE}$(pyenv -v)${_RESET}; using: $(pyenv global)"
   echo "${_BOLD}${_YELLOW}ruby${_RESET}:    ${_BOLD}${_WHITE}$(ruby -v)${_RESET} $(which ruby)"
   echo "${_BOLD}${_YELLOW}- gem${_RESET}:   ${_BOLD}${_WHITE}$(gem -v)${_RESET} $(which gem)"
+
+  if hash rbenv 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}- rbenv${_RESET}  ${_BOLD}${_WHITE}$(rbenv -v)${_RESET}; using: $(rbenv global)"
+  fi
+
   echo "${_BOLD}${_YELLOW}rust${_RESET}:    ${_BOLD}${_WHITE}$(rustc --version)${_RESET}"
 }
 

@@ -1,5 +1,2 @@
 #!/usr/bin/env bash
 ### .localrc - Machine/computer/server-specific settings
-
-source /usr/local/opt/asdf/libexec/asdf.sh
-
