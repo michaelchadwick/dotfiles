@@ -42,10 +42,10 @@ function about {
   fi
   # programming versions
   echo "${_BOLD}${_YELLOW}go${_RESET}:      ${_BOLD}${_WHITE}$(go version)${_RESET} $(which go)"
-  echo "${_BOLD}${_YELLOW}java${_RESET}:    ${_BOLD}${_WHITE}$(java -version | head -1)${_RESET} $(which java)"
+  echo "${_BOLD}${_YELLOW}java${_RESET}:    ${_BOLD}${_WHITE}$(java -version 2>&1 | head -n 1)${_RESET} $(which java)"
 
   if hash jenv 2>/dev/null; then
-    echo "${_BOLD}${_YELLOW}- jenv${_RESET}:    ${_BOLD}${_WHITE}$(jenv --version)${_RESET}"
+    echo "${_BOLD}${_YELLOW}- jenv${_RESET}:    ${_BOLD}${_WHITE}$(jenv --version)${_RESET}; using: $(jenv global)"
   fi
 
   echo "${_BOLD}${_YELLOW}node${_RESET}:    ${_BOLD}${_WHITE}$(node -v)${_RESET} $(which node)"
@@ -68,7 +68,7 @@ function about {
     echo "${_BOLD}${_YELLOW}- rbenv${_RESET}  ${_BOLD}${_WHITE}$(rbenv -v)${_RESET}; using: $(rbenv global)"
   fi
 
-  echo "${_BOLD}${_YELLOW}rust${_RESET}:    ${_BOLD}${_WHITE}$(rustc --version)${_RESET}"
+  echo "${_BOLD}${_YELLOW}rust${_RESET}:    ${_BOLD}${_WHITE}$(rustc --version)${_RESET} $(which rustc)"
 }
 
 # ansicolors: display all fg and bg ansi color escape codes
