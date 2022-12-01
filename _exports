@@ -34,6 +34,7 @@ export GIT_PS1_SHOWUPSTREAM="verbose name"
 # node
 export NODE_PATH="$HOME/.npm"
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+export NODE_OPTIONS="--dns-result-order=ipv4first"
 
 ##########################################################
 
