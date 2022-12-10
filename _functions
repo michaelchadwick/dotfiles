@@ -124,6 +124,12 @@ function about {
   else
     echo "rustc not installed"
   fi
+
+  if hash tsc 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}tsc${_RESET}:     ${_BOLD}${_WHITE}$(tsc -v | cut -d' ' -f2-)${_RESET} $(which tsc)"
+  else
+    echo "tsc not installed"
+  fi
 }
 
 # ansicolors: display all fg and bg ansi color escape codes
