@@ -316,15 +316,17 @@ function speedtest() {
 
 # mov to gif
 function video_to_gif() {
-  if hash ffmpeg 2>/dev/null; then
-    if hash gifsicle 2>/dev/null; then
-      ffmpeg -i "$1" "${1%.*}.gif" && gifsicle -O3 "${1%.*}.gif" -o "${1%.*}.gif" && osascript -e "display notification \"${1%.*}.gif successfully converted and saved\" with title \"MOV2GIF SUCCESS!\""
-    else
-      echo "gifsicle not installed; try brew install gifsicle"
-    fi
-  else
-    echo "ffmpeg not installed; try brew install ffmpeg"
+  if ! [ -x "$(command -v ffmpeg)" ]; then
+    echo 'Error: ffmpeg is not installed. please install with (brew install ffmpeg)' >&2
+    exit 1
   fi
+
+  if ! [ -x "$(command -v gifsicle)" ]; then
+    echo 'Error: gifsicle is not installed. please install with (brew install gifsicle)' >&2
+    exit 1
+  fi
+
+  ffmpeg -i "$1" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=8 > ~/Downloads/"$1".gif
 }
 
 ##############################################################
