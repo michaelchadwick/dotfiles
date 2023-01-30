@@ -2,8 +2,9 @@
 ### .functions - more complicated aliases, basically
 
 # colors
-_WHITE="$(tput setaf 7)"
+_RED="$(tput setaf 1)"
 _YELLOW="$(tput setaf 3)"
+_WHITE="$(tput setaf 7)"
 _BOLD="$(tput bold)"
 _RESET="$(tput sgr0)"
 
@@ -311,6 +312,31 @@ function speedtest() {
     echo "Done and logged to $logfile"
   else
     echo "speedtest-cli not installed; try brew install speedtest-cli"
+  fi
+}
+
+# homebrew updating
+function steep {
+  echo "${_BOLD}${_WHITE}-------------------------------${_RESET}"
+  echo "${_BOLD}${_WHITE}| START: Homebrew update      |${_RESET}"
+  echo "${_BOLD}${_WHITE}| brew update                 |${_RESET}"
+  echo "${_BOLD}${_WHITE}-------------------------------${_RESET}"
+  brew update
+
+  if [ $? -eq 0 ]; then
+    echo "${_BOLD}${_WHITE}-------------------------------${_RESET}"
+    echo "${_BOLD}${_WHITE}| START: Homebrew upgrade     |${_RESET}"
+    echo "${_BOLD}${_WHITE}| brew upgrade                |${_RESET}"
+    echo "${_BOLD}${_WHITE}-------------------------------${_RESET}"
+    brew upgrade
+    echo "${_BOLD}${_WHITE}-------------------------------${_RESET}"
+    echo "${_BOLD}${_WHITE}| START: Homebrew upgrade cask|${_RESET}"
+    echo "${_BOLD}${_WHITE}| brew update --cask          |${_RESET}"
+    echo "${_BOLD}${_WHITE}-------------------------------${_RESET}"
+    brew upgrade --cask
+  else
+    echo "${_BOLD}${_WHITE}-------------------------------${_RESET}"
+    echo "${_BOLD}${_RED}could not upgrade due to update error${_RESET}"
   fi
 }
 

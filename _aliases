@@ -57,7 +57,6 @@ alias sgit='git branch -a | grep'
 # package management
 alias gemup="gem update --system && gem update && gem cleanup"
 alias gemups="gem update --system"
-alias steep="brew update && brew upgrade && brew upgrade --cask"
 
 # hugo static site generator
 alias hugos="hugo serve --disableFastRender"
