@@ -2,11 +2,11 @@
 ### .functions - more complicated aliases, basically
 
 # colors
-_RED="$(tput setaf 1)"
-_YELLOW="$(tput setaf 3)"
-_WHITE="$(tput setaf 7)"
-_BOLD="$(tput bold)"
-_RESET="$(tput sgr0)"
+_RED="$(tty -s && tput setaf 1)"
+_YELLOW="$(tty -s && tput setaf 3)"
+_WHITE="$(tty -s && tput setaf 7)"
+_BOLD="$(tty -s && tput bold)"
+_RESET="$(tty -s && tput sgr0)"
 
 # list: display all functions in custom dotfiles
 function _funclist {

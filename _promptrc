@@ -2,18 +2,18 @@
 ### .promptrc - custom command prompt
 
 # local vars for prompt colors
-_RESET="$(tput sgr0)"
+_RESET="$(tty -s && tput sgr0)"
 # fg colors
-#_BLACK_FG="$(tput setaf 0)"
-#_RED_FG="$(tput setaf 1)"
-_GREEN_FG="$(tput setaf 2)"
-_YELLOW_FG="$(tput setaf 3)"
-#_PURPLE_FG="$(tput setaf 4)"
-#_MAGENTA_FG="$(tput setaf 5)"
-#_DARKCYAN_FG="$(tput setaf 6)"
-#_WHITE_FG="$(tput setaf 7)"
-_BRIGHTCYAN_FG="$(tput setaf 14)"
-_BOLD="$(tput bold)"
+#_BLACK_FG="$(tty -s && tput setaf 0)"
+#_RED_FG="$(tty -s && tput setaf 1)"
+_GREEN_FG="$(tty -s && tput setaf 2)"
+_YELLOW_FG="$(tty -s && tput setaf 3)"
+#_PURPLE_FG="$(tty -s && tput setaf 4)"
+#_MAGENTA_FG="$(tty -s && tput setaf 5)"
+#_DARKCYAN_FG="$(tty -s && tput setaf 6)"
+#_WHITE_FG="$(tty -s && tput setaf 7)"
+_BRIGHTCYAN_FG="$(tty -s && tput setaf 14)"
+_BOLD="$(tty -s && tput bold)"
 
 _ddev_pst1() {
   if [ -f ".ddev/config.yaml" ]; then
