@@ -30,7 +30,7 @@ _ddev_pst1() {
 }
 # prompt vars
 PS1_DIR="${_GREEN_FG}[\w]${_RESET}"
-PS1_GIT="${_BRIGHTCYAN_FG}${_BOLD}\$(__git_ps1)${_RESET}"
+PS1_GIT="${_BOLD}\$(__git_ps1)${_RESET}"
 PS1_DDEV="\$(_ddev_pst1)"
 PS1_USER="\[${_GREEN_FG}${_BOLD}\]\u\[${_YELLOW_FG}${_BOLD}\]@\[${_GREEN_FG}${_BOLD}\]\h\[${_RESET}\]"
 PS1_DATE="\[${_YELLOW_FG}${_BOLD}\](\$(date +%T))\[${_RESET}\]"
