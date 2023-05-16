@@ -243,6 +243,14 @@ function httpy3 {
   open http://localhost:"$rport";
   python3 -m http.server "$rport";
 }
+## python 3.x (or 2.x if 3.x not available)
+function httpy {
+  if hash python3 2>/dev/null; then
+    httpy3
+  else
+    httpy2
+  fi
+}
 ## nodejs (http-server)
 function httnode {
   rport=$(get_rand_port);
