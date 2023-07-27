@@ -34,7 +34,7 @@ PATH=$PATH:$GOBIN
 PATH=$PATH:$GOROOT
 
 # rust
-PATH=$PATH:$HOME/.cargo/bin
+# PATH=$PATH:$HOME/.cargo/bin
 
 # python
 PATH=$PATH:$HOME/Library/Python/2.7/bin
