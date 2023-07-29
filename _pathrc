@@ -5,8 +5,12 @@
 PATH=$HOME/bin
 
 # my scripts
-PATH=$PATH:$HOME/.scripts
-PATH=$PATH:$HOME/.scripts/_others
+if [ -d "$HOME"/.scripts ]; then
+  PATH=$PATH:$HOME/.scripts
+fi
+if [ -d "$HOME"/.scripts/_others ]; then
+  PATH=$PATH:$HOME/.scripts/_others
+fi
 
 # basic unix-y paths
 PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
