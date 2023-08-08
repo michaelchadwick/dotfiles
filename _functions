@@ -141,24 +141,50 @@ function about {
   fi
 
   echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
+  echo "${_BOLD}${_WHITE}| webdev tech                  |${_RESET}"
+  echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
+
+  if hash httpd 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}httpd${_RESET}:  ${_BOLD}${_WHITE}$(httpd -v | head -n 1 | cut -d : -f 2)${_RESET} $(which httpd)"
+  else
+    echo "httpd not installed"
+  fi
+
+  if hash nginx 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}nginx${_RESET}:  ${_BOLD}${_WHITE}$(nginx -v 2>&1 | head -n 1 | cut -d : -f 2)${_RESET} $(which nginx)"
+  else
+    echo "nginx not installed"
+  fi
+
+  echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
+  echo "${_BOLD}${_WHITE}| webdev tools                 |${_RESET}"
+  echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
+
+  if hash jekyll 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}jekyll${_RESET}:  ${_BOLD}${_WHITE}$(jekyll --version | cut -d " " -f 2)${_RESET} $(which jekyll)"
+  else
+    echo "jekyll not installed"
+  fi
+
+  echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
   echo "${_BOLD}${_WHITE}| database systems             |${_RESET}"
   echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
 
   # database versions
   if hash mysql 2>/dev/null; then
-    echo "${_BOLD}${_YELLOW}mysql${_RESET}:    ${_BOLD}${_WHITE}$(mysql -V)${_RESET} $(which mysql)"
+    echo "${_BOLD}${_YELLOW}mysql${_RESET}:   ${_BOLD}${_WHITE}$(mysql -V)${_RESET} $(which mysql)"
   else
     echo "mysql not installed"
   fi
 
   if hash psql 2>/dev/null; then
-    echo "${_BOLD}${_YELLOW}postgres${_RESET}: ${_BOLD}${_WHITE}$(psql --version)${_RESET} $(which psql)"
+    echo "${_BOLD}${_YELLOW}psql${_RESET}:    ${_BOLD}${_WHITE}$(psql --version)${_RESET} $(which psql)"
   else
     echo "postgres not installed"
   fi
 
   if hash sqlite3 2>/dev/null; then
-    echo "${_BOLD}${_YELLOW}sqlite3${_RESET}:  ${_BOLD}${_WHITE}$(sqlite3 --version)${_RESET} $(which sqlite3)"
+    echo "${_BOLD}${_YELLOW}sqlite3${_RESET}: ${_BOLD}${_WHITE}$(sqlite3 --version)${_RESET} $(which sqlite3)"
   else
     echo "sqlite3 not installed"
   fi
