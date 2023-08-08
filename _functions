@@ -42,6 +42,10 @@ function about {
     fi
   fi
 
+  echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
+  echo "${_BOLD}${_WHITE}| programming langs            |${_RESET}"
+  echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
+
   # programming versions
   if hash asdf 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}asdf${_RESET}:      ${_BOLD}${_WHITE}$(asdf version)${_RESET} $(which asdf)"
@@ -81,7 +85,11 @@ function about {
     echo "node not installed"
   fi
 
-  echo "${_BOLD}${_YELLOW}php${_RESET}:     ${_BOLD}${_WHITE}$(php -v | head -1)${_RESET} $(which php)"
+  if hash php 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}php${_RESET}:     ${_BOLD}${_WHITE}$(php -v | head -1)${_RESET} $(which php)"
+  else
+    echo "php not installed"
+  fi
 
   if hash python 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}python${_RESET}:  ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | head -1)${_RESET}$(which python)"
@@ -130,6 +138,29 @@ function about {
     echo "${_BOLD}${_YELLOW}tsc${_RESET}:     ${_BOLD}${_WHITE}$(tsc -v | cut -d' ' -f2-)${_RESET} $(which tsc)"
   else
     echo "tsc not installed"
+  fi
+
+  echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
+  echo "${_BOLD}${_WHITE}| database systems             |${_RESET}"
+  echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
+
+  # database versions
+  if hash mysql 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}mysql${_RESET}:    ${_BOLD}${_WHITE}$(mysql -V)${_RESET} $(which mysql)"
+  else
+    echo "mysql not installed"
+  fi
+
+  if hash psql 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}postgres${_RESET}: ${_BOLD}${_WHITE}$(psql --version)${_RESET} $(which psql)"
+  else
+    echo "postgres not installed"
+  fi
+
+  if hash sqlite3 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}sqlite3${_RESET}:  ${_BOLD}${_WHITE}$(sqlite3 --version)${_RESET} $(which sqlite3)"
+  else
+    echo "sqlite3 not installed"
   fi
 }
 
