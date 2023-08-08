@@ -202,6 +202,11 @@ function ansicolors {
   done
 }
 
+# b64: base64 encode string
+function b64 {
+  echo -n "$1" | openssl base64
+}
+
 # countdown: start a full-screen countdown
 function countdown() {
   start=${1:60}
