@@ -5,7 +5,7 @@
 _RESET="$(tty -s && tput sgr0)"
 # fg colors
 #_BLACK_FG="$(tty -s && tput setaf 0)"
-#_RED_FG="$(tty -s && tput setaf 1)"
+_RED_FG="$(tty -s && tput setaf 1)"
 _GREEN_FG="$(tty -s && tput setaf 2)"
 _YELLOW_FG="$(tty -s && tput setaf 3)"
 #_PURPLE_FG="$(tty -s && tput setaf 4)"
@@ -28,15 +28,24 @@ _ddev_pst1() {
     echo "${_YELLOW_FG} [ddev]${_RESET}"
   fi
 }
+
+_ruby_pst1() {
+  # true;
+  if hash ruby 2>/dev/null; then
+    echo -e "(${_RED_FG}ruby:$(ruby -v 2>&1 | cut -d' ' -f2)${_RESET})"
+  fi
+}
+
 # prompt vars
 PS1_DIR="${_GREEN_FG}[\w]${_RESET}"
-PS1_GIT="${_BOLD}\$(__git_ps1)${_RESET}"
+PS1_GIT="${_BOLD}${_BRIGHTCYAN_FG}\$(__git_ps1)${_RESET}"
 PS1_DDEV="\$(_ddev_pst1)"
+PS1_RUBY="\$(_ruby_pst1)"
 PS1_USER="\[${_GREEN_FG}${_BOLD}\]\u\[${_YELLOW_FG}${_BOLD}\]@\[${_GREEN_FG}${_BOLD}\]\h\[${_RESET}\]"
 PS1_DATE="\[${_YELLOW_FG}${_BOLD}\](\$(date +%T))\[${_RESET}\]"
 
 # [dir] [ddev] (git)
-export PS1_CUSTOM1="$PS1_DIR$PS1_DDEV$PS1_GIT\n"
+export PS1_CUSTOM1="$PS1_DIR$PS1_DDEV$PS1_RUBY$PS1_GIT\n"
 
 # adding emoji via emo
 # if [ -f $GOPATH/bin/emo ]; then
