@@ -32,7 +32,9 @@ _ddev_pst1() {
 _ruby_pst1() {
   # true;
   if hash ruby 2>/dev/null; then
-    echo -e "(${_RED_FG}ruby:$(ruby -v 2>&1 | cut -d' ' -f2)${_RESET})"
+    if [[ "$PWD" =~ ruby ]]; then
+      echo -e "(${_RED_FG}ruby:$(ruby -v 2>&1 | cut -d' ' -f2)${_RESET})"
+    fi
   fi
 }
 
