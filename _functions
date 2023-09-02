@@ -81,6 +81,12 @@ function about {
     else
       echo "nvm not installed"
     fi
+
+    if hash yarn 2>/dev/null; then
+      echo "${_BOLD}${_YELLOW}- yarn${_RESET}:   ${_BOLD}${_WHITE}$(yarn --version)${_RESET} $(which yarn)"
+    else
+      echo "yarn not installed"
+    fi
   else
     echo "node not installed"
   fi
