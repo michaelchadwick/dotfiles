@@ -48,7 +48,7 @@ function about {
 
   # programming versions
   if hash asdf 2>/dev/null; then
-    echo "${_BOLD}${_YELLOW}asdf${_RESET}:      ${_BOLD}${_WHITE}$(asdf version)${_RESET} $(which asdf)"
+    echo "${_BOLD}${_YELLOW}asdf${_RESET}:      ${_BOLD}${_WHITE}$(asdf version)${_RESET}"
   else
     echo "asdf not installed"
   fi
