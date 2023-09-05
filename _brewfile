@@ -1,0 +1,341 @@
+#############################
+# TAPS                      #
+#############################
+tap "1password/tap"
+tap "ankitpokhrel/jira-cli"
+tap "bensadeh/circumflex"
+tap "buo/cask-upgrade"
+tap "dart-lang/dart"
+tap "dbcli/tap"
+tap "drud/ddev"
+tap "eddieantonio/eddieantonio"
+tap "eth-p/software"
+tap "gcenx/wine"
+tap "homebrew/bundle"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/services"
+tap "jakehilborn/jakehilborn"
+tap "jesseduffield/lazydocker"
+tap "mike-engel/jwt-cli"
+tap "mongodb/brew"
+tap "muesli/tap"
+tap "sass/sass"
+tap "scarvalhojr/tap"
+tap "shivammathur/php"
+tap "symfony-cli/tap"
+tap "wagoodman/dive"
+tap "yt-dlp/taps"
+
+#############################
+# SYSTEM LIBRARIES          #
+#############################
+brew "ca-certificates" # Mozilla CA certificate store
+brew "game-music-emu"
+brew "highlight" # library for syntax highlighting
+brew "imagemagick" # image conversion library
+brew "imagemagick@6" # image conversion library
+brew "libao"
+brew "libass"
+brew "libcroco"
+brew "libdvdcss"
+brew "libepoxy"
+brew "libev"
+brew "libevent"
+brew "libgcrypt"
+brew "libgphoto2"
+brew "libheif"
+brew "libicns"
+brew "libiconv"
+brew "libid3tag"
+brew "libidn2"
+brew "libjwt"
+brew "libmodplug"
+brew "libnotify"
+brew "libpq"
+brew "libpsl"
+brew "libsass"
+brew "libsigc++"
+brew "libsodium"
+brew "libsoup"
+brew "librsvg"
+brew "libvorbis"
+brew "libvpx"
+brew "libxml2"
+brew "libyaml"
+brew "libzip"
+brew "mcrypt" # deprecated
+brew "nss"
+brew "openssl@3"
+brew "qt"
+brew "readline"
+brew "sdl2"
+brew "snappy" # compression
+brew "xz" # compression
+brew "zlib" # compression
+
+#############################
+# DOCKER                    #
+#############################
+## main apps
+brew "docker", link: false
+brew "docker-compose", link: false
+## open-source docker alternative
+brew "colima"
+# Lazier way to manage everything docker
+brew "lazydocker"
+
+#############################
+# PROGRAMMING LANGUAGES     #
+#############################
+# audio programming
+brew "chuck"
+# better ruby
+brew "crystal"
+# microsoft .NET
+brew "dotnet"
+# golang
+brew "go"
+# java
+brew "jenv"
+brew "maven"
+brew "openjdk"
+brew "openjdk@11"
+# julia
+brew "julia"
+# nodejs
+brew "node"
+# perl
+brew "perl"
+# php
+brew "php", restart_service: true
+brew "shivammathur/php/php"
+brew "shivammathur/php/php@7.4"
+brew "shivammathur/php/php@8.0"
+brew "shivammathur/php/php@8.1"
+## python
+brew "python@3.9"
+brew "python-tk@3.11"
+brew "pyenv"
+brew "pyenv-virtualenv"
+# ruby
+brew "rbenv"
+brew "ruby-build"
+# rust
+brew "rustup-init"
+
+#############################
+# TOOLS                     #
+#############################
+# better grep
+brew "ack"
+# advent of code cli
+brew "scarvalhojr/tap/aoc-cli"
+# system info
+brew "archey4"
+# universal version manager
+# brew "asdf"
+# Tool for generating GNU Standards-compliant Makefiles
+brew "automake"
+# newest version of bash, as macos's is always behind
+brew "bash"
+# completion
+brew "bash-completion@2"
+# better cat
+brew "bat"
+# source building
+brew "cmake"
+# GNUseful tools
+brew "coreutils"
+# silly utility
+brew "cowsay"
+## command-line http
+brew "curl"
+## better diff
+brew "diff-so-fancy"
+# macOS command line utility to configure multi-display resolutions and arrangements
+brew "jakehilborn/jakehilborn/displayplacer"
+# Lightweight DNS forwarder and DHCP server
+brew "dnsmasq", restart_service: true
+# Convert text between DOS, UNIX, and Mac formats
+brew "dos2unix"
+# file usage tool
+brew "dua-cli"
+# better du
+brew "muesli/tap/duf"
+brew "duf"
+# Monitor a directory for changes and run a shell command
+brew "fswatch"
+# better awk
+brew "gawk"
+# cli github
+brew "gh"
+# version control
+brew "git"
+# cli markdown
+brew "glow"
+## colorize log files
+brew "grc"
+# better top
+brew "htop"
+# cli http client
+brew "httpie"
+# cat for images
+brew "eddieantonio/eddieantonio/imgcat"
+# json output from a shell
+brew "jo"
+# process json
+brew "jq"
+# decode/encode JWT
+brew "mike-engel/jwt-cli/jwt-cli"
+## log viewer
+brew "lnav"
+# make locally-trusted dev certs
+brew "mkcert"
+# tail multiple files at once
+brew "multitail"
+# text editor
+brew "nano"
+# file usage tool
+brew "ncdu"
+# pretty "about" info for a machine
+brew "neofetch"
+# network Swiss army knife
+brew "netcat"
+# port scanner
+brew "nmap"
+# run multiple shell commands at the same time
+brew "parallel"
+# better ping
+brew "prettyping"
+# password generator
+brew "pwgen"
+# cli version of speedtest.net
+brew "speedtest-cli"
+# Test SSL/TLS enabled services to discover supported cipher suites
+brew "sslscan"
+# alternate shell
+# brew "starship"
+# it's...telnet
+brew "telnet"
+# i.e. ag (better find)
+brew "the_silver_searcher"
+# better man
+brew "tldr"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
+# command-line http downloader
+brew "wget"
+# Automatic workarounds for problems in Wine
+brew "winetricks"
+# CLI dashboard
+brew "wtfutil"
+# download youtube videos
+brew "youtube-dl"
+brew "yt-dlp" # better youtube-dl fork
+
+#############################
+# MEDIA                     #
+#############################
+## media encoding/decoding formats
+brew "flac"
+brew "jpeg-xl"
+brew "opus"
+brew "theora"
+brew "x264"
+brew "x265"
+brew "xvid"
+## media conversion Swiss army knife
+brew "ffmpeg"
+# soundfont synth
+brew "fluid-synth"
+# Minimalistic plugin API for video effects
+brew "frei0r"
+# optimize animated gifs
+brew "gifsicle"
+# get info about media
+brew "media-info"
+## media player
+brew "mpv"
+# audio player
+brew "sox"
+
+#############################
+# WEBDEV                    #
+#############################
+## css
+brew "sass/sass/sass"
+## static site generator in golang
+brew "hugo"
+## http servers
+brew "httpd", restart_service: true
+brew "nginx"
+## database
+brew "mariadb"
+brew "mongodb/brew/mongodb-community"
+brew "postgresql@14"
+brew "redis"
+brew "sqlite"
+brew "unixodbc"
+## package management
+brew "bower"
+brew "composer"
+brew "pkg-config"
+# utilities for patch files
+brew "patchutils"
+# shell script linter
+brew "shellcheck"
+# compiler
+brew "llvm"
+# atlassian cli
+brew "ankitpokhrel/jira-cli/jira-cli"
+# docker-based local dev
+brew "drud/ddev/ddev"
+# symfony cli
+brew "symfony-cli/tap/symfony-cli"
+
+#############################
+# OTHER                     #
+#############################
+# Compressed read-only file system for Linux
+# brew "squashfs"
+
+#############################
+# CASKS                     #
+#############################
+# 1password cli
+cask "1password-cli"
+# open-source java development kit
+cask "adoptopenjdk8"
+# check music playing from macos menubar
+cask "background-music"
+# Utility to create and modify archives
+cask "betterzip"
+# facebook messenger client
+cask "caprine"
+# sqlite gui client
+cask "db-browser-for-sqlite"
+# the font that minecraft uses
+cask "font-monocraft"
+# api testing
+cask "insomnia"
+# Spotlight metadata importer
+cask "mdimagesizemdimporter"
+# powershell on macos
+cask "powershell"
+
+# quicklook plugins
+cask "qlimagesize"
+cask "qlmarkdown"
+cask "qlstephen"
+cask "qlvideo"
+cask "quicklook-json"
+cask "quicklookase"
+cask "syntax-highlight" # syntax highlighting in ql
+
+# open-source stats for the macos menubar
+cask "stats"
+# Prebuilt OpenJDK Binaries
+cask "temurin8"
+# Open-source version of the X.Org X Window System
+cask "xquartz"
