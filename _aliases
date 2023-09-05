@@ -105,9 +105,14 @@ fi
 if hash fd 2>/dev/null; then
   alias find="fd"
 fi
-# ncdu: better du
-if hash ncdu 2>/dev/null; then
-  alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+# duf: better du
+if hash duf 2>/dev/null; then
+  # ncdu: better duf
+  if hash ncdu 2>/dev/null; then
+    alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+  else
+    alias du="duf"
+  fi
 fi
 # bat: better cat
 if hash bat 2>/dev/null; then
