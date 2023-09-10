@@ -98,6 +98,12 @@ function about {
     echo "${_BOLD}${_GRAY}- php    not installed${_RESET}"
   fi
 
+  if hash composer 2>/dev/null; then
+    echo "${_BOLD}${_YELLOW}- composer${_RESET}  ${_BOLD}${_WHITE}$(composer --version | cut -d' ' -f3)${_RESET} $(which composer)"
+  else
+    echo "${_BOLD}${_GRAY}- composer not installed${_RESET}"
+  fi
+
   if hash python 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}python${_RESET}:  ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | head -1)${_RESET}$(which python)"
   else
