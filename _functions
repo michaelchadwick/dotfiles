@@ -51,7 +51,7 @@ function about {
   if hash asdf 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}asdf${_RESET}:    ${_BOLD}${_WHITE}$(asdf version | cut -d'v' -f2)${_RESET}"
   else
-    echo "${_BOLD}${_GRAY}- asdf   not installed${_RESET}"
+    echo "${_BOLD}${_GRAY}asdf   not installed${_RESET}"
   fi
 
   if hash go 2>/dev/null; then
@@ -138,13 +138,13 @@ function about {
   if hash rustc 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}rust${_RESET}:    ${_BOLD}${_WHITE}$(rustc --version)${_RESET} $(which rustc)"
   else
-    echo "${_BOLD}${_GRAY}- rustc  not installed${_RESET}"
+    echo "${_BOLD}${_GRAY}rustc    not installed${_RESET}"
   fi
 
   if hash tsc 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}tsc${_RESET}:     ${_BOLD}${_WHITE}$(tsc -v | cut -d' ' -f2-)${_RESET} $(which tsc)"
   else
-    echo "${_BOLD}${_GRAY}- tsc    not installed${_RESET}"
+    echo "${_BOLD}${_GRAY}tsc      not installed${_RESET}"
   fi
 
   echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
