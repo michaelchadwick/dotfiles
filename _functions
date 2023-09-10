@@ -5,6 +5,7 @@
 _RED="$(tty -s && tput setaf 1)"
 _YELLOW="$(tty -s && tput setaf 3)"
 _WHITE="$(tty -s && tput setaf 7)"
+_GRAY="$(tty -s && tput setaf 8)"
 _BOLD="$(tty -s && tput bold)"
 _RESET="$(tty -s && tput sgr0)"
 
@@ -48,27 +49,27 @@ function about {
 
   # programming versions
   if hash asdf 2>/dev/null; then
-    echo "${_BOLD}${_YELLOW}asdf${_RESET}:      ${_BOLD}${_WHITE}$(asdf version)${_RESET}"
+    echo "${_BOLD}${_YELLOW}asdf${_RESET}:    ${_BOLD}${_WHITE}$(asdf version | cut -d'v' -f2)${_RESET}"
   else
-    echo "asdf not installed"
+    echo "${_BOLD}${_GRAY}asdf     not installed${_RESET}"
   fi
 
   if hash go 2>/dev/null; then
-    echo "${_BOLD}${_YELLOW}go${_RESET}:      ${_BOLD}${_WHITE}$(go version)${_RESET} $(which go)"
+    echo "${_BOLD}${_YELLOW}go${_RESET}:      ${_BOLD}${_WHITE}$(go version | cut -d' ' -f3 | cut -d'g' -f2 | cut -d'o' -f2)${_RESET} $(which go)"
   else
-    echo "go not installed"
+    echo "${_BOLD}${_GRAY}go       not installed${_RESET}"
   fi
 
   if hash java 2>/dev/null; then
-    echo "${_BOLD}${_YELLOW}java${_RESET}:    ${_BOLD}${_WHITE}$(java -version 2>&1 | head -n 1)${_RESET} $(which java)"
+    echo "${_BOLD}${_YELLOW}java${_RESET}:    ${_BOLD}${_WHITE}$(java -version 2>&1 | head -n 1 | cut -d' ' -f3- | cut -d'"' -f2 | cut -d'"' -f1)${_RESET} $(which java)"
 
     if hash jenv 2>/dev/null; then
-      echo "${_BOLD}${_YELLOW}- jenv${_RESET}:    ${_BOLD}${_WHITE}$(jenv --version)${_RESET}; using: $(jenv global)"
+      echo "${_BOLD}${_YELLOW}- jenv${_RESET}:  ${_BOLD}${_WHITE}$(jenv --version | cut -d' ' -f2 )${_RESET}; using: $(jenv global)"
     else
-      echo "jenv not installed"
+      echo "${_BOLD}${_GRAY}jenv     not installed${_RESET}"
     fi
   else
-    echo "java not installed"
+    echo "${_BOLD}${_GRAY}java     not installed${_RESET}"
   fi
 
   if hash node 2>/dev/null; then
@@ -79,71 +80,71 @@ function about {
     if hash nvm 2>/dev/null; then
       echo "${_BOLD}${_YELLOW}- nvm${_RESET}:   ${_BOLD}${_WHITE}$(nvm --version)${_RESET} $(which nvm)"
     else
-      echo "nvm not installed"
+      echo "${_BOLD}${_GRAY}nvm      not installed${_RESET}"
     fi
 
     if hash yarn 2>/dev/null; then
       echo "${_BOLD}${_YELLOW}- yarn${_RESET}:  ${_BOLD}${_WHITE}$(yarn --version)${_RESET} $(which yarn)"
     else
-      echo "yarn not installed"
+      echo "${_BOLD}${_GRAY}yarn     not installed${_RESET}"
     fi
   else
-    echo "node not installed"
+    echo "${_BOLD}${_GRAY}node     not installed${_RESET}"
   fi
 
   if hash php 2>/dev/null; then
-    echo "${_BOLD}${_YELLOW}php${_RESET}:     ${_BOLD}${_WHITE}$(php -v | head -1)${_RESET} $(which php)"
+    echo "${_BOLD}${_YELLOW}php${_RESET}:     ${_BOLD}${_WHITE}$(php -v | head -1 | cut -d' ' -f2)${_RESET} $(which php)"
   else
-    echo "php not installed"
+    echo "${_BOLD}${_GRAY}php      not installed${_RESET}"
   fi
 
   if hash python 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}python${_RESET}:  ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | head -1)${_RESET}$(which python)"
   else
-    echo "python not installed"
+    echo "${_BOLD}${_GRAY}python   not installed${_RESET}"
   fi
 
   if hash python2 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}python2${_RESET}: ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | head -1)${_RESET}$(which python2)"
   else
-    echo "python2 not installed"
+    echo "${_BOLD}${_GRAY}python2  not installed${_RESET}"
   fi
 
   if hash python3 2>/dev/null; then
-    echo "${_BOLD}${_YELLOW}python3${_RESET}: ${_BOLD}${_WHITE}$(python3 --version)${_RESET} $(which python3)"
+    echo "${_BOLD}${_YELLOW}python3${_RESET}: ${_BOLD}${_WHITE}$(python3 --version | cut -d' ' -f2)${_RESET} $(which python3)"
   else
-    echo "python3 not installed"
+    echo "${_BOLD}${_GRAY}python3  not installed${_RESET}"
   fi
 
   if hash pyenv 2>/dev/null; then
-    echo "${_BOLD}${_YELLOW}- pyenv${_RESET}  ${_BOLD}${_WHITE}$(pyenv -v)${_RESET}; using: $(pyenv global)"
+    echo "${_BOLD}${_YELLOW}- pyenv${_RESET}  ${_BOLD}${_WHITE}$(pyenv -v | cut -d' ' -f2 | cut -d';' -f1)${_RESET}; using: $(pyenv global)"
   else
-    echo "pyenv not installed"
+    echo "${_BOLD}${_GRAY}pyenv    not installed${_RESET}"
   fi
 
   if hash ruby 2>/dev/null; then
-    echo "${_BOLD}${_YELLOW}ruby${_RESET}:    ${_BOLD}${_WHITE}$(ruby -v)${_RESET} $(which ruby)"
+    echo "${_BOLD}${_YELLOW}ruby${_RESET}:    ${_BOLD}${_WHITE}$(ruby -v | cut -d' ' -f2)${_RESET} $(which ruby)"
     echo "${_BOLD}${_YELLOW}- gem${_RESET}:   ${_BOLD}${_WHITE}$(gem -v)${_RESET} $(which gem)"
 
     if hash rbenv 2>/dev/null; then
       echo "${_BOLD}${_YELLOW}- rbenv${_RESET}  ${_BOLD}${_WHITE}$(rbenv -v)${_RESET}; using: $(rbenv global)"
     else
-      echo "rbenv not installed"
+      echo "${_BOLD}${_GRAY}rbenv    not installed${_RESET}"
     fi
   else
-    echo "ruby not installed"
+    echo "${_BOLD}${_GRAY}ruby     not installed${_RESET}"
   fi
 
   if hash rustc 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}rust${_RESET}:    ${_BOLD}${_WHITE}$(rustc --version)${_RESET} $(which rustc)"
   else
-    echo "rustc not installed"
+    echo "${_BOLD}${_GRAY}rustc    not installed${_RESET}"
   fi
 
   if hash tsc 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}tsc${_RESET}:     ${_BOLD}${_WHITE}$(tsc -v | cut -d' ' -f2-)${_RESET} $(which tsc)"
   else
-    echo "tsc not installed"
+    echo "${_BOLD}${_GRAY}tsc      not installed${_RESET}"
   fi
 
   echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
@@ -151,15 +152,15 @@ function about {
   echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
 
   if hash httpd 2>/dev/null; then
-    echo "${_BOLD}${_YELLOW}httpd${_RESET}:  ${_BOLD}${_WHITE}$(httpd -v | head -n 1 | cut -d : -f 2)${_RESET} $(which httpd)"
+    echo "${_BOLD}${_YELLOW}httpd${_RESET}:   ${_BOLD}${_WHITE}$(httpd -v | head -n 1 | cut -d : -f 2 | cut -d'/' -f2)${_RESET} $(which httpd)"
   else
-    echo "httpd not installed"
+    echo "${_BOLD}${_GRAY}httpd    not installed${_RESET}"
   fi
 
   if hash nginx 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}nginx${_RESET}:  ${_BOLD}${_WHITE}$(nginx -v 2>&1 | head -n 1 | cut -d : -f 2)${_RESET} $(which nginx)"
   else
-    echo "nginx not installed"
+    echo "${_BOLD}${_GRAY}nginx    not installed${_RESET}"
   fi
 
   echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
@@ -169,7 +170,7 @@ function about {
   if hash jekyll 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}jekyll${_RESET}:  ${_BOLD}${_WHITE}$(jekyll --version | cut -d " " -f 2)${_RESET} $(which jekyll)"
   else
-    echo "jekyll not installed"
+    echo "${_BOLD}${_GRAY}jekyll   not installed${_RESET}"
   fi
 
   echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
@@ -178,21 +179,21 @@ function about {
 
   # database versions
   if hash mysql 2>/dev/null; then
-    echo "${_BOLD}${_YELLOW}mysql${_RESET}:   ${_BOLD}${_WHITE}$(mysql -V)${_RESET} $(which mysql)"
+    echo "${_BOLD}${_YELLOW}mysql${_RESET}:   ${_BOLD}${_WHITE}$(mysql -V 2>&1 | cut -d' ' -f3- | cut -d',' -f1)${_RESET} $(which mysql)"
   else
-    echo "mysql not installed"
+    echo "${_BOLD}${_GRAY}mysql    not installed${_RESET}"
   fi
 
   if hash psql 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}psql${_RESET}:    ${_BOLD}${_WHITE}$(psql --version)${_RESET} $(which psql)"
   else
-    echo "postgres not installed"
+    echo "${_BOLD}${_GRAY}postgres not installed${_RESET}"
   fi
 
   if hash sqlite3 2>/dev/null; then
-    echo "${_BOLD}${_YELLOW}sqlite3${_RESET}: ${_BOLD}${_WHITE}$(sqlite3 --version)${_RESET} $(which sqlite3)"
+    echo "${_BOLD}${_YELLOW}sqlite3${_RESET}: ${_BOLD}${_WHITE}$(sqlite3 --version 2>&1 | cut -d' ' -f1)${_RESET} $(which sqlite3)"
   else
-    echo "sqlite3 not installed"
+    echo "${_BOLD}${_GRAY}sqlite3 not installed${_RESET}"
   fi
 }
 
@@ -211,6 +212,23 @@ function ansicolors {
 # b64: base64 encode string
 function b64 {
   echo -n "$1" | openssl base64
+}
+
+# colors: show all colors possible on terminal
+function colors {
+  function color() {
+    for c; do
+      printf '\e[48;5;%dm%03d' "$c" "$c"
+    done
+    printf '\e[0m \n'
+  }
+
+  IFS=$' \t\n'
+  color {0..15}
+  for ((i=0;i<6;i++)); do
+      color $(seq $((i*36+16)) $((i*36+51)))
+  done
+  color {232..255}
 }
 
 # countdown: start a full-screen countdown
