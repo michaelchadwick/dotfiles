@@ -51,13 +51,13 @@ function about {
   if hash asdf 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}asdf${_RESET}:    ${_BOLD}${_WHITE}$(asdf version | cut -d'v' -f2)${_RESET}"
   else
-    echo "${_BOLD}${_GRAY}asdf     not installed${_RESET}"
+    echo "${_BOLD}${_GRAY}- asdf   not installed${_RESET}"
   fi
 
   if hash go 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}go${_RESET}:      ${_BOLD}${_WHITE}$(go version | cut -d' ' -f3 | cut -d'g' -f2 | cut -d'o' -f2)${_RESET} $(which go)"
   else
-    echo "${_BOLD}${_GRAY}go       not installed${_RESET}"
+    echo "${_BOLD}${_GRAY}- go     not installed${_RESET}"
   fi
 
   if hash java 2>/dev/null; then
@@ -66,10 +66,10 @@ function about {
     if hash jenv 2>/dev/null; then
       echo "${_BOLD}${_YELLOW}- jenv${_RESET}:  ${_BOLD}${_WHITE}$(jenv --version | cut -d' ' -f2 )${_RESET}; using: $(jenv global)"
     else
-      echo "${_BOLD}${_GRAY}jenv     not installed${_RESET}"
+      echo "${_BOLD}${_GRAY}- jenv   not installed${_RESET}"
     fi
   else
-    echo "${_BOLD}${_GRAY}java     not installed${_RESET}"
+    echo "${_BOLD}${_GRAY}- java   not installed${_RESET}"
   fi
 
   if hash node 2>/dev/null; then
@@ -80,46 +80,46 @@ function about {
     if hash nvm 2>/dev/null; then
       echo "${_BOLD}${_YELLOW}- nvm${_RESET}:   ${_BOLD}${_WHITE}$(nvm --version)${_RESET} $(which nvm)"
     else
-      echo "${_BOLD}${_GRAY}nvm      not installed${_RESET}"
+      echo "${_BOLD}${_GRAY}- nvm    not installed${_RESET}"
     fi
 
     if hash yarn 2>/dev/null; then
       echo "${_BOLD}${_YELLOW}- yarn${_RESET}:  ${_BOLD}${_WHITE}$(yarn --version)${_RESET} $(which yarn)"
     else
-      echo "${_BOLD}${_GRAY}yarn     not installed${_RESET}"
+      echo "${_BOLD}${_GRAY}- yarn   not installed${_RESET}"
     fi
   else
-    echo "${_BOLD}${_GRAY}node     not installed${_RESET}"
+    echo "${_BOLD}${_GRAY}- node   not installed${_RESET}"
   fi
 
   if hash php 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}php${_RESET}:     ${_BOLD}${_WHITE}$(php -v | head -1 | cut -d' ' -f2)${_RESET} $(which php)"
   else
-    echo "${_BOLD}${_GRAY}php      not installed${_RESET}"
+    echo "${_BOLD}${_GRAY}- php    not installed${_RESET}"
   fi
 
   if hash python 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}python${_RESET}:  ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | head -1)${_RESET}$(which python)"
   else
-    echo "${_BOLD}${_GRAY}python   not installed${_RESET}"
+    echo "${_BOLD}${_GRAY}- python not installed${_RESET}"
   fi
 
   if hash python2 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}python2${_RESET}: ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | head -1)${_RESET}$(which python2)"
   else
-    echo "${_BOLD}${_GRAY}python2  not installed${_RESET}"
+    echo "${_BOLD}${_GRAY}- python2 not installed${_RESET}"
   fi
 
   if hash python3 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}python3${_RESET}: ${_BOLD}${_WHITE}$(python3 --version | cut -d' ' -f2)${_RESET} $(which python3)"
   else
-    echo "${_BOLD}${_GRAY}python3  not installed${_RESET}"
+    echo "${_BOLD}${_GRAY}- python3 not installed${_RESET}"
   fi
 
   if hash pyenv 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}- pyenv${_RESET}  ${_BOLD}${_WHITE}$(pyenv -v | cut -d' ' -f2 | cut -d';' -f1)${_RESET}; using: $(pyenv global)"
   else
-    echo "${_BOLD}${_GRAY}pyenv    not installed${_RESET}"
+    echo "${_BOLD}${_GRAY}- pyenv  not installed${_RESET}"
   fi
 
   if hash ruby 2>/dev/null; then
@@ -129,22 +129,22 @@ function about {
     if hash rbenv 2>/dev/null; then
       echo "${_BOLD}${_YELLOW}- rbenv${_RESET}  ${_BOLD}${_WHITE}$(rbenv -v)${_RESET}; using: $(rbenv global)"
     else
-      echo "${_BOLD}${_GRAY}rbenv    not installed${_RESET}"
+      echo "${_BOLD}${_GRAY}- rbenv  not installed${_RESET}"
     fi
   else
-    echo "${_BOLD}${_GRAY}ruby     not installed${_RESET}"
+    echo "${_BOLD}${_GRAY}- ruby   not installed${_RESET}"
   fi
 
   if hash rustc 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}rust${_RESET}:    ${_BOLD}${_WHITE}$(rustc --version)${_RESET} $(which rustc)"
   else
-    echo "${_BOLD}${_GRAY}rustc    not installed${_RESET}"
+    echo "${_BOLD}${_GRAY}- rustc  not installed${_RESET}"
   fi
 
   if hash tsc 2>/dev/null; then
     echo "${_BOLD}${_YELLOW}tsc${_RESET}:     ${_BOLD}${_WHITE}$(tsc -v | cut -d' ' -f2-)${_RESET} $(which tsc)"
   else
-    echo "${_BOLD}${_GRAY}tsc      not installed${_RESET}"
+    echo "${_BOLD}${_GRAY}- tsc    not installed${_RESET}"
   fi
 
   echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
