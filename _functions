@@ -18,6 +18,18 @@ function _funclist {
   fi
 }
 
+# function anon() {
+#   str=$1
+#   pattern="\/Users\/$USER|\/home\/$USER"
+
+#   if [[ $str =~ $pattern ]]; then
+#     echo 'found thing to anon'
+#     echo "$(sed 's/$pattern/foo/' $str)"
+#   else
+#     echo "$str"
+#   fi
+# }
+
 # about: display info about current system
 function about {
   # OS info
