@@ -471,9 +471,8 @@ function steep {
   echo "${_BOLD}${_WHITE}| START: Homebrew update       |${_RESET}"
   echo "${_BOLD}${_WHITE}| brew update                  |${_RESET}"
   echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
-  brew update
 
-  if [ $? -eq 0 ]; then
+  if brew update; then
     echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
     echo "${_BOLD}${_WHITE}| START: Homebrew upgrade      |${_RESET}"
     echo "${_BOLD}${_WHITE}| brew upgrade                 |${_RESET}"
