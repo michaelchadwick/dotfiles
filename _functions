@@ -406,6 +406,44 @@ function httruby {
   ruby -run -e httpd . -p "$rport";
 }
 
+## get the Notes field from a Logic Pro X project (e.g. lyrics)
+function lpxnotes_dump() {
+  # Check if a filename is provided as an argument
+  if [ "$#" -ne 1 ]; then
+    echo "Usage: lpxnotes_dump <filename>"
+  else
+    # assuming only one Alternative
+    filename=$1/Alternatives/000/ProjectData
+
+    # Check if the file exists
+    if [ ! -e "$filename" ]; then
+      echo "File not found: $filename"
+    else
+      # regex pattern for code where Notes start (in LPX 10.7, at least)
+      pattern='^\\f0\\fs30'
+
+      # get ASCII from binary | find the pattern where Notes start | grab the line number
+      start_line=$(strings "$filename" | grep -an $pattern "$filename" | cut -d: -f1)
+
+      if [ -n "$start_line" ]; then
+        # starting at line number where Notes start
+        # grab text from there to EOF and clean up output
+        notes=$(
+          tail -n +"$start_line" "$filename" \
+          | awk '{gsub(/\\f0\\fs30/,""); print}' \
+          | awk '{gsub(/\\cf2 /,""); print}' \
+          | awk '{gsub(/^ /,""); print}' \
+          | awk '{gsub(/\\/,""); print}' \
+          | awk '{gsub(/\}/,""); print}'
+        )
+        echo "$notes"
+      else
+        echo "Could not extract Notes from file."
+      fi
+    fi
+  fi
+}
+
 # display public IP using cloudflare/google
 # myip 4 -> IPv4, myip 6 -> IPv6, myip -> IPv4 and IPv6
 function myip() {
