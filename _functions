@@ -419,27 +419,38 @@ function lpxnotes_dump() {
     if [ ! -e "$filename" ]; then
       echo "File not found: $filename"
     else
-      # regex pattern for code where Notes start (in LPX 10.7, at least)
-      pattern='^\\f0\\fs30'
+      # regex pattern for code where Notes start and end (in LPX 10.7, at least)
+      pattern='\\\\f0\\\\fs30'
+      end_pattern='}'
 
-      # get ASCII from binary | find the pattern where Notes start | grab the line number
-      start_line=$(strings "$filename" | grep -an $pattern "$filename" | cut -d: -f1)
+      # find first, and only first, instance of this to capture Project Notes
+      str=$(strings "$filename" | awk -v pattern="$pattern" -v end_pattern="$end_pattern" '
+        $0 ~ pattern {
+          flag=1
+        }
+        flag {
+          print
+        }
+        $0 ~ end_pattern && flag {
+          flag=0
+          exit
+        }
+      ')
 
-      if [ -n "$start_line" ]; then
-        # starting at line number where Notes start
-        # grab text from there to EOF and clean up output
-        notes=$(
-          tail -n +"$start_line" "$filename" \
-          | awk '{gsub(/\\f0\\fs30/,""); print}' \
-          | awk '{gsub(/\\cf2 /,""); print}' \
-          | awk '{gsub(/^ /,""); print}' \
-          | awk '{gsub(/\\/,""); print}' \
-          | awk '{gsub(/\}/,""); print}'
-        )
-        echo "$notes"
-      else
-        echo "Could not extract Notes from file."
-      fi
+      # clean up output
+      notes=$(
+        echo "$str" \
+        | awk '{gsub(/pard.+/,""); print}' \
+        | awk '{gsub(/\\f0\\fs30/,""); print}' \
+        | awk '{gsub(/\\cf2 /,""); print}' \
+        | awk '{gsub(/^ /,""); print}' \
+        | awk '{gsub(/\\/,""); print}' \
+        | awk '{gsub(/\}/,""); print}' \
+        | awk '{gsub(/^[\s]+$/,""); print}' \
+        | awk '{gsub(/qSxT/,""); print}'
+      )
+
+      echo "$notes"
     fi
   fi
 }
