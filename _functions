@@ -246,6 +246,12 @@ function about() {
           echo "${_BOLD}${_GRAY}hugo not installed${_RESET}"
         fi
 
+        if hash rails 2>/dev/null; then
+          echo "${_BOLD}${_YELLOW}rails${_RESET}       ${_BOLD}${_WHITE}$(rails -v | cut -d' ' -f2)${_RESET} $(which rails)" | _anon
+        else
+          echo "${_BOLD}${_GRAY}- rails not installed${_RESET}"
+        fi
+
         if hash symfony 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}symfony${_RESET}:    ${_BOLD}${_WHITE}$(symfony version | cut -d' ' -f4)${_RESET} $(which symfony)" | _anon
         else
