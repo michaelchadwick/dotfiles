@@ -97,14 +97,16 @@ alias ytdla="yt-dlp --extract-audio --audio-format mp3"
 # improved commands #
 #####################
 
-# prettyping: prettier ping
-if hash prettyping 2>/dev/null; then
-  alias ping="prettyping --nolegend"
+# bat: better cat
+if hash bat 2>/dev/null; then
+  # prettybat: better bat
+  if hash prettybat 2>/dev/null; then
+    alias cat="prettybat"
+  else
+    alias cat="bat"
+  fi
 fi
-# fd: better find
-if hash fd 2>/dev/null; then
-  alias find="fd"
-fi
+
 # duf: better du
 if hash duf 2>/dev/null; then
   # ncdu: better duf
@@ -114,13 +116,25 @@ if hash duf 2>/dev/null; then
     alias du="duf"
   fi
 fi
-# bat: better cat
-if hash bat 2>/dev/null; then
-  alias cat="bat"
+
+# fd: better find
+if hash fd 2>/dev/null; then
+  alias find="fd"
 fi
-# prettybat: better bat
-if hash prettybat 2>/dev/null; then
-  alias bat="prettybat"
+
+# gawk: GNU awk
+if hash gawk 2>/dev/null; then
+  alias awk="gawk"
+fi
+
+# gsed: GNU sed
+if hash gsed 2>/dev/null; then
+  alias sed="gsed"
+fi
+
+# prettyping: prettier ping
+if hash prettyping 2>/dev/null; then
+  alias ping="prettyping --nolegend"
 fi
 
 ##########################################################

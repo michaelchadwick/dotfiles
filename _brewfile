@@ -166,7 +166,7 @@ brew "muesli/tap/duf"
 brew "duf"
 # Monitor a directory for changes and run a shell command
 brew "fswatch"
-# better awk
+# GNU awk
 brew "gawk"
 # cli github
 brew "gh"
@@ -176,6 +176,8 @@ brew "git"
 brew "glow"
 ## colorize log files
 brew "grc"
+## GNU sed
+brew "gsed"
 # better top
 brew "htop"
 # cli http client
