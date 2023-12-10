@@ -5,19 +5,21 @@
 # misc
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export CLICOLOR=1
-export CODE="$HOME/Code"
 export COLORIZE=1
 export COMPOSE_HTTP_TIMEOUT=300 # docker-compose increase timeout
-export DROPBOX_HOME="$HOME/Dropbox"
 export EDITOR=$TXTAPP
 export GEMEDITOR=$TXTAPP
-export HISTTIMEFORMAT='%F %T %t'
 export HTTP_SERVICES="httpd\|vpnkit\|java\|nc\|node\|ng\|php\|ruby\|hugo\|docker\|com.docker\|com.docke"
-export ICLOUD_HOME="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export PROMPT_COMMAND='printf "\e]0;bash\7"' # fix prompt post-ssh
 export STARSHIP_CONFIG=$HOME/.starship/config.toml
 export TXTAPP=vi
+
+# bash history
+export HISTCONTROL=ignoreboth
+export HISTFILESIZE=2000
+export HISTSIZE=1000
+export HISTTIMEFORMAT='%F %T %t'
 
 # crystal
 export CRYSTAL_OPTS="--link-flags=-Wl,-ld_classic"
