@@ -584,6 +584,30 @@ function wav2flac() {
   for i in *.wav; do ffmpeg -i "$i" "${i%.*}.flac"; done
 }
 
+# wav to mp3
+function wav2mp3() {
+  if ! [ -x "$(command -v ffmpeg)" ]; then
+    echo 'Error: ffmpeg is not installed. please install with (brew install ffmpeg)' >&2
+    exit 1
+  fi
+
+  for i in *.wav; do ffmpeg -i "$i" "${i%.*}.mp3"; done
+}
+
+# * to *
+function mediaconv() {
+  if ! [ -x "$(command -v ffmpeg)" ]; then
+    echo 'Error: ffmpeg is not installed. please install with (brew install ffmpeg)' >&2
+    exit 1
+  fi
+
+  if [ "$#" -lt 2 ]; then
+    echo "Usage: mediaconv <ext1> <ext2>"
+  fi
+
+  for i in *."$1"; do ffmpeg -i "$i" "${i%.*}.$2"; done
+}
+
 ##############################################################
 
 ## load private, non-tracked, functions
