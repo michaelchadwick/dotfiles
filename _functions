@@ -288,6 +288,8 @@ function about() {
 
 
     fi
+  else
+    echo "note: use 'about -f' for language/package manager info"
   fi
 }
 
