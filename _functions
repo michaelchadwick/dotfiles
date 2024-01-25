@@ -317,6 +317,27 @@ function countdown() {
   watch -tn1 echo "$((now-$(date +%s)+start))"
 }
 
+# df_low: email admin if disk free space is low
+function df_low() {
+  OS=$(uname)
+
+  if [ "$OS" = "Darwin" ]; then
+    ROOT="/System/Volumes/Data"
+  else
+    ROOT="/"
+  fi
+
+  CURRENT=$(df $ROOT | grep $ROOT | awk '{ print $5}' | sed 's/%//g')
+  THRESHOLD=90
+  USER=neb
+  DOMAIN=neb.host
+
+  if [ "$CURRENT" -gt "$THRESHOLD" ] ; then
+    msg="Root partition free space on $HOSTNAME is critically low. Used: $CURRENT%"
+    echo "$msg" | mail -s "Disk Space Alert for $HOSTNAME" $USER@$DOMAIN
+  fi
+}
+
 # color show in your terminal
 # source: https://twitter.com/climagic/status/817405740772184065
 function display_colors {
