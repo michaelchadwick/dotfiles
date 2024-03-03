@@ -49,3 +49,5 @@ hash asdf 2>/dev/null || {
     eval "$(rbenv init -)"
   fi
 }
+
+fortune | cowsay
