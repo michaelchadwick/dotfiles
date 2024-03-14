@@ -11,6 +11,10 @@ fi
 if [ -d "$HOME"/.scripts/_others ]; then
   PATH=$PATH:$HOME/.scripts/_others
 fi
+if [ -d "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Code/shell" ]; then
+  # shellcheck disable=SC2147
+  PATH=$PATH:"$HOME/Library/Mobile Documents/com~apple~CloudDocs/Code/shell"
+fi
 
 # basic unix-y paths
 PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
