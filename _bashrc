@@ -50,4 +50,4 @@ hash asdf 2>/dev/null || {
   fi
 }
 
-fortune | cowsay
+# fortune | cowsay
