@@ -50,4 +50,5 @@ hash asdf 2>/dev/null || {
   fi
 }
 
-# fortune | cowsay
+# homebrew
+eval $(/opt/homebrew/bin/brew shellenv)
