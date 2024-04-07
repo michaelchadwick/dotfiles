@@ -57,7 +57,6 @@ function about() {
 
   if [ $# -ge 1 ]; then
     if [ "$1" = '-f' ]; then
-
       echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
       echo "${_BOLD}${_WHITE}| programming langs            |${_RESET}"
       echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
@@ -196,6 +195,12 @@ function about() {
           echo "${_BOLD}${_GRAY}- gem not installed${_RESET}"
         fi
 
+        if hash mise 2>/dev/null; then
+          echo "${_BOLD}${_YELLOW}mise${_RESET}:       ${_BOLD}${_WHITE}$(mise --version)${_RESET} $(which mise)" | _anon
+        else
+          echo "${_BOLD}${_GRAY}- mise not installed${_RESET}"
+        fi
+
         if hash pip 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}pip${_RESET}:        ${_BOLD}${_WHITE}$(pip --version | cut -d' ' -f2)${_RESET} $(which pip)" | _anon
         else
@@ -262,30 +267,29 @@ function about() {
       echo "${_BOLD}${_WHITE}| database systems             |${_RESET}"
       echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
 
-      if hash mongod 2>/dev/null; then
-        echo "${_BOLD}${_YELLOW}mongod${_RESET}:     ${_BOLD}${_WHITE}$(mongod --version | head -1 | cut -d' ' -f3)${_RESET} $(which mongod)" | _anon
-      else
-        echo "${_BOLD}${_GRAY}mongod not installed${_RESET}"
-      fi
+        if hash mongod 2>/dev/null; then
+          echo "${_BOLD}${_YELLOW}mongod${_RESET}:     ${_BOLD}${_WHITE}$(mongod --version | head -1 | cut -d' ' -f3)${_RESET} $(which mongod)" | _anon
+        else
+          echo "${_BOLD}${_GRAY}mongod not installed${_RESET}"
+        fi
 
-      if hash mysql 2>/dev/null; then
-        echo "${_BOLD}${_YELLOW}mysql${_RESET}:      ${_BOLD}${_WHITE}$(mysql -V 2>&1 | cut -d' ' -f3- | cut -d',' -f1)${_RESET} $(which mysql)" | _anon
-      else
-        echo "${_BOLD}${_GRAY}mysql not installed${_RESET}"
-      fi
+        if hash mysql 2>/dev/null; then
+          echo "${_BOLD}${_YELLOW}mysql${_RESET}:      ${_BOLD}${_WHITE}$(mysql -V 2>&1 | cut -d' ' -f3- | cut -d',' -f1)${_RESET} $(which mysql)" | _anon
+        else
+          echo "${_BOLD}${_GRAY}mysql not installed${_RESET}"
+        fi
 
-      if hash psql 2>/dev/null; then
-        echo "${_BOLD}${_YELLOW}psql${_RESET}:       ${_BOLD}${_WHITE}$(psql --version | cut -d' ' -f3)${_RESET} $(which psql)" | _anon
-      else
-        echo "${_BOLD}${_GRAY}postgres not installed${_RESET}"
-      fi
+        if hash psql 2>/dev/null; then
+          echo "${_BOLD}${_YELLOW}psql${_RESET}:       ${_BOLD}${_WHITE}$(psql --version | cut -d' ' -f3)${_RESET} $(which psql)" | _anon
+        else
+          echo "${_BOLD}${_GRAY}postgres not installed${_RESET}"
+        fi
 
-      if hash sqlite3 2>/dev/null; then
-        echo "${_BOLD}${_YELLOW}sqlite3${_RESET}:    ${_BOLD}${_WHITE}$(sqlite3 --version 2>&1 | cut -d' ' -f1)${_RESET} $(which sqlite3)" | _anon
-      else
-        echo "${_BOLD}${_GRAY}sqlite3 not installed${_RESET}"
-      fi
-
+        if hash sqlite3 2>/dev/null; then
+          echo "${_BOLD}${_YELLOW}sqlite3${_RESET}:    ${_BOLD}${_WHITE}$(sqlite3 --version 2>&1 | cut -d' ' -f1)${_RESET} $(which sqlite3)" | _anon
+        else
+          echo "${_BOLD}${_GRAY}sqlite3 not installed${_RESET}"
+        fi
 
     fi
   else

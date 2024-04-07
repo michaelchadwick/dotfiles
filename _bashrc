@@ -33,22 +33,30 @@ if [ -f "$HOME"/.localrc ]; then source "$HOME"/.localrc; fi
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
-# asdf is the uber version control manager
-# but if it doesn't exist, check for others
-hash asdf 2>/dev/null || {
-  # nvm - Node version manager
-  if hash "$HOME"/.nvm 2>/dev/null; then
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-  fi
-
-  # rbenv - Ruby version manager
-  if hash rbenv 2>/dev/null; then
-    export PATH="$PATH:$HOME/.rbenv/bin"
-    eval "$(rbenv init -)"
-  fi
-}
-
 # homebrew
 eval $(/opt/homebrew/bin/brew shellenv)
+
+# mise-en-place is the NEW uber version control manager
+# buf if it doesn't exist, then...
+if hash $HOME/.local/bin/mise 2>/dev/null; then
+  eval "$(/Users/mchadwick/.local/bin/mise activate bash)"
+else
+  # asdf is the uber version control manager
+  # but if it doesn't exist, check for others
+  if hash /opt/homebrew/bin/asdf 2>/dev/null; then
+    . /opt/homebrew/opt/asdf/libexec/asdf.sh
+  else
+    # nvm - Node version manager
+    if hash "$HOME"/.nvm 2>/dev/null; then
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+      [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+    fi
+
+    # rbenv - Ruby version manager
+    if hash rbenv 2>/dev/null; then
+      export PATH="$PATH:$HOME/.rbenv/bin"
+      eval "$(rbenv init -)"
+    fi
+  fi
+fi
