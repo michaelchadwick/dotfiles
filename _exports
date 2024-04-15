@@ -27,7 +27,7 @@ export CRYSTAL_OPTS="--link-flags=-Wl,-ld_classic"
 # go
 export GOPATH="$CODE/go"
 export GOBIN="$GOPATH/bin"
-export GOROOT="/usr/local/opt/go/libexec"
+export GOROOT="/opt/homebrew/opt/go/libexec"
 
 # git
 export GIT_PS1_SHOWCOLORHINTS=1
