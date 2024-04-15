@@ -292,7 +292,7 @@ brew "llvm"
 # atlassian cli
 brew "ankitpokhrel/jira-cli/jira-cli"
 # docker-based local dev
-brew "drud/ddev/ddev"
+brew "ddev/ddev/ddev"
 # symfony cli
 brew "symfony-cli/tap/symfony-cli"
 
@@ -320,7 +320,8 @@ cask "db-browser-for-sqlite"
 # the font that minecraft uses
 cask "font-monocraft"
 # api testing
-cask "insomnia"
+# cask "insomnia"
+cask "insomnium" # open-source, non-login version
 # Spotlight metadata importer
 cask "mdimagesizemdimporter"
 # powershell on macos
