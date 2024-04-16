@@ -43,7 +43,9 @@ PS1_DIR="${_GREEN_FG}[\w]${_RESET}"
 PS1_GIT="${_BOLD}${_BRIGHTCYAN_FG}\$(__git_ps1)${_RESET}"
 PS1_DDEV="\$(_ddev_pst1)"
 PS1_RUBY="\$(_ruby_pst1)"
-PS1_USER="\[${_GREEN_FG}${_BOLD}\]\u\[${_YELLOW_FG}${_BOLD}\]@\[${_GREEN_FG}${_BOLD}\]\h\[${_RESET}\]"
+# PS1_HOST="\h"
+PS1_HOST="localhost"
+PS1_USER="\[${_GREEN_FG}${_BOLD}\]\u\[${_YELLOW_FG}${_BOLD}\]@\[${_GREEN_FG}${_BOLD}\]$PS1_HOST\[${_RESET}\]"
 PS1_DATE="\[${_YELLOW_FG}${_BOLD}\](\$(date +%T))\[${_RESET}\]"
 
 # [dir] [ddev] (git)
