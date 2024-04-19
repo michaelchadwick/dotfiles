@@ -322,3 +322,6 @@ docker-compose.override.yml
 
 # Todo
 TODO.md
+
+# mise-en-place
+.mise.toml
