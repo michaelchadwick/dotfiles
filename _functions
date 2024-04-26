@@ -587,18 +587,24 @@ function steep {
 
 # mov to gif
 function vid2gif() {
+  RUN_CMD=true
+
   if ! [ -x "$(command -v ffmpeg)" ]; then
-    echo 'Error: ffmpeg is not installed. please install with (brew install ffmpeg)' >&2
-    exit 1
+    echo 'Error: ffmpeg is not installed. Please install with (brew install ffmpeg)' >&2
+    RUN_CMD=false
   fi
 
   if ! [ -x "$(command -v gifsicle)" ]; then
-    echo 'Error: gifsicle is not installed. please install with (brew install gifsicle)' >&2
-    exit 1
+    echo 'Error: gifsicle is not installed. Please install with (brew install gifsicle)' >&2
+    RUN_CMD=false
   fi
 
-  ffmpeg -i "$1" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=8 > ~/Downloads/"$1".gif
+  if [ "$RUN_CMD" = true ]; then
+    ffmpeg -i "$1" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=8 > ~/Downloads/"$1".gif
+  fi
 }
+alias mp42gif=vid2gif
+alias mov2gif=vid2gif
 
 # wav to flac
 function wav2flac() {
