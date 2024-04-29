@@ -238,6 +238,12 @@ function about() {
       echo "${_BOLD}${_WHITE}| webdev tools                 |${_RESET}"
       echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
 
+        if hash ember 2>/dev/null; then
+          echo "${_BOLD}${_YELLOW}ember${_RESET}:      ${_BOLD}${_WHITE}$(ember -v | cut -d " " -f 2)${_RESET} $(which ember)" | _anon
+        else
+          echo "${_BOLD}${_GRAY}ember not installed${_RESET}"
+        fi
+
         if hash jekyll 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}jekyll${_RESET}:     ${_BOLD}${_WHITE}$(jekyll --version | cut -d " " -f 2)${_RESET} $(which jekyll)" | _anon
         else
