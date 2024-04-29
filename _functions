@@ -263,7 +263,7 @@ function about() {
         fi
 
         if hash rails 2>/dev/null; then
-          echo "${_BOLD}${_YELLOW}rails${_RESET}       ${_BOLD}${_WHITE}$(rails -v | cut -d' ' -f2)${_RESET} $(which rails)" | _anon
+          echo "${_BOLD}${_YELLOW}rails${_RESET}:      ${_BOLD}${_WHITE}$(rails -v | cut -d' ' -f2)${_RESET} $(which rails)" | _anon
         else
           echo "${_BOLD}${_GRAY}- rails not installed${_RESET}"
         fi
