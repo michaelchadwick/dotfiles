@@ -90,6 +90,12 @@ function about() {
           else
             echo "${_BOLD}${_GRAY}- nvm not installed${_RESET}"
           fi
+
+          if hash pnpm 2>/dev/null; then
+            echo "${_BOLD}${_YELLOW}- pnpm${_RESET}:     ${_BOLD}${_WHITE}$(pnpm --version)${_RESET} $(which pnpm)" | _anon
+          else
+            echo "${_BOLD}${_GRAY}- pnpm not installed${_RESET}"
+          fi
         else
           echo "${_BOLD}${_GRAY}node not installed${_RESET}"
         fi
