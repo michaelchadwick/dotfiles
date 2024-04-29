@@ -165,7 +165,7 @@ function about() {
         fi
 
         if hash composer 2>/dev/null; then
-          echo "${_BOLD}${_YELLOW}composer${_RESET}    ${_BOLD}${_WHITE}$(composer about | head -n 1 | cut -d' ' -f9)${_RESET} $(which composer)" | _anon
+          echo "${_BOLD}${_YELLOW}composer${_RESET}:   ${_BOLD}${_WHITE}$(composer about | head -n 1 | cut -d' ' -f9)${_RESET} $(which composer)" | _anon
         else
           echo "${_BOLD}${_GRAY}composer not installed${_RESET}"
         fi
