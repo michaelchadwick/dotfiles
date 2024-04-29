@@ -110,7 +110,7 @@ function about() {
         py1cmd2=$(type python 2>/dev/null)
 
         if [ "$py1cmd1" ] || [ "$py1cmd2" ]; then
-          echo "${_BOLD}${_YELLOW}python${_RESET}:     ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | cut -d' ' -f1)${_RESET}$(which python)" | _anon
+          echo "${_BOLD}${_YELLOW}python${_RESET}:     ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | cut -d' ' -f1)${_RESET} $(which python)" | _anon
         else
           echo "${_BOLD}${_GRAY}python not installed${_RESET}"
         fi
