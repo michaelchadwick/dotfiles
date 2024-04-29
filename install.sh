@@ -83,6 +83,10 @@ echo -e "${C_RESET}"
 if [ ! -d "$HOME"/.gitconfig.d ]; then
   mkdir "$HOME"/.gitconfig.d
 fi
+# grab git-completion.bash if nonexistent
+if [ ! -f "$HOME"/.git-completion.bash ]; then
+  wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+fi
 # grab git-prompt.sh if nonexistent
 if [ ! -f "$HOME"/.git-prompt.sh ]; then
   cd "$HOME" || exit
