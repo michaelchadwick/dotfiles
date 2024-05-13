@@ -5,6 +5,7 @@
 # misc
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export CLICOLOR=1
+export CODE="$HOME/Code"
 export COLORIZE=1
 export COMPOSE_HTTP_TIMEOUT=300 # docker-compose increase timeout
 export EDITOR=$TXTAPP
