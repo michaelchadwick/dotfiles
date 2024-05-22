@@ -104,17 +104,6 @@ if [ ! -f "$HOME"/.ssh/config ]; then
   ln -s "$PWD"/ssh/_config "$HOME"/.ssh/config
 fi
 
-## STARSHIP
-# make starship dir if nonexistent
-if [ -d .starship ]; then
-  if [ ! -d "$HOME"/.starship ]; then
-    mkdir -p "$HOME"/.starship
-  fi
-fi
-if [ ! -f "$HOME"/.starship/config.toml ]; then
-  ln -s "$PWD"/starship/_config.toml "$HOME"/.starship/config.toml
-fi
-
 ## VIM
 # make .vim directory if nonexisting
 # add custom color theme
