@@ -23,10 +23,17 @@ function skip_file() {
   echo -e "${C_FAILURE}Skipped $1: $2${C_RESET}"
 }
 
+echo -e "${C_SUCCESS}"
+echo "*****************************************************************"
+echo "BEGIN!"
+echo "*****************************************************************"
+echo -e "${C_RESET}"
+
 echo -e "${C_INFO}"
-echo "*****************************************************************"
-echo "Linking local '$HOME/.' files to custom _dotfiles..."
-echo "*****************************************************************"
+echo "*********************************"
+echo "Linking local '\$HOME/.'          "
+echo "files to custom _dotfiles...     "
+echo "*********************************"
 echo -e "${C_RESET}"
 
 # loop through template config and symlink to $HOME
@@ -73,9 +80,10 @@ for src_file in linting/_*; do
 done
 
 echo -e "${C_INFO}"
-echo "*****************************************************************"
-echo "Creating missing '$HOME' dirs for git, ssh, vim, etc."
-echo "*****************************************************************"
+echo "*********************************"
+echo "Creating missing '\$HOME' dirs   "
+echo "for git, ssh, vim, etc.          "
+echo "*********************************"
 echo -e "${C_RESET}"
 
 ## GIT
@@ -113,7 +121,7 @@ if [ ! -d "$HOME"/.vim ]; then
   wget https://raw.githubusercontent.com/sjl/badwolf/master/colors/badwolf.vim
 fi
 
-echo -e "${C_INFO}"
+echo -e "${C_SUCCESS}"
 echo "*****************************************************************"
 echo "Done!"
 echo "*****************************************************************"
