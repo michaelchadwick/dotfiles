@@ -13,7 +13,6 @@ export GEMEDITOR=$TXTAPP
 export HTTP_SERVICES="httpd\|vpnkit\|java\|nc\|node\|ng\|php\|ruby\|hugo\|docker\|com.docker\|com.docke"
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export PROMPT_COMMAND='printf "\e]0;bash\7"' # fix prompt post-ssh
-export STARSHIP_CONFIG=$HOME/.starship/config.toml
 export TXTAPP=vi
 
 # bash history
