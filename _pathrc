@@ -66,4 +66,7 @@ PATH=$PATH:/usr/local/opt/imagemagick@6/bin
 PATH=$PATH:/usr/local/MacGPG2/bin
 PATH=$PATH:/usr/local/munki
 
+# mise
+PATH=$PATH:$HOME/.local/share/mise/shims
+
 export PATH
