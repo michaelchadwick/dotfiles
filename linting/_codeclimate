@@ -17,9 +17,9 @@
       "enabled": true
     }
   },
-  "exclude_patterns": {
+  "exclude_patterns": [
     "dist/",
     "public/",
     "scripts/"
-  }
+  ]
 }
