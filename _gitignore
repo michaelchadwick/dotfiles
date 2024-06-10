@@ -311,6 +311,9 @@ xcuserdata/
 # environment variables
 .env
 
+# Github Secrets
+.secrets
+
 # Visual Studio Code
 .vscode
 
