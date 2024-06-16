@@ -36,7 +36,7 @@ echo "files to custom _dotfiles...     "
 echo "*********************************"
 echo -e "${C_RESET}"
 
-# loop through template config and symlink to $HOME
+# ./: $HOME/_*
 for src_file in _*; do
   src_path="$PWD/$src_file"
   dest_path="$HOME"/.${src_file:1}
@@ -57,11 +57,18 @@ for src_file in _*; do
   fi
 done
 
-## CONFIG - ~/.config
-for src_file in config/_*; do
-  f="$(basename -- "$src_file")"
-  src_path="$PWD/$src_file"
-  dest_path="$HOME"/.config/${f:1}
+## ./config - $HOME/.config/**/*
+for src_dir_file in _config/**/*; do
+  f="$(basename $src_dir_file)"
+  d="$(basename $(dirname $src_dir_file))"
+  src_path="$PWD/$src_dir_file"
+  dest_dir="$HOME/.config/$d"
+
+  if [ ! -e "$dest_dir" ]; then
+    mkdir -p "$dest_dir"
+  fi
+
+  dest_path="${dest_dir}/${f}"
 
   if [ ! -e "$dest_path" ]; then
     link_file "$src_path" "$dest_path"
@@ -79,8 +86,8 @@ for src_file in config/_*; do
   fi
 done
 
-## LINTING
-for src_file in linting/_*; do
+## ./_linting - $HOME/_*
+for src_file in _linting/_*; do
   f="$(basename -- "$src_file")"
   src_path="$PWD/$src_file"
   dest_path="$HOME"/.${f:1}.json

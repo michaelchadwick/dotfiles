@@ -2,6 +2,6 @@
 *_priv
 *_priv_*
 *_private
-shpinner
-ssh/*
+_ssh/*
+_work/*
 _localrc
