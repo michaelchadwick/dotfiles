@@ -69,4 +69,7 @@ PATH=$PATH:/usr/local/munki
 # mise
 PATH=$PATH:$HOME/.local/share/mise/shims
 
+# pnpm
+PATH=$PATH:$HOME/Library/pnpm
+
 export PATH
