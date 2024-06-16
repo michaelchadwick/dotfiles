@@ -57,6 +57,28 @@ for src_file in _*; do
   fi
 done
 
+## CONFIG - ~/.config
+for src_file in config/_*; do
+  f="$(basename -- "$src_file")"
+  src_path="$PWD/$src_file"
+  dest_path="$HOME"/.config/${f:1}
+
+  if [ ! -e "$dest_path" ]; then
+    link_file "$src_path" "$dest_path"
+  else
+    if [ "$1" == "-d" ]; then
+      if [ -h "$dest_path" ]; then
+        skip_file "$dest_path" $err_linked
+      else
+        backup_file "$dest_path"
+        link_file "$src_path" "$dest_path"
+      fi
+    else
+      skip_file "$dest_path" $err_exists
+    fi
+  fi
+done
+
 ## LINTING
 for src_file in linting/_*; do
   f="$(basename -- "$src_file")"
