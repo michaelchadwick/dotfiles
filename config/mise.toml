@@ -1,0 +1,9 @@
+[tools]
+# global tool versions go here
+# you can set these with `mise use -g`
+ruby = "3.2.2"
+python = "3.11"
+go = "1.22.4"
+node = "20.14.0"
+pnpm = "9.3.0"
+rust = "latest"
