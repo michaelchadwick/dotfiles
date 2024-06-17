@@ -1,0 +1,14 @@
+# Include /Users/mchadwick/.colima/ssh_config
+
+################################################
+# personal
+################################################
+host lish
+  HostName lish-fremont.linode.com
+  User mjchadwick
+Host neb
+  HostName neb.host
+  User mike
+Host rpi
+  Hostname retropie.local
+  User pi

@@ -58,7 +58,7 @@ for src_file in _*; do
 done
 
 ## ./config - $HOME/.config/**/*
-for src_dir_file in _config/**/*; do
+for src_dir_file in config/**/*; do
   f="$(basename $src_dir_file)"
   d="$(basename $(dirname $src_dir_file))"
   src_path="$PWD/$src_dir_file"
@@ -87,7 +87,7 @@ for src_dir_file in _config/**/*; do
 done
 
 ## ./_linting - $HOME/_*
-for src_file in _linting/_*; do
+for src_file in linting/_*; do
   f="$(basename -- "$src_file")"
   src_path="$PWD/$src_file"
   dest_path="$HOME"/.${f:1}.json
