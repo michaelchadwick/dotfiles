@@ -123,6 +123,11 @@ if hash gsed 2>/dev/null; then
   alias sed="gsed"
 fi
 
+# honkit: fork of gitbook
+if hash honkit 2>/dev/null; then
+  alias gitbook="honkit"
+fi
+
 # prettyping: prettier ping
 if hash prettyping 2>/dev/null; then
   alias ping="prettyping --nolegend"
