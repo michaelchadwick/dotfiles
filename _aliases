@@ -31,14 +31,6 @@ alias users-all="getent passwd | cut -d: -f1"
 # custom command aliases #
 ##########################
 
-# apache
-alias modscfga="cd /etc/apache2/mods-available"
-alias modscfge="cd /etc/apache2/mods-enabled"
-alias sites="cd /var/www"
-alias sitescfg="cd /etc/apache2/sites-enabled"
-alias sitescfga="cd /etc/apache2/sites-available"
-alias sitescfge="cd /etc/apache2/sites-enabled"
-
 # composer
 alias compi="composer install"
 alias compu="composer update"
@@ -51,8 +43,7 @@ alias dm="docker-machine"
 alias docker-ps="docker ps --format \"table {{.ID}}\t{{.Image}}\t{{.Status}}\""
 
 # git
-alias gitlog="git lg -20"
-alias sgit='git branch -a | grep'
+alias gitlog='git log --graph --pretty=format:'"'"'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"'"' --abbrev-commit'
 
 # package management
 alias gemup="gem update --system && gem update && gem cleanup"

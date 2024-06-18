@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+### .functions_extra - more complicated aliases for silly reasons
+
+# countdown: start a full-screen countdown
+function countdown() {
+  start=${1:60}
+  now=$(date +%s)
+  watch -tn1 echo "$((now-$(date +%s)+start))"
+}
+
+# color show in your terminal
+# source: https://twitter.com/climagic/status/817405740772184065
+function display_colors {
+  yes "$(seq 16 231)" | while read -r i;
+  do printf "\x1b[48;5;%im\n" "$i";
+  sleep .02;
+  done
+}
+
+# make it snow in your terminal
+# source: http://climagic.org/coolstuff/let-it-snow.html
+function display_snow {
+  export LINES COLUMNS;
+  clear;
+  while :;
+  do echo $LINES $COLUMNS $((RANDOM % COLUMNS));
+  sleep 0.1;
+  done|gawk '{a[$3]=0;for(x in a) {o=a[x];a[x]=a[x]+1;printf "\033[%s;%sH ",o,x; printf "\033[%s;%sH*\033[0;0H",a[x],x;}}'
+}
+
+# play rainymood music
+function rainymood {
+  FILE=$((RANDOM%4))
+  URL="https://rainymood.com/audio1110/${FILE}.ogg"
+  mpv "$URL" && rainymood
+}
+
+# roll a die
+function roll() {
+  if [ $# -ge 1 ]; then
+    echo $((RANDOM % 1 + 1))
+  else
+    echo $((RANDOM % 2))
+  fi
+}

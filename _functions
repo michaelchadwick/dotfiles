@@ -18,18 +18,6 @@ function _funclist {
   fi
 }
 
-function _anon() {
-  read -r str
-  pattern="\/Users\/$USER|\/home\/$USER"
-
-  if [[ $str =~ $pattern ]]; then
-    # -E argument is required for regex
-    echo "$str" | sed -E "s/$pattern/\$HOME/"
-  else
-    echo "$str"
-  fi
-}
-
 # ansicolors: display all fg and bg ansi color escape codes
 function ansicolors {
   for attr in $(seq 0 1); do
@@ -45,54 +33,6 @@ function ansicolors {
 # b64: base64 encode string
 function b64 {
   echo -n "$1" | openssl base64
-}
-
-# countdown: start a full-screen countdown
-function countdown() {
-  start=${1:60}
-  now=$(date +%s)
-  watch -tn1 echo "$((now-$(date +%s)+start))"
-}
-
-# df_low: email admin if disk free space is low
-function df_low() {
-  OS=$(uname)
-
-  if [ "$OS" = "Darwin" ]; then
-    ROOT="/System/Volumes/Data"
-  else
-    ROOT="/"
-  fi
-
-  CURRENT=$(df $ROOT | grep $ROOT | awk '{ print $5}' | sed 's/%//g')
-  THRESHOLD=90
-  USER=neb
-  DOMAIN=neb.host
-
-  if [ "$CURRENT" -gt "$THRESHOLD" ] ; then
-    msg="Root partition free space on $HOSTNAME is critically low. Used: $CURRENT%"
-    echo "$msg" | mail -s "Disk Space Alert for $HOSTNAME" $USER@$DOMAIN
-  fi
-}
-
-# color show in your terminal
-# source: https://twitter.com/climagic/status/817405740772184065
-function display_colors {
-  yes "$(seq 16 231)" | while read -r i;
-  do printf "\x1b[48;5;%im\n" "$i";
-  sleep .02;
-  done
-}
-
-# make it snow in your terminal
-# source: http://climagic.org/coolstuff/let-it-snow.html
-function display_snow {
-  export LINES COLUMNS;
-  clear;
-  while :;
-  do echo $LINES $COLUMNS $((RANDOM % COLUMNS));
-  sleep 0.1;
-  done|gawk '{a[$3]=0;for(x in a) {o=a[x];a[x]=a[x]+1;printf "\033[%s;%sH ",o,x; printf "\033[%s;%sH*\033[0;0H",a[x],x;}}'
 }
 
 # dummy: create dummy binary file
@@ -129,25 +69,6 @@ function get_rand_port {
       print i
     }
   '
-}
-
-function histleast {
-  if [ $# -eq 1 ]; then
-    count=$1
-  else
-    count=10
-  fi
-
-  history | awk '{CMD[$4]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | tail -n$count
-}
-function histmost {
-  if [ $# -eq 1 ]; then
-    count=$1
-  else
-    count=10
-  fi
-
-  history | awk '{CMD[$4]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n$count
 }
 
 # list http ports and procs
@@ -278,26 +199,10 @@ function myip() {
   fi
 }
 
-# play rainymood music
-function rainymood {
-  FILE=$((RANDOM%4))
-  URL="https://rainymood.com/audio1110/${FILE}.ogg"
-  mpv "$URL" && rainymood
-}
-
-# roll a die
-function roll() {
-  if [ $# -ge 1 ]; then
-    echo $((RANDOM % 1 + 1))
-  else
-    echo $((RANDOM % 2))
-  fi
-}
-
 # speedtest
 function speedtest() {
   if hash speedtest-cli 2>/dev/null; then
-    logfile="$HOME"/Documents/speedtest_log.txt
+    logfile="$HOME"/speedtest_log.txt
 
     echo "Checking internet speed and logging..."
     {
@@ -311,30 +216,6 @@ function speedtest() {
     echo "Done and logged to $logfile"
   else
     echo "speedtest-cli not installed; try brew install speedtest-cli"
-  fi
-}
-
-# homebrew updating
-function steep {
-  echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
-  echo "${_BOLD}${_WHITE}| START: Homebrew update       |${_RESET}"
-  echo "${_BOLD}${_WHITE}| brew update                  |${_RESET}"
-  echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
-
-  if brew update; then
-    echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
-    echo "${_BOLD}${_WHITE}| START: Homebrew upgrade      |${_RESET}"
-    echo "${_BOLD}${_WHITE}| brew upgrade                 |${_RESET}"
-    echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
-    brew upgrade
-    echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
-    echo "${_BOLD}${_WHITE}| START: Homebrew upgrade cask |${_RESET}"
-    echo "${_BOLD}${_WHITE}| brew update --cask           |${_RESET}"
-    echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
-    brew upgrade --cask
-  else
-    echo "${_BOLD}${_WHITE}-------------------------------${_RESET}"
-    echo "${_BOLD}${_RED}could not upgrade due to update error${_RESET}"
   fi
 }
 
@@ -395,8 +276,9 @@ function mediaconv() {
 
 ##############################################################
 
-## load about() function
+## load additional functions broken out into own files
 if [ -f "$HOME"/.functions_about ]; then source "$HOME"/.functions_about; fi
+if [ -f "$HOME"/.functions_extras ]; then source "$HOME"/.functions_extras; fi
 
 ## load private, non-tracked, functions
 # shellcheck source=/dev/null
