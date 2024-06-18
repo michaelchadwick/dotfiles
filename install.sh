@@ -90,7 +90,7 @@ done
 for src_file in linting/_*; do
   f="$(basename -- "$src_file")"
   src_path="$PWD/$src_file"
-  dest_path="$HOME"/.${f:1}.json
+  dest_path="$HOME"/.${f:1}
 
   if [ ! -e "$dest_path" ]; then
     link_file "$src_path" "$dest_path"
