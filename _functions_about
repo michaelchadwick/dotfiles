@@ -9,6 +9,18 @@ _GRAY="$(tty -s && tput setaf 8)"
 _BOLD="$(tty -s && tput bold)"
 _RESET="$(tty -s && tput sgr0)"
 
+function _anon() {
+  read -r str
+  pattern="\/Users\/$USER|\/home\/$USER"
+
+  if [[ $str =~ $pattern ]]; then
+    # -E argument is required for regex
+    echo "$str" | sed -E "s/$pattern/\$HOME/"
+  else
+    echo "$str"
+  fi
+}
+
 function about() {
   # OS info
   if hash neofetch 2>/dev/null; then
