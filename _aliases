@@ -45,9 +45,8 @@ alias docker-ps="docker ps --format \"table {{.ID}}\t{{.Image}}\t{{.Status}}\""
 # git
 alias gitlog='git log --graph --pretty=format:'"'"'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"'"' --abbrev-commit'
 
-# package management
-alias gemup="gem update --system && gem update && gem cleanup"
-alias gemups="gem update --system"
+# homebrew
+alias steep="brew update && brew upgrade && brew cleanup"
 
 # hugo static site generator
 alias hugos="hugo serve --disableFastRender"
@@ -62,6 +61,8 @@ alias npm-global-audit="npx npm-global-audit --auditor npm"
 
 # ruby
 alias be="bundle exec"
+alias gemup="gem update --system && gem update && gem cleanup"
+alias gemups="gem update --system"
 
 # sass - dart > ruby
 # alias sass="/usr/local/bin/sass"
