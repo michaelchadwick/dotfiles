@@ -44,6 +44,7 @@ alias docker-ps="docker ps --format \"table {{.ID}}\t{{.Image}}\t{{.Status}}\""
 
 # git
 alias gitlog='git log --graph --pretty=format:'"'"'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"'"' --abbrev-commit'
+alias gitpum="git pull upstream master"
 
 # homebrew
 alias steep="brew update && brew upgrade && brew cleanup"
