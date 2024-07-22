@@ -167,7 +167,8 @@ function lpxnotes_dump() {
         | awk '{gsub(/\\/,""); print}' \
         | awk '{gsub(/\}/,""); print}' \
         | awk '{gsub(/^[\s]+$/,""); print}' \
-        | awk '{gsub(/qSxT/,""); print}'
+        | awk '{gsub(/qSxT/,""); print}' \
+        | awk '{gsub(/92/,""); print}'
       )
 
       echo "$notes"
