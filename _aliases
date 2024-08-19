@@ -19,7 +19,6 @@ alias rebash='source $HOME/.bashrc'
 alias redns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias renginx="sudo systemctl restart nginx"
 alias repostfix="sudo launchctl stop org.postfix.master; sudo launchctl start org.postfix.master"
-alias svcs="sudo systemctl list-units --type=service"
 alias untar="tar -xvf"
 
 # unix system
@@ -126,11 +125,6 @@ fi
 # gsed: GNU sed
 if hash gsed 2>/dev/null; then
   alias sed="gsed"
-fi
-
-# honkit: fork of gitbook
-if hash honkit 2>/dev/null; then
-  alias gitbook="honkit"
 fi
 
 # prettyping: prettier ping
