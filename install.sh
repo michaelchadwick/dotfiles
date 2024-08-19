@@ -59,8 +59,8 @@ done
 
 ## ./config - $HOME/.config/**/*
 for src_dir_file in config/**/*; do
-  f="$(basename $src_dir_file)"
-  d="$(basename $(dirname $src_dir_file))"
+  f="$(basename "$src_dir_file")"
+  d="$(basename "$(dirname "$src_dir_file")")"
   src_path="$PWD/$src_dir_file"
   dest_dir="$HOME/.config/$d"
 
