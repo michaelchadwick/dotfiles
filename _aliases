@@ -57,6 +57,9 @@ alias hugos="hugo serve --disableFastRender"
 alias npm-audit-html="npm audit --json | npm-audit-html; open npm-audit.html"
 alias npm-global-audit="npx npm-global-audit --auditor npm"
 
+# npkill
+alias npkillall="npx npkill -D -x -y -nu"
+
 # python (make python3 default)
 # alias python=/usr/local/bin/python3
 
