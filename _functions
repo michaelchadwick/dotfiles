@@ -278,7 +278,9 @@ function mediaconv() {
 ##############################################################
 
 ## load additional functions broken out into own files
+# shellcheck disable=SC1091
 if [ -f "$HOME"/.functions_about ]; then source "$HOME"/.functions_about; fi
+# shellcheck disable=SC1091
 if [ -f "$HOME"/.functions_extras ]; then source "$HOME"/.functions_extras; fi
 
 ## load private, non-tracked, functions

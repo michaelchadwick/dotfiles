@@ -34,11 +34,11 @@ if [ -f "$HOME"/.localrc ]; then source "$HOME"/.localrc; fi
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # homebrew
-eval $(/opt/homebrew/bin/brew shellenv)
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # mise-en-place is the NEW uber version control manager
 # buf if it doesn't exist, then...
-if hash $HOME/.local/bin/mise 2>/dev/null; then
+if hash "$HOME"/.local/bin/mise 2>/dev/null; then
   eval "$(/Users/mchadwick/.local/bin/mise activate bash)"
 else
   # asdf is the uber version control manager
