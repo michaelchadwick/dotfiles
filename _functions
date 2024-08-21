@@ -89,9 +89,15 @@ function httprocss {
 
 # simple http servers for local directory in various flavors
 ## php
-function httphp {
+function httphp() {
   rport=$(get_rand_port);
-  open http://localhost:"$rport";
+
+  if [ $# -eq 1 ]; then
+    open http://localhost:"$rport" "$1";
+  else
+    open http://localhost:"$rport";
+  fi
+
   php -S 127.0.0.1:"$rport";
 }
 ## python 2.x
