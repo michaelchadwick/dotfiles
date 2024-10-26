@@ -43,6 +43,7 @@ alias docker-ps="docker ps --format \"table {{.ID}}\t{{.Image}}\t{{.Status}}\""
 
 # git
 alias gitlog='git log --graph --pretty=format:'"'"'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"'"' --abbrev-commit'
+alias gitpom="git pull origin master"
 alias gitpum="git pull upstream master"
 
 # homebrew
