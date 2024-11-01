@@ -1,9 +1,4 @@
-# Include /Users/mchadwick/.colima/ssh_config
-
-################################################
-# personal
-################################################
-host lish
+Host lish
   HostName lish-fremont.linode.com
   User mjchadwick
 Host neb
