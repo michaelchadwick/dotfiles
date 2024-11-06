@@ -1,5 +1,5 @@
 [tools]
-ruby = "3.2.2"
+ruby = "3"
 python = "2"
 go = "latest"
 node = "20.12.2"
