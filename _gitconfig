@@ -79,3 +79,5 @@
 	email = michael.chadwick@gmail.com
 [init]
 	defaultBranch = main
+[github]
+	user = michaelchadwick
