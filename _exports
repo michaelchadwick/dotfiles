@@ -2,8 +2,11 @@
 ### .exports - public global env vars
 # shellcheck source=/dev/null
 
+export TXTAPP=vi
+
 # misc
 export BASH_SILENCE_DEPRECATION_WARNING=1
+export BUNDLER_EDITOR=$TXTAPP
 export CLICOLOR=1
 export CODE="$HOME/Code"
 export COLORIZE=1
@@ -13,7 +16,6 @@ export GEMEDITOR=$TXTAPP
 export HTTP_SERVICES="httpd\|vpnkit\|java\|nc\|node\|ng\|php\|ruby\|hugo\|docker\|com.docker\|com.docke"
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export PROMPT_COMMAND='printf "\e]0;bash\7"' # fix prompt post-ssh
-export TXTAPP=vi
 
 # bash history
 export HISTCONTROL=ignoreboth
