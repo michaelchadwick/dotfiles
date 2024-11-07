@@ -46,9 +46,6 @@ alias gitlog='git log --graph --pretty=format:'"'"'%Cred%h%Creset -%C(yellow)%d%
 alias gitpom="git pull origin master"
 alias gitpum="git pull upstream master"
 
-# homebrew
-alias steep="brew update && brew upgrade && brew cleanup"
-
 # hugo static site generator
 alias hugos="hugo serve --disableFastRender"
 

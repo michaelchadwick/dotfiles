@@ -281,6 +281,11 @@ function mediaconv() {
   for i in *."$1"; do ffmpeg -i "$i" "${i%.*}.$2"; done
 }
 
+function whoruns() {
+  # shellcheck disable=SC2009
+  ps -oe user,comm | grep "$1"
+}
+
 ##############################################################
 
 ## load additional functions broken out into own files
