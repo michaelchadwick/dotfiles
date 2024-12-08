@@ -1,2 +1,11 @@
 Style/Documentation:
   Enabled: false
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Naming/MethodParameterName:
+  Enabled: false
