@@ -64,20 +64,14 @@
   required = true
 [status]
   submodulesummary = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [commit]
-	template = /Users/mike/.stCommitMsg
+  template = /Users/mike/.stCommitMsg
 [icdiff]
-	options = --highlight --line-numbers
+  options = --highlight --line-numbers
 [user]
-	name = Michael Chadwick
-	email = michael.chadwick@gmail.com
+  name = Michael Chadwick
+  email = michael.chadwick@gmail.com
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [github]
-	user = michaelchadwick
+  user = michaelchadwick
