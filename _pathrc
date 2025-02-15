@@ -74,6 +74,6 @@ PATH=$PATH:$HOME/.local/share/mise/shims
 PATH=$PATH:$HOME/Library/pnpm
 
 # qlty
-PATH=$PATH:$HOME/.qlty
+PATH=$PATH:$HOME/.qlty/bin
 
 export PATH
