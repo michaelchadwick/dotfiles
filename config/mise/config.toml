@@ -2,8 +2,8 @@
 ruby = "3.3.6"
 python = "2"
 go = "latest"
-node = "20.18.2"
-pnpm = "10.2.1"
+node = "22.14.0"
+pnpm = "10.5.0"
 rust = "latest"
 
 [settings]
