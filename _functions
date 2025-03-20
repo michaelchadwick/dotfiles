@@ -254,7 +254,7 @@ function wav2flac() {
     exit 1
   fi
 
-  for i in *.wav; do ffmpeg -i "$i" "${i%.*}.flac"; done
+  for i in *.wav; do ffmpeg -i "$i" -af aformat=s16:44100 "${i%.*}.flac"; done
 }
 
 # wav to mp3
