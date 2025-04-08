@@ -3,7 +3,7 @@ ruby = "3.3.6"
 python = "2"
 go = "latest"
 node = "22.14.0"
-pnpm = "10.6"
+pnpm = "10.7"
 rust = "latest"
 
 [settings]
