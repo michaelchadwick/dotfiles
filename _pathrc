@@ -7,10 +7,12 @@ PATH=$HOME/bin
 # my scripts
 if [ -d "$HOME"/.scripts ]; then
   PATH=$PATH:$HOME/.scripts
+
+  if [ -d "$HOME"/.scripts/_others ]; then
+    PATH=$PATH:$HOME/.scripts/_others
+  fi
 fi
-if [ -d "$HOME"/.scripts/_others ]; then
-  PATH=$PATH:$HOME/.scripts/_others
-fi
+
 if [ -d "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Code/shell" ]; then
   # shellcheck disable=SC2147
   PATH=$PATH:"$HOME/Library/Mobile Documents/com~apple~CloudDocs/Code/shell"
@@ -20,8 +22,8 @@ fi
 PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 
 # git/heroku/mysql
-PATH=$PATH:/usr/local/git/bin
-PATH=$PATH:/usr/local/heroku/bin
+# PATH=$PATH:/usr/local/git/bin
+# PATH=$PATH:/usr/local/heroku/bin
 # PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:/opt/homebrew/opt/mysql/bin
 
@@ -36,7 +38,7 @@ PATH=$PATH:.bundle/bin
 PATH=$PATH:$HOME/.rbenv/shims
 
 # cakephp
-PATH=$PATH:/usr/lib/cake/console
+# PATH=$PATH:/usr/lib/cake/console
 
 # go
 PATH=$PATH:$GOBIN
@@ -46,15 +48,15 @@ PATH=$PATH:$GOROOT
 # PATH=$PATH:$HOME/.cargo/bin
 
 # python
-PATH=$PATH:$HOME/Library/Python/2.7/bin
-PATH=$PATH:$HOME/Library/Python/3.7/bin
+# PATH=$PATH:$HOME/Library/Python/2.7/bin
+# PATH=$PATH:$HOME/Library/Python/3.7/bin
 
 # java
 PATH=$PATH:$HOME/.jenv/bin
 
 # php
-PATH=$PATH:/usr/local/opt/php@7.4/bin
-PATH=$PATH:/usr/local/opt/php@7.4/sbin
+# PATH=$PATH:/usr/local/opt/php@7.4/bin
+# PATH=$PATH:/usr/local/opt/php@7.4/sbin
 
 # xcode
 PATH=$PATH:/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin
@@ -64,8 +66,8 @@ PATH=$PATH:/opt/X11/bin
 PATH=$PATH:/usr/local/opt/imagemagick@6/bin
 
 # mac stuff
-PATH=$PATH:/usr/local/MacGPG2/bin
-PATH=$PATH:/usr/local/munki
+# PATH=$PATH:/usr/local/MacGPG2/bin
+# PATH=$PATH:/usr/local/munki
 
 # mise
 PATH=$PATH:$HOME/.local/share/mise/shims
