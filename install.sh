@@ -87,26 +87,26 @@ for src_dir_file in config/**/*; do
 done
 
 ## ./_linting - $HOME/_*
-for src_file in linting/_*; do
-  f="$(basename -- "$src_file")"
-  src_path="$PWD/$src_file"
-  dest_path="$HOME"/.${f:1}
+# for src_file in linting/_*; do
+#   f="$(basename -- "$src_file")"
+#   src_path="$PWD/$src_file"
+#   dest_path="$HOME"/.${f:1}
 
-  if [ ! -e "$dest_path" ]; then
-    link_file "$src_path" "$dest_path"
-  else
-    if [ "$1" == "-d" ]; then
-      if [ -h "$dest_path" ]; then
-        skip_file "$dest_path" $err_linked
-      else
-        backup_file "$dest_path"
-        link_file "$src_path" "$dest_path"
-      fi
-    else
-      skip_file "$dest_path" $err_exists
-    fi
-  fi
-done
+#   if [ ! -e "$dest_path" ]; then
+#     link_file "$src_path" "$dest_path"
+#   else
+#     if [ "$1" == "-d" ]; then
+#       if [ -h "$dest_path" ]; then
+#         skip_file "$dest_path" $err_linked
+#       else
+#         backup_file "$dest_path"
+#         link_file "$src_path" "$dest_path"
+#       fi
+#     else
+#       skip_file "$dest_path" $err_exists
+#     fi
+#   fi
+# done
 
 echo -e "${C_INFO}"
 echo "*********************************"
