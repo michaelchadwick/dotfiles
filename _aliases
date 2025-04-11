@@ -27,6 +27,7 @@ alias rebash='source $HOME/.bashrc'
 alias redns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias remasto="sudo systemctl restart mastodon-sidekiq.service; sudo systemctl restart mastodon-streaming.service; sudo systemctl restart mastodon-web.service"
 alias renginx="sudo systemctl restart nginx"
+alias repnpm="npx npkill -D -x -y -nu; rm pnpm-lock.yaml; pnpm install"
 alias repostfix="sudo launchctl stop org.postfix.master; sudo launchctl start org.postfix.master"
 
 ##########################
