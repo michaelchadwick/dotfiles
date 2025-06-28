@@ -7,6 +7,7 @@ pnpm = "10.10.0"
 rust = "latest"
 
 [settings]
+idiomatic_version_file_enable_tools = ["node"]
 # plugins can read the versions files used by other version managers (if enabled by the plugin)
 # for example, .nvmrc in the case of node's nvm
 #legacy_version_file = true                     # enabled by default (unlike asdf)
