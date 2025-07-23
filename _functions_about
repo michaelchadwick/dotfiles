@@ -298,6 +298,12 @@ function about() {
           echo "${_BOLD}${_GRAY}sqlite3 not installed${_RESET}"
         fi
 
+        if hash redis-server 2>/dev/null; then
+          echo "${_BOLD}${_YELLOW}redis${_RESET}:      ${_BOLD}${_WHITE}$(redis-server --version 2>&1 | cut -d' ' -f3 | cut -d'=' -f2)${_RESET} $(which redis-server)" | _anon
+        else
+          echo "${_BOLD}${_GRAY}redis not installed${_RESET}"
+        fi
+
     fi
   else
     echo "note: use 'about -f' for full system and application information"
