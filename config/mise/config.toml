@@ -2,7 +2,7 @@
 ruby = "3.3.6"
 python = "2"
 go = "latest"
-node = "20"
+node = "22"
 pnpm = "10.10.0"
 rust = "latest"
 
