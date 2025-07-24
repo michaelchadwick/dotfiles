@@ -25,6 +25,7 @@ PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 # PATH=$PATH:/usr/local/git/bin
 # PATH=$PATH:/usr/local/heroku/bin
 # PATH=$PATH:/usr/local/mysql/bin
+PATH=$PATH:/opt/homebrew/bin
 PATH=$PATH:/opt/homebrew/opt/mysql/bin
 
 # composer
