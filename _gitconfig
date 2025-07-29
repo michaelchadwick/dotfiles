@@ -1,41 +1,11 @@
-[include]
-  # pull machine-specific info I want to use on the machine
-  path = .gitconfig.d/user.txt
-[color]
-  interactive = auto
-  ui = auto
-  branch = auto
-[color "diff"]
-  added = green bold
-  changed = yellow bold
-  modified = yellow bold
-  untracked = red bold
-[color "status"]
-  added = green bold
-  changed = yellow bold
-  modified = yellow bold
-  untracked = red bold
-[core]
-  editor = vim
-  excludesfile = ~/.gitignore
-  autocrlf = input
-  safecrlf = false
-  fileMode = false
-  pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
   # general
-  aa = add --all
-  st = status
+  br = branch
   ci = commit
   co = checkout
   cp = cherry-pick
   ls = ls-tree -r HEAD --name-only
-  pushall = push --recurse-submodules=on-demand
-  subup = submodule update
-
-  # branching
-  br = branch
-  bnew = checkout -b
+  st = status
 
   # diff
   diffs = diff --staged
@@ -50,8 +20,29 @@
   logpp = log --oneline -25
   logppp = log --oneline -50
   tree = log --color --graph --abbrev-commit --oneline -n 15
-[push]
-  default = matching
+[color]
+  interactive = auto
+  ui = auto
+  branch = auto
+[color "diff"]
+  added = green bold
+  changed = yellow bold
+  modified = yellow bold
+  untracked = red bold
+[color "status"]
+  added = green bold
+  changed = yellow bold
+  modified = yellow bold
+  untracked = red bold
+[commit]
+  template = /Users/mike/.stCommitMsg
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore
+  autocrlf = input
+  safecrlf = false
+  fileMode = false
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [diff]
   tool = kdiff3
 [filter "hawser"]
@@ -63,16 +54,19 @@
   required = true
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
-[status]
-  submodulesummary = true
-[commit]
-  template = /Users/mike/.stCommitMsg
+[github]
+  user = michaelchadwick
 [icdiff]
   options = --highlight --line-numbers
+[include]
+  # pull machine-specific info I want to use on the machine
+  path = .gitconfig.d/user.txt
+[init]
+  defaultBranch = main
+[push]
+  default = matching
+[status]
+  submodulesummary = true
 [user]
   name = Michael Chadwick
   email = michael.chadwick@gmail.com
-[init]
-  defaultBranch = main
-[github]
-  user = michaelchadwick
