@@ -41,12 +41,13 @@
 [commit]
   template = /Users/mike/.stCommitMsg
 [core]
+  autocrlf = input
   editor = vim
   excludesfile = ~/.gitignore
-  autocrlf = input
-  safecrlf = false
   fileMode = false
   pager = diff-so-fancy | less --tabs=4 -RFX
+  safecrlf = false
+  whitespace = indent-with-non-tab,space-before-tab,space-in-empty-line,trailing-space
 [diff]
   tool = kdiff3
 [filter "hawser"]
