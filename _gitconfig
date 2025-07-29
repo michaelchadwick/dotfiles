@@ -20,6 +20,10 @@
   logpp = log --oneline -25
   logppp = log --oneline -50
   tree = log --color --graph --abbrev-commit --oneline -n 15
+[branch]
+  sort = -committerdate
+[column]
+  ui = auto
 [color]
   interactive = auto
   ui = auto
