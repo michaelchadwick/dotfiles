@@ -5,7 +5,7 @@
   co = checkout
   cp = cherry-pick
   ls = ls-tree -r HEAD --name-only
-  st = status
+  st = status --short
 
   # diff
   diffs = diff --staged
@@ -70,6 +70,7 @@
 [push]
   default = matching
 [status]
+  branch = true
   submodulesummary = true
 [user]
   name = Michael Chadwick
