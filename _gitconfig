@@ -61,6 +61,8 @@
   smudge = git-lfs smudge -- %f
 [github]
   user = michaelchadwick
+[help]
+  autocorrect = prompt
 [icdiff]
   options = --highlight --line-numbers
 [include]
