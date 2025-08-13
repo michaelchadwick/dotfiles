@@ -3,6 +3,9 @@
 
 if [ -f "$HOME"/.bashrc ]; then source "$HOME"/.bashrc; fi
 
+# docker bash completion
+[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+
 # iterm2
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
