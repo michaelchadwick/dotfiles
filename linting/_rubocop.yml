@@ -3,6 +3,8 @@ Layout/LineLength:
 
 Metrics/AbcSize:
   Enabled: false
+Metrics/BlockLength:
+  Max: 50
 Metrics/CyclomaticComplexity:
   Enabled: false
 Metrics/MethodLength:
