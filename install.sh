@@ -115,6 +115,15 @@ echo "for git, ssh, vim, etc.          "
 echo "*********************************"
 echo -e "${C_RESET}"
 
+## DEFOLD - game engine custom styling
+## ./defold - $HOME/.defold/*
+if [ ! -d "$HOME"/.defold ]; then
+  mkdir -p "$HOME"/.defold
+fi
+if [ ! -f "$HOME"/.defold/custom.css ]; then
+  ln -s "$PWD"/.defold/_custom.css "$HOME"/.defold/custom.css
+fi
+
 ## GIT
 # make .gitconfig.d dir if nonexistent
 if [ ! -d "$HOME"/.gitconfig.d ]; then

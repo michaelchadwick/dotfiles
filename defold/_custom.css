@@ -1,0 +1,7 @@
+* {
+  -df-background-darker: derive(#0a0a42, -10%);
+  -df-background-dark: derive(#0a0a42, -5%);
+  -df-background: #0a0a42;
+  -df-background-light: derive(#0a0a42, 10%);
+  -df-background-lighter: derive(#0a0a42, 20%);
+}
