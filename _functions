@@ -182,6 +182,22 @@ function lpxnotes_dump() {
   fi
 }
 
+## love2d - make .love file from source directory for macOS
+function makelovefile() {
+  if [ "$#" -eq 0 ]; then
+    DEST=$(basename "$(pwd)").love
+    SRC="."
+  elif [ "$#" -eq 1 ]; then
+    DEST=$1
+    SRC="."
+  elif [ "$#" -ge 2 ]; then
+    DEST=$1
+    SRC=$2
+  fi
+
+  zip -r "$DEST" "$SRC" -x "*.git*" -x "*.DS_Store" -x "*.md"
+}
+
 # display public IP using cloudflare/google
 # myip 4 -> IPv4, myip 6 -> IPv6, myip -> IPv4 and IPv6
 function myip() {
