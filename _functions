@@ -263,6 +263,16 @@ function vid2gif() {
 alias mp42gif=vid2gif
 alias mov2gif=vid2gif
 
+# mp3 to ogg
+function mp32ogg() {
+  if ! [ -x "$(command -v ffmpeg)" ]; then
+    echo 'Error: ffmpeg is not installed. please install with (brew install ffmpeg)' >&2
+    exit 1
+  fi
+
+  for i in *.mp3; do ffmpeg -i "$i" "${i%.*}.ogg"; done
+}
+
 # wav to flac
 function wav2flac() {
   if ! [ -x "$(command -v ffmpeg)" ]; then
