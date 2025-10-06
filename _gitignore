@@ -330,3 +330,6 @@ TODO.md
 # mise-en-place
 .mise.toml
 mise.toml
+
+# JetBrains
+.idea
