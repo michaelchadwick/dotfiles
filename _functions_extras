@@ -28,18 +28,11 @@ function display_snow {
   done|gawk '{a[$3]=0;for(x in a) {o=a[x];a[x]=a[x]+1;printf "\033[%s;%sH ",o,x; printf "\033[%s;%sH*\033[0;0H",a[x],x;}}'
 }
 
-# play rainymood music
-function rainymood {
-  FILE=$((RANDOM%4))
-  URL="https://rainymood.com/audio1110/${FILE}.ogg"
-  mpv "$URL" && rainymood
-}
-
-# roll a die
+# roll a die (d6 default)
 function roll() {
   if [ $# -ge 1 ]; then
-    echo $((RANDOM % 1 + 1))
+    echo $((RANDOM % $1 + 1))
   else
-    echo $((RANDOM % 2))
+    echo $((RANDOM % 6 + 1))
   fi
 }
