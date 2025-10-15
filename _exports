@@ -20,7 +20,7 @@ export PROMPT_COMMAND='printf "\e]0;bash\7"' # fix prompt post-ssh
 # bash history
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=2000
-export HISTSIZE=1000
+export HISTSIZE=1001
 export HISTTIMEFORMAT='%F %T %t'
 
 # crystal
