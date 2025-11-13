@@ -240,10 +240,22 @@ function about() {
       echo "${_BOLD}${_WHITE}| webdev tools                 |${_RESET}"
       echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
 
+        if hash ddev 2>/dev/null; then
+          echo "${_BOLD}${_YELLOW}ddev${_RESET}:       ${_BOLD}${_WHITE}$(ddev -v | cut -d " " -f 3)${_RESET} $(which ddev)" | _anon
+        else
+          echo "${_BOLD}${_GRAY}ddev not installed${_RESET}"
+        fi
+
         if hash ember 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}ember${_RESET}:      ${_BOLD}${_WHITE}$(ember -v | cut -d " " -f 2)${_RESET} $(which ember)" | _anon
         else
           echo "${_BOLD}${_GRAY}ember not installed${_RESET}"
+        fi
+
+        if hash fin 2>/dev/null; then
+          echo "${_BOLD}${_YELLOW}docksal${_RESET}:    ${_BOLD}${_WHITE}$(fin -v | cut -d " " -f 2)${_RESET} $(which fin)" | _anon
+        else
+          echo "${_BOLD}${_GRAY}docksal not installed${_RESET}"
         fi
 
         if hash jekyll 2>/dev/null; then
