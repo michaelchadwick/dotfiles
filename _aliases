@@ -97,6 +97,7 @@ alias ytdla="yt-dlp --extract-audio --audio-format mp3 --extractor-args 'youtube
 #####################
 
 # bat: better cat
+# https://github.com/sharkdp/bat
 if hash bat 2>/dev/null; then
   # prettybat: better bat
   if hash prettybat 2>/dev/null; then
@@ -106,7 +107,8 @@ if hash bat 2>/dev/null; then
   fi
 fi
 
-# duf: better du
+# duf: better df
+# https://github.com/muesli/duf
 if hash duf 2>/dev/null; then
   # ncdu: better duf
   if hash ncdu 2>/dev/null; then
@@ -117,6 +119,7 @@ if hash duf 2>/dev/null; then
 fi
 
 # fd: better find
+# https://github.com/sharkdp/fd
 if hash fd 2>/dev/null; then
   alias find="fd"
 fi
@@ -132,6 +135,7 @@ if hash gsed 2>/dev/null; then
 fi
 
 # prettyping: prettier ping
+# https://github.com/denilsonsa/prettyping
 if hash prettyping 2>/dev/null; then
   alias ping="prettyping --nolegend"
 fi
