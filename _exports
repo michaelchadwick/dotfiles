@@ -24,7 +24,7 @@ export HISTSIZE=1001
 export HISTTIMEFORMAT='%F %T %t'
 
 # crystal
-export CRYSTAL_OPTS="--link-flags=-Wl,-ld_classic"
+export CRYSTAL_OPTS="--link-flags=-Wl"
 
 # go
 export GOPATH="$CODE/go"
