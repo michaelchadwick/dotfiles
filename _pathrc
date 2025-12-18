@@ -2,81 +2,81 @@
 ### .pathrc - custom command path
 
 # user home binaries
-PATH=$HOME/bin
+PATH=${HOME}/bin
 
 # my scripts
-if [ -d "$HOME"/.scripts ]; then
-  PATH=$PATH:$HOME/.scripts
+if [[ -d "${HOME}"/.scripts ]]; then
+  PATH=${PATH}:${HOME}/.scripts
 
-  if [ -d "$HOME"/.scripts/_others ]; then
-    PATH=$PATH:$HOME/.scripts/_others
+  if [[ -d "${HOME}"/.scripts/_others ]]; then
+    PATH=${PATH}:${HOME}/.scripts/_others
   fi
 fi
 
-if [ -d "$HOME/Library/Mobile Documents/com~apple~CloudDocs/Code/shell" ]; then
+if [[ -d "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Code/shell" ]]; then
   # shellcheck disable=SC2147
-  PATH=$PATH:"$HOME/Library/Mobile Documents/com~apple~CloudDocs/Code/shell"
+  PATH=${PATH}:"${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Code/shell"
 fi
 
 # basic unix-y paths
-PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+PATH=${PATH}:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 
 # git/heroku/mysql
-# PATH=$PATH:/usr/local/git/bin
-# PATH=$PATH:/usr/local/heroku/bin
-# PATH=$PATH:/usr/local/mysql/bin
-PATH=$PATH:/opt/homebrew/bin
-PATH=$PATH:/opt/homebrew/opt/mysql/bin
+# PATH=${PATH}:/usr/local/git/bin
+# PATH=${PATH}:/usr/local/heroku/bin
+# PATH=${PATH}:/usr/local/mysql/bin
+PATH=${PATH}:/opt/homebrew/bin
+PATH=${PATH}:/opt/homebrew/opt/mysql/bin
 
 # composer
-PATH=$PATH:$HOME/.composer/vendor/bin
+PATH=${PATH}:${HOME}/.composer/vendor/bin
 
 # npm/yarn stuff
-PATH=$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin
+PATH=${PATH}:${HOME}/.yarn/bin:${HOME}/.config/yarn/global/node_modules/.bin
 
 # ruby
-PATH=$PATH:.bundle/bin
-PATH=$PATH:$HOME/.rbenv/shims
+PATH=${PATH}:.bundle/bin
+PATH=${PATH}:${HOME}/.rbenv/shims
 
 # cakephp
-# PATH=$PATH:/usr/lib/cake/console
+# PATH=${PATH}:/usr/lib/cake/console
 
 # go
-PATH=$PATH:$GOBIN
-PATH=$PATH:$GOROOT
+PATH=${PATH}:${GOBIN:?}
+PATH=${PATH}:${GOROOT:?}
 
 # rust
-# PATH=$PATH:$HOME/.cargo/bin
+# PATH=${PATH}:${HOME}/.cargo/bin
 
 # python
-# PATH=$PATH:$HOME/Library/Python/2.7/bin
-# PATH=$PATH:$HOME/Library/Python/3.7/bin
+# PATH=${PATH}:${HOME}/Library/Python/2.7/bin
+# PATH=${PATH}:${HOME}/Library/Python/3.7/bin
 
 # java
-PATH=$PATH:$HOME/.jenv/bin
+PATH=${PATH}:${HOME}/.jenv/bin
 
 # php
-# PATH=$PATH:/usr/local/opt/php@7.4/bin
-# PATH=$PATH:/usr/local/opt/php@7.4/sbin
+# PATH=${PATH}:/usr/local/opt/php@7.4/bin
+# PATH=${PATH}:/usr/local/opt/php@7.4/sbin
 
 # xcode
-PATH=$PATH:/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin
-PATH=$PATH:/Developer/usr/bin
-PATH=$PATH:/Library/Frameworks/Mono.framework/Versions/Current/Commands
-PATH=$PATH:/opt/X11/bin
-PATH=$PATH:/usr/local/opt/imagemagick@6/bin
+PATH=${PATH}:/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin
+PATH=${PATH}:/Developer/usr/bin
+PATH=${PATH}:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+PATH=${PATH}:/opt/X11/bin
+PATH=${PATH}:/usr/local/opt/imagemagick@6/bin
 
 # mac stuff
-# PATH=$PATH:/usr/local/MacGPG2/bin
-# PATH=$PATH:/usr/local/munki
+# PATH=${PATH}:/usr/local/MacGPG2/bin
+# PATH=${PATH}:/usr/local/munki
 
 # mise
-PATH=$PATH:$HOME/.local/share/mise/shims
+PATH=${PATH}:${HOME}/.local/share/mise/shims
 
 # pnpm
-PATH=$PATH:$HOME/Library/pnpm
+PATH=${PATH}:${HOME}/Library/pnpm
 
 # qlty
-PATH=$PATH:$HOME/.qlty/bin
+PATH=${PATH}:${HOME}/.qlty/bin
 
 export PATH

@@ -31,66 +31,66 @@ echo -e "${C_RESET}"
 
 echo -e "${C_INFO}"
 echo "*********************************"
-echo "Linking local '\$HOME/.'          "
+echo "Linking local '\${HOME}/.'          "
 echo "files to custom _dotfiles...     "
 echo "*********************************"
 echo -e "${C_RESET}"
 
-# ./: $HOME/_*
+# ./: ${HOME}/_*
 for src_file in _*; do
-  src_path="$PWD/$src_file"
-  dest_path="$HOME"/.${src_file:1}
+  src_path="${PWD}/${src_file}"
+  dest_path="${HOME}"/.${src_file:1}
 
-  if [ ! -e "$dest_path" ]; then
-    link_file "$src_path" "$dest_path"
+  if [[ ! -e "${dest_path}" ]]; then
+    link_file "${src_path}" "${dest_path}"
   else
-    if [ "$1" == "-d" ]; then
-      if [ -h "$dest_path" ]; then
-        skip_file "$dest_path" $err_linked
+    if [[ "$1" == "-d" ]]; then
+      if [[ -h "${dest_path}" ]]; then
+        skip_file "${dest_path}" "${err_linked}"
       else
-        backup_file "$dest_path"
-        link_file "$src_path" "$dest_path"
+        backup_file "${dest_path}"
+        link_file "${src_path}" "${dest_path}"
       fi
     else
-      skip_file "$dest_path" $err_exists
+      skip_file "${dest_path}" "${err_exists}"
     fi
   fi
 done
 
-## ./config - $HOME/.config/**/*
+## ./config - ${HOME}/.config/**/*
 for src_dir_file in config/**/*; do
-  f="$(basename "$src_dir_file")"
-  d="$(basename "$(dirname "$src_dir_file")")"
-  src_path="$PWD/$src_dir_file"
-  dest_dir="$HOME/.config/$d"
+  f="$(basename "${src_dir_file}")"
+  d="$(basename "$(dirname "${src_dir_file}")")"
+  src_path="${PWD}/${src_dir_file}"
+  dest_dir="${HOME}/.config/${d}"
 
-  if [ ! -e "$dest_dir" ]; then
-    mkdir -p "$dest_dir"
+  if [[ ! -e "${dest_dir}" ]]; then
+    mkdir -p "${dest_dir}"
   fi
 
   dest_path="${dest_dir}/${f}"
 
-  if [ ! -e "$dest_path" ]; then
-    link_file "$src_path" "$dest_path"
+  if [[ ! -e "${dest_path}" ]]; then
+    link_file "${src_path}" "${dest_path}"
   else
-    if [ "$1" == "-d" ]; then
-      if [ -h "$dest_path" ]; then
-        skip_file "$dest_path" $err_linked
+    if [[ "$1" == "-d" ]]; then
+      if [[ -h "${dest_path}" ]]; then
+        skip_file "${dest_path}" "${err_linked}"
       else
-        backup_file "$dest_path"
-        link_file "$src_path" "$dest_path"
+        backup_file "${dest_path}"
+        link_file "${src_path}" "${dest_path}"
       fi
     else
-      skip_file "$dest_path" $err_exists
+      skip_file "${dest_path}" "${err_exists}"
     fi
   fi
 done
 
-## ./_linting - $HOME/_*
+## ./_linting - ${HOME}/_*
 # for src_file in linting/_*; do
 #   f="$(basename -- "$src_file")"
 #   src_path="$PWD/$src_file"
-#   dest_path="$HOME"/.${f:1}
+#   dest_path="${HOME}"/.${f:1}
 
 #   if [ ! -e "$dest_path" ]; then
 #     link_file "$src_path" "$dest_path"
@@ -110,32 +110,32 @@ done
 
 echo -e "${C_INFO}"
 echo "*********************************"
-echo "Creating missing '\$HOME' dirs   "
+echo "Creating missing '\${HOME}' dirs   "
 echo "for git, ssh, vim, etc.          "
 echo "*********************************"
 echo -e "${C_RESET}"
 
 ## DEFOLD - game engine custom styling
-## ./defold - $HOME/.defold/*
-if [ ! -d "$HOME"/.defold ]; then
-  mkdir -p "$HOME"/.defold
+## ./defold - ${HOME}/.defold/*
+if [[ ! -d "${HOME}"/.defold ]]; then
+  mkdir -p "${HOME}"/.defold
 fi
-if [ ! -f "$HOME"/.defold/custom.css ]; then
-  ln -s "$PWD"/.defold/_custom.css "$HOME"/.defold/custom.css
+if [[ ! -f "${HOME}"/.defold/custom.css ]]; then
+  ln -s "${PWD}"/.defold/_custom.css "${HOME}"/.defold/custom.css
 fi
 
 ## GIT
 # make .gitconfig.d dir if nonexistent
-if [ ! -d "$HOME"/.gitconfig.d ]; then
-  mkdir "$HOME"/.gitconfig.d
+if [[ ! -d "${HOME}"/.gitconfig.d ]]; then
+  mkdir "${HOME}"/.gitconfig.d
 fi
 # grab git-completion.bash if nonexistent
-if [ ! -f "$HOME"/.git-completion.bash ]; then
+if [[ ! -f "${HOME}"/.git-completion.bash ]]; then
   wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 fi
 # grab git-prompt.sh if nonexistent
-if [ ! -f "$HOME"/.git-prompt.sh ]; then
-  cd "$HOME" || exit
+if [[ ! -f "${HOME}"/.git-prompt.sh ]]; then
+  cd "${HOME}" || exit
   wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
   mv git-prompt.sh .git-prompt.sh
 fi
@@ -143,19 +143,19 @@ fi
 ## SSH
 # make ssh dir if nonexistent
 # then link custom ssh config
-if [ ! -d "$HOME"/.ssh ]; then
-  mkdir -p "$HOME"/.ssh
+if [[ ! -d "${HOME}"/.ssh ]]; then
+  mkdir -p "${HOME}"/.ssh
 fi
-if [ ! -f "$HOME"/.ssh/config ]; then
-  ln -s "$PWD"/ssh/_config "$HOME"/.ssh/config
+if [[ ! -f "${HOME}"/.ssh/config ]]; then
+  ln -s "${PWD}"/ssh/_config "${HOME}"/.ssh/config
 fi
 
 ## VIM
 # make .vim directory if nonexisting
 # add custom color theme
-if [ ! -d "$HOME"/.vim ]; then
-  mkdir -p "$HOME"/.vim/colors
-  cd "$HOME"/.vim/colors || exit
+if [[ ! -d "${HOME}"/.vim ]]; then
+  mkdir -p "${HOME}"/.vim/colors
+  cd "${HOME}"/.vim/colors || exit
   wget https://raw.githubusercontent.com/sjl/badwolf/master/colors/badwolf.vim
 fi
 

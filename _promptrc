@@ -16,7 +16,7 @@ _BRIGHTCYAN_FG="$(tty -s && tput setaf 14)"
 _BOLD="$(tty -s && tput bold)"
 
 _ddev_pst1() {
-  if [ -f ".ddev/config.yaml" ]; then
+  if [[ -f ".ddev/config.yaml" ]]; then
     # mycmd="$(grep 'OK' <(ddev st))"
 
     # if [ "$mycmd" -eq 0 ]; then
@@ -32,7 +32,7 @@ _ddev_pst1() {
 _ruby_pst1() {
   # true;
   if hash ruby 2>/dev/null; then
-    if [[ "$PWD" =~ ruby ]]; then
+    if [[ "${PWD}" =~ ruby ]]; then
       echo -e "(${_RED_FG}ruby:$(ruby -v 2>&1 | cut -d' ' -f2)${_RESET})"
     fi
   fi
@@ -44,11 +44,11 @@ PS1_GIT="${_BOLD}${_BRIGHTCYAN_FG}\$(__git_ps1)${_RESET}"
 PS1_DDEV="\$(_ddev_pst1)"
 PS1_RUBY="\$(_ruby_pst1)"
 PS1_HOST="\h"
-PS1_USER="\[${_GREEN_FG}${_BOLD}\]\u\[${_YELLOW_FG}${_BOLD}\]@\[${_GREEN_FG}${_BOLD}\]$PS1_HOST\[${_RESET}\]"
+PS1_USER="\[${_GREEN_FG}${_BOLD}\]\u\[${_YELLOW_FG}${_BOLD}\]@\[${_GREEN_FG}${_BOLD}\]${PS1_HOST}\[${_RESET}\]"
 PS1_DATE="\[${_YELLOW_FG}${_BOLD}\](\$(date +%T))\[${_RESET}\]"
 
 # [dir] [ddev] (git)
-export PS1_CUSTOM1="$PS1_DIR$PS1_DDEV$PS1_RUBY$PS1_GIT\n"
+export PS1_CUSTOM1="${PS1_DIR}${PS1_DDEV}${PS1_RUBY}${PS1_GIT}\n"
 
 # adding emoji via emo
 # if [ -f $GOPATH/bin/emo ]; then
@@ -56,7 +56,7 @@ export PS1_CUSTOM1="$PS1_DIR$PS1_DDEV$PS1_RUBY$PS1_GIT\n"
 # fi
 
 # user(date) $
-export PS1_CUSTOM1="$PS1_CUSTOM1$PS1_USER$PS1_DATE "
+export PS1_CUSTOM1="${PS1_CUSTOM1}${PS1_USER}${PS1_DATE} "
 
 # save prompt
-export PS1=$PS1_CUSTOM1
+export PS1=${PS1_CUSTOM1}

@@ -12,7 +12,7 @@ _RESET="$(tty -s && tput sgr0)"
 # list: display all functions in custom dotfiles
 function _funclist {
   if hash ag 2>/dev/null; then
-    ag '(function )([A-Za-z0-9_-]+)' "$HOME"/.functions* --nonumbers
+    ag '(function )([A-Za-z0-9_-]+)' "${HOME}"/.functions* --nonumbers
   else
     echo 'Error: Missing ag (silver searcher). Cannot display functions.'
   fi
@@ -44,11 +44,11 @@ function dummy() {
 function foobarlist() {
   list=('foo' 'bar' 'baz' 'qux' 'quux' 'quuz' 'corge' 'grault' 'garply' 'waldo' 'fred' 'plugh' 'xyzzy' 'thud')
 
-  if [ $# -eq 0 ]; then
+  if [[ $# -eq 0 ]]; then
     for w in "${list[@]}"; do
-      echo "$w"
+      echo "${w}"
     done
-  elif [ $# -ge 1 ]; then
+  elif [[ $# -ge 1 ]]; then
     echo "${list[$1]}"
   fi
 }
@@ -74,11 +74,11 @@ function get_rand_port {
 # list http ports and procs
 function httports {
   # shellcheck disable=SC2196
-  lsof -i -n -P | grep "$HTTP_SERVICES" | grep LISTEN | egrep -o ":[0-9]{2,5}" | cut -f2- -d: | sort -n | uniq
+  lsof -i -n -P | grep "${HTTP_SERVICES:?}" | grep LISTEN | egrep -o ":[0-9]{2,5}" | cut -f2- -d: | sort -n | uniq
 }
 function httportss {
   # shellcheck disable=SC2196
-  sudo lsof -i -n -P | grep "$HTTP_SERVICES" | grep LISTEN | egrep -o ":[0-9]{2,5}" | cut -f2- -d: | sort -n | uniq
+  sudo lsof -i -n -P | grep "${HTTP_SERVICES}" | grep LISTEN | egrep -o ":[0-9]{2,5}" | cut -f2- -d: | sort -n | uniq
 }
 function httprocs() {
   lsof -i -n -P | grep 'httpd\|vpnkit\|java\|nc\|node\|ng' | grep LISTEN | awk '{print $1}' | sort -n
@@ -92,67 +92,67 @@ function httprocss {
 function httphp() {
   rport=$(get_rand_port);
 
-  if [ $# -eq 1 ]; then
-    open http://localhost:"$rport" "$1";
+  if [[ $# -eq 1 ]]; then
+    open http://localhost:"${rport}" "$1";
   else
-    open http://localhost:"$rport";
+    open http://localhost:"${rport}";
   fi
 
-  php -S 127.0.0.1:"$rport";
+  php -S 127.0.0.1:"${rport}";
 }
 ## python 2.x
 function httpy2 {
   rport=$(get_rand_port);
-  open http://localhost:"$rport";
-  python -m SimpleHTTPServer "$rport";
+  open http://localhost:"${rport}";
+  python -m SimpleHTTPServer "${rport}";
 }
 ## python 3.x
 function httpy3 {
   rport=$(get_rand_port);
-  open http://localhost:"$rport";
-  python3 -m http.server "$rport";
+  open http://localhost:"${rport}";
+  python3 -m http.server "${rport}";
 }
 ## python 3.x (or 2.x if 3.x not available)
 function httpy {
   major_version="$(python -c 'import platform as p;print(p.python_version_tuple()[0])')"
   rport=$(get_rand_port)
-  if [[ "$major_version" == '3' ]]; then
-    exec python -m http.server "$rport"
+  if [[ "${major_version}" == '3' ]]; then
+    exec python -m http.server "${rport}"
   else
-    exec python -m SimpleHTTPServer "$rport"
+    exec python -m SimpleHTTPServer "${rport}"
   fi
 }
 ## nodejs (http-server)
 function httnode {
   rport=$(get_rand_port);
-  http-server -o -p "$rport";
+  http-server -o -p "${rport}";
 }
 ## ruby 1.9.2+
 function httruby {
   rport=$(get_rand_port);
-  open http://localhost:"$rport";
-  ruby -run -e httpd . -p "$rport";
+  open http://localhost:"${rport}";
+  ruby -run -e httpd . -p "${rport}";
 }
 
 ## get the Notes field from a Logic Pro X project (e.g. lyrics)
 function lpxnotes_dump() {
   # Check if a filename is provided as an argument
-  if [ "$#" -ne 1 ]; then
+  if [[ "$#" -ne 1 ]]; then
     echo "Usage: lpxnotes_dump <filename>"
   else
     # assuming only one Alternative
     filename=$1/Alternatives/000/ProjectData
 
     # Check if the file exists
-    if [ ! -e "$filename" ]; then
-      echo "File not found: $filename"
+    if [[ ! -e "${filename}" ]]; then
+      echo "File not found: ${filename}"
     else
       # regex pattern for code where Notes start and end (in LPX 10.7, at least)
       pattern='\\\\f0\\\\fs30'
       end_pattern='}'
 
       # find first, and only first, instance of this to capture Project Notes
-      str=$(strings "$filename" | awk -v pattern="$pattern" -v end_pattern="$end_pattern" '
+      str=$(strings "${filename}" | awk -v pattern="${pattern}" -v end_pattern="${end_pattern}" '
         $0 ~ pattern {
           flag=1
         }
@@ -167,7 +167,7 @@ function lpxnotes_dump() {
 
       # clean up output
       notes=$(
-        echo "$str" \
+        echo "${str}" \
         | awk '{gsub(/pard.+/,""); print}' \
         | awk '{gsub(/\\f0\\fs30/,""); print}' \
         | awk '{gsub(/\\cf2 /,""); print}' \
@@ -179,45 +179,45 @@ function lpxnotes_dump() {
         | awk '{gsub(/\04792/,"\047"); print}' \
       )
 
-      echo "$notes"
+      echo "${notes}"
     fi
   fi
 }
 
 ## love2d - make .love file from source directory for macOS
 function makelovefile() {
-  if [ "$#" -eq 0 ]; then
+  if [[ "$#" -eq 0 ]]; then
     DEST=$(basename "$(pwd)").love
     SRC="."
-  elif [ "$#" -eq 1 ]; then
+  elif [[ "$#" -eq 1 ]]; then
     DEST=$1
     SRC="."
-  elif [ "$#" -ge 2 ]; then
+  elif [[ "$#" -ge 2 ]]; then
     DEST=$1
     SRC=$2
   fi
 
-  zip -r "$DEST" "$SRC" -x "*.git*" -x "*.DS_Store" -x "*.md"
+  zip -r "${DEST}" "${SRC}" -x "*.git*" -x "*.DS_Store" -x "*.md"
 }
 
 # display public IP using cloudflare/google
 # myip 4 -> IPv4, myip 6 -> IPv6, myip -> IPv4 and IPv6
 function myip() {
-  if [ $# -eq 0 ]; then
+  if [[ $# -eq 0 ]]; then
     myip4=$(dig +short txt ch whoami.cloudflare @1.0.0.1)
     myip6=$(dig -6 TXT +short o-o.myaddr.l.google.com @ns1.google.com)
 
-    echo "$myip4" | xargs
-    echo "$myip6" | xargs
-  elif [ $# -ge 1 ]; then
-    if [ "$1" -eq '4' ]; then
+    echo "${myip4}" | xargs
+    echo "${myip6}" | xargs
+  elif [[ $# -ge 1 ]]; then
+    if [[ "$1" -eq '4' ]]; then
       myip=$(dig +short txt ch whoami.cloudflare @1.0.0.1)
 
-      echo "$myip" | xargs
-    elif [ "$1" -eq '6' ]; then
+      echo "${myip}" | xargs
+    elif [[ "$1" -eq '6' ]]; then
       myip=$(dig -6 TXT +short o-o.myaddr.l.google.com @ns1.google.com)
 
-      echo "$myip" | xargs
+      echo "${myip}" | xargs
     else
       echo "only IPv4 and IPv6 supported"
     fi
@@ -245,7 +245,7 @@ function serveit() {
 # speedtest
 function speedtest() {
   if hash speedtest-cli 2>/dev/null; then
-    logfile="$HOME"/speedtest_log.txt
+    logfile="${HOME}"/speedtest_log.txt
 
     echo "Checking internet speed and logging..."
     {
@@ -255,8 +255,8 @@ function speedtest() {
       speedtest-cli --simple
       echo "----------------------------"
       echo ""
-    } >> "$logfile"
-    echo "Done and logged to $logfile"
+    } >> "${logfile}"
+    echo "Done and logged to ${logfile}"
   else
     echo "speedtest-cli not installed; try brew install speedtest-cli"
   fi
@@ -266,17 +266,17 @@ function speedtest() {
 function vid2gif() {
   RUN_CMD=true
 
-  if ! [ -x "$(command -v ffmpeg)" ]; then
+  if ! [[ -x "$(command -v ffmpeg)" ]]; then
     echo 'Error: ffmpeg is not installed. Please install with (brew install ffmpeg)' >&2
     RUN_CMD=false
   fi
 
-  if ! [ -x "$(command -v gifsicle)" ]; then
+  if ! [[ -x "$(command -v gifsicle)" ]]; then
     echo 'Error: gifsicle is not installed. Please install with (brew install gifsicle)' >&2
     RUN_CMD=false
   fi
 
-  if [ "$RUN_CMD" = true ]; then
+  if [[ "${RUN_CMD}" = true ]]; then
     ffmpeg -i "$1" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=8 > ~/Downloads/"$1".gif
   fi
 }
@@ -285,46 +285,46 @@ alias mov2gif=vid2gif
 
 # mp3 to ogg
 function mp32ogg() {
-  if ! [ -x "$(command -v ffmpeg)" ]; then
+  if ! [[ -x "$(command -v ffmpeg)" ]]; then
     echo 'Error: ffmpeg is not installed. please install with (brew install ffmpeg)' >&2
     exit 1
   fi
 
-  for i in *.mp3; do ffmpeg -i "$i" "${i%.*}.ogg"; done
+  for i in *.mp3; do ffmpeg -i "${i}" "${i%.*}.ogg"; done
 }
 
 # wav to flac
 function wav2flac() {
-  if ! [ -x "$(command -v ffmpeg)" ]; then
+  if ! [[ -x "$(command -v ffmpeg)" ]]; then
     echo 'Error: ffmpeg is not installed. please install with (brew install ffmpeg)' >&2
     exit 1
   fi
 
-  for i in *.wav; do ffmpeg -i "$i" -af aformat=s16:44100 "${i%.*}.flac"; done
+  for i in *.wav; do ffmpeg -i "${i}" -af aformat=s16:44100 "${i%.*}.flac"; done
 }
 
 # wav to mp3
 function wav2mp3() {
-  if ! [ -x "$(command -v ffmpeg)" ]; then
+  if ! [[ -x "$(command -v ffmpeg)" ]]; then
     echo 'Error: ffmpeg is not installed. please install with (brew install ffmpeg)' >&2
     exit 1
   fi
 
-  for i in *.wav; do ffmpeg -i "$i" "${i%.*}.mp3"; done
+  for i in *.wav; do ffmpeg -i "${i}" "${i%.*}.mp3"; done
 }
 
 # * to *
 function mediaconv() {
-  if ! [ -x "$(command -v ffmpeg)" ]; then
+  if ! [[ -x "$(command -v ffmpeg)" ]]; then
     echo 'Error: ffmpeg is not installed. please install with (brew install ffmpeg)' >&2
     exit 1
   fi
 
-  if [ "$#" -lt 2 ]; then
+  if [[ "$#" -lt 2 ]]; then
     echo "Usage: mediaconv <ext1> <ext2>"
   fi
 
-  for i in *."$1"; do ffmpeg -i "$i" "${i%.*}.$2"; done
+  for i in *."$1"; do ffmpeg -i "${i}" "${i%.*}.$2"; done
 }
 
 function whoruns() {
@@ -336,10 +336,10 @@ function whoruns() {
 
 ## load additional functions broken out into own files
 # shellcheck disable=SC1091
-if [ -f "$HOME"/.functions_about ]; then source "$HOME"/.functions_about; fi
+if [[ -f "${HOME}"/.functions_about ]]; then source "${HOME}"/.functions_about; fi
 # shellcheck disable=SC1091
-if [ -f "$HOME"/.functions_extras ]; then source "$HOME"/.functions_extras; fi
+if [[ -f "${HOME}"/.functions_extras ]]; then source "${HOME}"/.functions_extras; fi
 
 ## load private, non-tracked, functions
 # shellcheck source=/dev/null
-if [ -f "$HOME"/.functions_priv ]; then source "$HOME"/.functions_priv; fi
+if [[ -f "${HOME}"/.functions_priv ]]; then source "${HOME}"/.functions_priv; fi

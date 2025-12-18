@@ -143,4 +143,4 @@ fi
 ##########################################################
 
 # load private, non-tracked, aliases
-if [ -f "$HOME"/.aliases_priv ]; then source "$HOME"/.aliases_priv; fi
+if [[ -f "${HOME}"/.aliases_priv ]]; then source "${HOME}"/.aliases_priv; fi

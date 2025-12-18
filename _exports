@@ -6,13 +6,13 @@ export TXTAPP=vi
 
 # misc
 export BASH_SILENCE_DEPRECATION_WARNING=1
-export BUNDLER_EDITOR=$TXTAPP
+export BUNDLER_EDITOR=${TXTAPP}
 export CLICOLOR=1
-export CODE="$HOME/Code"
+export CODE="${HOME}/Code"
 export COLORIZE=1
 export COMPOSE_HTTP_TIMEOUT=300 # docker-compose increase timeout
-export EDITOR=$TXTAPP
-export GEMEDITOR=$TXTAPP
+export EDITOR=${TXTAPP}
+export GEMEDITOR=${TXTAPP}
 export HTTP_SERVICES="httpd\|vpnkit\|java\|nc\|node\|ng\|php\|ruby\|hugo\|docker\|com.docker\|com.docke"
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export PROMPT_COMMAND='printf "\e]0;bash\7"' # fix prompt post-ssh
@@ -27,8 +27,8 @@ export HISTTIMEFORMAT='%F %T %t'
 export CRYSTAL_OPTS="--link-flags=-Wl"
 
 # go
-export GOPATH="$CODE/go"
-export GOBIN="$GOPATH/bin"
+export GOPATH="${CODE}/go"
+export GOBIN="${GOPATH}/bin"
 export GOROOT="/opt/homebrew/opt/go/libexec"
 
 # git
@@ -39,18 +39,18 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM="verbose name"
 
 # node
-export NODE_PATH="$HOME/.npm"
-export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+export NODE_PATH="${HOME}/.npm"
+export NODE_PATH=${NODE_PATH}:/usr/local/lib/node_modules
 export NODE_OPTIONS="--dns-result-order=ipv4first"
 
 # pnpm
 export PNPM_HOME="/Users/mchadwick/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+case ":${PATH}:" in
+  *":${PNPM_HOME}:"*) ;;
+  *) export PATH="${PNPM_HOME}:${PATH}" ;;
 esac
 
 ##########################################################
 
 # load private, non-tracked, exports
-if [ -f "$HOME"/.exports_priv ]; then source "$HOME"/.exports_priv; fi
+if [[ -f "${HOME}"/.exports_priv ]]; then source "${HOME}"/.exports_priv; fi

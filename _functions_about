@@ -11,19 +11,19 @@ _RESET="$(tty -s && tput sgr0)"
 
 function _anon() {
   read -r str
-  pattern="\/Users\/$USER|\/home\/$USER"
+  pattern="\/Users\/${USER}|\/home\/${USER}"
 
-  if [[ $str =~ $pattern ]]; then
+  if [[ ${str} =~ ${pattern} ]]; then
     # -E argument is required for regex
-    echo "$str" | sed -E "s/$pattern/\$HOME/"
+    echo "${str}" | sed -E "s/${pattern}/\$HOME/"
   else
-    echo "$str"
+    echo "${str}"
   fi
 }
 
 function about() {
-  if [ $# -ge 1 ]; then
-    if [ "$1" = '-f' ]; then
+  if [[ $# -ge 1 ]]; then
+    if [[ "$1" = '-f' ]]; then
       clear
     fi
   fi
@@ -35,13 +35,13 @@ function about() {
     if hash archey 2>/dev/null; then
       archey -c "$1"
     else
-      if [ -f /etc/redhat-release ]; then
+      if [[ -f /etc/redhat-release ]]; then
         cat /etc/redhat-release
       else
-        if [ -f /etc/os-release ]; then
+        if [[ -f /etc/os-release ]]; then
           cat /etc/os-release
         else
-          if [ -f /proc/version ]; then
+          if [[ -f /proc/version ]]; then
             cat /proc/version
           else
             uname -a
@@ -51,8 +51,8 @@ function about() {
     fi
   fi
 
-  if [ $# -ge 1 ]; then
-    if [ "$1" = '-f' ]; then
+  if [[ $# -ge 1 ]]; then
+    if [[ "$1" = '-f' ]]; then
       echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
       echo "${_BOLD}${_WHITE}| programming langs            |${_RESET}"
       echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
@@ -105,7 +105,7 @@ function about() {
         py1cmd1=$(hash python 2>/dev/null)
         py1cmd2=$(type python 2>/dev/null)
 
-        if [ "$py1cmd1" ] || [ "$py1cmd2" ]; then
+        if [[ -n "${py1cmd1}" ]] || [[ -n "${py1cmd2}" ]]; then
           echo "${_BOLD}${_YELLOW}python${_RESET}:     ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | cut -d' ' -f1)${_RESET} $(which python)" | _anon
         else
           echo "${_BOLD}${_GRAY}python not installed${_RESET}"
@@ -114,7 +114,7 @@ function about() {
         py2cmd1=$(hash python2 2>/dev/null)
         py2cmd2=$(type python2 2>/dev/null)
 
-        if [ "$py2cmd1" ] || [ "$py2cmd2" ]; then
+        if [[ -n "${py2cmd1}" ]] || [[ -n "${py2cmd2}" ]]; then
           echo "${_BOLD}${_YELLOW}python2${_RESET}:    ${_BOLD}${_WHITE}$(python2 -c 'import sys; print(sys.version)' | head -1)${_RESET}$(which python2)" | _anon
         else
           echo "${_BOLD}${_GRAY}python2 not installed${_RESET}"

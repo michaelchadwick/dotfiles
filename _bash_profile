@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 # shellcheck source=/dev/null
 
-if [ -f "$HOME"/.bashrc ]; then source "$HOME"/.bashrc; fi
+if [[ -f "${HOME}"/.bashrc ]]; then source "${HOME}"/.bashrc; fi
 
 # docker bash completion
-[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+BREW_ROOT=$(brew --prefix)
+[[ -r "${BREW_ROOT}/etc/profile.d/bash_completion.sh" ]] && . "${BREW_ROOT}/etc/profile.d/bash_completion.sh"
 
 # iterm2
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 # rust
-. "$HOME/.cargo/env"
+. "${HOME}/.cargo/env"
