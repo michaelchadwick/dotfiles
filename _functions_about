@@ -241,6 +241,22 @@ function about() {
         fi
 
       echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
+      echo "${_BOLD}${_WHITE}| mail servers                 |${_RESET}"
+      echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
+
+        if hash dovecot 2>/dev/null; then
+          echo "${_BOLD}${_YELLOW}dovecot${_RESET}:   ${_BOLD}${_WHITE}$(dovecot --version)${_RESET} $(which dovecot)" | _anon
+        else
+          echo "${_BOLD}${_GRAY}dovecot not installed${_RESET}"
+        fi
+
+        if hash postfix 2>/dev/null; then
+          echo "${_BOLD}${_YELLOW}postfix${_RESET}:   ${_BOLD}${_WHITE}$(postconf -d mail_version 2>&1 | grep -v 'Permission denied')${_RESET} $(which postfix)" | _anon
+        else
+          echo "${_BOLD}${_GRAY}postfix not installed${_RESET}"
+        fi
+
+      echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
       echo "${_BOLD}${_WHITE}| webdev tools                 |${_RESET}"
       echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
 
