@@ -251,7 +251,7 @@ function about() {
         fi
 
         if hash postfix 2>/dev/null; then
-          echo "${_BOLD}${_YELLOW}postfix${_RESET}:   ${_BOLD}${_WHITE}$(postconf -d mail_version 2>&1 | grep -v 'Permission denied')${_RESET} $(which postfix)" | _anon
+          echo "${_BOLD}${_YELLOW}postfix${_RESET}:   ${_BOLD}${_WHITE}$(postconf -d mail_version 2>&1 | grep -v 'Permission denied' | cut -d'=' -f2 | cut -d' ' -f2)${_RESET} $(which postfix)" | _anon
         else
           echo "${_BOLD}${_GRAY}postfix not installed${_RESET}"
         fi
