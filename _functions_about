@@ -278,16 +278,16 @@ function about() {
           echo "${_BOLD}${_GRAY}docksal not installed${_RESET}"
         fi
 
-        if hash jekyll 2>/dev/null; then
-          echo "${_BOLD}${_YELLOW}jekyll${_RESET}:     ${_BOLD}${_WHITE}$(jekyll --version | cut -d " " -f 2)${_RESET} $(which jekyll)" | _anon
-        else
-          echo "${_BOLD}${_GRAY}jekyll not installed${_RESET}"
-        fi
-
         if hash hugo 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}hugo${_RESET}:       ${_BOLD}${_WHITE}$(hugo version | cut -d " " -f 2)${_RESET} $(which hugo)" | _anon
         else
           echo "${_BOLD}${_GRAY}hugo not installed${_RESET}"
+        fi
+
+        if hash jekyll 2>/dev/null; then
+          echo "${_BOLD}${_YELLOW}jekyll${_RESET}:     ${_BOLD}${_WHITE}$(jekyll --version | cut -d " " -f 2)${_RESET} $(which jekyll)" | _anon
+        else
+          echo "${_BOLD}${_GRAY}jekyll not installed${_RESET}"
         fi
 
         if hash rails 2>/dev/null; then
