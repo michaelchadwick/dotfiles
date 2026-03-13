@@ -134,6 +134,11 @@ function httruby {
   ruby -run -e httpd . -p "${rport}";
 }
 
+function jcurl {
+  # http://benw.me/posts/colourized-pretty-printed-json-with-curl/
+  curl "$@" | jq | pygmentize -l json -O "style=paraiso-dark"
+}
+
 ## get the Notes field from a Logic Pro X project (e.g. lyrics)
 function lpxnotes_dump() {
   # Check if a filename is provided as an argument
