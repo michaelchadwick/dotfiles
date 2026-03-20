@@ -115,13 +115,22 @@ echo "for git, ssh, vim, etc.          "
 echo "*********************************"
 echo -e "${C_RESET}"
 
+## CHROME - custom chrome stuff
+## ./chrome - ${HOME}/.chrome/*
+if [[ ! -d "${HOME}"/.chrome ]]; then
+  mkdir -p "${HOME}"/.chrome
+fi
+if [[ ! -f "${HOME}"/.chrome/newtab.html ]]; then
+  ln -s "${PWD}"/chrome/_newtab.html "${HOME}"/.chrome/newtab.html
+fi
+
 ## DEFOLD - game engine custom styling
 ## ./defold - ${HOME}/.defold/*
 if [[ ! -d "${HOME}"/.defold ]]; then
   mkdir -p "${HOME}"/.defold
 fi
 if [[ ! -f "${HOME}"/.defold/custom.css ]]; then
-  ln -s "${PWD}"/.defold/_custom.css "${HOME}"/.defold/custom.css
+  ln -s "${PWD}"/defold/_custom.css "${HOME}"/.defold/custom.css
 fi
 
 ## GIT
