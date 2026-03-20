@@ -3,5 +3,6 @@
 *_priv_*
 *_private
 _localrc
+chrome/*
 ssh/*
 work/*
