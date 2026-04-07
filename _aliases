@@ -140,6 +140,11 @@ if hash prettyping 2>/dev/null; then
   alias ping="prettyping --nolegend"
 fi
 
+# ripgrep: better grep
+if hash ripgrep 2>/dev/null; then
+  alias rg="ripgrep"
+fi
+
 ##########################################################
 
 # load private, non-tracked, aliases
