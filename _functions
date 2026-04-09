@@ -140,10 +140,10 @@ function jcurl {
 }
 
 ## get the Notes field from a Logic Pro X project (e.g. lyrics)
-function lpxnotes_dump() {
+function lpxdump_notes() {
   # Check if a filename is provided as an argument
   if [[ "$#" -ne 1 ]]; then
-    echo "Usage: lpxnotes_dump <filename>"
+    echo "Usage: lpxdump_notes <filename>"
   else
     # assuming only one Alternative
     filename=$1/Alternatives/000/ProjectData
@@ -188,6 +188,29 @@ function lpxnotes_dump() {
     fi
   fi
 }
+alias logicdump_notes=lpxdump_notes
+
+## get the Tempo field from a Logic Pro X project
+function lpxdump_tempo() {
+  # Check if a filename is provided as an argument
+  if [[ "$#" -ne 1 ]]; then
+    echo "Usage: lpxdump_tempo <filename>"
+  else
+    # assuming only one Alternative
+    altdir=Alternatives/000/MetaData
+    filename=$1/${altdir}
+
+    # Check if the file exists
+    if [[ ! -e "$1" ]]; then
+      echo "File not found: $1"
+    else
+      echo "$1"
+      # use built-in macOS defaults tool to read .plist
+      defaults read "${filename}" BeatsPerMinute
+    fi
+  fi
+}
+alias logicdump_tempo=lpxdump_tempo
 
 ## love2d - make .love file from source directory for macOS
 function makelovefile() {
