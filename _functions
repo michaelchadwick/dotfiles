@@ -321,6 +321,16 @@ function mp32ogg() {
   for i in *.mp3; do ffmpeg -i "${i}" "${i%.*}.ogg"; done
 }
 
+# mp3 to wav
+function mp32wav() {
+  if ! [[ -x "$(command -v ffmpeg)" ]]; then
+    echo 'Error: ffmpeg is not installed. please install with (brew install ffmpeg)' >&2
+    exit 1
+  fi
+
+  for i in *.mp3; do ffmpeg -i "${i}" "${i%.*}.wav"; done
+}
+
 # wav to flac
 function wav2flac() {
   if ! [[ -x "$(command -v ffmpeg)" ]]; then
