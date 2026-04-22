@@ -106,29 +106,33 @@ function about() {
           echo "${_BOLD}${_GRAY}php not installed${_RESET}"
         fi
 
-        py1cmd1=$(hash python 2>/dev/null)
-        py1cmd2=$(type python 2>/dev/null)
+        pycmd1=$(hash python 2>/dev/null)
+        pycmd2=$(type python 2>/dev/null)
+        pycmd3=$(hash python2 2>/dev/null)
+        pycmd4=$(type python2 2>/dev/null)
+        pycmd5=$(hash python3 2>/dev/null)
+        pycmd6=$(type python3 2>/dev/null)
 
-        if [[ -n "${py1cmd1}" ]] || [[ -n "${py1cmd2}" ]]; then
+        if [[ -n "${pycmd1}" ]] || [[ -n "${pycmd2}" ]] || [[ -n "${pycmd3}" ]] || [[ -n "${pycmd4}" ]] || [[ -n "${pycmd5}" ]] || [[ -n "${pycmd6}" ]]; then
           echo "${_BOLD}${_YELLOW}python${_RESET}:     ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | cut -d' ' -f1)${_RESET} $(which python)" | _anon
         else
           echo "${_BOLD}${_GRAY}python not installed${_RESET}"
         fi
 
-        py2cmd1=$(hash python2 2>/dev/null)
-        py2cmd2=$(type python2 2>/dev/null)
+        # py2cmd1=$(hash python2 2>/dev/null)
+        # py2cmd2=$(type python2 2>/dev/null)
 
-        if [[ -n "${py2cmd1}" ]] || [[ -n "${py2cmd2}" ]]; then
-          echo "${_BOLD}${_YELLOW}python2${_RESET}:    ${_BOLD}${_WHITE}$(python2 -c 'import sys; print(sys.version)' | head -1)${_RESET}$(which python2)" | _anon
-        else
-          echo "${_BOLD}${_GRAY}python2 not installed${_RESET}"
-        fi
+        # if [[ -n "${py2cmd1}" ]] || [[ -n "${py2cmd2}" ]]; then
+        #   echo "${_BOLD}${_YELLOW}python2${_RESET}:    ${_BOLD}${_WHITE}$(python2 -c 'import sys; print(sys.version)' | head -1)${_RESET}$(which python2)" | _anon
+        # else
+        #   echo "${_BOLD}${_GRAY}python2 not installed${_RESET}"
+        # fi
 
-        if hash python3 2>/dev/null; then
-          echo "${_BOLD}${_YELLOW}python3${_RESET}:    ${_BOLD}${_WHITE}$(python3 -c 'import sys; print(sys.version)' | cut -d' ' -f1)${_RESET} $(which python3)" | _anon
-        else
-          echo "${_BOLD}${_GRAY}python3 not installed${_RESET}"
-        fi
+        # if hash python3 2>/dev/null; then
+        #   echo "${_BOLD}${_YELLOW}python3${_RESET}:    ${_BOLD}${_WHITE}$(python3 -c 'import sys; print(sys.version)' | cut -d' ' -f1)${_RESET} $(which python3)" | _anon
+        # else
+        #   echo "${_BOLD}${_GRAY}python3 not installed${_RESET}"
+        # fi
 
         if hash ruby 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}ruby${_RESET}:       ${_BOLD}${_WHITE}$(ruby -v | cut -d' ' -f2)${_RESET} $(which ruby)" | _anon
