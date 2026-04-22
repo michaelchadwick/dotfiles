@@ -218,6 +218,12 @@ function about() {
           echo "${_BOLD}${_GRAY}rbenv not installed${_RESET}"
         fi
 
+        if hash uv 2>/dev/null; then
+          echo "${_BOLD}${_YELLOW}uv${_RESET}          ${_BOLD}${_WHITE}$(uv --version | cut -d' ' -f2 | cut -d';' -f1)${_RESET}; $(which uv)" | _anon
+        else
+          echo "${_BOLD}${_GRAY}uv not installed${_RESET}"
+        fi
+
         if hash yarn 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}yarn${_RESET}:       ${_BOLD}${_WHITE}$(yarn --version)${_RESET} $(which yarn)" | _anon
         else
