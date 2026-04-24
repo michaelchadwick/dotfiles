@@ -311,6 +311,19 @@ function vid2gif() {
 alias mp42gif=vid2gif
 alias mov2gif=vid2gif
 
+function mov2mp4() {
+  RUN_CMD=true
+
+  if ! [[ -x "$(command -v ffmpeg)" ]]; then
+    echo 'Error: ffmpeg is not installed. Please install with (brew install ffmpeg)' >&2
+    RUN_CMD=false
+  fi
+
+  if [[ "${RUN_CMD}" = true ]]; then
+    ffmpeg -i "$1" "${1%.*}.mp4"
+  fi
+}
+
 # mp3 to ogg
 function mp32ogg() {
   if ! [[ -x "$(command -v ffmpeg)" ]]; then
