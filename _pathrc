@@ -59,6 +59,9 @@ PATH=${PATH}:${HOME}/.jenv/bin
 # PATH=${PATH}:/usr/local/opt/php@7.4/bin
 # PATH=${PATH}:/usr/local/opt/php@7.4/sbin
 
+# usagi (pico8 meets lua)
+PATH=${PATH}:${HOME}/.usagi/bin
+
 # xcode
 PATH=${PATH}:/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin
 PATH=${PATH}:/Developer/usr/bin
