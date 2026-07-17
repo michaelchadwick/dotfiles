@@ -37,7 +37,17 @@ function b64 {
 
 # dummy: create dummy binary file
 function dummy() {
-  dd if=/dev/urandom bs=1024 count="$1" of=dummy
+  size=1024
+  count=1
+
+  if [[ $# -eq 1 ]]; then
+    size=$1
+  elif [[ $# -eq 2 ]]; then
+    size=$1
+    count=$2
+  fi
+
+  dd if=/dev/urandom bs="${size}" count="${count}" of="dummy_${size}x${count}"
 }
 
 # print out list of generic variables
