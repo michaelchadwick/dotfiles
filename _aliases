@@ -62,6 +62,7 @@ alias npm-global-audit="npx npm-global-audit --auditor npm"
 
 # npkill
 alias npkillall="npx npkill -D -x -y -nu"
+alias pnpkillall="pnpx npkill -D -x -y -nu"
 
 # python (make python3 default)
 # alias python=/usr/local/bin/python3
