@@ -24,7 +24,7 @@
 # shellcheck source=/dev/null
 [ -r /etc/lsb-release ] && . /etc/lsb-release
 
-if [ -z "$DISTRIB_DESCRIPTION" ] && [ -x /usr/bin/lsb_release ]; then
+if [ -z "${DISTRIB_DESCRIPTION}" ] && [ -x /usr/bin/lsb_release ]; then
         # Fall back to using the very slow lsb_release utility
         DISTRIB_DESCRIPTION=$(lsb_release -s -d)
 fi
@@ -35,5 +35,5 @@ else
         printf "Host: %s\n\n", "$(hostname)"
 fi
 
-printf "Welcome to %s (%s).\n" "$DISTRIB_DESCRIPTION" "$(uname -r)"
+printf "Welcome to %s (%s).\n" "${DISTRIB_DESCRIPTION}" "$(uname -r)"
 printf "\n"
