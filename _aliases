@@ -55,6 +55,9 @@ alias gitpuma="git pull upstream main"
 # hugo static site generator
 alias hugos="hugo serve --disableFastRender"
 
+# mise
+alias miseup="mise self-update"
+
 # nodejs
 ## requires 'npm i -g npm-audit-html' first to work
 alias npm-audit-html="npm audit --json | npm-audit-html; open npm-audit.html"
