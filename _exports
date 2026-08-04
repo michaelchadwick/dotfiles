@@ -6,6 +6,7 @@ export TXTAPP=vi
 
 # misc
 export BASH_SILENCE_DEPRECATION_WARNING=1
+export BUN_INSTALL="${HOME}/.bun"
 export BUNDLER_EDITOR=${TXTAPP}
 export CLICOLOR=1
 export CODE="${HOME}/Code"

@@ -82,4 +82,8 @@ PATH=${PATH}:${HOME}/Library/pnpm
 # qlty
 PATH=${PATH}:${HOME}/.qlty/bin
 
+# bun
+declare BUN_INSTALL
+PATH="${PATH}:${BUN_INSTALL}/bin"
+
 export PATH
