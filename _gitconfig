@@ -38,8 +38,6 @@
   changed = yellow bold
   modified = yellow bold
   untracked = red bold
-[commit]
-  template = /Users/mike/.stCommitMsg
 [core]
   autocrlf = input
   editor = vim
