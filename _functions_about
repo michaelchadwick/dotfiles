@@ -41,13 +41,17 @@ function about() {
         if [[ -f /etc/redhat-release ]]; then
           cat /etc/redhat-release
         else
-          if [[ -f /etc/os-release ]]; then
-            cat /etc/os-release
+          if [[ -f /etc/debian_version ]]; then
+            echo "Debian v$(cat /etc/debian_version)"
           else
-            if [[ -f /proc/version ]]; then
-              cat /proc/version
+            if [[ -f /etc/os-release ]]; then
+              cat /etc/os-release
             else
-              uname -a
+              if [[ -f /proc/version ]]; then
+                cat /proc/version
+              else
+                uname -a
+              fi
             fi
           fi
         fi
