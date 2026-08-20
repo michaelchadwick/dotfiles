@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-### .functions_about -  display info about current system
+### .functions_about - display info about current system
 
 # colors
 _RED="$(tty -s && tput setaf 1)"
