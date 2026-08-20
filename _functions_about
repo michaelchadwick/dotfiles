@@ -221,7 +221,7 @@ function about() {
         fi
 
         if hash rbenv 2>/dev/null; then
-          echo "${_BOLD}${_YELLOW}rbenv${_RESET}     ${_BOLD}${_WHITE}$(rbenv -v | cut -d' ' -f2)${_RESET}; using: $(rbenv global)" | _anon
+          echo "${_BOLD}${_YELLOW}rbenv${_RESET}       ${_BOLD}${_WHITE}$(rbenv -v | cut -d' ' -f2)${_RESET}; using: $(rbenv global)" | _anon
         else
           echo "${_BOLD}${_GRAY}rbenv       [not installed]${_RESET}"
         fi
@@ -265,7 +265,7 @@ function about() {
         fi
 
         if hash postfix 2>/dev/null; then
-          echo "${_BOLD}${_YELLOW}postfix${_RESET}:   ${_BOLD}${_WHITE}$(postconf -d mail_version 2>&1 | grep -v 'Permission denied' | cut -d'=' -f2 | cut -d' ' -f2)${_RESET} $(command -v postfix)" | _anon
+          echo "${_BOLD}${_YELLOW}postfix${_RESET}:    ${_BOLD}${_WHITE}$(postconf -d mail_version 2>&1 | grep -v 'Permission denied' | cut -d'=' -f2 | cut -d' ' -f2)${_RESET} $(command -v postfix)" | _anon
         else
           echo "${_BOLD}${_GRAY}postfix     [not installed]${_RESET}"
         fi
