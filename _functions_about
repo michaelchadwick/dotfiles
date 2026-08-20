@@ -59,6 +59,10 @@ function about() {
     fi
   fi
 
+  if [[ -f /etc/debian_version ]]; then
+    echo "Debian v$(cat /etc/debian_version)"
+  fi
+
   if [[ $# -ge 1 ]]; then
     if [[ "$1" = '-f' ]]; then
       echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
