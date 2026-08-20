@@ -173,7 +173,7 @@ function about() {
         fi
 
         if hash cargo 2>/dev/null; then
-          echo "${_BOLD}${_YELLOW}cargo${_RESET}       ${_BOLD}${_WHITE}$(cargo --version | cut -d' ' -f2)${_RESET} $(command -v cargo)" | _anon
+          echo "${_BOLD}${_YELLOW}cargo${_RESET}:      ${_BOLD}${_WHITE}$(cargo --version | cut -d' ' -f2)${_RESET} $(command -v cargo)" | _anon
         else
           echo "${_BOLD}${_GRAY}cargo       [not installed]${_RESET}"
         fi
@@ -215,19 +215,19 @@ function about() {
         fi
 
         if hash pyenv 2>/dev/null; then
-          echo "${_BOLD}${_YELLOW}pyenv${_RESET}     ${_BOLD}${_WHITE}$(pyenv -v | cut -d' ' -f2 | cut -d';' -f1)${_RESET}; using: $(pyenv global)" | _anon
+          echo "${_BOLD}${_YELLOW}pyenv${_RESET}:    ${_BOLD}${_WHITE}$(pyenv -v | cut -d' ' -f2 | cut -d';' -f1)${_RESET}; using: $(pyenv global)" | _anon
         else
           echo "${_BOLD}${_GRAY}pyenv       [not installed]${_RESET}"
         fi
 
         if hash rbenv 2>/dev/null; then
-          echo "${_BOLD}${_YELLOW}rbenv${_RESET}       ${_BOLD}${_WHITE}$(rbenv -v | cut -d' ' -f2)${_RESET}; using: $(rbenv global)" | _anon
+          echo "${_BOLD}${_YELLOW}rbenv${_RESET}:      ${_BOLD}${_WHITE}$(rbenv -v | cut -d' ' -f2)${_RESET}; using: $(rbenv global)" | _anon
         else
           echo "${_BOLD}${_GRAY}rbenv       [not installed]${_RESET}"
         fi
 
         if hash uv 2>/dev/null; then
-          echo "${_BOLD}${_YELLOW}uv${_RESET}          ${_BOLD}${_WHITE}$(uv --version | cut -d' ' -f2 | cut -d';' -f1)${_RESET}; $(command -v uv)" | _anon
+          echo "${_BOLD}${_YELLOW}uv${_RESET}:         ${_BOLD}${_WHITE}$(uv --version | cut -d' ' -f2 | cut -d';' -f1)${_RESET}; $(command -v uv)" | _anon
         else
           echo "${_BOLD}${_GRAY}uv          [not installed]${_RESET}"
         fi
