@@ -65,19 +65,19 @@ function about() {
           echo "${_BOLD}${_YELLOW}crystal${_RESET}:    ${_BOLD}${_WHITE}$(crystal --version | head -n 1 | cut -d' ' -f2)${_RESET} $(command -v crystal)" | _anon
 
         else
-          echo "${_BOLD}${_GRAY}crystal not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}crystal     [not installed]${_RESET}"
         fi
 
         if hash go 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}go${_RESET}:         ${_BOLD}${_WHITE}$(go version | cut -d' ' -f3 | cut -d'g' -f2 | cut -d'o' -f2)${_RESET} $(command -v go)" | _anon
         else
-          echo "${_BOLD}${_GRAY}go not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}go          [not installed]${_RESET}"
         fi
 
         if hash java 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}java${_RESET}:       ${_BOLD}${_WHITE}$(java -version 2>&1 | head -n 1 | cut -d' ' -f3- | cut -d'"' -f2 | cut -d'"' -f1)${_RESET} $(command -v java)" | _anon
         else
-          echo "${_BOLD}${_GRAY}java not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}java        [not installed]${_RESET}"
         fi
 
         if hash node 2>/dev/null; then
@@ -88,22 +88,22 @@ function about() {
           if hash nvm 2>/dev/null; then
             echo "${_BOLD}${_YELLOW}- nvm${_RESET}:      ${_BOLD}${_WHITE}$(nvm --version)${_RESET} $(command -v nvm)" | _anon
           else
-            echo "${_BOLD}${_GRAY}- nvm not installed${_RESET}"
+            echo "${_BOLD}${_GRAY}- nvm       [not installed]${_RESET}"
           fi
 
           if hash pnpm 2>/dev/null; then
             echo "${_BOLD}${_YELLOW}- pnpm${_RESET}:     ${_BOLD}${_WHITE}$(pnpm --version)${_RESET} $(command -v pnpm)" | _anon
           else
-            echo "${_BOLD}${_GRAY}- pnpm not installed${_RESET}"
+            echo "${_BOLD}${_GRAY}- pnpm      [not installed]${_RESET}"
           fi
         else
-          echo "${_BOLD}${_GRAY}node not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}node        [not installed]${_RESET}"
         fi
 
         if hash php 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}php${_RESET}:        ${_BOLD}${_WHITE}$(php -v | head -1 | cut -d' ' -f2)${_RESET} $(command -v php)" | _anon
         else
-          echo "${_BOLD}${_GRAY}php not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}php         [not installed]${_RESET}"
         fi
 
         pycmd1=$(hash python 2>/dev/null)
@@ -116,7 +116,7 @@ function about() {
         if [[ -n "${pycmd1}" ]] || [[ -n "${pycmd2}" ]] || [[ -n "${pycmd3}" ]] || [[ -n "${pycmd4}" ]] || [[ -n "${pycmd5}" ]] || [[ -n "${pycmd6}" ]]; then
           echo "${_BOLD}${_YELLOW}python${_RESET}:     ${_BOLD}${_WHITE}$(python -c 'import sys; print(sys.version)' | cut -d' ' -f1)${_RESET} $(command -v python)" | _anon
         else
-          echo "${_BOLD}${_GRAY}python not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}python      [not installed]${_RESET}"
         fi
 
         # py2cmd1=$(hash python2 2>/dev/null)
@@ -125,31 +125,31 @@ function about() {
         # if [[ -n "${py2cmd1}" ]] || [[ -n "${py2cmd2}" ]]; then
         #   echo "${_BOLD}${_YELLOW}python2${_RESET}:    ${_BOLD}${_WHITE}$(python2 -c 'import sys; print(sys.version)' | head -1)${_RESET}$(command -v python2)" | _anon
         # else
-        #   echo "${_BOLD}${_GRAY}python2 not installed${_RESET}"
+        #   echo "${_BOLD}${_GRAY}python2     [not installed]${_RESET}"
         # fi
 
         # if hash python3 2>/dev/null; then
         #   echo "${_BOLD}${_YELLOW}python3${_RESET}:    ${_BOLD}${_WHITE}$(python3 -c 'import sys; print(sys.version)' | cut -d' ' -f1)${_RESET} $(command -v python3)" | _anon
         # else
-        #   echo "${_BOLD}${_GRAY}python3 not installed${_RESET}"
+        #   echo "${_BOLD}${_GRAY}python3     [not installed]${_RESET}"
         # fi
 
         if hash ruby 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}ruby${_RESET}:       ${_BOLD}${_WHITE}$(ruby -v | cut -d' ' -f2)${_RESET} $(command -v ruby)" | _anon
         else
-          echo "${_BOLD}${_GRAY}ruby not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}ruby        [not installed]${_RESET}"
         fi
 
         if hash rustc 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}rust${_RESET}:       ${_BOLD}${_WHITE}$(rustc --version | cut -d' ' -f2)${_RESET} $(command -v rustc)" | _anon
         else
-          echo "${_BOLD}${_GRAY}rustc not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}rustc       [not installed]${_RESET}"
         fi
 
         if hash tsc 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}tsc${_RESET}:        ${_BOLD}${_WHITE}$(tsc -v | cut -d' ' -f2-)${_RESET} $(command -v tsc)" | _anon
         else
-          echo "${_BOLD}${_GRAY}tsc not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}tsc         [not installed]${_RESET}"
         fi
 
       echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
@@ -159,79 +159,79 @@ function about() {
         if hash asdf 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}asdf${_RESET}:      ${_BOLD}${_WHITE}$(asdf version | cut -d'v' -f2)${_RESET}" | _anon
         else
-          echo "${_BOLD}${_GRAY}asdf not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}asdf        [not installed]${_RESET}"
         fi
 
         if hash bower 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}bower${_RESET}:      ${_BOLD}${_WHITE}$(bower -v)${_RESET} $(command -v bower)" | _anon
         else
-          echo "${_BOLD}${_GRAY}bower not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}bower       [not installed]${_RESET}"
         fi
 
         if hash cargo 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}cargo${_RESET}       ${_BOLD}${_WHITE}$(cargo --version | cut -d' ' -f2)${_RESET} $(command -v cargo)" | _anon
         else
-          echo "${_BOLD}${_GRAY}cargo not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}cargo       [not installed]${_RESET}"
         fi
 
         if hash composer 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}composer${_RESET}:   ${_BOLD}${_WHITE}$(composer about | head -n 1 | cut -d' ' -f9)${_RESET} $(command -v composer)" | _anon
         else
-          echo "${_BOLD}${_GRAY}composer not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}composer    [not installed]${_RESET}"
         fi
 
         if hash gem 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}gem${_RESET}:        ${_BOLD}${_WHITE}$(gem -v)${_RESET} $(command -v gem)" | _anon
         else
-          echo "${_BOLD}${_GRAY}gem not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}gem         [not installed]${_RESET}"
         fi
 
         if hash jenv 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}- jenv${_RESET}:     ${_BOLD}${_WHITE}$(jenv --version | cut -d' ' -f2 )${_RESET}; using: $(jenv global)" | _anon
         else
-          echo "${_BOLD}${_GRAY}jenv not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}jenv        [not installed]${_RESET}"
         fi
 
         if hash mise 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}mise${_RESET}:       ${_BOLD}${_WHITE}$(mise --version)${_RESET} $(command -v mise)" | _anon
         else
-          echo "${_BOLD}${_GRAY}mise not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}mise        [not installed]${_RESET}"
         fi
 
         if hash pip 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}pip${_RESET}:        ${_BOLD}${_WHITE}$(pip --version | cut -d' ' -f2)${_RESET} $(command -v pip)" | _anon
         else
-          echo "${_BOLD}${_GRAY}pip not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}pip         [not installed]${_RESET}"
         fi
 
         if hash pip3 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}pip3${_RESET}:       ${_BOLD}${_WHITE}$(pip3 --version | cut -d' ' -f2)${_RESET} $(command -v pip3)" | _anon
         else
-          echo "${_BOLD}${_GRAY}pip3 not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}pip3        [not installed]${_RESET}"
         fi
 
         if hash pyenv 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}pyenv${_RESET}     ${_BOLD}${_WHITE}$(pyenv -v | cut -d' ' -f2 | cut -d';' -f1)${_RESET}; using: $(pyenv global)" | _anon
         else
-          echo "${_BOLD}${_GRAY}pyenv not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}pyenv       [not installed]${_RESET}"
         fi
 
         if hash rbenv 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}rbenv${_RESET}     ${_BOLD}${_WHITE}$(rbenv -v | cut -d' ' -f2)${_RESET}; using: $(rbenv global)" | _anon
         else
-          echo "${_BOLD}${_GRAY}rbenv not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}rbenv       [not installed]${_RESET}"
         fi
 
         if hash uv 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}uv${_RESET}          ${_BOLD}${_WHITE}$(uv --version | cut -d' ' -f2 | cut -d';' -f1)${_RESET}; $(command -v uv)" | _anon
         else
-          echo "${_BOLD}${_GRAY}uv not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}uv          [not installed]${_RESET}"
         fi
 
         if hash yarn 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}yarn${_RESET}:       ${_BOLD}${_WHITE}$(yarn --version)${_RESET} $(command -v yarn)" | _anon
         else
-          echo "${_BOLD}${_GRAY}yarn not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}yarn        [not installed]${_RESET}"
         fi
 
       echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
@@ -241,13 +241,13 @@ function about() {
         if hash httpd 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}httpd${_RESET}:      ${_BOLD}${_WHITE}$(httpd -v | head -n 1 | cut -d : -f 2 | cut -d'/' -f2 | cut -d' ' -f1)${_RESET} $(command -v httpd)" | _anon
         else
-          echo "${_BOLD}${_GRAY}httpd not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}httpd       [not installed]${_RESET}"
         fi
 
         if hash nginx 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}nginx${_RESET}:      ${_BOLD}${_WHITE}$(nginx -v 2>&1 | head -n 1 | cut -d : -f 2 | cut -d'/' -f2)${_RESET} $(command -v nginx)" | _anon
         else
-          echo "${_BOLD}${_GRAY}nginx not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}nginx       [not installed]${_RESET}"
         fi
 
       echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
@@ -257,13 +257,13 @@ function about() {
         if hash dovecot 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}dovecot${_RESET}:   ${_BOLD}${_WHITE}$(dovecot --version)${_RESET} $(command -v dovecot)" | _anon
         else
-          echo "${_BOLD}${_GRAY}dovecot not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}dovecot     [not installed]${_RESET}"
         fi
 
         if hash postfix 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}postfix${_RESET}:   ${_BOLD}${_WHITE}$(postconf -d mail_version 2>&1 | grep -v 'Permission denied' | cut -d'=' -f2 | cut -d' ' -f2)${_RESET} $(command -v postfix)" | _anon
         else
-          echo "${_BOLD}${_GRAY}postfix not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}postfix     [not installed]${_RESET}"
         fi
 
       echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
@@ -273,43 +273,43 @@ function about() {
         if hash ddev 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}ddev${_RESET}:       ${_BOLD}${_WHITE}$(ddev -v | cut -d " " -f 3)${_RESET} $(command -v ddev)" | _anon
         else
-          echo "${_BOLD}${_GRAY}ddev not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}ddev        [not installed]${_RESET}"
         fi
 
         if hash ember 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}ember${_RESET}:      ${_BOLD}${_WHITE}$(ember -v | cut -d " " -f 2)${_RESET} $(command -v ember)" | _anon
         else
-          echo "${_BOLD}${_GRAY}ember not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}ember       [not installed]${_RESET}"
         fi
 
         if hash fin 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}docksal${_RESET}:    ${_BOLD}${_WHITE}$(fin -v | cut -d " " -f 2)${_RESET} $(command -v fin)" | _anon
         else
-          echo "${_BOLD}${_GRAY}docksal not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}docksal     [not installed]${_RESET}"
         fi
 
         if hash hugo 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}hugo${_RESET}:       ${_BOLD}${_WHITE}$(hugo version | cut -d " " -f 2)${_RESET} $(command -v hugo)" | _anon
         else
-          echo "${_BOLD}${_GRAY}hugo not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}hugo        [not installed]${_RESET}"
         fi
 
         if hash jekyll 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}jekyll${_RESET}:     ${_BOLD}${_WHITE}$(jekyll --version | cut -d " " -f 2)${_RESET} $(command -v jekyll)" | _anon
         else
-          echo "${_BOLD}${_GRAY}jekyll not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}jekyll      [not installed]${_RESET}"
         fi
 
         if hash rails 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}rails${_RESET}:      ${_BOLD}${_WHITE}$(rails -v | cut -d' ' -f2)${_RESET} $(command -v rails)" | _anon
         else
-          echo "${_BOLD}${_GRAY}- rails not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}- rails     [not installed]${_RESET}"
         fi
 
         if hash symfony 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}symfony${_RESET}:    ${_BOLD}${_WHITE}$(symfony version | cut -d' ' -f4)${_RESET} $(command -v symfony)" | _anon
         else
-          echo "${_BOLD}${_GRAY}symfony not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}symfony     [not installed]${_RESET}"
         fi
 
       echo "${_BOLD}${_WHITE}--------------------------------${_RESET}"
@@ -319,31 +319,31 @@ function about() {
         if hash mongod 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}mongod${_RESET}:     ${_BOLD}${_WHITE}$(mongod --version | head -1 | cut -d' ' -f3)${_RESET} $(command -v mongod)" | _anon
         else
-          echo "${_BOLD}${_GRAY}mongod not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}mongod      [not installed]${_RESET}"
         fi
 
         if hash mysql 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}mysql${_RESET}:      ${_BOLD}${_WHITE}$(mysql -V 2>&1 | cut -d' ' -f3- | cut -d',' -f1)${_RESET} $(command -v mysql)" | _anon
         else
-          echo "${_BOLD}${_GRAY}mysql not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}mysql       [not installed]${_RESET}"
         fi
 
         if hash psql 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}psql${_RESET}:       ${_BOLD}${_WHITE}$(psql --version | cut -d' ' -f3)${_RESET} $(command -v psql)" | _anon
         else
-          echo "${_BOLD}${_GRAY}postgres not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}postgres    [not installed]${_RESET}"
         fi
 
         if hash sqlite3 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}sqlite3${_RESET}:    ${_BOLD}${_WHITE}$(sqlite3 --version 2>&1 | cut -d' ' -f1)${_RESET} $(command -v sqlite3)" | _anon
         else
-          echo "${_BOLD}${_GRAY}sqlite3 not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}sqlite3     [not installed]${_RESET}"
         fi
 
         if hash redis-server 2>/dev/null; then
           echo "${_BOLD}${_YELLOW}redis${_RESET}:      ${_BOLD}${_WHITE}$(redis-server --version 2>&1 | cut -d' ' -f3 | cut -d'=' -f2)${_RESET} $(command -v redis-server)" | _anon
         else
-          echo "${_BOLD}${_GRAY}redis not installed${_RESET}"
+          echo "${_BOLD}${_GRAY}redis       [not installed]${_RESET}"
         fi
 
     fi
