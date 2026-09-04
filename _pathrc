@@ -86,4 +86,7 @@ PATH=${PATH}:${HOME}/.qlty/bin
 declare BUN_INSTALL
 PATH="${PATH}:${BUN_INSTALL}/bin"
 
+# docker
+PATH="${PATH}:${HOME}/.docker/bin"
+
 export PATH
