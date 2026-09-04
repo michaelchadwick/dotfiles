@@ -333,3 +333,6 @@ mise.toml
 
 # JetBrains
 .idea
+
+# love2D
+.love
