@@ -36,6 +36,7 @@ PATH=${PATH}:${HOME}/.yarn/bin:${HOME}/.config/yarn/global/node_modules/.bin
 
 # ruby
 PATH=${PATH}:.bundle/bin
+PATH=${PATH}:${HOME}/.gem/ruby/3.4.0/bin
 PATH=${PATH}:${HOME}/.rbenv/shims
 
 # cakephp
