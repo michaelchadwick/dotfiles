@@ -30,6 +30,7 @@ set foldnestmax=10              " 10 nested fold max
 set foldmethod=indent           " fold based on indent level
 
 set laststatus=2
+set statusline +=%{fnamemodify(resolve(expand('%:p')),':~')}\ %*
 set mouse=
 set title
 set backspace=indent,eol,start  " make sure backspace works everywhere
