@@ -224,7 +224,7 @@ function lpxdump_notes() {
 }
 alias logicdump_notes=lpxdump_notes
 
-## get the Tempo field from a Logic Pro X project
+## get the Tempo field from a Logic Pro X project (e.g. bpm)
 function lpxdump_tempo() {
   # Check if a filename is provided as an argument
   if [[ "$#" -ne 1 ]]; then
@@ -232,13 +232,13 @@ function lpxdump_tempo() {
   else
     # assuming only one Alternative
     altdir=Alternatives/000/MetaData
-    filename=$1/${altdir}
+    filename="${PWD}"/$1/${altdir}
 
     # Check if the file exists
     if [[ ! -e "$1" ]]; then
       echo "File not found: $1"
     else
-      echo "$1"
+      # echo "${filename}"
       # use built-in macOS defaults tool to read .plist
       defaults read "${filename}" BeatsPerMinute
     fi
