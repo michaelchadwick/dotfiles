@@ -4,7 +4,9 @@
 tap "1password/tap"
 tap "ankitpokhrel/jira-cli"
 tap "bensadeh/circumflex"
+tap "blackfireio/blackfire", trusted: true
 tap "buo/cask-upgrade"
+tap "chattocorp/tap"
 tap "dart-lang/dart"
 tap "dbcli/tap"
 tap "drud/ddev"
@@ -22,10 +24,11 @@ tap "mongodb/brew"
 tap "muesli/tap"
 tap "sass/sass"
 tap "scarvalhojr/tap"
+tap "shivammathur/extensions"
 tap "shivammathur/php"
+tap "stan-breaks/ytsurf", "https://github.com/stan-breaks/ytsurf", trusted: true
 tap "symfony-cli/tap"
-tap "wagoodman/dive"
-tap "yt-dlp/taps"
+tap "yokomohoyo/tap", trusted: { casks: ["insomnium"] }
 
 #############################
 # SYSTEM LIBRARIES          #
@@ -94,6 +97,8 @@ brew "chuck"
 brew "crystal"
 # microsoft .NET
 brew "dotnet"
+# Functional metaprogramming aware language built on Erlang VM
+brew "elixir"
 # golang
 brew "go"
 # java
@@ -103,6 +108,8 @@ brew "openjdk"
 brew "openjdk@11"
 # julia
 brew "julia"
+# Package manager for Lua
+brew "luarocks"
 # nodejs
 brew "node"
 # perl
@@ -110,9 +117,9 @@ brew "perl"
 # php
 brew "php", restart_service: true
 brew "shivammathur/php/php"
-brew "shivammathur/php/php@7.4"
-brew "shivammathur/php/php@8.0"
-brew "shivammathur/php/php@8.1"
+brew "shivammathur/php/php@8.3"
+brew "shivammathur/php/php@8.4"
+brew "shivammathur/php/php@8.5"
 ## python
 brew "python@3.9"
 brew "python-tk@3.11"
@@ -129,6 +136,8 @@ brew "rustup-init"
 #############################
 # better grep
 brew "ack"
+# Run your GitHub Actions locally
+brew "act"
 # advent of code cli
 brew "scarvalhojr/tap/aoc-cli"
 # system info
@@ -143,6 +152,14 @@ brew "bash"
 brew "bash-completion@2"
 # better cat
 brew "bat"
+brew "bat-extras"
+brew "blackfireio/blackfire/blackfire", trusted: true
+# Detect tempo of audio files using beats-per-minute (BPM)
+brew "bpm-tools"
+# Real-time chat app CLI and server
+brew "chattocorp/tap/chatto", trusted: true
+# Statistics utility to count lines of code
+brew "cloc"
 # source building
 brew "cmake"
 # GNUseful tools
@@ -162,8 +179,9 @@ brew "dos2unix"
 # file usage tool
 brew "dua-cli"
 # better du
-brew "muesli/tap/duf"
 brew "duf"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
 # Monitor a directory for changes and run a shell command
 brew "fswatch"
 # GNU awk
@@ -182,6 +200,8 @@ brew "gsed"
 brew "htop"
 # cli http client
 brew "httpie"
+# Website copier/offline browser
+brew "httrack"
 # cat for images
 brew "eddieantonio/eddieantonio/imgcat"
 # json output from a shell
@@ -206,12 +226,16 @@ brew "neofetch"
 brew "netcat"
 # port scanner
 brew "nmap"
+# Open source suite of directory software
+brew "openldap"
 # run multiple shell commands at the same time
 brew "parallel"
 # better ping
 brew "prettyping"
 # password generator
 brew "pwgen"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # cli version of speedtest.net
 brew "speedtest-cli"
 # Test SSL/TLS enabled services to discover supported cipher suites
@@ -224,6 +248,8 @@ brew "telnet"
 brew "the_silver_searcher"
 # better man
 brew "tldr"
+# Sends magic packets to wake up network-devices
+brew "wakeonlan"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
 # command-line http downloader
@@ -233,8 +259,9 @@ brew "winetricks"
 # CLI dashboard
 brew "wtfutil"
 # download youtube videos
-brew "youtube-dl"
-brew "yt-dlp" # better youtube-dl fork
+# brew "youtube-dl"
+# better youtube-dl fork
+brew "yt-dlp"
 
 #############################
 # MEDIA                     #
@@ -267,6 +294,10 @@ brew "sox"
 #############################
 ## css
 brew "sass/sass/sass"
+# Universal database tool and SQL client
+cask "dbeaver-community"
+# Desktop client for GitHub repositories
+cask "github"
 ## static site generator in golang
 brew "hugo"
 ## http servers
@@ -322,6 +353,8 @@ cask "font-monocraft"
 # api testing
 # cask "insomnia"
 cask "insomnium" # open-source, non-login version
+# mp3 id3 editing
+cask "kid3"
 # Spotlight metadata importer
 cask "mdimagesizemdimporter"
 # powershell on macos
