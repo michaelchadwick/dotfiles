@@ -339,7 +339,7 @@ function vid2gif() {
   fi
 
   if [[ "${RUN_CMD}" = true ]]; then
-    ffmpeg -i "$1" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=8 > ~/Downloads/"$1".gif
+    ffmpeg -i "$1" -pix_fmt rgb8 -r 10 -f gif - | gifsicle --optimize=3 --delay=8 > ~/Downloads/"$1".gif
   fi
 }
 alias mp42gif=vid2gif
