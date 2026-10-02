@@ -336,3 +336,6 @@ mise.toml
 
 # love2D
 .love
+
+# claude
+**/.claude/settings.local.json
